@@ -1,0 +1,4 @@
+camptimetest.AppModuleFactoryMachine
+camptimetest.rest.ActivityResourceFactoryMachine
+camptimetest.rest.EmployeeResourceFactoryMachine
+camptimetest.rest.EmployeeResourceRouterFactoryMachine

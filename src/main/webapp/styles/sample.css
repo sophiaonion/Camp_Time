@@ -1,0 +1,20 @@
+body {
+	background-color: darkcyan;
+	color: white;
+	font-family: Helvetica;
+}
+
+
+h1{
+	margin: 3px;
+}
+
+hr {
+	height: 12px;
+	background-color: white;
+}
+
+fieldset {
+	border: 2px solid white;
+}
+
