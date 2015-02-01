@@ -19,7 +19,7 @@ var main = function() {
 		//otherwise the Jackson on the server side will intermittently screw up
 		console.log(data);
 		$.ajax({
-			//type: 'POST',
+			type: 'POST',
 			url: '/api/employees',
 			data: data,
 			contentType: 'application/json'
