@@ -1,5 +1,7 @@
 package camptimetest.rest;
 
+import com.google.common.base.Optional;
+import org.bson.types.ObjectId;
 import restx.annotations.GET;
 import restx.annotations.PUT;
 import restx.annotations.RestxResource;
@@ -17,7 +19,7 @@ import javax.inject.Named;
 public class CamperResource {
     private JongoCollection registrations;
 
-    public CamperResource(@Named ("registrations") JongoCollection campers){
+    public CamperResource(@Named ("registrations") JongoCollection registrations){
         this.registrations = registrations;
     }
 
@@ -28,6 +30,17 @@ public class CamperResource {
     public void registerCamper(String camperID, String sessionID){
         SessionRegistration reg = new SessionRegistration(camperID, sessionID);
         registrations.get().save(reg);
+
+    }
+
+    @GET("/campers/{camperID}")
+    public Iterable<Camper> getCamper(Optional<String> camperID) {
+        if(camperID.isPresent()) {
+            registrations.get().find(new ObjectId(camperID));
+        }
+        else {
+
+        }
 
     }
 }
