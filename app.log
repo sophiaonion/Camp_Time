@@ -3934,3 +3934,16 @@ java.lang.NullPointerException: null
 
 21:36:38.066 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
 21:36:38.534 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:40:39.961 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:40:40.260 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:40:42.368 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:40:42.369 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:40:42.893 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+21:40:43.328 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:50:15.160 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
