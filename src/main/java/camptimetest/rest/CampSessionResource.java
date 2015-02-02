@@ -52,7 +52,4 @@ public class CampSessionResource {
             return campsession;
         }
 
-
-    //todo add list of fixed activities, activity collection??
-    //todo create session page
 }
