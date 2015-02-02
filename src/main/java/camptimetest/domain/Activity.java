@@ -16,6 +16,8 @@ public class Activity {
     private String title;
     private Calendar startTime;
     private Calendar endTime;
+    private String activityAreaID;
+
     @Id
     @ObjectId
     private String key;
@@ -66,5 +68,13 @@ public class Activity {
 
     public Calendar getEndTime(){
         return endTime;
+    }
+
+    public String getActivityAreaID() {
+        return activityAreaID;
+    }
+
+    public void setActivityAreaID(String activityAreaID) {
+        this.activityAreaID = activityAreaID;
     }
 }
