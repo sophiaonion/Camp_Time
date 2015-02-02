@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Create Camp Session</title>
+    <link rel='stylesheet' type='text/css' href='styles/sample.css'>
 </head>
 <body>
     <header>
@@ -11,11 +12,61 @@
 
     <div id="session-info">
         <p><label>Start Date:</label>
-            <input type="text" name="start_date" id="start_date"></p>
-        <p><label>End Date:</label>
-            <input type="text" name="end_date" id="end_date"></p>
+            <input type="date" name="start_date" id="start_date"></p>
 
-        <button type="button" id="submit-activity">Submit</button>
+        <p><label>End Date:</label>
+            <input type="date" name="end_date" id="end_date"></p>
+
+        <p><label>Skeleton Schedule:</label>
+            <select name="skeleton_schedule" id="skeleton_schedule">
+                <option value="skeleton1">skeleton 1</option>
+                <option value="skeleton1">skeleton 2</option>
+            </select>
+        </p>
+
+        <p><label>Fixed time Activities:</label>
+            <select name="fixed_time" id="fixed_time">
+                <option value="pool">Pool</option>
+                <option value="art">Art</option>
+                <option value="eating">Eating</option>
+                <option value="sports">Sports </option>
+                <option value="customize">Counselor Time</option>
+                <option value="canoeing">Canoeing </option>
+                <option value="archery">Archery </option>
+                <option value="creek">Creek Hopping</option>
+            </select>
+        </p>
+
+        <p><label>Regular Activities:</label>
+            <select name="activities" id="activities">
+                <option value="pool">Pool</option>
+                <option value="art">Art</option>
+                <option value="eating">Eating</option>
+                <option value="sports">Sports </option>
+                <option value="customize">Counselor Time</option>
+                <option value="canoeing">Canoeing </option>
+                <option value="archery">Archery </option>
+                <option value="creek">Creek Hopping</option>
+            </select>
+        </p>
+        <p><label>Name:</label>
+            <input type="text" name="name" id="name"></p>
+
+        <p><label>Age Range:</label>
+            <select name="age_range" id="age_range">
+                <option value="daisy">Daisy (grades K-1)</option>
+                <option value="brownie">Brownie (grades 2-3)</option>
+                <option value="junior">Junior (grades 4-5) </option>
+                <option value="cadette">Cadette (grades 6-8) </option>
+                <option value="senior">Senior (grades 9-10)</option>
+                <option value="ambassador">Ambassador (grades 11-12)</option>
+            </select>
+        </p>
+
+        <p><label>Enrollment Cap:</label>
+            <input type="int" name="enrollment_cap" id="enrollment_cap"></p>
+
+        <a href="success.html">Submit</a>
     </div>
 </body>
 <script src="scripts/jquery-2.1.3.js"></script>
