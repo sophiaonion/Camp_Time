@@ -1,5 +1,7 @@
 camptimetest.AppModuleFactoryMachine
 camptimetest.rest.ActivityResourceFactoryMachine
+camptimetest.rest.CampSessionResourceFactoryMachine
+camptimetest.rest.CampSessionResourceRouterFactoryMachine
 camptimetest.rest.CamperResourceFactoryMachine
 camptimetest.rest.CamperResourceRouterFactoryMachine
 camptimetest.rest.EmployeeResourceFactoryMachine
