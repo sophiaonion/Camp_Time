@@ -5,14 +5,27 @@ var main = function(camp_sessions, campers){
 //        var element = $("<option>");
 //        element.html('value', session.name);
 //        element.data('sessionID', session.sessionID);
+//          $('#session').append(element);
 //    });
 
     //hard code session options for now
 
+    var autocomplete =
+
+    $('#camper-name').autocomplete({
+        source:
+        autoFocus: true
+        autocompletechange:
+        }
+    })
+
+
     $('#submit-registration').on('click', function(){
         var data = {
             camperID: $('#camper-name').val(),
-            sessionID: $('#session-name').val()
+            sessionID: $('#session').val()
+            //for nonhard coded method
+            //sessionID: $('#session option:selected').data(sessionID);
         };
 
         $.ajax({

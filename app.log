@@ -4681,3 +4681,31 @@ java.lang.NullPointerException: null
 16:14:06.210 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 80.75 ms
 16:14:06.286 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 5.406 ms
 16:14:19.976 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/Margine%20the%20camper/KritterKrazy >> OK - 210.8 ms
+16:24:42.352 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+16:24:42.593 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+16:24:44.298 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+16:24:44.299 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+16:24:44.719 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+16:24:45.193 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+16:25:31.994 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+16:25:32.137 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 760.1 ms
+16:25:32.219 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 81.81 ms
+16:25:32.290 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.520 ms
+16:27:33.498 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+16:27:33.773 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+16:27:36.050 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+16:27:36.051 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+16:27:36.486 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+16:27:37.107 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
