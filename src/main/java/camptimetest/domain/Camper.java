@@ -10,17 +10,17 @@ public class Camper {
 
     @ObjectId
     @Id
-    private String camperId;
+    private String camperID;
     private String name;
     private String age;
     private String extraInfo;
 
-    public String getCamperId(){
-        return camperId;
+    public String getcamperID(){
+        return camperID;
     }
 
-    public Camper setCamperId(String camperId){
-        this.camperId = camperId;
+    public Camper setcamperID(String camperID){
+        this.camperID = camperID;
         return this;
     }
 
@@ -54,7 +54,7 @@ public class Camper {
     @Override
     public String toString(){
         return "Camper{" +
-                "camperId='" + camperId + '\'' +
+                "camperID='" + camperID + '\'' +
                 ", name='" + name + '\'' +
                 ", age='" + age + '\'' +
                 ", extraInfo=" + extraInfo + '\'' +

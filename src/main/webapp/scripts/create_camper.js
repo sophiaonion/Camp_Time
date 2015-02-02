@@ -9,15 +9,13 @@ var main = function(){
 
     $.ajax({
         type: 'POST',
-        url: '/api/campers/' + data.camperName + '/' + data.camperAge + '/' data.extraInfo,
+        url: '/api/campers',
         data: JSON.stringify(data),
         contentType: 'application/JSON'
     });
 
     });
 }
-//eventually get campers and sessions and pass to main function
-$(document).ready(function(){
 
 
-});
+$(document).ready(main);

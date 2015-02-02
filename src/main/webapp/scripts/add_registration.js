@@ -1,31 +1,40 @@
 var main = function(camp_sessions, campers){
     //get camper name from linked camper registration page
 
-//    camp_sessions.forEach(function(session){
-//        var element = $("<option>");
-//        element.html('value', session.name);
-//        element.data('sessionID', session.sessionID);
-//          $('#session').append(element);
-//    });
+    camp_sessions.forEach(function(session){
+        var element = $("<option>");
+        element.html('value', session.name);
+        element.data('sessionID', session.sessionID);
+          $('#session').append(element);
+    });
 
-    //hard code session options for now
+    //generate autocomplete selections
+    //value is displayed, ID is extra data to send
+    var autocomplete_source = campers.forEach(function(camper){
 
-    var autocomplete =
+        return {
+            value: camper.name,
+            ID: camper.camperID
+        };
+    });
 
+    var selected_camperID;
     $('#camper-name').autocomplete({
-        source:
-        autoFocus: true
-        autocompletechange:
+        source: autocomplete_source, //set possible options
+        autoFocus: true, //automatically select closest match
+        select: function(event, ui){ //upon selection set camperID to send
+            //ui.item is selected item
+            selected_camperID = ui.item.ID;
+            console.log(ui.item.ID);
         }
-    })
+    });
 
 
     $('#submit-registration').on('click', function(){
         var data = {
-            camperID: $('#camper-name').val(),
-            sessionID: $('#session').val()
             //for nonhard coded method
-            //sessionID: $('#session option:selected').data(sessionID);
+            sessionID: $('#session option:selected').data(sessionID),
+            camperID: selected_camperID
         };
 
         $.ajax({

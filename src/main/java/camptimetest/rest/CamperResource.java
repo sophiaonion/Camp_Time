@@ -4,6 +4,7 @@ import camptimetest.domain.Camper;
 import com.google.common.base.Optional;
 import org.bson.types.ObjectId;
 import restx.annotations.GET;
+import restx.annotations.POST;
 import restx.annotations.PUT;
 import restx.annotations.RestxResource;
 import restx.factory.Component;
@@ -52,4 +53,11 @@ public class CamperResource {
 //        }
 //
 //    }
+
+    @POST("/campers")
+    public Camper createCamper(Camper camper){
+        campers.get().save(camper);
+        return camper;
+
+    }
 }
