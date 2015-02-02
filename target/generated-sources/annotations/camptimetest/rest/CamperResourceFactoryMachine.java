@@ -10,11 +10,13 @@ public class CamperResourceFactoryMachine extends SingleNameFactoryMachine<Campe
 
     public CamperResourceFactoryMachine() {
         super(0, new StdMachineEngine<CamperResource>(NAME, BoundlessComponentBox.FACTORY) {
-private final Factory.Query<restx.jongo.JongoCollection> campers = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "registrations")).mandatory();
+private final Factory.Query<restx.jongo.JongoCollection> registrations = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "registrations")).mandatory();
+private final Factory.Query<restx.jongo.JongoCollection> campers = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "campers")).mandatory();
 
             @Override
             public BillOfMaterials getBillOfMaterial() {
                 return new BillOfMaterials(ImmutableSet.<Factory.Query<?>>of(
+registrations,
 campers
                 ));
             }
@@ -22,6 +24,7 @@ campers
             @Override
             protected CamperResource doNewComponent(SatisfiedBOM satisfiedBOM) {
                 return new CamperResource(
+satisfiedBOM.getOne(registrations).get().getComponent(),
 satisfiedBOM.getOne(campers).get().getComponent()
                 );
             }

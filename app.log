@@ -3909,3 +3909,28 @@ java.lang.NullPointerException: null
 14:31:34.794 [qtp1442958201-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] PUT /campers/cmper/seion - per request factory created in 1.073 s
 14:31:58.167 [qtp1442958201-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/cmper/seion >> NO_CONTENT - 23.37 s
 14:31:58.304 [qtp1442958201-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/cmper/seion >> NO_CONTENT - 24.83 s
+21:33:35.820 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:33:36.104 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:33:38.097 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:33:38.098 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:33:41.729 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 4 sources compiled in 3.198 s
+21:33:42.109 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+21:33:42.820 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:36:35.310 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:36:35.589 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:36:37.688 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:36:37.689 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:36:38.066 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+21:36:38.534 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics

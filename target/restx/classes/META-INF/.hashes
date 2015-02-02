@@ -1,9 +1,10 @@
 src\main\java**camptimetest\domain\Activity.java**e8e0ef5adc74dda68aaff2961ec60da2**1422651366845
 src\main\java**camptimetest\domain\Employee.java**8e5372c1358af461f85eb8086164b064**1422583864712
-src\main\java**camptimetest\rest\EmployeeResource.java**af67329f5b3fadb3ba64ee573e75f39b**1422652117735
+src\main\java**camptimetest\rest\EmployeeResource.java**af67329f5b3fadb3ba64ee573e75f39b**1422846430140
 src\main\java**camptimetest\AppModule.java**2416e0b1ae138599e87fece1bf8f4fc2**1422529583323
 src\main\java**camptimetest\rest\ActivityResource.java**867cf5d3164815d970f0fc4b26613d5a**1422651451416
-src\main\java**camptimetest\rest\CamperResource.java**ec180a7076402bc59778198451258eaf**1422821008508
+src\main\java**camptimetest\rest\CamperResource.java**6c3b21bae186f356134a3dd30e8e125c**1422847933264
 src\main\java**playground\datetest.java**d448977782891c9945fbe16eed038397**1422650703835
+src\main\java**camptimetest\domain\Camper.java**c813d30a33f285ca1c1748e5c5dd94dd**1422843953335
 src\main\java**camptimetest\AppServer.java**ea40a1c316600c658c555d3abcd57b2c**1422529271084
-src\main\java**camptimetest\domain\SessionRegistration.java**f037f5f9007b73e684a00e76400118f6**1422821474241
+src\main\java**camptimetest\domain\SessionRegistration.java**8d60c85a23966ffec5d2cf3bc7d90898**1422821509841

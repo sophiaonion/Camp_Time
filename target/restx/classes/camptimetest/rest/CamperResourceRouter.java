@@ -36,19 +36,18 @@ public class CamperResourceRouter extends RestxRouter {
                     final RestxSecurityManager securityManager) {
         super(
             "default", "CamperResourceRouter", new RestxRoute[] {
-        new StdEntityRoute<Void, Empty>("default#CamperResource#registerCamper",
+        new StdEntityRoute<Void, camptimetest.domain.SessionRegistration>("default#CamperResource#registerCamper",
                 readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
-                writerRegistry.<Empty>build(void.class, Optional.<String>absent()),
+                writerRegistry.<camptimetest.domain.SessionRegistration>build(camptimetest.domain.SessionRegistration.class, Optional.<String>absent()),
                 new StdRestxRequestMatcher("PUT", "/campers/{camperID}/{sessionID}"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
-            protected Optional<Empty> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
+            protected Optional<camptimetest.domain.SessionRegistration> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
                 securityManager.check(request, open());
-                resource.registerCamper(
+                return Optional.of(resource.registerCamper(
                         /* [PATH] camperID */ match.getPathParam("camperID"),
                         /* [PATH] sessionID */ match.getPathParam("sessionID")
-                );
-                return Optional.of(Empty.EMPTY);
+                ));
             }
 
             @Override
@@ -71,9 +70,9 @@ public class CamperResourceRouter extends RestxRouter {
                 operation.parameters.add(sessionID);
 
 
-                operation.responseClass = "void";
+                operation.responseClass = "SessionRegistration";
                 operation.inEntitySchemaKey = "";
-                operation.outEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "camptimetest.domain.SessionRegistration";
                 operation.sourceLocation = "camptimetest.rest.CamperResource#registerCamper(java.lang.String,java.lang.String)";
             }
         },

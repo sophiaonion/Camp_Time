@@ -1,5 +1,6 @@
 package camptimetest.rest;
 
+import camptimetest.domain.Camper;
 import com.google.common.base.Optional;
 import org.bson.types.ObjectId;
 import restx.annotations.GET;
@@ -18,8 +19,10 @@ import javax.inject.Named;
 @PermitAll
 public class CamperResource {
     private JongoCollection registrations;
+    private JongoCollection campers;
 
-    public CamperResource(@Named ("registrations") JongoCollection registrations){
+    public CamperResource(@Named ("registrations") JongoCollection registrations,
+                          @Named ("campers") JongoCollection campers){
         this.registrations = registrations;
     }
 
@@ -27,20 +30,21 @@ public class CamperResource {
 //    public Iterable<camp>
 
     @PUT("/campers/{camperID}/{sessionID}")
-    public void registerCamper(String camperID, String sessionID){
+    public SessionRegistration registerCamper(String camperID, String sessionID){
         SessionRegistration reg = new SessionRegistration(camperID, sessionID);
         registrations.get().save(reg);
+        return reg;
 
     }
 
-    @GET("/campers/{camperID}")
-    public Iterable<Camper> getCamper(Optional<String> camperID) {
-        if(camperID.isPresent()) {
-            registrations.get().find(new ObjectId(camperID));
-        }
-        else {
-
-        }
-
-    }
+//    @GET("/campers/{camperID}")
+//    public Iterable<Camper> getCamper(Optional<String> camperID) {
+//        if(camperID.isPresent()) {
+//            registrations.get().find(new ObjectId(camperID)).as(Camper);
+//        }
+//        else {
+//
+//        }
+//
+//    }
 }
