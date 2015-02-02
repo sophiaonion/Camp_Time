@@ -20,12 +20,11 @@ nav ul li:hover > ul {
 nav ul {
     display: inline-table; /*makes menu width fit around items */
     padding: 0 20px;
-    background-color: rgba(150, 200, 255, .7);
+    background-color: #CC333F;
     border-radius: 8px; /*round edges*/
     list-style: none; /*get rid of bullet points */
     position: relative; /*sub menus position relative to nav bar */
-    color: white;
-
+    color: #EFEFEF;
 }
 
 nav ul:after { /*inserts content  after list*/
@@ -39,11 +38,11 @@ nav ul li {
 }
 
 nav ul li:hover {
-    background-color: white;
+    background-color: #EB6841;
 }
 
 nav ul li:hover a {
-    color: darkcyan;
+    color: #EFEFEF;
 }
 
 /*modify menu bar blocks */
@@ -51,6 +50,7 @@ nav ul li a {
     display: block;
     padding: 20px 15px;
     text-decoration: none; /*remove link underlines */
+    color: #EFEFEF;
 }
 
 /*sub menus*/
@@ -63,9 +63,9 @@ nav ul ul {
 /*sub menu list items */
 nav ul ul li {
     float: none;
-    border: 1px solid grey;
+    border: 1px solid #EB6841;
     position: relative;
-    background: white;
+    background: #EDC951;
 }
 
 nav ul ul li a {
@@ -73,7 +73,7 @@ nav ul ul li a {
 }
 
 nav ul ul li a:hover {
-    background: lightblue;
+    background: #DE5F59;
 }
 /* sub sub menus */
 nav ul ul ul {

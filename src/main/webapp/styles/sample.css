@@ -1,20 +1,22 @@
 body {
-	background-color: darkcyan;
-	color: white;
+	background-color: #00A0B0;
+	color: #EFEFEF;
 	font-family: Helvetica;
 }
 
 
 h1{
 	margin: 3px;
+	color: #EDC951;
 }
 
 hr {
 	height: 12px;
-	background-color: white;
+	background-color: #CC333F;
+	color: #EFEFEF;
 }
 
 fieldset {
-	border: 2px solid white;
+	border: 2px solid #CC333F;
 }
 
