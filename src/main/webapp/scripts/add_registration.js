@@ -1,36 +1,44 @@
-var main = function(camp_sessions){
+var main = function(camp_sessions, campers){
     //get camper name from linked camper registration page
-    var qs = new QueryString();
 
-    camp_sessions.forEach(function(session){
-        var element = $("<option>");
-        element.html('value', session.name);
-        element.data('sessionID', session.sessionID);
-    });
+//    camp_sessions.forEach(function(session){
+//        var element = $("<option>");
+//        element.html('value', session.name);
+//        element.data('sessionID', session.sessionID);
+//    });
+
+    //hard code session options for now
 
     $('#submit-registration').on('click', function(){
-    var data = {
-        camperID: $('#camper-name').val(),
-        sessionID: $('#session-name').val()
-    };
+        var data = {
+            camperID: $('#camper-name').val(),
+            sessionID: $('#session-name').val()
+        };
 
+        $.ajax({
+            type: 'PUT',
+            url: '/api/campers/' + data.camperID + '/' + data.sessionID,
+            data: JSON.stringify(data),
+            contentType: 'application/JSON',
+            success: function(data){
+                alert('camper registered');
+            }
+        });
 
+        $('#camper-name').val("");
+        $('#session-name').val("");
+    }); //end submit-registration click handler
 
-    $.ajax({
-        type: 'PUT',
-        url: '/api/campers/' + data.camperID + '/' + data.sessionID,
-        data: JSON.stringify(data),
-        contentType: 'application/JSON'
+    $('#cancel').on('click', function(){
+        window.location.replace('home_page_test.html');
     });
-
-    $('#camper-name').val("");
-    $('#session-name').val("");
-});
 
 };
 //eventually get campers and sessions and pass to main function
 $(document).ready(function(){
-        $.get('/api/campsessions', function(camp_sessions){
-            main(campSessions);
-        });
+   $.get('/api/campsessions', function(camp_sessions){
+       $.get('api/campers', function(campers){
+            main(camp_sessions, campers);
+       });
+   });
 });

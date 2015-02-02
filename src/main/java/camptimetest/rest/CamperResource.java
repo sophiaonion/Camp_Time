@@ -24,6 +24,7 @@ public class CamperResource {
     public CamperResource(@Named ("registrations") JongoCollection registrations,
                           @Named ("campers") JongoCollection campers){
         this.registrations = registrations;
+        this.campers = campers;
     }
 
 //    @GET("/campers")
@@ -37,7 +38,10 @@ public class CamperResource {
 
     }
 
-
+    @GET("/campers")
+    public Iterable<Camper> getCampers(){
+        return campers.get().find().as(Camper.class);
+    }
 //    @GET("/campers/{camperID}")
 //    public Iterable<Camper> getCamper(Optional<String> camperID) {
 //        if(camperID.isPresent()) {

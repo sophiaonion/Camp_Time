@@ -2,32 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/ActivityResourceFactoryMachine$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/ActivityResourceFactoryMachine$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/ActivityResourceFactoryMachine.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/ActivityResourceFactoryMachine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/AppModule.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/AppModule.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/AppModuleFactoryMachine$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/AppModuleFactoryMachine$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/AppModuleFactoryMachine$2.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/AppModuleFactoryMachine$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/AppModuleFactoryMachine.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/AppModuleFactoryMachine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/AppServer.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/AppServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResource.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceFactoryMachine$1.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceFactoryMachine$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceFactoryMachine.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceFactoryMachine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouter$1.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouter$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouter.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouterFactoryMachine$1.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouterFactoryMachine$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouterFactoryMachine.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouterFactoryMachine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResource.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceFactoryMachine$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceFactoryMachine$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceFactoryMachine.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceFactoryMachine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter$2.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouterFactoryMachine$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouterFactoryMachine$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouterFactoryMachine.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouterFactoryMachine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\domain\Activity.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\domain\Activity.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\ActivityResource.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\ActivityResource.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\ActivityResourceFactoryMachine$1.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\ActivityResourceFactoryMachine$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\ActivityResourceFactoryMachine.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\ActivityResourceFactoryMachine.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppModule.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppModule.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppModuleFactoryMachine$1.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppModuleFactoryMachine$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppModuleFactoryMachine$2.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppModuleFactoryMachine$2.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppModuleFactoryMachine.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppModuleFactoryMachine.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppServer.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\AppServer.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResource.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceFactoryMachine$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceFactoryMachine$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceFactoryMachine$1.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceFactoryMachine$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceFactoryMachine.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceFactoryMachine.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceFactoryMachine.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceFactoryMachine.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouter$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouter$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceRouter$1.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceRouter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouter.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouter.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceRouter.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceRouter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouterFactoryMachine$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouterFactoryMachine$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceRouterFactoryMachine$1.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceRouterFactoryMachine$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouterFactoryMachine.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouterFactoryMachine.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceRouterFactoryMachine.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\CamperResourceRouterFactoryMachine.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\domain\Employee.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\domain\Employee.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResource.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResource.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceFactoryMachine$1.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceFactoryMachine$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceFactoryMachine.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceFactoryMachine.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouter$1.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouter$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouter$2.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouter$2.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouter.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouter.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouterFactoryMachine$1.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouterFactoryMachine$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouterFactoryMachine.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\rest\EmployeeResourceRouterFactoryMachine.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\domain\SessionRegistration.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\camptimetest\domain\SessionRegistration.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\playground\datetest.class" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\playground\datetest.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\META-INF\.hashes" afterPath="C:\Users\Eric\restx_examples\CAMPTIMETEST\target\restx\classes\META-INF\.hashes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts/add_registration.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/add_registration.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/home_page_test.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/home_page_test.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/register_camper.html" afterPath="$PROJECT_DIR$/src/main/webapp/register_camper.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/services/restx.factory.FactoryMachine" afterPath="$PROJECT_DIR$/target/classes/META-INF/services/restx.factory.FactoryMachine" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/services/restx.factory.FactoryMachine" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/services/restx.factory.FactoryMachine" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/sample.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/sample.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -55,22 +71,108 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sample.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/sample.css">
+      <file leaf-file-name="CamperResource.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35433072" vertical-offset="0" max-vertical-offset="420">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.11912226" vertical-offset="234" max-vertical-offset="867">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+              <folding>
+                <element signature="e#1222#1223#0" expanded="true" />
+                <element signature="e#1282#1283#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CampSessionResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="578">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home_page_test.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/home_page_test.css">
+      <file leaf-file-name="add_registration.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/add_registration.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.888889" vertical-offset="603" max-vertical-offset="1320">
-              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="833">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register_camper.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/register_camper.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.269231" vertical-offset="6" max-vertical-offset="527">
+              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_employee.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/add_employee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.192307" vertical-offset="202" max-vertical-offset="680">
+              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_session.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/create_session.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="476">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_page_test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/home_page_test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="510" max-vertical-offset="1071">
+              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_employees.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view_employees.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="408">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppModule.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/AppModule.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="561">
+              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/EmployeeResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="134" max-vertical-offset="816">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding>
+                <element signature="e#1189#1190#0" expanded="true" />
+                <element signature="e#1253#1254#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +201,6 @@
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/add_activity.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/add_activity.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/register_camper.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/scripts/add_registration.js" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/SessionRegistration.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/EmployeeResource.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/styles/home_page_test.html" />
@@ -113,9 +213,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/add_employee.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_camper.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/create_camper.js" />
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/styles/home_page_test.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/styles/sample.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/register_camper.html" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/scripts/add_registration.js" />
       </list>
     </option>
   </component>
@@ -127,10 +229,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="204" />
-    <option name="y" value="22" />
-    <option name="width" value="1076" />
-    <option name="height" value="756" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1317" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -158,6 +260,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -172,7 +275,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemId" value="CAMPTIMETEST" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -182,7 +285,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -204,7 +321,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemId" value="CAMPTIMETEST" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -230,7 +347,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -248,7 +391,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemId" value="CAMPTIMETEST" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -270,7 +413,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemId" value="CAMPTIMETEST" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -296,7 +439,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemId" value="CAMPTIMETEST" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -326,7 +469,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemId" value="CAMPTIMETEST" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -346,13 +489,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
+              <option name="myItemId" value="createdata" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -440,12 +582,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -454,9 +590,66 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+    <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
@@ -475,6 +668,12 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -486,6 +685,11 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -531,27 +735,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.AppServer" />
       <item index="1" class="java.lang.String" itemvalue="Application.datetest" />
@@ -584,33 +767,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="204" y="22" width="1076" height="756" extended-state="0" />
+    <frame x="-8" y="-8" width="1317" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39940828" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.053254437" sideWeight="0.50038433" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31475905" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31475905" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.053254437" sideWeight="0.50038433" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2630561" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30120483" sideWeight="0.49961567" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48668638" sideWeight="0.49961567" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21368179" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39940828" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980783" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980783" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -645,27 +828,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/add_employee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="680">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/AppServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="731">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/AppModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="561">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/EmployeeResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="714">
@@ -845,31 +1007,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/AppServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="645">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="374">
           <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/EmployeeResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="782">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view_employees.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="408">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -881,25 +1022,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/add_employee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6415929" vertical-offset="0" max-vertical-offset="678">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.123931624" vertical-offset="333" max-vertical-offset="1035">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/AppModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53418803" vertical-offset="0" max-vertical-offset="702">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -910,13 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/view_employees.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34375" vertical-offset="0" max-vertical-offset="480">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="285">
@@ -924,45 +1043,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/add_registration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3125" vertical-offset="0" max-vertical-offset="480">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/register_camper.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46052632" vertical-offset="0" max-vertical-offset="456">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/add_employee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="585">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/create_camper.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="495">
           <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10683761" vertical-offset="0" max-vertical-offset="702">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -977,41 +1061,158 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47008547" vertical-offset="0" max-vertical-offset="702">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Camper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="930">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/home_page_test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9" max-vertical-offset="945">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/home_page_test.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.888889" vertical-offset="603" max-vertical-offset="1320">
-          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="876" max-vertical-offset="1496">
+          <caret line="75" column="23" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/sample.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35433072" vertical-offset="0" max-vertical-offset="420">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/AppServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="697">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/add_employee.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/view_employees.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1853">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Camper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1054">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/AppModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="561">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/EmployeeResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="134" max-vertical-offset="816">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="e#1189#1190#0" expanded="true" />
+            <element signature="e#1253#1254#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_session.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/home_page_test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="510" max-vertical-offset="1071">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view_employees.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="408">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="578">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/add_employee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.192307" vertical-offset="202" max-vertical-offset="680">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/register_camper.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.269231" vertical-offset="6" max-vertical-offset="527">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/add_registration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="833">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11912226" vertical-offset="234" max-vertical-offset="867">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+          <folding>
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

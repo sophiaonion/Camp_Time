@@ -20,3 +20,9 @@ fieldset {
 	border: 2px solid #CC333F;
 }
 
+button {
+	background-color: #DE5F59;
+	color: white;
+	border: 1px solid white;
+	padding: 8px;
+}
