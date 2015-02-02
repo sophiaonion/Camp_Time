@@ -3947,3 +3947,57 @@ java.lang.NullPointerException: null
 21:40:42.893 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
 21:40:43.328 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
 21:50:15.160 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+22:58:32.888 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+22:58:33.250 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+22:58:34.772 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+22:58:34.772 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+22:58:36.934 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 11 sources compiled in 1.739 s
+22:58:37.281 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+22:58:37.727 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+23:02:11.671 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+23:02:18.364 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+23:02:18.535 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+23:02:19.458 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+23:02:19.459 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+23:02:19.906 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+23:02:20.084 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+23:04:28.775 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+23:14:53.465 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+23:14:53.727 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+23:14:55.167 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+23:14:55.167 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+23:14:55.797 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+23:14:56.048 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+23:17:36.143 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+23:17:41.861 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+23:17:42.032 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+23:17:42.994 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+23:17:42.994 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+23:17:43.933 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 668.6 ms
+23:17:44.243 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+23:17:44.393 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+23:33:35.261 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 918.5 ms

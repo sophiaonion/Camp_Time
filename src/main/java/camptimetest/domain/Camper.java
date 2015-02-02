@@ -12,7 +12,7 @@ public class Camper {
     @Id
     private String camperId;
     private String name;
-    private int age;
+    private String age;
     private String extraInfo;
 
     public String getCamperId(){
@@ -33,11 +33,11 @@ public class Camper {
         return this;
     }
 
-    public int getAge(){
+    public String getAge(){
         return age;
     }
 
-    public Camper setAge(int age){
+    public Camper setAge(String age){
         this.age = age;
         return this;
     }
