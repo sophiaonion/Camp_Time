@@ -16,4 +16,7 @@ var main = function(){
 
 }
 //eventually get campers and sessions and pass to main function
-$(document).ready(main);
+$(document).ready(function(){
+
+
+});
