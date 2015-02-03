@@ -20,4 +20,33 @@ public class SessionRegistration {
         this.sessionID = sessionID;
     }
 
+    public SessionRegistration(){}
+
+    public String getKey(){
+        return key;
+    }
+
+    public String getCamperID(){
+            return camperID;
+    }
+
+    public String getSessionID(){
+        return sessionID;
+    }
+
+    public SessionRegistration setKey(String key){
+        this.key = key;
+        return this;
+    }
+
+    public SessionRegistration setCamperID(String camperID){
+        this.camperID = camperID;
+        return this;
+    }
+
+    public SessionRegistration setSessionID(String sessionID){
+        this.sessionID = sessionID;
+        return this;
+    }
+
 }

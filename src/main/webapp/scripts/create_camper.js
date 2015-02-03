@@ -1,8 +1,8 @@
 var main = function(campers){
     $('#create-camper').on('click', function(){
     var data = {
-        camperName: $('#camper-name').val(),
-        camperAge: $('#camper-age').val(),
+        name: $('#camper-name').val(),
+        age: $('#camper-age').val(),
         extraInfo: $('#extra-info').val()
     };
 

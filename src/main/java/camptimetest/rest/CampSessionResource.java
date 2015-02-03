@@ -1,6 +1,9 @@
 package camptimetest.rest;
 
 import camptimetest.domain.CampSession;
+import camptimetest.domain.Camper;
+import camptimetest.domain.SessionRegistration;
+import org.bson.types.ObjectId;
 import restx.annotations.GET;
 import restx.annotations.POST;
 import restx.annotations.PUT;
@@ -9,6 +12,9 @@ import restx.factory.Component;
 import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
 import javax.inject.Named;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static restx.common.MorePreconditions.checkEquals;
 
@@ -24,14 +30,33 @@ import static restx.common.MorePreconditions.checkEquals;
 public class CampSessionResource {
 
         private JongoCollection campSession;
+        private JongoCollection campers;
+        private JongoCollection registrations;
 
-        public CampSessionResource(@Named("campsessions") JongoCollection campSession){
+        public CampSessionResource(@Named("campsessions") JongoCollection campSession,
+                                   @Named("campers") JongoCollection campers,
+                                   @Named("registrations") JongoCollection registrations){
             this.campSession = campSession;
+            this.campers = campers;
+            this.registrations = registrations;
         }
 
         @GET("/campsessions")
         public Iterable<CampSession> getSessions(){
             return campSession.get().find().as(CampSession.class);
+        }
+
+        @GET("/campsessions/campers/{id}")
+        public Iterable<Camper> getCampersInSession(String id){
+            Iterable<SessionRegistration> regsOfSession = registrations.get().find("{sessionID: #}", id).
+                    projection("{camperID: 1, sessionID: 0}").as(SessionRegistration.class);
+            ArrayList<String> camperIDs = new ArrayList<>();
+            for(SessionRegistration reg : regsOfSession){
+                camperIDs.add(reg.getCamperID());
+            }
+            Iterable<Camper> campersOfSession = campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
+
+            return campersOfSession;
         }
 
         @POST("/campsessions")

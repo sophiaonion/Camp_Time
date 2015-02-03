@@ -67,7 +67,7 @@ var main = function(camp_sessions, campers){
     });
 
 };
-//eventually get campers and sessions and pass to main function
+
 $(document).ready(function(){
    $.get('/api/campsessions', function(camp_sessions){
        $.get('api/campers', function(campers){
