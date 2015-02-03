@@ -1,9 +1,8 @@
-var main = function(){
+var main = function(campers){
     $('#create-camper').on('click', function(){
-    //have to match attributes of java class exactly
     var data = {
-        name: $('#camper-name').val(),
-        age: $('#camper-age').val(),
+        camperName: $('#camper-name').val(),
+        camperAge: $('#camper-age').val(),
         extraInfo: $('#extra-info').val()
     };
 
@@ -12,13 +11,22 @@ var main = function(){
         type: 'POST',
         url: '/api/campers',
         data: JSON.stringify(data),
-        contentType: 'application/JSON'
+        contentType: 'application/JSON',
+        success: function(data){
+             alert('Session Created');
+             window.location.replace('register_camper.html');
+        },
+        error: function(request, status, error){
+             alert(error);
+        }
     });
-
-    window.location.href = '/register_camper.html';
 
     });
 }
+//eventually get campers and sessions and pass to main function
+$(document).ready(function(){
+       $.get('/api/campers', function(campers){
+                main(campers);
+       });
 
-
-$(document).ready(main);
+});

@@ -56,11 +56,10 @@ var main = function(camp_sessions, campers){
             contentType: 'application/JSON',
             success: function(data){
                 alert('camper registered');
+                window.location.replace('home_page_test.html');
             }
         });
 
-        $('#camper-name').val("");
-        $('#session-name').text("");
     }); //end submit-registration click handler
 
     $('#cancel').on('click', function(){

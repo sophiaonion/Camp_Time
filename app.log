@@ -6114,3 +6114,29 @@ Caused by: com.fasterxml.jackson.databind.JsonMappingException: Can not deserial
 22:22:27.636 [qtp667738744-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d02c9c03643e0c6c51198d/undefined >> OK - 55.36 ms
 22:24:34.316 [qtp667738744-31  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 30.59 ms
 22:24:54.253 [qtp667738744-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 6.887 ms
+22:41:50.827 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+22:41:51.240 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+22:41:52.806 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+22:41:52.807 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+22:41:55.470 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 6 sources compiled in 2.082 s
+22:41:55.947 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+22:41:56.306 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+22:44:53.072 [qtp1753447031-27 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+22:44:53.282 [qtp1753447031-27 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 874.6 ms
+22:44:53.797 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 514.5 ms
+22:45:02.643 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 643.8 ms
+22:45:05.070 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 197.2 ms
+22:45:05.130 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 9.382 ms
+22:45:11.309 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/undefined/undefined >> OK - 95.04 ms
+22:46:03.578 [qtp1753447031-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 17.31 ms
+22:46:03.634 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 8.602 ms
+22:46:05.988 [qtp1753447031-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/undefined/undefined >> OK - 7.085 ms
+22:47:26.719 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 37.70 ms
+22:47:35.589 [qtp1753447031-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 2.217 ms
+22:48:01.538 [qtp1753447031-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 1.560 ms
