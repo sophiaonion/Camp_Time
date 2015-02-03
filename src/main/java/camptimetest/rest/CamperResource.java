@@ -28,9 +28,6 @@ public class CamperResource {
         this.campers = campers;
     }
 
-//    @GET("/campers")
-//    public Iterable<camp>
-
     @PUT("/campers/{camperID}/{sessionID}")
     public SessionRegistration registerCamper(String camperID, String sessionID){
         SessionRegistration reg = new SessionRegistration(camperID, sessionID);
@@ -51,7 +48,6 @@ public class CamperResource {
 //        else {
 //
 //        }
-//
 //    }
 
     @POST("/campers")

@@ -15,6 +15,8 @@ var main = function(){
         contentType: 'application/JSON'
     });
 
+    window.location.href = '/register_camper.html';
+
     });
 }
 
