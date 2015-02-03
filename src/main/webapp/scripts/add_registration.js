@@ -3,29 +3,41 @@ var main = function(camp_sessions, campers){
 
     camp_sessions.forEach(function(session){
         var element = $("<option>");
-        element.html('value', session.name);
-        element.data('sessionID', session.sessionID);
-          $('#session').append(element);
+        element.val(session.name);
+        element.text(session.name);
+        element.data('sessionID', session._id);
+         $('#session').append(element);
     });
 
     //generate autocomplete selections
     //value is displayed, ID is extra data to send
-    var autocomplete_source = campers.forEach(function(camper){
+    console.log('campers: ' + campers);
+    var autocomplete_source = campers.map(function(camper){
 
+        console.log('from $get camper name: ' + camper.name + 'id as camperID' + camper._id);
         return {
             value: camper.name,
-            ID: camper.camperID
+            ID: camper._id
         };
     });
 
+    autocomplete_source.forEach(function(value){
+        console.log(value.value + value.ID);
+    });
+
+    var uponSelect = function(event, ui){ //upon selection set camperID to send
+                                 //ui.item is selected item
+                                 selected_camperID = ui.item.ID;
+                                 console.log(ui.item.ID);
+                             };
     var selected_camperID;
     $('#camper-name').autocomplete({
         source: autocomplete_source, //set possible options
         autoFocus: true, //automatically select closest match
-        select: function(event, ui){ //upon selection set camperID to send
-            //ui.item is selected item
-            selected_camperID = ui.item.ID;
-            console.log(ui.item.ID);
+        select: uponSelect,
+        messages: {//get rid of helper text
+            noResults: '',
+            results: function(){}//usually appends selected result text to bottom
         }
     });
 
@@ -33,10 +45,10 @@ var main = function(camp_sessions, campers){
     $('#submit-registration').on('click', function(){
         var data = {
             //for nonhard coded method
-            sessionID: $('#session option:selected').data(sessionID),
+            sessionID: $('#session option:selected').data('sessionID'),
             camperID: selected_camperID
         };
-
+        console.log('submit clicked');
         $.ajax({
             type: 'PUT',
             url: '/api/campers/' + data.camperID + '/' + data.sessionID,
@@ -48,7 +60,7 @@ var main = function(camp_sessions, campers){
         });
 
         $('#camper-name').val("");
-        $('#session-name').val("");
+        $('#session-name').text("");
     }); //end submit-registration click handler
 
     $('#cancel').on('click', function(){

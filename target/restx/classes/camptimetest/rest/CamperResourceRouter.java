@@ -100,6 +100,37 @@ public class CamperResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.CamperResource#getCampers()";
             }
         },
+        new StdEntityRoute<camptimetest.domain.Camper, camptimetest.domain.Camper>("default#CamperResource#createCamper",
+                readerRegistry.<camptimetest.domain.Camper>build(camptimetest.domain.Camper.class, Optional.<String>absent()),
+                writerRegistry.<camptimetest.domain.Camper>build(camptimetest.domain.Camper.class, Optional.<String>absent()),
+                new StdRestxRequestMatcher("POST", "/campers"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<camptimetest.domain.Camper> doRoute(RestxRequest request, RestxRequestMatch match, camptimetest.domain.Camper body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.createCamper(
+                        /* [BODY] camper */ checkValid(validator, body)
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription camper = new OperationParameterDescription();
+                camper.name = "camper";
+                camper.paramType = OperationParameterDescription.ParamType.body;
+                camper.dataType = "Camper";
+                camper.schemaKey = "camptimetest.domain.Camper";
+                camper.required = true;
+                operation.parameters.add(camper);
+
+
+                operation.responseClass = "Camper";
+                operation.inEntitySchemaKey = "camptimetest.domain.Camper";
+                operation.outEntitySchemaKey = "camptimetest.domain.Camper";
+                operation.sourceLocation = "camptimetest.rest.CamperResource#createCamper(camptimetest.domain.Camper)";
+            }
+        },
         });
     }
 

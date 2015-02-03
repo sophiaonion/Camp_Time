@@ -7,9 +7,9 @@ var main = function(camp_sessions){
             skeletonSchedule: $('#skeleton-schedule').val(),
             fixedTime: $('#fixed-time').val(),
             activities: $('#activities').val(),
-            sessionName: $('#session-name').val(),
-            age: $('#age').val(),
-            enrollCap: $('#enroll-cap').val(),
+            name: $('#session-name').val(),
+            ageGroup: $('#age').val(),
+            enrollmentCap: $('#enroll-cap').val(),
         };
 
         $.ajax({

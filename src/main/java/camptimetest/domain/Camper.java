@@ -8,9 +8,10 @@ import org.jongo.marshall.jackson.oid.ObjectId;
  */
 public class Camper {
 
-    @ObjectId
     @Id
-    private String camperID;
+    @ObjectId
+    private String camperID;//still referred to as _id on client side!!!
+    //still have to have some designated id field to use though
     private String name;
     private String age;
     private String extraInfo;
@@ -19,7 +20,7 @@ public class Camper {
         return camperID;
     }
 
-    public Camper setcamperID(String camperID){
+    public Camper setcamperID(final String camperID){
         this.camperID = camperID;
         return this;
     }

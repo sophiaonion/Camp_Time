@@ -1,8 +1,9 @@
 var main = function(){
     $('#create-camper').on('click', function(){
+    //have to match attributes of java class exactly
     var data = {
-        camperName: $('#camper-name').val(),
-        camperAge: $('#camper-age').val(),
+        name: $('#camper-name').val(),
+        age: $('#camper-age').val(),
         extraInfo: $('#extra-info').val()
     };
 

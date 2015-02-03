@@ -3,7 +3,7 @@ package camptimetest.domain;
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,8 +17,8 @@ public class CampSession {
     private String name;
     private String ageGroup;
     private int enrollmentCap;
-    private Calendar startDate;
-    private Calendar endDate;
+    private Date startDate;
+    private Date endDate;
     // private List<Activity> fixedActivities; ----no longer necessary, just have sessionresource do it
     private List<String> requiredActivities; //list of ids of required activities - schedule update will incorporate ~somehow
     private List<Employee> counselors;
@@ -69,20 +69,20 @@ public class CampSession {
         return this;
     }
 
-    public Calendar getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public CampSession setStartDate(Calendar startDate) {
+    public CampSession setStartDate(Date startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    public Calendar getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public CampSession setEndDate(Calendar endDate) {
+    public CampSession setEndDate(Date endDate) {
         this.endDate = endDate;
         return this;
     }
