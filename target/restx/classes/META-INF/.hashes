@@ -8,6 +8,6 @@ src\main\java**camptimetest\domain\Camper.java**d8461d51647ad87e448555d8d4122c9b
 src\main\java**camptimetest\createdata\TestData.java**d925ce6d5939854cde22e747d93ee066**1422916497339
 src\main\java**camptimetest\AppModule.java**2416e0b1ae138599e87fece1bf8f4fc2**1422529583323
 src\main\java**camptimetest\rest\CamperResource.java**f1552ab0aec01468610ff709bd7d2f83**1422939509296
-src\main\java**camptimetest\rest\CampSessionResource.java**8047bb54cda218033fd434e069563035**1422939890137
+src\main\java**camptimetest\rest\CampSessionResource.java**0a70941ee1f3626611a6fc168c75f10d**1422946395960
 src\main\java**camptimetest\AppServer.java**ea40a1c316600c658c555d3abcd57b2c**1422529271084
 src\main\java**camptimetest\domain\SessionRegistration.java**70dd464a6b945404fc1f71177937f663**1422939617098
