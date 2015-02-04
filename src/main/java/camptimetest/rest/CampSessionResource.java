@@ -48,16 +48,27 @@ public class CampSessionResource {
 
         @GET("/campsessions/campers/{id}")
         public Iterable<Camper> getCampersInSession(String id){
-            Iterable<SessionRegistration> regsOfSession = registrations.get().find("{sessionID: #}", id).
-                    projection("{camperID: 1, sessionID: 0}").as(SessionRegistration.class);
-            ArrayList<String> camperIDs = new ArrayList<>();
-            for(SessionRegistration reg : regsOfSession){
-                camperIDs.add(reg.getCamperID());
-            }
-            Iterable<Camper> campersOfSession = campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
+            //mapping straight to strings or ObjectIds DOESN'T work
+            //can use find().projection({camperID: 1, _id:0} to return only camperID field and then can map to String.class
+            //to pass to ObjectId constructor easier, but it doesn't seem to return anything in the query
+            Iterable<SessionRegistration> regsOfSession = registrations.get().find("{sessionID: #}", id).as(SessionRegistration.class);
 
-            return campersOfSession;
+            //kind of cumbersome turn Iterable<SessionRegistration> into ArrayList<ObjectIds> in order to query for _id of campers
+            ArrayList<ObjectId> camperIDs = new ArrayList<>();
+            for(SessionRegistration reg : regsOfSession){
+                camperIDs.add(new ObjectId(reg.getCamperID()));
+                System.out.println(reg.getCamperID());
+            }
+            //things that didn't work... using .as(ObjectId.class) to return only session IDs as a group of object IDs
+            //then using Lists.newArrayList(Iterable) to turn Iterable into list of ObjectIds
+            return campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
         }
+
+        @GET("/campsessions/agegroup/{agegroup}")
+        public Iterable<CampSession> getCampSessionsOfAgeGroup(String agegroup){
+            return campSession.get().find("{ageGroup: #}", agegroup).as(CampSession.class);
+        }
+
 
         @POST("/campsessions")
         public CampSession createCampSession(CampSession newCS){

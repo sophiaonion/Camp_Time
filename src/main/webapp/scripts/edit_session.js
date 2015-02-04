@@ -9,10 +9,12 @@ var main = function(camp_sessions){
     var uponSelect =  function(event, ui){
         selected_sessionID = ui.item.ID;
         $.get('/api/campsessions/campers/' + selected_sessionID, function(campers){
+            console.log('got campers');
+            console.log(campers);
             campers.forEach(function(camper){
                 console.log(camper.name);
 
-            })
+            });
 
         });
     }

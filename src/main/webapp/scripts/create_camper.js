@@ -23,10 +23,5 @@ var main = function(campers){
 
     });
 }
-//eventually get campers and sessions and pass to main function
-$(document).ready(function(){
-       $.get('/api/campers', function(campers){
-                main(campers);
-       });
 
-});
+$(document).ready(main);
