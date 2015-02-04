@@ -55,7 +55,7 @@ var main = function(camp_sessions, campers){
             data: JSON.stringify(data),
             contentType: 'application/JSON',
             success: function(data){
-                alert('camper registered');
+                alert('camper registered for this session');
                 window.location.replace('home_page_test.html');
             }
         });
