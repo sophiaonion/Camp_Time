@@ -64,6 +64,12 @@ public class CampSessionResource {
             return campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
         }
 
+        @GET("/campsessions/agegroup/{agegroup}")
+        public Iterable<CampSession> getCampSessionsOfAgeGroup(String agegroup){
+            return campSession.get().find("{ageGroup: #}", agegroup).as(CampSession.class);
+        }
+
+
         @POST("/campsessions")
         public CampSession createCampSession(CampSession newCS){
            campSession.get().save(newCS);
