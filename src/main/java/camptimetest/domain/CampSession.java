@@ -31,6 +31,7 @@ public class CampSession {
         //need to already have activityAreaIDs (just hard code in?)
         //no employees linked to activity for now - schedule update /should/ take care of that
         //then put each activity into database
+
     }
 
     public String getSessionID() {

@@ -1,4 +1,26 @@
 var main = function(camp_sessions){
+$("#schedule").hide();
+
+    $('#enter-dates').on('click', function(){
+        //print out schedule decider for fixed time activities
+        $("#schedule").show();
+
+        //enter skeleton schedule activities here?
+
+    })
+
+    $('#add-activity').click(function(){
+            $('#select-from option:selected').each( function() {
+                    $('#select-to').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
+            });
+        });
+
+        $('#remove-activity').click(function(){
+            $('#select-to option:selected').each( function() {
+                $('#select-from').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
+                $(this).remove();
+                         });
+                     });
 
     $('#create-session').on('click', function(){
         var data = {
@@ -31,6 +53,8 @@ var main = function(camp_sessions){
     $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
     });
+
+
 
 };
 //eventually get campers and sessions and pass to main function

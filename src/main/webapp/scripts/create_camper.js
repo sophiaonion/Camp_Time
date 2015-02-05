@@ -13,7 +13,7 @@ var main = function(campers){
         data: JSON.stringify(data),
         contentType: 'application/JSON',
         success: function(data){
-             alert('Session Created');
+             alert('Camper Created');
              window.location.replace('register_camper.html');
         },
         error: function(request, status, error){
