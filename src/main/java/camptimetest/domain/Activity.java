@@ -40,8 +40,14 @@ public class Activity {
     public String getTitle(){
         return title;
     }
+
     public Activity addEmployee(Employee employee){
         workers.add(employee);
+        return this;
+    }
+
+    public Activity removeEmployee(Employee employee){
+        workers.remove(employee);
         return this;
     }
 

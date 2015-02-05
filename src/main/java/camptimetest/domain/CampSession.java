@@ -15,7 +15,7 @@ public class CampSession {
     @Id
     private String sessionID;
     private String name;
-    private String ageGroup;
+    private String ageGroup; //will use 1, 2, 3, 4, 5
     private int enrollmentCap;
     private Date startDate;
     private Date endDate;

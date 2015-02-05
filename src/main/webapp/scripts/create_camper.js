@@ -13,7 +13,7 @@ var main = function(campers){
         data: JSON.stringify(data),
         contentType: 'application/JSON',
         success: function(data){
-             alert('Camper Created');
+             alert('Camper Registered.');
              window.location.replace('register_camper.html');
         },
         error: function(request, status, error){
@@ -23,10 +23,5 @@ var main = function(campers){
 
     });
 }
-//eventually get campers and sessions and pass to main function
-$(document).ready(function(){
-       $.get('/api/campers', function(campers){
-                main(campers);
-       });
 
-});
+$(document).ready(main);
