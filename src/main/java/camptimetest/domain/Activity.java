@@ -4,7 +4,7 @@ import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.Date;
 
 /**
@@ -14,9 +14,10 @@ public class Activity {
 
     private ArrayList<Employee> workers;
     private String title;
-    private Calendar startTime;
-    private Calendar endTime;
+    private Date startTime;
+    private Date endTime;
     private String activityAreaID;
+
 
     @Id
     @ObjectId
@@ -60,19 +61,19 @@ public class Activity {
         return workers;
     }
 
-    public Activity setStartTime(Calendar startTime){
+    public Activity setStartTime(Date startTime){
         this.startTime = startTime;
         return this;
     }
 
-    public Calendar getStartTime(){ return startTime;}
+    public Date getStartTime(){ return startTime;}
 
-    public Activity setEndTime(Calendar endTime){
+    public Activity setEndTime(Date endTime){
         this.endTime = endTime;
         return this;
     }
 
-    public Calendar getEndTime(){
+    public Date getEndTime(){
         return endTime;
     }
 

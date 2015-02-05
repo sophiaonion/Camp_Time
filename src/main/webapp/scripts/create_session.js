@@ -22,7 +22,36 @@ $("#schedule").hide();
                          });
                      });
 
+
     $('#create-session').on('click', function(){
+        console.log('create session clicked');
+        var activity = function(day, time, activity){
+                            this.day = day;
+                            this.time = time;
+                            this.activity = activity;
+                            console.log(this.day, this.time, this.activity);
+                       };
+        var activities = [];
+        var getCalendar = function(){
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+//select rows of table body after first and then log time element
+            $('#schedule tbody').children(':gt(0)').each(function(){
+                console.log($('td:first', $(this)).text());
+
+                var time = $('td:first', $(this)).text();
+                //get time of row and then iterate over row for activities
+                $(this).children(':gt(0)').each(function(){
+                    //construct activity with day string from position of element in row, time from first column
+                    //and text of area -- might have to be .val() method for input fields
+                    activities.push(new activity(days[$(this).index() - 1], time, $(this).text()));
+                });
+            });
+        };
+
+        getCalendar();
+
+
+
         var data = {
             startDate: $('#start-date').val(),
             endDate: $('#end-date').val(),
@@ -34,19 +63,19 @@ $("#schedule").hide();
             enrollmentCap: $('#enroll-cap').val(),
         };
 
-        $.ajax({
-            type: 'POST',
-            url: '/api/campsessions',
-            data: JSON.stringify(data),
-            contentType: 'application/JSON',
-            success: function(data){
-                alert('Session Created');
-                window.location.replace('home_page_test.html');
-            },
-            error: function(request, status, error){
-                alert(error);
-            }
-        });
+//        $.ajax({
+//            type: 'POST',
+//            url: '/api/campsessions',
+//            data: JSON.stringify(data),
+//            contentType: 'application/JSON',
+//            success: function(data){
+//                alert('Session Created');
+//                window.location.replace('home_page_test.html');
+//            },
+//            error: function(request, status, error){
+//                alert(error);
+//            }
+//        });
 
     }); //end submit-registration click handler
 

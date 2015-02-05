@@ -10,19 +10,19 @@ public class ActivityResourceFactoryMachine extends SingleNameFactoryMachine<Act
 
     public ActivityResourceFactoryMachine() {
         super(0, new StdMachineEngine<ActivityResource>(NAME, BoundlessComponentBox.FACTORY) {
-
+private final Factory.Query<restx.jongo.JongoCollection> activities = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "activities")).mandatory();
 
             @Override
             public BillOfMaterials getBillOfMaterial() {
                 return new BillOfMaterials(ImmutableSet.<Factory.Query<?>>of(
-
+activities
                 ));
             }
 
             @Override
             protected ActivityResource doNewComponent(SatisfiedBOM satisfiedBOM) {
                 return new ActivityResource(
-
+satisfiedBOM.getOne(activities).get().getComponent()
                 );
             }
         });
