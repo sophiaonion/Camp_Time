@@ -9413,3 +9413,63 @@ Caused by: java.net.ConnectException: Connection refused: connect
 21:08:59.750 [qtp1020923989-25 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
 21:08:59.928 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 873.1 ms
 21:09:00.206 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 277.2 ms
+21:14:23.574 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:14:23.878 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:14:25.909 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:14:25.909 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:14:26.252 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+21:14:26.711 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:14:43.492 [qtp1020923989-25 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+21:14:43.670 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 799.6 ms
+21:14:43.988 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 317.9 ms
+21:16:25.902 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:16:26.145 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:16:28.525 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:16:28.526 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:16:29.003 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+21:16:29.680 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:16:36.765 [qtp1020923989-26 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+21:16:36.945 [qtp1020923989-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 848.2 ms
+21:16:37.198 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 252.6 ms
+21:17:33.214 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:17:33.606 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:17:35.522 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:17:35.523 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:17:35.863 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+21:17:36.297 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:17:42.456 [qtp1020923989-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+21:17:42.626 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 809.2 ms
+21:17:42.895 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 268.3 ms
+21:21:44.198 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:21:44.447 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:21:46.837 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:21:46.838 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:21:47.320 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
+21:21:47.774 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:21:58.533 [qtp1020923989-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+21:21:58.719 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 936.1 ms
+21:21:58.979 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 259.6 ms
