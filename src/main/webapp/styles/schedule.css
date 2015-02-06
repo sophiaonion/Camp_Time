@@ -1,0 +1,5 @@
+/*this is the one we want in order to style the autocomplete schedule*/
+#schedule input {
+        font-size: .8em;
+        width: 75px;
+}
