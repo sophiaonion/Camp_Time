@@ -19,20 +19,8 @@ public class CampSession {
     private int enrollmentCap;
     private Date startDate;
     private Date endDate;
-    // private List<Activity> fixedActivities; ----no longer necessary, just have sessionresource do it
-    private List<String> requiredActivities; //list of ids of required activities - schedule update will incorporate ~somehow
+    private List<Activity> activities; //list of all activities, required or not
     private List<Employee> counselors;
-
-
-    public CampSession() {
-        //add skeleton schedule into database?? will need to create and enter activities
-        //create new activity for each item in skeleton schedule: meals, checkin/out, all-camp activities, etc.
-        //calculate dates based on startdate/enddate
-        //need to already have activityAreaIDs (just hard code in?)
-        //no employees linked to activity for now - schedule update /should/ take care of that
-        //then put each activity into database
-
-    }
 
     public String getSessionID() {
         return sessionID;
@@ -88,15 +76,6 @@ public class CampSession {
         return this;
     }
 
-    public List<String> getRequiredActivities() {
-        return requiredActivities;
-    }
-
-    public CampSession setRequiredActivities(List<String> requiredActivities) {
-        this.requiredActivities = requiredActivities;
-        return this;
-    }
-
     public List<Employee> getCounselors() {
         return counselors;
     }
@@ -104,6 +83,14 @@ public class CampSession {
     public CampSession setCounselors(List<Employee> counselors) {
         this.counselors = counselors;
         return this;
+    }
+
+    public List<Activity> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(List<Activity> activities) {
+        activities = activities;
     }
 
     @Override
@@ -116,7 +103,7 @@ public class CampSession {
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
             //    ", fixedActivities=" + fixedActivities +
-                ", requiredActivities=" + requiredActivities +
+                ", activities=" + activities +
                 ", counselors=" + counselors +
                 '}';
     }

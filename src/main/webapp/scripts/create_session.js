@@ -1,5 +1,4 @@
-var main = function(camp_sessions){
-//get the format we want and correct time zone for date String
+var main = function(camp_sessions){//get the format we want and correct time zone for date String
 Date.prototype.myToString = function(){
     var utcDate = this.toUTCString(); //returns correct date as Day, Date Month Year time
     utcDate = utcDate.slice(0, utcDate.indexOf('2015') - 1);

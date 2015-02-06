@@ -4,10 +4,8 @@ import camptimetest.domain.CampSession;
 import camptimetest.domain.Camper;
 import camptimetest.domain.SessionRegistration;
 import org.bson.types.ObjectId;
-import restx.annotations.GET;
-import restx.annotations.POST;
-import restx.annotations.PUT;
-import restx.annotations.RestxResource;
+import restx.Status;
+import restx.annotations.*;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
@@ -47,7 +45,7 @@ public class CampSessionResource {
         }
 
         @GET("/campsessions/campers/{id}")
-        public Iterable<Camper> getCampersInSession(String id){
+        public Iterable<Camper> getCampersInSession(String id){ //
             //mapping straight to strings or ObjectIds DOESN'T work
             //can use find().projection({camperID: 1, _id:0} to return only camperID field and then can map to String.class
             //to pass to ObjectId constructor easier, but it doesn't seem to return anything in the query
@@ -87,5 +85,6 @@ public class CampSessionResource {
             campSession.get().save(campsession);
             return campsession;
         }
+
 
 }

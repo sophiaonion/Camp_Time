@@ -10,9 +10,16 @@
 {
     font-family:Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
     font-size: 1em;
+    width: 75px;
 }
 
+/*this is the one we want in order to style the autocomplete */
+#schedule .ui-widget input {
+        font-size: .8em;
+        font-family: Arial, serif;
+        width: 75px;
 
+}
 
 
 
