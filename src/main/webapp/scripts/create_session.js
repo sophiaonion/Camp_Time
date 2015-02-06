@@ -7,7 +7,37 @@ $("#schedule").hide();
 
         //enter skeleton schedule activities here?
 
-    })
+    });
+
+    $('#schedule tbody').children(':gt(0)').each(function(){
+         $(this).children(':gt(0)').each(function(){
+             //  $(this).html("<input class=&quotui-widget&quot>"),
+//                $(this).append("hi");
+//                $(this).autocomplete({
+//                      source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ],
+//                      autoFocus: true,
+//                      //select: uponSelect
+//                 });
+         });
+     });
+
+
+    $('#schedule tbody').children(':gt(0)').each(function( i1, l1 ){
+        $(this).children(':gt(0)').each(function(i2, l2){
+            $('#'+i1+i2).autocomplete({
+                                   source: [ "pool", "art", "meal", "sports",
+                                   "counselor time", "canoeing", "archery", "creek hopping", "check in/out", "unit"
+                                    , "other"],
+                                   autoFocus: true,
+                                   //select: uponSelect
+                              });
+    });
+    });
+
+
+
+
+
 
     $('#add-activity').click(function(){
             $('#select-from option:selected').each( function() {
@@ -34,7 +64,7 @@ $("#schedule").hide();
         var activities = [];
         var getCalendar = function(){
             var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-//select rows of table body after first and then log time element
+            //select rows of table body after first and then log time element
             $('#schedule tbody').children(':gt(0)').each(function(){
                 console.log($('td:first', $(this)).text());
 

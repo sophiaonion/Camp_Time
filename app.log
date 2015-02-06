@@ -8956,3 +8956,140 @@ Caused by: java.net.ConnectException: Connection refused: connect
 22:38:29.751 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
 22:38:29.925 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 815.0 ms
 22:38:30.208 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 281.1 ms
+23:12:21.704 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+23:12:22.226 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+23:12:23.957 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+23:12:23.958 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+23:12:26.578 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 19 sources compiled in 2.244 s
+23:12:26.868 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+23:12:27.399 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+23:29:37.331 [qtp1753447031-26 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+23:29:37.532 [qtp1753447031-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 827.1 ms
+23:29:38.569 [qtp1753447031-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 1.036 s
+23:31:16.965 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 23.29 ms
+23:32:20.202 [qtp1753447031-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 22.02 ms
+23:34:53.919 [qtp1753447031-33 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 26.00 ms
+23:42:55.229 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 46.96 ms
+23:48:46.236 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 20.93 ms
+23:49:08.627 [qtp1753447031-45 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 54.22 ms
+23:56:58.256 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 30.69 ms
+23:57:00.467 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 13.14 ms
+23:57:27.857 [qtp1753447031-54 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 44.38 ms
+23:57:30.077 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 19.67 ms
+23:58:02.769 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+14:43:22.981 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+14:43:23.409 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+14:43:25.287 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+14:43:25.304 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+14:43:26.200 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+14:43:26.530 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+14:43:45.138 [qtp1753447031-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+14:43:45.645 [qtp1753447031-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 1.185 s
+14:43:46.557 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 911.6 ms
+14:44:00.810 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 36.44 ms
+14:44:12.538 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 14.12 ms
+14:44:17.680 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/campers/54d2e27b0364451ebdc513a7 >> OK - 15.44 ms
+14:53:02.329 [qtp1753447031-32 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 36.94 ms
+14:54:45.889 [qtp1753447031-34 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 64.96 ms
+14:55:24.476 [qtp1753447031-35 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 37.95 ms
+14:56:05.336 [qtp1753447031-35 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 23.47 ms
+14:56:06.053 [qtp1753447031-35 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 12.20 ms
+14:57:27.493 [qtp1753447031-35 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 25.70 ms
+15:08:18.164 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 30.35 ms
+15:09:25.251 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 13.31 ms
+15:09:37.310 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 44.96 ms
+15:10:34.008 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 13.51 ms
+15:11:17.067 [qtp1753447031-50 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 21.59 ms
+15:11:44.139 [qtp1753447031-51 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 69.68 ms
+15:13:05.564 [qtp1753447031-51 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 48.14 ms
+15:13:27.087 [qtp1753447031-51 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 25.57 ms
+15:13:47.035 [qtp1753447031-54 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 29.64 ms
+15:14:03.245 [qtp1753447031-51 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 14.18 ms
+15:14:17.327 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 77.11 ms
+15:15:08.314 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 16.00 ms
+15:15:25.462 [qtp1753447031-51 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 8.960 ms
+15:18:01.017 [qtp1753447031-57 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 12.45 ms
+15:22:51.083 [qtp1753447031-61 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 12.92 ms
+15:23:16.202 [qtp1753447031-61 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 6.529 ms
+15:24:12.360 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 8.495 ms
+15:24:38.333 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 13.25 ms
+15:24:59.086 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 7.685 ms
+15:25:43.539 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 9.253 ms
+15:25:53.420 [qtp1753447031-65 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 10.85 ms
+15:35:27.565 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 15.38 ms
+15:38:31.488 [qtp1753447031-76 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 8.933 ms
+15:40:00.716 [qtp1753447031-78 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 42.63 ms
+15:40:47.082 [qtp1753447031-80 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 7.223 ms
+15:41:03.272 [qtp1753447031-79 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 6.416 ms
+15:41:40.390 [qtp1753447031-81 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 25.89 ms
+15:46:26.490 [qtp1753447031-84 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 20.30 ms
+15:46:54.085 [qtp1753447031-84 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 5.535 ms
+15:47:03.048 [qtp1753447031-87 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 45.09 ms
+15:47:32.918 [qtp1753447031-87 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 8.378 ms
+15:49:34.943 [qtp1753447031-88 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 42.44 ms
+15:49:48.538 [qtp1753447031-90 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 7.662 ms
+15:50:28.890 [qtp1753447031-89 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 51.55 ms
+15:51:49.132 [qtp1753447031-88 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 7.214 ms
+15:55:39.991 [qtp1753447031-93 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 6.703 ms
+15:59:10.829 [qtp1753447031-97 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 18.04 ms
+16:00:42.718 [qtp1753447031-99 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 43.46 ms
+16:06:23.560 [qtp1753447031-104] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 22.60 ms
+16:07:18.792 [qtp1753447031-104] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 11.21 ms
+16:08:25.062 [qtp1753447031-108] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 82.53 ms
+16:08:41.774 [qtp1753447031-104] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 11.10 ms
+16:12:39.917 [qtp1753447031-112] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 14.70 ms
+16:30:14.218 [qtp1753447031-128] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 29.35 ms
+16:30:41.469 [qtp1753447031-128] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 5.636 ms
+16:30:58.450 [qtp1753447031-128] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 8.569 ms
+16:31:14.529 [qtp1753447031-129] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 39.48 ms
+16:32:37.417 [qtp1753447031-129] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 5.583 ms
+16:35:29.347 [qtp1753447031-132] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 37.66 ms
+16:36:16.287 [qtp1753447031-136] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 34.13 ms
+16:36:45.806 [qtp1753447031-138] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 37.98 ms
+16:37:10.759 [qtp1753447031-137] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 6.994 ms
+16:39:52.840 [qtp1753447031-139] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 17.94 ms
+16:40:14.214 [qtp1753447031-140] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 8.061 ms
+16:40:53.095 [qtp1753447031-140] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 37.52 ms
+16:42:00.884 [qtp1753447031-141] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 42.10 ms
+16:45:13.226 [qtp1753447031-144] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 38.66 ms
+16:45:30.760 [qtp1753447031-145] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 6.831 ms
+17:57:16.139 [qtp1753447031-195] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 17.54 ms
+18:01:36.356 [qtp1753447031-200] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 6.137 ms
+18:08:11.621 [qtp1753447031-208] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 5.957 ms
+18:08:26.390 [qtp1753447031-208] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 6.472 ms
+18:09:46.732 [qtp1753447031-207] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 22.69 ms
+18:16:35.778 [qtp1753447031-214] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 5.547 ms
+18:17:30.364 [qtp1753447031-216] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 81.40 ms
+18:21:12.616 [qtp1753447031-219] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 8.796 ms
+18:23:29.308 [qtp1753447031-219] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 7.066 ms
+18:25:56.804 [qtp1753447031-223] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 8.788 ms
+19:25:41.777 [qtp1753447031-263] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 10.82 ms
+20:49:41.296 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+20:54:31.263 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+20:54:31.639 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+20:54:33.649 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+20:54:33.663 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+20:54:39.960 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 19 sources compiled in 4.988 s
+20:54:41.372 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+20:54:42.657 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+20:54:52.955 [qtp1753447031-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+20:54:53.210 [qtp1753447031-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 1.306 s
+20:54:54.272 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 1.061 s

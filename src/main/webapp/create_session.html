@@ -3,110 +3,103 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Create Camp Session</title>
-    <link rel='stylesheet' type='text/css' href='styles/sample.css'>
-    <!--<link rel='stylesheet' type='text/css' href='styles/schedule.css'> -->
+    <link href="styles/sample.css" type="text/css" rel="stylesheet">
+    <link href="scripts/jquery-ui-1.11.2.custom/jquery-ui.min.css" type="text/css" rel="stylesheet">
+    <!--<link rel='stylesheet' type='text/css' href='styles/schedule.css'>-->
 </head>
 <body>
-    <header>
-        <h1>Create Camp Session</h1>
-    </header>
+<header>
+    <h1>Create Camp Session</h1>
+</header>
 
-    <div id="session-info">
+<div id="session-info"></div>
 
-        <p><label>Name:</label>
-            <input type="text" name="session-name" id="session-name"></p>
+<p><label>Name:</label>
+    <input type="text" name="session-name" id="session-name"></p>
 
-        <p><label>Age Range:</label>
-            <select name="age" id="age">
-                <option value="daisy">Daisy (grades K-1)</option>
-                <option value="brownie">Brownie (grades 2-3)</option>
-                <option value="junior">Junior (grades 4-5) </option>
-                <option value="cadette">Cadette (grades 6-8) </option>
-                <option value="senior">Senior (grades 9-10)</option>
-                <option value="ambassador">Ambassador (grades 11-12)</option>
-            </select>
-        </p>
+<p><label>Age Range:</label>
+    <select name="age" id="age">
+        <option value="daisy">Daisy (grades K-1)</option>
+        <option value="brownie">Brownie (grades 2-3)</option>
+        <option value="junior">Junior (grades 4-5) </option>
+        <option value="cadette">Cadette (grades 6-8) </option>
+        <option value="senior">Senior (grades 9-10)</option>
+        <option value="ambassador">Ambassador (grades 11-12)</option>
+    </select>
+</p>
 
-        <p><label>Enrollment Cap:</label>
-            <input type="number" name="enroll-cap" id="enroll-cap"></p>
+<p><label>Enrollment Cap:</label>
+    <input type="number" name="enroll-cap" id="enroll-cap"></p>
 
 
-        <p><label>Start Date (mm/dd/yyy):</label>
-            <input type="date" name="start-date" id="start-date"></p>
+<p><label>Start Date (mm/dd/yyy):</label>
+    <input type="date" name="start-date" id="start-date"></p>
 
-        <p><label>End Date (mm/dd/yyy):</label>
-            <input type="date" name="end-date" id="end-date"></p>
+<p><label>End Date (mm/dd/yyy):</label>
+    <input type="date" name="end-date" id="end-date"></p>
 
-        <button type="button" id="enter-dates">Submit</button>
+<button type="button" id="enter-dates">Submit</button>
 
-        <table id="schedule">
-            <caption>enter fixed time activities</caption>
-            <tbody>
-                <tr><td>Time</td><td>Su</td><td>M</td><td>T</td><td>W</td><td>Tr</td><td>F</td><td>Sa</td></tr>
-                <tr><td>9:00</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td></tr>
-                <tr><td>10:00</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-                <tr><td>11:00</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-                <tr><td>12:00</td><td>Lunch</td><td>Lunch</td><td>Lunch</td><td>Lunch</td><td>Lunch</td><td>Lunch</td><td>Lunch</td></tr>
-                <tr><td>1:00</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td></tr>
-                <tr><td>2:00</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-                <tr><td>3:00</td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td><td><input></td></tr>
-                <tr><td>4:00</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td></tr>
-                <tr><td>5:00</td><td>Dinner</td><td>Dinner</td><td>Dinner</td><td>Dinner</td><td>Dinner</td><td>Dinner</td><td>Dinner</td></tr>
-                <tr><td>6:00</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td></tr>
-                <tr><td>7:00</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td><td>All-Camp</td></tr>
-                <tr><td>8:00</td><td></td><td>Snack</td><td>Snack</td><td>Snack</td><td>Snack</td><td>Snack</td><td>Snack</td></tr>
-                <tr><td>9:00</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td><td>Unit</td></tr>
-            </tbody>
-        </table>
-
-        <!--<p><label>Fixed time Activities:</label>-->
-            <!--<select name="fixed-time" id="fixed-time">-->
-                <!--<option value="pool">Pool</option>-->
-                <!--<option value="art">Art</option>-->
-                <!--<option value="eating">Eating</option>-->
-                <!--<option value="sports">Sports </option>-->
-                <!--<option value="customize">Counselor Time</option>-->
-                <!--<option value="canoeing">Canoeing </option>-->
-                <!--<option value="archery">Archery </option>-->
-                <!--<option value="creek">Creek Hopping</option>-->
-            <!--</select>-->
-        <!--</p>-->
-
-        <!--<p><label>Required Activities:</label>-->
-            <!--<select name="activities" id="activities">-->
-                <!--<option value="pool">Pool</option>-->
-                <!--<option value="art">Art</option>-->
-                <!--<option value="eating">Eating</option>-->
-                <!--<option value="sports">Sports </option>-->
-                <!--<option value="customize">Counselor Time</option>-->
-                <!--<option value="canoeing">Canoeing </option>-->
-                <!--<option value="archery">Archery </option>-->
-                <!--<option value="creek">Creek Hopping</option>-->
-            <!--</select>-->
-        <div>
-            <p>Enter Required Activities:</p>
-            <select name="selectfrom" id="select-from" multiple size="10" width="50">
-                <option value="pool">Pool</option>
-                <option value="art">Art</option>
-                <option value="eating">Eating</option>
-                <option value="sports">Sports</option>
-                <option value="customize">Counselor Time</option>
-                <option value="canoeing">Canoeing</option>
-                <option value="archery">Archery</option>
-                <option value="creek">Creek Hopping</option>
-            </select>
-            <button type="add-activity" id="add-activity">Add</button>
-            <select name="selectto" id="select-to" multiple size="10" style="width: 100px"></select>
-            <button type="remove-activity" id="remove-activity">Remove</button>
+<div>
+    <table id="schedule"  class="ui-widget">
+        <caption>enter fixed time activities</caption>
+        <tbody>
+        <tr><td>Time</td><td>Su</td><td>M</td><td>T</td><td>W</td><td>Tr</td><td>F</td><td>Sa</td></tr>
+        <tr><td>9:00</td><td><input id="11" value="unit"></td><td><input id="12" value="unit"></td><td><input id="13" value="unit"></td><td><input id="14" value="unit"></td><td><input id="15" value="unit"></td><td><input id="16" value="unit"></td><td><input id="17" value="unit"></td></tr>
+        <tr><td>10:00</td><td><input id="21"></td><td><input id="22"></td><td><input id="23"></td><td><input id="24"></td><td><input id="25"></td><td><input id="26"></td><td><input id="27"></td></tr>
+        <tr><td>11:00</td><td><input id="31"></td><td><input id="32"></td><td><input id="33"></td><td><input id="34"></td><td><input id="35"></td><td><input id="36"></td><td><input id="37"></td></tr>
+        <tr><td>12:00</td><td><input id="41" value="meal"></td><td><input id="42" value="meal"></td><td><input id="43" value="meal"></td><td><input id="44" value="meal"></td><td><input id="45" value="meal"></td><td><input id="46" value="meal"></td><td><input id="47" value="meal"></td></tr>
+        <tr><td>1:00</td><td><input id="51" value="unit"></td><td><input id="52" value="unit"></td><td><input id="53" value="unit"></td><td><input id="54" value="unit"></td><td><input id="55" value="unit"></td><td><input id="56" value="unit"></td><td><input id="57" value="unit"></td></tr>
+        <tr><td>2:00</td><td><input id="61"></td><td><input id="62"></td><td><input id="63"></td><td><input id="64"></td><td><input id="65"></td><td><input id="66"></td><td><input id="67"></td></tr>
+        <tr><td>3:00</td><td><input id="71"></td><td><input id="72"></td><td><input id="73"></td><td><input id="74"></td><td><input id="75"></td><td><input id="76"></td><td><input id="77"></td></tr>
+        <tr><td>4:00</td><td><input id="81" value="all-camp"></td><td><input id="82" value="all-camp"></td><td><input id="83" value="all-camp"></td><td><input id="84" value="all-camp"></td><td><input id="85" value="all-camp"></td><td><input id="86" value="all-camp"></td><td><input id="87" value="all-camp"></td></tr>
+        <tr><td>5:00</td><td><input id="91" value="meal"></td><td><input id="92" value="meal"></td><td><input id="93" value="meal"></td><td><input id="94" value="meal"></td><td><input id="95" value="meal"></td><td><input id="96" value="meal"></td><td><input id="97" value="meal"></td></tr>
+        <tr><td>6:00</td><td><input id="101" value="meal"></td><td><input id="102" value="meal"></td><td><input id="103" value="meal"></td><td><input id="104" value="meal"></td><td><input id="105" value="meal"></td><td><input id="106" value="meal"></td><td><input id="107" value="meal"></td></tr>
+        <tr><td>7:00</td><td><input id="111" value="all-camp"></td><td><input id="112" value="all-camp"></td><td><input id="113" value="all-camp"></td><td><input id="114" value="all-camp"></td><td><input id="115" value="all-camp"></td><td><input id="116" value="all-camp"></td><td><input id="117" value="all-camp"></td></tr>
+        <tr><td>8:00</td><td><input id="121" value="all-camp"></td><td><input id="122" value="all-camp"></td><td><input id="123" value="all-camp"></td><td><input id="124" value="all-camp"></td><td><input id="125" value="all-camp"></td><td><input id="126" value="all-camp"></td><td><input id="127" value="all-camp"></td></tr>
+        <tr><td>9:00</td><td><input id="131" value="unit"></td><td><input id="132" value="unit"></td><td><input id="133" value="unit"></td><td><input id="134" value="unit"></td><td><input id="135" value="unit"></td><td><input id="136" value="unit"></td><td><input id="137" value="unit"></td></tr>
+        </tbody>
+    </table>
 </div>
 
-        </p>
+<!--<p><label>Fixed time Activities:</label>-->
+<!--<select name="fixed-time" id="fixed-time">-->
+<!--<option value="pool">Pool</option>-->
+<!--<option value="art">Art</option>-->
+<!--<option value="eating">Eating</option>-->
+<!--<option value="sports">Sports </option>-->
+<!--<option value="customize">Counselor Time</option>-->
+<!--<option value="canoeing">Canoeing </option>-->
+<!--<option value="archery">Archery </option>-->
+<!--<option value="creek">Creek Hopping</option>-->
+<!--</select>-->
+<!--</p>-->
 
-        <button type="button" id="create-session">Create</button>
+<div>
+    <p>Enter Required Activities:</p>
+    <select name="selectfrom" id="select-from" multiple size="10" width="50">
+        <option value="pool">Pool</option>
+        <option value="art">Art</option>
+        <option value="eating">Eating</option>
+        <option value="sports">Sports</option>
+        <option value="customize">Counselor Time</option>
+        <option value="canoeing">Canoeing</option>
+        <option value="archery">Archery</option>
+        <option value="creek">Creek Hopping</option>
+    </select>
+    <button type="add-activity" id="add-activity">Add</button>
+    <select name="selectto" id="select-to" multiple size="10" style="width: 100px"></select>
+    <button type="remove-activity" id="remove-activity">Remove</button>
+</div>
 
-    </div>
+</p>
+
+<button type="button" id="create-session">Create</button>
+
+</div>
 </body>
-<script src="scripts/jquery-2.1.3.js"></script>
+<script src='scripts/jquery-2.1.3.js'></script>
+<script src='scripts/jquery-ui-1.11.2.custom/jquery-ui.min.js'></script>
 <script src='scripts/create_session.js'></script>
 
 </html>
