@@ -5,7 +5,6 @@ import org.jongo.marshall.jackson.oid.ObjectId;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Date;
 
 /**
  * Created by Eric on 1/29/2015.
@@ -14,14 +13,21 @@ public class Activity {
 
     private ArrayList<Employee> workers;
     private String title;
-    private Date startTime;
-    private Date endTime;
+    private Date day; //idk how this stuff will be formatted yet <- & v
+    private Date hour;
     private String activityAreaID;
 
 
     @Id
     @ObjectId
     private String key;
+
+    public Activity(String title, Date day, Date hour, String activityAreaID) {
+        this.title = title;
+        this.day = day;
+        this.hour = hour;
+        this.activityAreaID = activityAreaID;
+    }
 
     //key will be generated automagically if not specified in passed in JSON object
     public Activity setKey(String key){
@@ -61,20 +67,20 @@ public class Activity {
         return workers;
     }
 
-    public Activity setStartTime(Date startTime){
-        this.startTime = startTime;
+    public Activity setDay(Date day){
+        this.day = day;
         return this;
     }
 
-    public Date getStartTime(){ return startTime;}
+    public Date getDay(){ return day;}
 
-    public Activity setEndTime(Date endTime){
-        this.endTime = endTime;
+    public Activity setHour(Date hour){
+        this.hour = hour;
         return this;
     }
 
-    public Date getEndTime(){
-        return endTime;
+    public Date getHour(){
+        return hour;
     }
 
     public String getActivityAreaID() {

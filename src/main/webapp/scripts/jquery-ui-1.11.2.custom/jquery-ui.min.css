@@ -16,6 +16,7 @@
 /*this is the one we want in order to style the autocomplete */
 #schedule .ui-widget input {
         font-size: .8em;
+        font-family: Arial, serif;
         width: 75px;
 
 }
