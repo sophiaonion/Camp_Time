@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="hardcoded autocomplete for session creation fixed time activities (it's ugly tho so it's a WIP)">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
+    <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts/jquery-ui-1.11.2.custom/jquery-ui.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jquery-ui-1.11.2.custom/jquery-ui.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -45,8 +44,8 @@
       <file leaf-file-name="jquery-ui.min.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/jquery-ui-1.11.2.custom/jquery-ui.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61731845" vertical-offset="0" max-vertical-offset="391">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8547486" vertical-offset="0" max-vertical-offset="510">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -679,7 +678,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423185908363</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changed jquery-ui.min.css to format auto-complete better">
+      <created>1423192348301</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1423192348301</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -759,7 +764,8 @@
     <MESSAGE value="sequence of session creation -&gt; camper creation -&gt; register camper now works&#10;&#10;changed Calendar class to date, Jackson can't map calendar objects apparently&#10;&#10;fixed some attribute name mismatches -- attribute names of json sent over must match java class attribute names exactly" />
     <MESSAGE value="Jquery attribute match java attributes for camper" />
     <MESSAGE value="hardcoded autocomplete for session creation fixed time activities (it's ugly tho so it's a WIP)" />
-    <option name="LAST_COMMIT_MESSAGE" value="hardcoded autocomplete for session creation fixed time activities (it's ugly tho so it's a WIP)" />
+    <MESSAGE value="changed jquery-ui.min.css to format auto-complete better" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed jquery-ui.min.css to format auto-complete better" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1114,6 +1120,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/jquery-ui-1.11.2.custom/jquery-ui.theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.413793" vertical-offset="319" max-vertical-offset="7072">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/create_session.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="22.884615" vertical-offset="595" max-vertical-offset="1870">
@@ -1124,18 +1138,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/jquery-ui-1.11.2.custom/jquery-ui.theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.413793" vertical-offset="319" max-vertical-offset="7072">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/jquery-ui-1.11.2.custom/jquery-ui.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61731845" vertical-offset="0" max-vertical-offset="391">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8547486" vertical-offset="0" max-vertical-offset="510">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding />
         </state>
       </provider>
