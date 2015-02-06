@@ -1,5 +1,5 @@
-//package camptimetest.domain;
-//
+package camptimetest.domain;
+
 //import org.jongo.marshall.jackson.oid.Id;
 //import org.jongo.marshall.jackson.oid.ObjectId;
 //

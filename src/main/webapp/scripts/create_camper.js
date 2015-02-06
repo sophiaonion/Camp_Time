@@ -3,7 +3,7 @@ var main = function(campers){
     var data = {
         name: $('#camper-name').val(),
         age: $('#camper-age').val(),
-        extraInfo: $('#extra-info').val()
+        extraInfo: $('#camper-info').val()
     };
 
     $.ajax({
