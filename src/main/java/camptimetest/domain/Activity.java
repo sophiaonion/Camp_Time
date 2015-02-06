@@ -13,8 +13,7 @@ public class Activity {
 
     private ArrayList<Employee> workers;
     private String title;
-    private Date day; //idk how this stuff will be formatted yet <- & v
-    private Date hour;
+    private Date time;
     private String activityAreaID;
 
 
@@ -22,12 +21,12 @@ public class Activity {
     @ObjectId
     private String key;
 
-    public Activity(String title, Date day, Date hour, String activityAreaID) {
-        this.title = title;
-        this.day = day;
-        this.hour = hour;
-        this.activityAreaID = activityAreaID;
-    }
+//    public Activity(String title, Date day, Date hour, String activityAreaID) {
+//        this.title = title;
+//        this.day = day;
+//        this.hour = hour;
+//        this.activityAreaID = activityAreaID;
+//    }
 
     //key will be generated automagically if not specified in passed in JSON object
     public Activity setKey(String key){
@@ -67,20 +66,12 @@ public class Activity {
         return workers;
     }
 
-    public Activity setDay(Date day){
-        this.day = day;
-        return this;
+    public Date getTime() {
+        return time;
     }
 
-    public Date getDay(){ return day;}
-
-    public Activity setHour(Date hour){
-        this.hour = hour;
-        return this;
-    }
-
-    public Date getHour(){
-        return hour;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     public String getActivityAreaID() {

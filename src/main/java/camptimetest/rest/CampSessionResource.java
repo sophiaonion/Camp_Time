@@ -1,5 +1,6 @@
 package camptimetest.rest;
 
+import camptimetest.domain.Activity;
 import camptimetest.domain.CampSession;
 import camptimetest.domain.Camper;
 import camptimetest.domain.SessionRegistration;
@@ -12,7 +13,9 @@ import restx.security.PermitAll;
 import javax.inject.Named;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import static restx.common.MorePreconditions.checkEquals;
 
@@ -69,9 +72,40 @@ public class CampSessionResource {
 
 
         @POST("/campsessions")
-        public CampSession createCampSession(CampSession newCS){
-           campSession.get().save(newCS);
-           return newCS;
+        public CampSession createCampSession(Map<String, Object> info){//change camp session to a mpa, pull out each individual thing and save into campsession
+            CampSession newCS = new CampSession();
+            Date start = new Date((String) info.get("startDate"));
+
+            //take items from map of info from inputted page
+            newCS.setName((String) info.get("name"));
+            newCS.setAgeGroup((String) info.get("ageGroup"));
+            newCS.setStartDate(start);
+            newCS.setEndDate(new Date((String) info.get("endDate")));
+            List<Activity> activities;
+                //ummm what need to add activities but idk how
+//            for(int i=0; i < info.get("activities").length(); i++) {
+//                Activity a = new Activity();
+//               // a.setTime(new Date())
+//                a.setTitle(info.get("activities").get(i).)
+//
+//            }
+//            newCS.setActivities(activities);
+
+            campSession.get().save(newCS);
+            return newCS;
+
+
+
+
+
+//            private String sessionID;
+//            private String name;
+//            private String ageGroup; //will use 1, 2, 3, 4, 5
+//            private int enrollmentCap;
+//            private Date startDate;
+//            private Date endDate;
+//            private List<Activity> activities; //list of all activities, required or not
+//            private List<Employee> counselors;
         }
 
         //sessionid is passed in url

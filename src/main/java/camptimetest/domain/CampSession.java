@@ -102,7 +102,7 @@ public class CampSession {
                 ", enrollmentCap=" + enrollmentCap +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-            //    ", fixedActivities=" + fixedActivities +
+                ", activities=" + activities +
                 ", activities=" + activities +
                 ", counselors=" + counselors +
                 '}';

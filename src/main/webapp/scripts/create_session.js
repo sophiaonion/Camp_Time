@@ -1,5 +1,4 @@
 var main = function(camp_sessions){
-
     //make schedule designer only visible after submit dates
     $("#schedule").hide();
     $('#enter-dates').on('click', function(){
@@ -18,7 +17,7 @@ var main = function(camp_sessions){
                       , "other"],
                   autoFocus: true,
                   });
-    });
+        });
     });
 
     //add/remove session curriculum
@@ -91,27 +90,24 @@ var main = function(camp_sessions){
                        //idea:  make it so only looks at items in table after and before check in and check out?
 
                        //go through all items and make into activities
-                       activities.push(new activity($(this).text(), $('#start-date') + i1, time));
+                      // if( ($(this).val().length()) != 0) {   //not working for now
+                       activities.push(new activity($(this).text(), i1, time));
+                      // }
                     });
             });
 
             //for required activities w/o fixed times
             $( "required-activities" ).each(function( index ) {
-                  //  activity a;
-                   // a.name = $(this).text()
                     activities.push(new activity($(this).text(), null, null));
             });
         };
 
         getCalendar();
 
-
-
         var data = {
             startDate: $('#start-date').val(),
             endDate: $('#end-date').val(),
-            schedule: activities,
-            requiredActivities: $('#required-activities').val(),
+            activities: activities,
             name: $('#session-name').val(),
             ageGroup: $('#age').val(),
             enrollmentCap: $('#enroll-cap').val(),
