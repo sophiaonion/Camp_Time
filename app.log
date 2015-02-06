@@ -7568,3 +7568,642 @@ Caused by: com.fasterxml.jackson.databind.JsonMappingException: Can not deserial
 20:16:38.449 [qtp1753447031-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 890.9 ms
 20:16:38.815 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 364.3 ms
 20:17:32.033 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 434.0 ms
+21:44:21.076 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:44:21.433 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:44:23.081 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:44:23.082 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:44:27.308 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 11 sources compiled in 3.485 s
+21:44:27.708 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+21:44:28.088 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:44:54.553 [qtp1753447031-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+21:44:54.801 [qtp1753447031-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 1.094 s
+21:44:55.797 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 994.0 ms
+21:45:14.038 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 338.1 ms
+21:49:50.250 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 19.05 ms
+21:50:02.074 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 70.49 ms
+21:50:25.087 [qtp1753447031-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 33.05 ms
+21:50:25.089 [qtp1753447031-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 29.27 ms
+21:50:30.723 [qtp1753447031-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 12.33 ms
+21:50:49.291 [qtp1753447031-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 58.85 ms
+21:51:00.330 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 16.83 ms
+21:51:17.682 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d2e881036492b28f334964/54d2e749036492b28f334962 >> OK - 101.4 ms
+21:51:54.800 [qtp1753447031-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 11.42 ms
+21:52:17.168 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 9.747 ms
+21:52:22.229 [qtp1753447031-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/campers/ >> NOT_FOUND - 2.627 ms
+21:52:42.390 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/campers/ >> NOT_FOUND - 799.3 μs
+22:36:58.361 [qtp1753447031-71 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 403.0 ms
+22:36:58.808 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 387.1 ms
+22:37:03.614 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 167.5 ms
+23:14:52.001 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+21:59:23.947 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:59:24.839 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:59:29.655 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:59:29.663 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:59:41.065 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 10.22 s
+21:59:43.209 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+21:59:46.896 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+22:02:03.178 [qtp1753447031-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+22:02:03.667 [qtp1753447031-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 2.258 s
+22:02:04.403 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 736.2 ms
+22:02:08.985 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 262.3 ms
+22:02:17.285 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 17.09 ms
+22:02:31.237 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 506.9 ms
+22:02:36.850 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 13.31 ms
+22:02:39.091 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 14.74 ms
+22:02:41.809 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d2e881036492b28f334963/54d43cd60364e540bfbb1d91 >> OK - 51.29 ms
+22:02:49.992 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.803 ms
+22:02:53.090 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d2e881036492b28f334963 >> OK - 202.0 ms
+22:03:23.019 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.892 ms
+22:03:26.661 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d2e881036492b28f334963 >> OK - 44.44 ms
+22:03:31.886 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d2e881036492b28f334964 >> OK - 15.69 ms
+22:03:39.713 [qtp1753447031-25 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Too many parameters passed to query: 54d2e881036492b28f334964
+java.lang.IllegalArgumentException: Too many parameters passed to query: 54d2e881036492b28f334964
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:121) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+22:03:39.716 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d2e881036492b28f334964/54d43cd60364e540bfbb1d91 >> BAD_REQUEST - 48.08 ms
+22:05:32.129 [qtp1753447031-28 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Too many parameters passed to query: 54d2e881036492b28f334964
+java.lang.IllegalArgumentException: Too many parameters passed to query: 54d2e881036492b28f334964
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:121) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+22:05:32.135 [qtp1753447031-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d2e881036492b28f334964/54d43cd60364e540bfbb1d91 >> BAD_REQUEST - 6.693 ms
+22:09:39.148 [qtp1753447031-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 8.601 ms
+22:09:44.405 [qtp1753447031-34 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d2e881036492b28f334964 >> OK - 32.74 ms
+22:09:51.842 [qtp1753447031-34 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d2e881036492b28f334964 >> OK - 18.29 ms
+22:09:57.070 [qtp1753447031-34 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Too many parameters passed to query: 54d2e881036492b28f334964
+java.lang.IllegalArgumentException: Too many parameters passed to query: 54d2e881036492b28f334964
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:121) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+22:09:57.073 [qtp1753447031-34 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d2e881036492b28f334964/54d2e749036492b28f334962 >> BAD_REQUEST - 3.912 ms
+22:10:24.353 [qtp1753447031-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 10.78 ms
+22:10:28.602 [qtp1753447031-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d2e881036492b28f334963 >> OK - 9.829 ms
+22:10:32.852 [qtp1753447031-34 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d2e881036492b28f334964 >> OK - 12.60 ms
+22:10:37.718 [qtp1753447031-34 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Too many parameters passed to query: 54d2e881036492b28f334964
+java.lang.IllegalArgumentException: Too many parameters passed to query: 54d2e881036492b28f334964
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:121) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+22:10:37.719 [qtp1753447031-34 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d2e881036492b28f334964/54d43cd60364e540bfbb1d91 >> BAD_REQUEST - 1.689 ms
+22:16:26.880 [qtp1753447031-40 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 236.7 ms
+22:16:27.231 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 318.5 ms
+22:16:43.396 [qtp1753447031-39 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 251.3 ms
+22:16:43.458 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 314.4 ms
+22:16:50.060 [qtp1753447031-40 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 645.5 ms
+22:16:50.064 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.771 ms
+22:16:59.870 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 2.631 ms
+22:18:44.491 [qtp1753447031-41 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.471 ms
+22:18:50.811 [qtp1753447031-42 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /campers - per request factory created in 202.0 ms
+22:18:50.811 [qtp1753447031-41 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /campers - per request factory created in 202.2 ms
+22:18:50.840 [qtp1753447031-41 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 9.726 ms
+22:18:50.841 [qtp1753447031-42 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 11.24 ms
+22:18:54.733 [qtp1753447031-42 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.278 ms
+22:21:37.143 [qtp1753447031-44 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.323 ms
+22:21:46.600 [qtp1753447031-44 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 8.878 ms
+22:21:46.606 [qtp1753447031-45 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 11.71 ms
+22:21:49.223 [qtp1753447031-45 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 10.58 ms
+22:24:45.972 [qtp1753447031-47 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 8.245 ms
+22:24:50.811 [qtp1753447031-47 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 11.75 ms
+22:24:50.815 [qtp1753447031-48 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 12.96 ms
+22:24:54.108 [qtp1753447031-47 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.526 ms
+22:26:03.930 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.239 ms
+22:26:09.712 [qtp1753447031-50 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 8.364 ms
+22:26:09.713 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 7.801 ms
+22:26:15.012 [qtp1753447031-50 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 5.013 ms
+22:26:37.455 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 5.512 ms
+22:26:39.971 [qtp1753447031-50 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.813 ms
+22:26:47.498 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 15.46 ms
+22:26:48.735 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.987 ms
+22:27:13.428 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 1.095 ms
+22:27:23.750 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 13.14 ms
+22:27:25.235 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 5.736 ms
+22:27:40.220 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 2.861 ms
+22:27:48.236 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 13.99 ms
+22:27:52.748 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 10.20 ms
+22:28:02.882 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 15.43 ms
+22:28:10.037 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.677 ms
+22:28:12.816 [qtp1753447031-49 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 1.898 ms
+22:28:27.722 [qtp1753447031-52 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 13.26 ms
+22:28:31.455 [qtp1753447031-52 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/campers/54d442c40364e540bfbb1d9f >> OK - 2.109 ms
+22:28:36.567 [qtp1753447031-52 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.223 ms
+22:28:38.289 [qtp1753447031-52 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 1.533 ms
+22:30:00.216 [qtp1753447031-54 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.002 ms
+22:30:36.582 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 3.304 ms
+22:32:46.548 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 11.83 ms
+22:32:59.591 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 14.36 ms
+22:33:02.759 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 9.322 ms
+22:33:12.569 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 13.56 ms
+22:33:15.816 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 5.728 ms
+22:33:18.541 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 13.81 ms
+22:34:10.983 [qtp1753447031-60 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.279 ms
+22:34:14.051 [qtp1753447031-57 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 30.06 ms
+22:34:17.946 [qtp1753447031-57 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> OK - 2.853 ms
+22:34:21.029 [qtp1753447031-57 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.024 ms
+22:34:23.185 [qtp1753447031-57 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 8.980 ms
+22:38:37.487 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d442ab0364e540bfbb1d9e/54d444080364e540bfbb1da2 >> OK - 11.91 ms
+22:38:45.765 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.587 ms
+22:38:48.851 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e >> OK - 191.5 ms
+22:38:52.753 [qtp1753447031-53 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Too many parameters passed to query: 54d442ab0364e540bfbb1d9e
+java.lang.IllegalArgumentException: Too many parameters passed to query: 54d442ab0364e540bfbb1d9e
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:121) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+22:38:52.820 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> BAD_REQUEST - 3.257 ms
+22:50:53.918 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 10.88 ms
+22:50:56.970 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 35.94 ms
+22:50:59.841 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d442ab0364e540bfbb1d9e/54d444080364e540bfbb1da2 >> OK - 14.57 ms
+22:51:03.497 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.288 ms
+22:51:06.481 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 5.753 ms
+22:51:08.641 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> OK - 2.978 ms
+22:51:12.927 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.390 ms
+22:51:15.470 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e >> OK - 10.80 ms
+22:57:45.420 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.899 s
+22:58:09.542 [qtp1753447031-82 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 357.5 ms
+22:58:09.573 [qtp1753447031-82 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 7.443 ms
+22:58:11.302 [qtp1753447031-83 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e >> OK - 36.50 ms
+22:58:16.091 [qtp1753447031-82 ] WARN  o.e.j.server.handler.ContextHandler - Aliased resource: file:/Users/sophiawang/Desktop/computer%20science/410/src/main/webapp/~=file:/Users/sophiawang/Desktop/computer%20science/410/src/main/webapp/
+22:58:22.262 [qtp1753447031-82 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.813 ms
+22:58:23.948 [qtp1753447031-82 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/ambassador >> OK - 7.288 ms
+22:58:26.799 [qtp1753447031-82 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> OK - 11.21 ms
+22:58:30.326 [qtp1753447031-83 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.349 ms
+22:58:32.646 [qtp1753447031-82 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e >> OK - 7.823 ms
+22:58:41.745 [qtp1753447031-84 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Too many parameters passed to query: {camperID:54d442ab0364e540bfbb1d9e
+java.lang.IllegalArgumentException: Too many parameters passed to query: {camperID:54d442ab0364e540bfbb1d9e
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:121) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+22:58:41.746 [qtp1753447031-84 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> BAD_REQUEST - 2.175 ms
+22:59:24.603 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.075 s
+22:59:44.161 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 631.9 ms
+23:00:04.764 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.234 s
+23:00:19.231 [qtp1753447031-86 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 522.6 ms
+23:00:19.237 [qtp1753447031-86 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 5.919 ms
+23:00:20.821 [qtp1753447031-85 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e >> OK - 9.377 ms
+23:00:22.446 [qtp1753447031-88 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Not enough parameters passed to query: {camperID:#, sessionID:#} 54d442ab0364e540bfbb1d9e
+java.lang.IllegalArgumentException: Not enough parameters passed to query: {camperID:#, sessionID:#} 54d442ab0364e540bfbb1d9e
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:87) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+23:00:22.447 [qtp1753447031-88 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> BAD_REQUEST - 2.422 ms
+23:00:28.484 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 4.952 s
+23:03:04.889 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.347 s
+23:05:32.973 [qtp1753447031-93 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 988.0 ms
+23:05:33.057 [qtp1753447031-93 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 62.73 ms
+23:05:36.527 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.974 s
+23:06:00.745 [qtp1753447031-92 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e - per request factory created in 349.9 ms
+23:06:00.817 [qtp1753447031-92 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e >> OK - 57.54 ms
+23:06:04.277 [qtp1753447031-86 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Cannot parse query: {camperID:'54d442ab0364e540bfbb1d9e', sessionID:'54d443fb0364e540bfbb1da1}
+java.lang.IllegalArgumentException: Cannot parse query: {camperID:'54d442ab0364e540bfbb1d9e', sessionID:'54d443fb0364e540bfbb1da1}
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:169) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:156) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+Caused by: com.mongodb.util.JSONParseException: 
+{camperID:'54d442ab0364e540bfbb1d9e', sessionID:'54d443fb0364e540bfbb1da1}
+                                                                          ^
+	at com.mongodb.util.JSONParser.read(JSON.java:272) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseString(JSON.java:410) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:182) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:231) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:145) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSON.parse(JSON.java:81) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:130) ~[jongo-1.0.jar:na]
+	... 47 common frames omitted
+23:06:04.280 [qtp1753447031-86 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> BAD_REQUEST - 34.90 ms
+23:07:25.125 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.568 s
+23:07:26.451 [qtp1753447031-92 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 1.051 s
+23:07:26.462 [qtp1753447031-92 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 10.49 ms
+23:07:29.168 [qtp1753447031-92 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e >> OK - 32.08 ms
+23:07:31.017 [qtp1753447031-86 ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Cannot parse query: {camperID:54d442ab0364e540bfbb1d9e, sessionID:54d443fb0364e540bfbb1da1}
+java.lang.IllegalArgumentException: Cannot parse query: {camperID:54d442ab0364e540bfbb1d9e, sessionID:54d443fb0364e540bfbb1da1}
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:169) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.createQuery(MongoCollection.java:204) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:160) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.remove(MongoCollection.java:156) ~[jongo-1.0.jar:na]
+	at camptimetest.rest.CamperResource.deleteRegistration(CamperResource.java:82) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:173) ~[classes/:na]
+	at camptimetest.rest.CamperResourceRouter$5.doRoute(CamperResourceRouter.java:169) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+Caused by: com.mongodb.util.JSONParseException: 
+{camperID:54d442ab0364e540bfbb1d9e, sessionID:54d443fb0364e540bfbb1da1}
+            ^
+	at com.mongodb.util.JSONParser.read(JSON.java:272) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:241) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:145) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSON.parse(JSON.java:81) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:130) ~[jongo-1.0.jar:na]
+	... 47 common frames omitted
+23:07:31.020 [qtp1753447031-86 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> BAD_REQUEST - 5.719 ms
+23:09:54.868 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.301 s
+23:09:57.988 [qtp1753447031-96 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 501.3 ms
+23:09:58.064 [qtp1753447031-96 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 75.01 ms
+23:09:59.346 [qtp1753447031-86 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d442ab0364e540bfbb1d9e >> OK - 25.94 ms
+23:10:01.681 [qtp1753447031-86 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /campers/54d442ab0364e540bfbb1d9e/54d443fb0364e540bfbb1da1 >> OK - 277.1 ms
+23:12:34.382 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 806.2 ms

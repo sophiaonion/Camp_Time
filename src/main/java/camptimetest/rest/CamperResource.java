@@ -1,17 +1,19 @@
 package camptimetest.rest;
 
+import camptimetest.domain.CampSession;
 import camptimetest.domain.Camper;
 import com.google.common.base.Optional;
+import com.mongodb.BasicDBObject;
 import org.bson.types.ObjectId;
-import restx.annotations.GET;
-import restx.annotations.POST;
-import restx.annotations.PUT;
-import restx.annotations.RestxResource;
+import restx.Status;
+import restx.annotations.*;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
 import camptimetest.domain.SessionRegistration;
 import javax.inject.Named;
+import java.io.Console;
+import java.util.ArrayList;
 
 /**
  * Created by Eric on 2/1/2015.
@@ -21,11 +23,14 @@ import javax.inject.Named;
 public class CamperResource {
     private JongoCollection registrations;
     private JongoCollection campers;
+    private JongoCollection campSessions;
 
     public CamperResource(@Named ("registrations") JongoCollection registrations,
-                          @Named ("campers") JongoCollection campers){
+                          @Named ("campers") JongoCollection campers,
+                          @Named("campsessions") JongoCollection campSessions){
         this.registrations = registrations;
         this.campers = campers;
+        this.campSessions=campSessions;
     }
 
     @PUT("/campers/{camperID}/{sessionID}")
@@ -50,10 +55,28 @@ public class CamperResource {
 //        }
 //    }
 
+    @GET("/campers/registrations/{camperID}")
+    public Iterable<CampSession> getCampers(String camperID){
+        Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #}", camperID).as(SessionRegistration.class);
+        ArrayList<ObjectId> sessionIDs = new ArrayList<>();
+        for(SessionRegistration reg : regsOfSession){
+            sessionIDs.add(new ObjectId(reg.getSessionID()));
+            System.out.println("sessionID"+ reg.getSessionID());
+        }
+
+        return campSessions.get().find("{_id: {$in:#}}", sessionIDs).as(CampSession.class);
+    }
+
     @POST("/campers")
     public Camper createCamper(Camper camper){
         campers.get().save(camper);
         return camper;
 
+    }
+
+    @DELETE("/campers/{camperID}/{sessionID}")
+    public Status deleteRegistration(String camperID, String sessionID){
+        registrations.get().remove("{camperID:\""+camperID+"\", sessionID:\""+sessionID+"\"}");
+        return Status.of("deleted");
     }
 }
