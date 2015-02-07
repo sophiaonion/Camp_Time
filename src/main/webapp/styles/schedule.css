@@ -4,3 +4,11 @@
         font-size: .8em;
         width: 75px;
 }
+
+#schedule .clone {
+        display: none;
+}
+
+#schedule {
+        display: none;
+}
