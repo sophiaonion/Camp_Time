@@ -1,6 +1,7 @@
 package camptimetest.rest;
 
 import camptimetest.domain.Employee;
+import org.bson.types.ObjectId;
 import restx.Status;
 import restx.annotations.DELETE;
 import restx.annotations.GET;
@@ -45,7 +46,8 @@ public class EmployeeResource {
 
     @DELETE("/employees/{employeeID}")
     public Status deleteEmployee(String employeeID){
-        employees.get().remove("{employeeID: \""+employeeID+"\" }");
+        ObjectId employeeId= new ObjectId(employeeID);
+        employees.get().remove("{_id:#}", employeeId);
         return Status.of("deleted");
     }
 

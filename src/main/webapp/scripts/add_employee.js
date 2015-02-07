@@ -8,11 +8,11 @@ var main = function(employees){
         });
 
         $('#remove-certification').click(function(){
-            $('#select-to option:selected').each( function() {
+            $('#certifications option:selected').each( function() {
                 $('#select-from').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
                 $(this).remove();
-                         });
-                     });
+            });
+        });
 
 
 
@@ -33,10 +33,13 @@ $('#add-employee').on('click', function(){
         certifications.push($(this).text());
     });
 
+
+    console.log($('#employee-age').val());
+
     //save all info into data
     var data = {
         name: $('#employee-name').val(),
-        age: $('employee-age').val(),
+        age: $('#employee-age').val(),
         gender: gender,
         job: $('#job').val(),
         certifications: certifications
@@ -63,10 +66,10 @@ $('#add-employee').on('click', function(){
     });
 }
 //eventually get employees and pass to main function
-$(document).ready(function(){
-       $.get('/api/employees', function(employees){
-                main(campers);
-       });
-});
+//$(document).ready(function(){
+//       $.get('/api/employees', function(employees){
+//               main(employees);
+//       });
+//});
 
 $(document).ready(main);
