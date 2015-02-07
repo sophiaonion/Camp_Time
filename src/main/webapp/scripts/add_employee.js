@@ -44,7 +44,6 @@ $('#add-employee').on('click', function(){
         certifications: certifications
     };
 
-
     $.ajax({
         type: 'POST',
         url: '/api/employees',
@@ -52,7 +51,7 @@ $('#add-employee').on('click', function(){
         contentType: 'application/JSON',
         success: function(data){
              alert('Employee Added.');
-            // window.location.replace('home_page_test.html');
+             window.location.replace('home_page_test.html');
         },
         error: function(request, status, error){
              alert(error);
