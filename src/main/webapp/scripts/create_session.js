@@ -152,7 +152,7 @@ var tableBuilt = false;
 
         //activity object to hold deets
         var activity = function(name, day, time){
-            this.name = name;
+            this.title = name;
             this.day = day;
             this.time = time;
         };
@@ -170,15 +170,15 @@ var tableBuilt = false;
             //retrieves time from first column
             var time = $('td:first', $(this)).text();
 
-                    //loop through each column in row
-                    $(this).children(':gt(0)').each(function(i2, l2){
+                    //loop through each column in row...:gt(1) moves past times and clone column
+                    $(this).children(':gt(1)').each(function(i2, l2){
 
                        //idea:  make it so only looks at items in table after and before check in and check out?
 
                        //go through all items and make into activities
-                      // if( ($(this).val().length()) != 0) {   //not working for now
-                       activities.push(new activity($(this).text(), i1.toString(), time));
-                      // }
+                      if($('input', $(this)).val() !== "") {   //not working for now
+                        activities.push(new activity($('input', $(this)).val(), i1.toString(), time));
+                        }
                     });
             });
 
