@@ -28,8 +28,11 @@ $('#add-employee').on('click', function(){
 
     //put certifications into list
     var certifications = [];
-    $( "certifications" ).each(function( index ) {
-        certifications.push($(this).text());
+
+    $( "#certifications" ).each(function(index) {
+
+        certifications.push( $(this).text() )
+
     });
 
 

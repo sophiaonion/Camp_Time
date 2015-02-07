@@ -11245,3 +11245,43 @@ java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Stri
 14:22:02.997 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 1.108 s
 14:22:03.450 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 452.1 ms
 14:22:26.666 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 449.3 ms
+14:29:22.835 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+14:29:23.818 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+14:29:26.472 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+14:29:26.473 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+14:29:31.877 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 19 sources compiled in 5.004 s
+14:29:32.582 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+14:29:33.979 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+14:29:40.097 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+14:29:40.298 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 809.4 ms
+14:29:40.767 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 468.3 ms
+14:31:02.876 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 62.53 ms
+14:32:03.357 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 705.4 ms
+14:33:00.341 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 43.80 ms
+14:34:24.278 [qtp895947612-28  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 318.9 ms
+14:34:24.322 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 38.98 ms
+14:34:24.323 [qtp895947612-29  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 45.40 ms
+14:40:30.111 [qtp895947612-34  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 2.006 s
+14:54:13.816 [pool-4-thread-1  ] INFO  restx.classloader.CompilationManager - classpath resource updated: camptimetest/createdata/info.txt
+14:58:02.572 [pool-4-thread-1  ] INFO  restx.classloader.CompilationManager - classpath resource updated: camptimetest/createdata/info.txt
+14:58:24.168 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.412 s
+14:58:51.326 [qtp895947612-53  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /employees - per request factory created in 3.325 s
+14:58:52.262 [qtp895947612-53  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 901.5 ms
+15:01:34.528 [qtp895947612-55  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /employees - per request factory created in 641.1 ms
+15:01:34.575 [qtp895947612-55  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 35.28 ms
+15:02:44.662 [qtp895947612-57  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /employees - per request factory created in 216.5 ms
+15:02:44.752 [qtp895947612-57  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 59.99 ms
+15:07:26.731 [qtp895947612-62  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 68.49 ms
+15:09:21.407 [qtp895947612-60  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 51.38 ms
+15:11:41.025 [qtp895947612-64  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 87.07 ms
+15:12:25.359 [qtp895947612-64  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 15.86 ms
+15:13:02.731 [qtp895947612-67  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 110.1 ms
+15:14:23.895 [qtp895947612-68  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 10.70 ms
+15:17:34.874 [qtp895947612-71  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 109.9 ms
+15:18:02.914 [qtp895947612-71  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 9.529 ms
