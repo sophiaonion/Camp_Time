@@ -36,7 +36,6 @@ var tableBuilt = false;
             var toClone = $('.clone'); //get clone column
             console.log('loop');
             toClone.each(function(index){
-                console.log($(this));
                 var next = $(this).clone(true);
                 next.removeClass('clone'); //otherwise it will be included in elements to clone next for loop iteration
                 var cloneId = $('input', this).attr('id');
@@ -178,7 +177,7 @@ var tableBuilt = false;
 
                        //go through all items and make into activities
                       // if( ($(this).val().length()) != 0) {   //not working for now
-                       activities.push(new activity($(this).text(), i1, time));
+                       activities.push(new activity($(this).text(), i1.toString(), time));
                       // }
                     });
             });

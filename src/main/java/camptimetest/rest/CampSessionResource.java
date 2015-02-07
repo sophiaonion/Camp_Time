@@ -81,7 +81,9 @@ public class CampSessionResource {
             CampSession newCS = new CampSession();
 
             //convert stuff into dates
-            DateTimeFormatter fmt = DateTimeFormat.forPattern("MM/dd/yyy");
+            DateTimeFormatter fmt = DateTimeFormat.forPattern("yy-MM-dd");
+            System.out.println(info.get("startDate").toString());
+            System.out.println(info.get("endDate").toString());
             DateTime start = fmt.parseDateTime(info.get("startDate").toString());
             DateTime end = fmt.parseDateTime(info.get("endDate").toString());
 
@@ -90,7 +92,7 @@ public class CampSessionResource {
             newCS.setEndDate(end);
             newCS.setName(String.valueOf(info.get("name")));
             newCS.setAgeGroup(String.valueOf(info.get("ageGroup")));
-            newCS.setEnrollmentCap((Integer) info.get("enrollmentCap"));
+            newCS.setEnrollmentCap(Integer.valueOf(String.valueOf(info.get("enrollmentCap"))));
 
             //make activitites
             ArrayList<Activity> activityList = new ArrayList<Activity>();
@@ -100,9 +102,9 @@ public class CampSessionResource {
             for(int i=0; i<activityInfo.size(); i++) {
                 Activity a = new Activity();
                 a.setTitle(activityInfo.get(i).get("name"));
-                if( !( activityInfo.get(i).get("day").isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
+                if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
-                    String[] timesplit = (info.get("time")).toString().split(":");//just get hour number from given time string
+                    String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
                     DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
                     DateTime time = day.withTime(0, Integer.parseInt(timesplit[0]), 0, 0);//set time to given time
                     a.setTime(time);//whoo who knows if this works lol
