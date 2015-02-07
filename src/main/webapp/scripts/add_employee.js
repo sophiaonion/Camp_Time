@@ -31,7 +31,7 @@ $('#add-employee').on('click', function(){
 
     $( "#certifications" ).each(function(index) {
 
-        certifications.push( $(this).text() )
+        certifications.push( $(this).text() + "," ) //added comma to use for splitting up string laterzz
 
     });
 
