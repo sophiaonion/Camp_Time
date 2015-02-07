@@ -20,9 +20,10 @@ function dateDiffInDays(a, b) {
 }
 
 //set build table function to trigger when both end and start dates are set
+var tableBuilt = false;
 (function(){
     var startDate, endDate; //following functions will be able to directly access
-    
+
     var buildTable = function(){ //constructs schedule table
         sDate = new Date(startDate);
         var daysOfSession = dateDiffInDays(sDate, new Date(endDate)) + 1; //+1 include last day in for loop then
@@ -44,8 +45,19 @@ function dateDiffInDays(a, b) {
             }); //end forEach cloning loop
             sDate.setDate(sDate.getDate() + 1);
         } //end for loop through dates
-    }; //end build table function
 
+        //set up autocomplete for activites
+        $('#schedule input').each(function(){
+            $(this).autocomplete({
+                                       source: [ "pool", "art", "meal", "sports",
+                                       "counselor time", "canoeing", "archery", "creek hopping", "check in/out", "unit"
+                                        , "other"],
+                                       autoFocus: true,
+                                       //select: uponSelect
+                                  });
+        }); //end autocomplete creation
+        tableBuilt = true;
+    }; //end build table function
 
 
     $('#start-date').on('change', function(){
@@ -65,24 +77,34 @@ function dateDiffInDays(a, b) {
 }()); //end closure, keeps endDate, startDate variables contained within the scope of function
 
     $('#enter-dates').on('click', function(){
-        $("#schedule").show();
-            //show only available dates here?
+        //print out schedule decider for fixed time activities
+        console.log(tableBuilt);
+        if(tableBuilt){
+            $("#schedule").show();
+        }
+        //enter skeleton schedule activities here?
+
     });
 
+    $('#schedule tbody').children(':gt(0)').each(function(){
+         $(this).children(':gt(0)').each(function(){
+             //  $(this).html("<input class=&quotui-widget&quot>"),
+//                $(this).append("hi");
+//                $(this).autocomplete({
+//                      source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ],
+//                      autoFocus: true,
+//                      //select: uponSelect
+//                 });
+         });
+     });
 
 
-    //add autocomplete for the stuff
-    $('#schedule tbody').children(':gt(0)').each(function( i1, l1 ){
-        $(this).children(':gt(0)').each(function(i2, l2){
-            $('#'+i1+i2).autocomplete({
-                  source: [ "pool", "art", "meal", "sports",
-                      "counselor time", "canoeing", "archery", "creek hopping", "check in/out", "unit"
-                      , "other"],
-                  autoFocus: true,
-                  });
-        });
-                            
-    });
+
+
+
+
+
+
 
     //add/remove session curriculum
     $('#add-activity').click(function(){
