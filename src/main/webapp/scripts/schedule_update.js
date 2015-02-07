@@ -3,7 +3,7 @@ var main = function(activities){
     $('#approve-update').hide();
     $('#trigger-update').on('click', function(){
 
-        //do stuff
+        //do stuff - idk how this works, just needs to return viable updated schedule
         $.ajax({
             type: 'GET',
             url: '/api/activities',
@@ -35,18 +35,3 @@ var main = function(activities){
 };
 
 $(document).ready(main);
-
-//        var data = {
-//            data: $('#data').val(),
-//        };
-//
-//        $.ajax({
-//            type: 'PUT',
-//            url: '/api/campers/' + data.camperID + '/' + data.sessionID,
-//            data: JSON.stringify(data),
-//            contentType: 'application/JSON',
-//            success: function(data){
-//                alert('camper registered for this session');
-//                window.location.replace('home_page_test.html');
-//            }
-//        });
