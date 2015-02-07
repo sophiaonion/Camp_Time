@@ -45,7 +45,7 @@ public class EmployeeResource {
 
     @DELETE("/employees/{employeeID}")
     public Status deleteEmployee(String employeeID){
-        employees.get().remove("{employeeID: \""+employeeID+"\" }");
+        employees.get().remove("{employeeID: &quot"+employeeID+"&quot}");
         return Status.of("deleted");
     }
 
