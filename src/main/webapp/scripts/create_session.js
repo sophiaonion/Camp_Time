@@ -118,19 +118,23 @@ var tableBuilt = false;
 
             //for fixed time activities
             //loops through each row
+            //parameters of callback index, value/element(copy
             $('#schedule tbody').children(':gt(0)').each(function( i1, l1 ){
 
             //retrieves time from first column
             var time = $('td:first', $(this)).text();
 
-                    //loop through each column in row...:gt(1) moves past times and clone column
+                    //loop through each column in row...:gt(1) moves past times and clone columns
                     $(this).children(':gt(1)').each(function(i2, l2){
-
+                        console.log($(this).index());
                        //idea:  make it so only looks at items in table after and before check in and check out?
 
                        //go through all items and make into activities
                       if($('input', $(this)).val() !== "") {   //not working for now
-                        activities.push(new activity($('input', $(this)).val(), i1.toString(), time));
+//                        console.log('name: ' + $('input', $(this).val()));
+//                        console.log('activity time: ' + time);
+//                        console.log('index: ' + i2.toString() );
+                        activities.push(new activity($('input', $(this)).val(), i2.toString(), time));
                         }
                     });
             });

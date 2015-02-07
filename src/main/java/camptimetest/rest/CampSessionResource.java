@@ -106,15 +106,15 @@ public class CampSessionResource {
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
                     String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
-                    System.out.println("hour: " + timesplit[0]);
                     DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
                     DateTime time = day.withTime(0, Integer.parseInt(timesplit[0]), 0, 0);//set time to given time
-                    a.setTime(time);//whoo who knows if this works lol
+                    a.setTime(time);
+
                 }
                 activityList.add(a);
                 activities.get().save(a);
             }
-            System.out.println(activityList.size());
+            System.out.println("Number of activities created: " + activityList.size());
             newCS.setActivities(activityList);
             campSession.get().save(newCS);
             return newCS;
