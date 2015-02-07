@@ -8,7 +8,6 @@ import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import restx.Status;
 import restx.annotations.*;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
@@ -16,7 +15,6 @@ import restx.security.PermitAll;
 import javax.inject.Named;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import static restx.common.MorePreconditions.checkEquals;
@@ -103,6 +101,7 @@ public class CampSessionResource {
                 Activity a = new Activity();
                 System.out.println("title: " + activityInfo.get(i).get("title"));
                 a.setTitle(activityInfo.get(i).get("title"));
+                a.setSession(String.valueOf(info.get("name")));
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
                     String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
