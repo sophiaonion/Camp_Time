@@ -114,7 +114,7 @@ public class CampSessionResource {
                 activityList.add(a);
                 activities.get().save(a);
             }
-
+            System.out.println(activityList.size());
             newCS.setActivities(activityList);
             campSession.get().save(newCS);
             return newCS;

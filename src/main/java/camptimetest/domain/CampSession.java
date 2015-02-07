@@ -92,7 +92,7 @@ public class CampSession {
     }
 
     public void setActivities(ArrayList<Activity> activities) {
-        activities = activities;
+        this.activities = activities;
     }
 
     @Override
