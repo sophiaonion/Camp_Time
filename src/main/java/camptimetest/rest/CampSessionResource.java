@@ -104,11 +104,14 @@ public class CampSessionResource {
                 a.setSession(String.valueOf(info.get("name")));
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
-                    String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
-                    DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
-                    DateTime time = day.withTime(0, Integer.parseInt(timesplit[0]), 0, 0);//set time to given time
-                    a.setTime(time);
+                    if (activityInfo.get(i).get("time") != null) { //if the activity is required time field will be null
+                        String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
 
+                        DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
+                        //hours, minutes, seconds, milli
+                        DateTime time = day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0);//set time to given time
+                        a.setTime(time);
+                    }
                 }
                 activityList.add(a);
                 activities.get().save(a);

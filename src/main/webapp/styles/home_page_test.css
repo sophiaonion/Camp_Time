@@ -28,7 +28,7 @@ nav ul {
 }
 
 nav ul:after { /*inserts content  after list*/
-    content: "";
+    content: ;
     clear: both;
     display: block;
 }

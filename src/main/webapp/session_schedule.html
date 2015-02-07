@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Session Schedule</title>
     <link href="styles/sample.css" type="text/css" rel="stylesheet">
+    <link href="styles/session_schedule.css" type="text/css" rel="stylesheet">
     <link href="styles/schedule.css" type="text/css" rel="stylesheet">
     <link href="scripts/jquery-ui-1.11.2.custom/jquery-ui.min.css" type="text/css" rel="stylesheet">
 </head>
@@ -18,9 +19,10 @@
         </select>
     </div>
 
-    <div>
+    <div class="session-schedule">
         <table id="schedule" class="ui-widget">
             <caption></caption>
+            <p>Required Activities: <span id="required-activities"></span></p>
             <tbody> <!--id convention first number hour, second number date -->
             <tr id="dates">  <td>Time</td></tr>
             <tr id="r1"> <td>9:00</td></tr>
@@ -39,8 +41,16 @@
             </tbody>
         </table>
     </div>
+    <div class="activity-info">
+        <p>Activity Title: <span id="activity-title"></span></p>
+        <p>Time: <span id="activity-time"></span></p>
+        <p >Employees working: <span id="num-employees"></span>
+            <button type="button" id="add-emp-activity">Add Employee</button></p>
+        <ul id="employees-working"></ul>
+    </div>
     </main>
 </body>
 <script src="scripts/jquery-2.1.3.js"></script>
+<script src='scripts/jquery-ui-1.11.2.custom/jquery-ui.min.js'></script>
 <script src="scripts/session_schedule.js"></script>
 </html>

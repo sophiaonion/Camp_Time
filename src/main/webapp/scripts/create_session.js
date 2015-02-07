@@ -133,14 +133,14 @@ var tableBuilt = false;
                       if($('input', $(this)).val() !== "") {   //not working for now
 //                        console.log('name: ' + $('input', $(this).val()));
 //                        console.log('activity time: ' + time);
-//                        console.log('index: ' + i2.toString() );
+//                        console.log('index: ' + i2.toString() );//day offset from startDate
                         activities.push(new activity($('input', $(this)).val(), i2.toString(), time));
                         }
                     });
             });
 
             //for required activities w/o fixed times
-            $( "required-activities" ).each(function( index ) {
+            $( "#required-activities option" ).each(function( index ) {
                     activities.push(new activity($(this).text(), null, null));
             });
         };
