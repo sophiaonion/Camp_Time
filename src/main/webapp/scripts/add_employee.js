@@ -10,9 +10,9 @@ var main = function() {
 		console.log('submitting employee');
 		event.preventDefault();
 		var data = 	JSON.stringify({
-                   			'name': $('#name').val(),
-                   			'age': $('#age').val(),
-                   			'job': $('#job').val()
+                   			name: $('#name').val(),
+                   			age: Number($('#age').val()),
+                   			job: $('#job').val()
                    	});
 
 		//to send request must use $.ajax to so content type can be specified as JSON
