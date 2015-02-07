@@ -2,34 +2,43 @@
 <html>
 <head>
 	<meta charset='utf-8'>
-	<title>Add Employee To CampTime</title>
+	<title>Add Employee</title>
 	<link rel='stylesheet' type='text/css' href='styles/sample.css'>
 </head>
 <body>
 	<header>
 		<h1>Add Employee</h1>
-		<hr>
 	</header>
 	<div id="employee-info">
-
-            <br>
-			<label for="name">Name:</label>
-			<input type="text" name="name" id="name">
-			<label for="age">Age:</label>
-			<input type="text" name="age" id="age">
-			<p>
-				<label for="job">Job:</label>
-				<select name="job" id="job">
-					<option value="administrator">Administrator</option>
-					<option value="counselor">Counselor</option>
-					<option value="special">Specialty</option>
-				</select>
-			</p>
-			<input type="submit" value="Submit" id="submit">
-		</fieldset>
-        <p><a href="view_employees.html">employees</a></p>
+        <p>Employee Name: <input type="text" id="employee-name"></p>
+        <p>Age: <input type="text" id="employee-age"></p>
+        <p>Gender: <input type="checkbox" name="woman" value="woman">Woman<input type="checkbox" name="man" value="man">Man</p>
+        <p>Job Type:
+            <select name="job" id="job">
+                <option value="admin">Administrator</option>
+                <option value="counselor">Counselor</option>
+                <option value="specialty">Specialty Staff</option>
+            </select>
+        </p>
+        <div>
+            <p>Employee Certifications and Qualifications:</p>
+            <select name="selectfrom" id="select-from" multiple size="10" width="50">
+                <option value="first-aid">First Aid</option>
+                <option value="cpr">CPR</option>
+                <option value="health">Health Supervisor</option>
+                <option value="lifeguard">Lifeguard</option>
+                <option value="art">Art Director</option>
+                <option value="nature">Nature Director</option>
+                <option value="archery">Archery</option>
+                <option value="store">Camp Store</option>
+                <option value="drive">Driving</option>
+            </select>
+            <button type="add-certification" id="add-certification">Add</button>
+            <select name="certifications" id="certifications" multiple size="10" style="width: 100px"></select>
+            <button type="remove-certification" id="remove-certification">Remove</button>
+        </div>
+        <br><button type="button" id="add-employee">Add Employee</button> &nbsp <button type="button" id="cancel">Cancel</button>
 	</div>
-
 		<script src="scripts/jquery-2.1.3.js"></script>
 		<script src="scripts/add_employee.js"></script>
 </body>

@@ -3,6 +3,8 @@ package camptimetest.domain;
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
+import java.util.ArrayList;
+
 /**
  * Created by Eric on 1/23/2015.
  */
@@ -13,6 +15,8 @@ public class Employee {
     private String name;
     private int age;
     private String job;
+    private String gender;
+    private ArrayList<Certification> certifications;
 
     @Id @ObjectId //designates as key in mongoDB, not sure of difference between @Id and @ObjectId
     private String key;
@@ -26,41 +30,55 @@ public class Employee {
         return this;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public Employee setName(final String name){
-        this.name = name; // + "more text" can manipulate parameter before setting object value and storing in database
-        return this;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getAge(){
+    public int getAge() {
         return age;
     }
 
-    public Employee setAge(final int age){
+    public void setAge(int age) {
         this.age = age;
-        return this;
     }
 
-    public String getJob(){
+    public String getJob() {
         return job;
     }
 
-    public Employee setJob(final String job){
+    public void setJob(String job) {
         this.job = job;
-        return this;
     }
 
-    //not necessary for JSON conversion to send to client or receive
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public ArrayList<Certification> getCertifications() {
+        return certifications;
+    }
+
+    public void setCertifications(ArrayList<Certification> certifications) {
+        this.certifications = certifications;
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Employee{" +
-                "age='" + age + '\'' +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
+                ", age=" + age +
                 ", job='" + job + '\'' +
+                ", gender='" + gender + '\'' +
+                ", certifications=" + certifications +
+                ", key='" + key + '\'' +
                 '}';
     }
-
 }

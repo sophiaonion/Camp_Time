@@ -1,6 +1,7 @@
 package camptimetest.rest;
 
 import camptimetest.domain.Employee;
+import restx.Status;
 import restx.annotations.DELETE;
 import restx.annotations.GET;
 import restx.annotations.POST;
@@ -32,7 +33,6 @@ public class EmployeeResource {
     }
 
 
-
     //if parameter isn't specified in URI path with {}, assumes it is the message body
     //Jackson library automatically tries to map sent JSON to specified class,
     //setting fields that match and ignoring others
@@ -43,9 +43,11 @@ public class EmployeeResource {
         return employee; //can return anything doesn't have to be sent object
     }
 
-    //@DELETE("/employees")
-    //public Employee deleteEmployee()
-
+    @DELETE("/employees/{employeeID}")
+    public Status deleteEmployee(String employeeID){
+        employees.get().remove("{employeeID: \""+employeeID+"\" }");
+        return Status.of("deleted");
+    }
 
 
 }

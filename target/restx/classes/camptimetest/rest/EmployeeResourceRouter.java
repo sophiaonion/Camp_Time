@@ -91,6 +91,37 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#createEmployee(camptimetest.domain.Employee)";
             }
         },
+        new StdEntityRoute<Void, restx.Status>("default#EmployeeResource#deleteEmployee",
+                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
+                writerRegistry.<restx.Status>build(restx.Status.class, Optional.<String>absent()),
+                new StdRestxRequestMatcher("DELETE", "/employees/{employeeID}"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<restx.Status> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.deleteEmployee(
+                        /* [PATH] employeeID */ match.getPathParam("employeeID")
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription employeeID = new OperationParameterDescription();
+                employeeID.name = "employeeID";
+                employeeID.paramType = OperationParameterDescription.ParamType.path;
+                employeeID.dataType = "string";
+                employeeID.schemaKey = "";
+                employeeID.required = true;
+                operation.parameters.add(employeeID);
+
+
+                operation.responseClass = "Status";
+                operation.inEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "restx.Status";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#deleteEmployee(java.lang.String)";
+            }
+        },
         });
     }
 
