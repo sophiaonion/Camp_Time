@@ -1,5 +1,6 @@
 package camptimetest.domain;
 
+import org.joda.time.DateTime;
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
@@ -13,7 +14,7 @@ public class Activity {
 
     private ArrayList<Employee> workers;
     private String title;
-    private Date time;
+    private DateTime time;
     private String activityAreaID;
 
 
@@ -66,11 +67,11 @@ public class Activity {
         return workers;
     }
 
-    public Date getTime() {
+    public DateTime getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(DateTime time) {
         this.time = time;
     }
 

@@ -73,5 +73,6 @@
     <orderEntry type="library" name="Maven: de.undercouch:bson4jackson:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.11.3" level="project" />
     <orderEntry type="library" name="Maven: org.jongo:jongo:1.0" level="project" />
+    <orderEntry type="library" name="joda-time-2.7" level="application" />
   </component>
 </module>

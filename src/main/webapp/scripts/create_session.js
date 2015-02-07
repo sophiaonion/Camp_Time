@@ -80,7 +80,8 @@ function dateDiffInDays(a, b) {
                       , "other"],
                   autoFocus: true,
                   });
-    });
+        });
+                            
     });
 
     //add/remove session curriculum
@@ -89,7 +90,8 @@ function dateDiffInDays(a, b) {
                     $('#required-activities').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
             });
         });
-    $('#remove-activity').click(function(){
+
+        $('#remove-activity').click(function(){
             $('#select-to option:selected').each( function() {
                 $('#select-from').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
                 $(this).remove();

@@ -1,8 +1,10 @@
 package camptimetest.domain;
 
+import org.joda.time.DateTime;
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,9 +19,9 @@ public class CampSession {
     private String name;
     private String ageGroup; //will use 1, 2, 3, 4, 5
     private int enrollmentCap;
-    private Date startDate;
-    private Date endDate;
-    private List<Activity> activities; //list of all activities, required or not
+    private DateTime startDate;
+    private DateTime endDate;
+    private ArrayList<Activity> activities; //list of all activities, required or not
     private List<Employee> counselors;
 
     public String getSessionID() {
@@ -58,20 +60,20 @@ public class CampSession {
         return this;
     }
 
-    public Date getStartDate() {
+    public DateTime getStartDate() {
         return startDate;
     }
 
-    public CampSession setStartDate(Date startDate) {
+    public CampSession setStartDate(DateTime startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    public Date getEndDate() {
+    public DateTime getEndDate() {
         return endDate;
     }
 
-    public CampSession setEndDate(Date endDate) {
+    public CampSession setEndDate(DateTime endDate) {
         this.endDate = endDate;
         return this;
     }
