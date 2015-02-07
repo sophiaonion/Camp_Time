@@ -64,12 +64,6 @@ $('#add-employee').on('click', function(){
      $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
     });
-}
-//eventually get employees and pass to main function
-//$(document).ready(function(){
-//       $.get('/api/employees', function(employees){
-//               main(employees);
-//       });
-//});
+};
 
 $(document).ready(main);

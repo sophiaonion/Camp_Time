@@ -9,7 +9,7 @@ var main = function(employees){
 };
 
 $(document).ready(function(){
-    $.getJSON('/api/employees', function(result){
+    $.get('/api/employees', function(result){
         console.log(result);
         main(result);
     });
