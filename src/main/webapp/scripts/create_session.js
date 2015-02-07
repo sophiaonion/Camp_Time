@@ -94,7 +94,7 @@ var tableBuilt = false;
             $('#required-activities option:selected').each( function() {
                 $(this).remove();
              });
-        );
+        });
 
 
     //on submission, create fixed-time activities (and also required activities?)
