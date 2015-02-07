@@ -87,11 +87,11 @@ public class CampSession {
         return this;
     }
 
-    public List<Activity> getActivities() {
+    public ArrayList<Activity> getActivities() {
         return activities;
     }
 
-    public void setActivities(List<Activity> activities) {
+    public void setActivities(ArrayList<Activity> activities) {
         activities = activities;
     }
 
