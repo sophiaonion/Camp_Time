@@ -31,6 +31,7 @@ var main = function(employees){
         var data = {
             employeeID: selected_employeeID
         };
+
         console.log('submit clicked');
         console.log(selected_employeeID);
 

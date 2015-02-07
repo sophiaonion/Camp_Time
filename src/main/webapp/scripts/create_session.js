@@ -91,11 +91,10 @@ var tableBuilt = false;
         });
 
         $('#remove-activity').click(function(){
-            $('#select-to option:selected').each( function() {
-                $('#select-from').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
+            $('#required-activities option:selected').each( function() {
                 $(this).remove();
-                         });
-                     });
+             });
+        );
 
 
     //on submission, create fixed-time activities (and also required activities?)

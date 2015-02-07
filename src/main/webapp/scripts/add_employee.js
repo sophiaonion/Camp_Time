@@ -9,7 +9,6 @@ var main = function(employees){
 
         $('#remove-certification').click(function(){
             $('#certifications option:selected').each( function() {
-                $('#select-from').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
                 $(this).remove();
             });
         });
@@ -64,12 +63,6 @@ $('#add-employee').on('click', function(){
      $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
     });
-}
-//eventually get employees and pass to main function
-//$(document).ready(function(){
-//       $.get('/api/employees', function(employees){
-//               main(employees);
-//       });
-//});
+};
 
 $(document).ready(main);
