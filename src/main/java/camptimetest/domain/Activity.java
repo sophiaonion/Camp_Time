@@ -5,7 +5,6 @@ import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by Eric on 1/29/2015.
@@ -15,6 +14,7 @@ public class Activity {
     private ArrayList<Employee> workers;
     private String title;
     private DateTime time;
+    private String session;
     private String activityAreaID;
 
 
@@ -61,6 +61,14 @@ public class Activity {
     public Activity setEmployees(ArrayList<Employee> workers){
         this.workers = workers;
         return this;
+    }
+
+    public String getSession() {
+        return session;
+    }
+
+    public void setSession(String session) {
+        this.session = session;
     }
 
     public ArrayList<Employee> getEmployees(){

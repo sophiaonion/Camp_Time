@@ -91,8 +91,7 @@ public class CampSession {
         return activities;
     }
 
-    public void setActivities(ArrayList<Activity> activities) {
-        activities = activities;
+    public void setActivities(ArrayList<Activity> activities) { this.activities = activities;
     }
 
     @Override

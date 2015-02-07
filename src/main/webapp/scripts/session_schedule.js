@@ -37,6 +37,7 @@ var main = function(camp_sessions){
         $('caption').text(session.name + ' Schedule');
         var currentDate = new Date(session.startDate); //keep adding columns until startDate === endDate + 1
         var stopDate = new Date(session.endDate); //date types returned as strings
+        stopDate.setDate(stopDate.getDate() + 1);
         console.log(currentDate);
         console.log(stopDate);
         console.log('date type: ' + typeof session.startDate);
@@ -62,10 +63,17 @@ var main = function(camp_sessions){
         } else {
             //find offset from startDate, will be column to put activity in
             //find hour, offset from nine will be row to put activity in
+            console.log('activity: ' + activity.title);
+            console.log('activity time: ' + activity.time);
             var act_date = new Date(activity.time);
-            var column = dateDiffInDays(session.startDate, act_date);
-            //take difference of activity time in 24 hour format and 9 since that is
-            var row = act_date.getHour() - 9;
+            var column = dateDiffInDays(new Date(session.startDate), new Date(act_date));
+            //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
+            var row_index = act_date.getHours() - 9 + 1;
+            var act_row = $('#schedule tbody tr:eq(' + row_index + ')');
+            var act_cell = $('td:eq(' + column + ')');
+            console.log('row index: ' + row_index + ' column: ' + column);
+            $('input', act_cell).val(activity.title);
+
 
         }
 

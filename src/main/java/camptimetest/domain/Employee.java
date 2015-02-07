@@ -16,7 +16,7 @@ public class Employee {
     private int age;
     private String job;
     private String gender;
-    private ArrayList<Certification> certifications;
+    private ArrayList<String> certifications;
 
     @Id @ObjectId //designates as key in mongoDB, not sure of difference between @Id and @ObjectId
     private String key;
@@ -62,11 +62,11 @@ public class Employee {
         this.gender = gender;
     }
 
-    public ArrayList<Certification> getCertifications() {
+    public ArrayList<String> getCertifications() {
         return certifications;
     }
 
-    public void setCertifications(ArrayList<Certification> certifications) {
+    public void setCertifications(ArrayList<String> certifications) {
         this.certifications = certifications;
     }
 

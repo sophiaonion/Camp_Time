@@ -8,7 +8,6 @@ import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import restx.Status;
 import restx.annotations.*;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
@@ -16,7 +15,6 @@ import restx.security.PermitAll;
 import javax.inject.Named;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import static restx.common.MorePreconditions.checkEquals;
@@ -103,18 +101,19 @@ public class CampSessionResource {
                 Activity a = new Activity();
                 System.out.println("title: " + activityInfo.get(i).get("title"));
                 a.setTitle(activityInfo.get(i).get("title"));
+                a.setSession(String.valueOf(info.get("name")));
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
                     String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
-                    System.out.println("hour: " + timesplit[0]);
                     DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
                     DateTime time = day.withTime(0, Integer.parseInt(timesplit[0]), 0, 0);//set time to given time
-                    a.setTime(time);//whoo who knows if this works lol
+                    a.setTime(time);
+
                 }
                 activityList.add(a);
                 activities.get().save(a);
             }
-
+            System.out.println("Number of activities created: " + activityList.size());
             newCS.setActivities(activityList);
             campSession.get().save(newCS);
             return newCS;
