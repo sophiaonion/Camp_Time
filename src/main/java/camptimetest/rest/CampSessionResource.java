@@ -101,10 +101,12 @@ public class CampSessionResource {
             ArrayList< Map<String, String> > activityInfo = (ArrayList< Map<String, String> >) info.get("activities");
             for(int i=0; i<activityInfo.size(); i++) {
                 Activity a = new Activity();
-                a.setTitle(activityInfo.get(i).get("name"));
+                System.out.println("title: " + activityInfo.get(i).get("title"));
+                a.setTitle(activityInfo.get(i).get("title"));
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
                     String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
+                    System.out.println("hour: " + timesplit[0]);
                     DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
                     DateTime time = day.withTime(0, Integer.parseInt(timesplit[0]), 0, 0);//set time to given time
                     a.setTime(time);//whoo who knows if this works lol
