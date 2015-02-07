@@ -1,6 +1,7 @@
 package camptimetest.rest;
 
 import camptimetest.domain.Activity;
+import camptimetest.domain.ConstraintChecker;
 import restx.annotations.GET;
 import restx.annotations.POST;
 import restx.annotations.RestxResource;
@@ -24,10 +25,13 @@ public class ActivityResource {
         this.activities = activities;
     }
 
-    //think we can query for null fields to get generic activites
-    //http://docs.mongodb.org/manual/faq/developers/#faq-developers-query-for-nulls
-    @GET("/activities/generic")
+    //this is to get schedule to work with for stuff
+    @GET("/activities")
     public Iterable<Activity> getActivities(){
+        JongoCollection activitiesCopy = activities;
+        ConstraintChecker cc = new ConstraintChecker(activitiesCopy);
+
+
         return activities.get().find("{startTime: null}").as(Activity.class);
     }
 
