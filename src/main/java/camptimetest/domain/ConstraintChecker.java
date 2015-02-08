@@ -1,5 +1,7 @@
 package camptimetest.domain;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import org.joda.time.DateTime;
@@ -7,8 +9,7 @@ import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 import restx.jongo.JongoCollection;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
 * Created by sophiawang on 2/4/15.
@@ -73,46 +74,51 @@ public class ConstraintChecker {
         return 0;
     }//end checkconflicts()
 
-    //associates an array of possible time assignments (called domains) to each activity in list
+    //associates an array of possible time assignments (called domain) to each activity in list
     private ArrayList< ArrayList<DateTime> > findDomain(List<DBObject> list) {
-        ArrayList< ArrayList<DateTime> > domains = new ArrayList< ArrayList<DateTime> >();
-        ArrayList<DateTime> takenTimes = new ArrayList<DateTime>();
-        ArrayList<DateTime> domain = new ArrayList<DateTime>();
-        for(int i=0; i<list.size(); i++) {
+        ArrayList< ArrayList<DateTime> > domains = new ArrayList< ArrayList<DateTime> >(); //list of possible domains for each i
+        ArrayList<DateTime> domain = new ArrayList<DateTime>();//domain specific to i
+        Multimap<DateTime, String> takenArea = ArrayListMultimap.create();//maps time to activity area
+        ArrayList<DateTime> takenSession = new ArrayList<DateTime>();//dates where session is already doing something
 
-            if(list.get(i).get("fixed") == true) {//if fixed time, domain should only be the time that it already is
+        //set up domain for all fixed time activities: should be only time it already is
+        for(int i=0; i<list.size(); i++) {//for each activity
+
+            if (list.get(i).get("fixed") == true) {
                 domain.add((DateTime) list.get(i).get("time"));//list of available times contains only the time it is set at
-                takenTimes.add((DateTime) list.get(i).get("time"));//add to list of unavailable times
+                takenArea.put(((DateTime) list.get(i).get("time")), String.valueOf(list.get(i).get("activityarea")));//add to list of unavailable actibity slots
                 domains.set(i, domain);//add to domains arraylist
             }
+            domain.clear();
+        }
 
-            else {//not fixed time, domain will be all times that are currently not filled (& also times where not already doing something???)
-
+        //set up domain for all non-fixed time activities: domain will be all times that are currently not filled (& also times where not already doing something???)
+        for(int i=0; i<list.size(); i++) {
+            if (list.get(i).get("fixed") == false) {
                 //need to get date at which current object's session starts & ends so can calculate possible time slots
-                DBObject sessionDates = (DBObject) campSessions.get().findOne("{session: "+ list.get(i).get("session") +" } { startDate: 1, endDate: 1, _id:0 }");//should return DBObject with just start and end date of current session
+                DBObject sessionDates = (DBObject) campSessions.get().findOne("{session: " + list.get(i).get("session") + " } { startDate: 1, endDate: 1, _id:0 }");//should return DBObject with just start and end date of current session
                 DateTime start = (DateTime) sessionDates.get("startDate");
                 DateTime end = (DateTime) sessionDates.get("endDate");
 
-                //calculate possible time slots and put into domains
-                while(start.getDayOfMonth() != end.getDayOfMonth()) {//go through each day of session
+                //calculate all possible time slots and put into domain for now
+                while (start.getDayOfMonth() != end.getDayOfMonth()) {//for each day of session
                     start = start.withHourOfDay(0);
-                    for(int h = 9; h<=21; h++) {//for each possible hour in day
+                    for (int h = 9; h <= 21; h++) {//for each hour in day
                         start = start.withHourOfDay(h);
                         domain.add(start);
                     }//add all possible hours to possible times list
                 }
 
-                //edit out taken domains
-                for (int j=0; j<takenTimes.size(); j++) {//for each time currently in domain check if it is taken and if so remove from domain list
-                    for(int k=0; k<domain.size(); k++) {
-                        if (takenTimes.get(j) == domain.get(k)) {//if a time is taken
-                            domain.remove(k);
-                        }//remove time if taken
+                //take out taken times aka times when another session is already doing this activity
+                for (int j = 0; j < domain.size(); j++) {
+                    if (takenArea.containsEntry(domain.get(j), list.get(i).get("activityArea"))) {//if something is in same area at same time
+                        domain.remove(j);
+                        j--;//decrement because removed one from thingy???? idk if necessary i can't do math
                     }
-                }//remove all taken times from times list
+                }//remove times from domain that would place activity in area at same time as another session
 
+                //take out unavailable times aka times when this session is already doing a thing
 
-                //edit out
 
                 domains.set(i, domain);//add possible open times to domain for index i (which corresponds to activity i in list)
             }
@@ -132,7 +138,7 @@ public class ConstraintChecker {
 
         //if there are activities without a time set
         if(type==1) {
-            //find least constrained activity
+            //find least constrained activity -- well all the non fixed activities should be almost equally constrained, so not super important
         }
         else {//type=2/3 -- some other type of conflict
 

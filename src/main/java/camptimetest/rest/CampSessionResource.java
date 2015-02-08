@@ -102,6 +102,7 @@ public class CampSessionResource {
                 System.out.println("title: " + activityInfo.get(i).get("title"));
                 a.setTitle(activityInfo.get(i).get("title"));
                 a.setSession(String.valueOf(info.get("name")));
+                //a.setActivityArea(ehhh); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! TODO: need to calculate in thingy
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
                     if (activityInfo.get(i).get("time") != null) { //if the activity is required time field will be null

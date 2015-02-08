@@ -15,7 +15,7 @@ public class Activity {
     private String title;
     private DateTime time;
     private String session;
-    private String activityAreaID;
+    private String activityArea;
     private Boolean fixed;
 
 
@@ -23,12 +23,11 @@ public class Activity {
     @ObjectId
     private String key;
 
-//    public Activity(String title, Date day, Date hour, String activityAreaID) {
+//    public Activity(String title, Date day, Date hour, String acactivityArea{
 //        this.title = title;
 //        this.day = day;
 //        this.hour = hour;
-//        this.activityAreaID = activityAreaID;
-//    }
+//        this.acactivityArea acactivityArea//    }
 
     //key will be generated automagically if not specified in passed in JSON object
     public Activity setKey(String key){
@@ -92,11 +91,11 @@ public class Activity {
         this.time = time;
     }
 
-    public String getActivityAreaID() {
-        return activityAreaID;
+    public String getActivityArea() {
+        return activityArea;
     }
 
-    public void setActivityAreaID(String activityAreaID) {
-        this.activityAreaID = activityAreaID;
+    public void setActivityArea(String activityArea) {
+        this.activityArea = activityArea;
     }
 }
