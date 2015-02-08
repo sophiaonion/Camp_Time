@@ -111,7 +111,10 @@ public class CampSessionResource {
                         //hours, minutes, seconds, milli
                         DateTime time = day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0);//set time to given time
                         a.setTime(time);
+                        a.setFixed(true);//activity is fixed time
                     }
+                    else
+                        a.setFixed(false);//activity is not fixed time
                 }
                 activityList.add(a);
                 activities.get().save(a);

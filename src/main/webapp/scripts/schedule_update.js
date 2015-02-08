@@ -3,19 +3,8 @@ var main = function(activities){
     $('#approve-update').hide();
     $('#trigger-update').on('click', function(){
 
-        //do stuff - idk how this works, just needs to return viable updated schedule
-        $.ajax({
-            type: 'GET',
-            url: '/api/activities',
-//            data: JSON.stringify(data),
-//            contentType: 'application/JSON',
-//            success: function(data){
-//                alert('camper registered for this session');
-//                window.location.replace('home_page_test.html');
-//            }
 
-        }
-
+        //do the stuff here - put activities into a viewable schedule
 
 
         $('#approve-update').show();
@@ -34,4 +23,8 @@ var main = function(activities){
 
 };
 
-$(document).ready(main);
+$(document).ready(function(){
+       $.get('api/activities', function(activities){
+            main(activities);
+        });
+});

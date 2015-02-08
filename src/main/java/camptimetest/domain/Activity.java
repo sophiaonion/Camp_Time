@@ -16,6 +16,7 @@ public class Activity {
     private DateTime time;
     private String session;
     private String activityAreaID;
+    private Boolean fixed;
 
 
     @Id
@@ -61,6 +62,14 @@ public class Activity {
     public Activity setEmployees(ArrayList<Employee> workers){
         this.workers = workers;
         return this;
+    }
+
+    public Boolean getFixed() {
+        return fixed;
+    }
+
+    public void setFixed(Boolean fixed) {
+        this.fixed = fixed;
     }
 
     public String getSession() {
