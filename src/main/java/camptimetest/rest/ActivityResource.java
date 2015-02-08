@@ -33,8 +33,9 @@ public class ActivityResource {
         JongoCollection activitiesCopy = activities;
         JongoCollection campSessionsCopy = campSessions;
         ConstraintChecker cc = new ConstraintChecker(activitiesCopy, campSessionsCopy);
+        //constraint checker assigns updated schedule to activitiesCopy, campSessionCopy
         cc.update();
-        return activities.get().find().as(Activity.class);
+        return activities.get().find().as(Activity.class);//returns copy of activities
     }
 
     @POST("/activities")//will work for creating activities specific to sessions or generic ones
