@@ -32,7 +32,7 @@ var main = function(camp_sessions){
     });
 
     var buildTableSchedule = function(session){
-
+        console.log('buildTableSchedule called');
         $('#schedule').show();
         $('caption').text(session.name + ' Schedule');
         var currentDate = new Date(session.startDate); //keep adding columns until startDate === endDate + 1
@@ -58,26 +58,66 @@ var main = function(camp_sessions){
         var required_activities = [];
         session.activities.forEach(function(activity){
         //if activity does not have a time field, it is a required activity
+        console.log(activity.time);
         if(!(activity.time)){
             required_activities.push(activity);
         } else {
             //find offset from startDate, will be column to put activity in
             //find hour, offset from nine will be row to put activity in
-            console.log('activity: ' + activity.title);
-            console.log('activity time: ' + activity.time);
+//            console.log('activity: ' + activity.title);
+//            console.log('activity time string: ' + activity.time);
             var act_date = new Date(activity.time);
-            var column = dateDiffInDays(new Date(session.startDate), new Date(act_date));
+            var column = dateDiffInDays(new Date(session.startDate), new Date(act_date)) + 1;
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
+//            console.log('activity time: ' + act_date.toUTCString());
+//            console.log('hour: ' + act_date.getHours());
+//            console.log('minutes: should be 0: ' +act_date.getMinutes());
             var row_index = act_date.getHours() - 9 + 1;
             var act_row = $('#schedule tbody tr:eq(' + row_index + ')');
-            var act_cell = $('td:eq(' + column + ')');
-            console.log('row index: ' + row_index + ' column: ' + column);
-            $('input', act_cell).val(activity.title);
+            var act_cell = $('td:eq(' + column + ')', act_row);
+//            console.log('row index: ' + row_index + ' column: ' + column);
+
+            $('input', $(act_cell)).val(activity.title).data('activity', activity);
 
 
         }
 
         });
+        //display required activities
+        //join turns array contents into string separated by parameter
+        activity_titles = required_activities.map(function(act){
+            return act.title;
+        });
+        $('#required-activities').text(activity_titles.join(', '));
+
+
+        //set up autocomplete for activites
+        $('#schedule input').each(function(){
+            $(this).autocomplete({
+                                       source: [ "pool", "art", "meal", "sports",
+                                       "counselor time", "canoeing", "archery", "creek hopping", "check in/out", "unit"
+                                        , "other"],
+                                       autoFocus: true,
+                                       //select: uponSelect
+                                  });
+        }); //end autocomplete creation
+
+        //set up click handller to display activity info
+        $('#schedule input').on('click', function(){
+            var activity = $(this).data('activity');
+            $('.activity-info #activity-title').text(activity.title);
+            var act_date = new Date(activity.time);
+            $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.getHours() + ':00');
+            if(activity.workers){
+                $('.activity-info #num-employees').text(activity.workers.length);
+                activity.workers.forEach(function(employee){
+                    $('.activity-info #employees-working').append($('<li>').text(employee.name));
+                });
+            } else {
+            $('.activity-info #employees-working').hide();
+            $('.activity-info #num-employees').text('0');}
+
+        })
 
 
     }; //end buildTableSchedule

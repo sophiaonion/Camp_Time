@@ -13,20 +13,12 @@ public class ActivityArea {
     @Id
     @ObjectId
     private String name; //name of the certification
-    private String activityAreaID;
     private ArrayList<Certification> certifications;
 
     public String getName(){return name;}
 
     public void setName(String name){
         this.name=name;
-    }
-
-    public String getActivityAreaID(){return activityAreaID;}
-
-    public ActivityArea setActivityAreaID(String id){
-        activityAreaID=id;
-        return this;
     }
 
     public ActivityArea setCertifications(ArrayList<Certification> certifications){

@@ -20,19 +20,20 @@ import javax.inject.Named;
 public class ActivityResource {
 
     private JongoCollection activities;
+    private JongoCollection campSessions;
 
-    public ActivityResource(@Named("activities") JongoCollection activities){
+    public ActivityResource(@Named("activities") JongoCollection activities, @Named("campSessions") JongoCollection campSessions){
         this.activities = activities;
+        this.campSessions = campSessions;
     }
 
     //this is to get schedule to work with for stuff
     @GET("/activities")
     public Iterable<Activity> getActivities(){
         JongoCollection activitiesCopy = activities;
-        ConstraintChecker cc = new ConstraintChecker(activitiesCopy);
-
-
-        return activities.get().find("{startTime: null}").as(Activity.class);
+        JongoCollection campSessionsCopy = campSessions;
+        ConstraintChecker cc = new ConstraintChecker(activitiesCopy, campSessionsCopy);
+        return activities.get().find().as(Activity.class);
     }
 
     @POST("/activities")//will work for creating activities specific to sessions or generic ones
