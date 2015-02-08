@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/domain/Activity.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/domain/Activity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts/schedule_update.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/schedule_update.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CAMPTIMETEST.iws" />
@@ -36,15 +32,18 @@
       <file leaf-file-name="ConstraintChecker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.237337" vertical-offset="209" max-vertical-offset="2115">
-              <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6444122" vertical-offset="381" max-vertical-offset="3120">
+              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding>
+                <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="e#3322#3332#0" expanded="true" />
-                <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="e#8291#8301#0" expanded="true" />
+                <element signature="e#3329#3339#0" expanded="true" />
+                <element signature="e#10464#10474#0" expanded="true" />
+                <element signature="e#10690#10700#0" expanded="true" />
+                <element signature="e#14962#14972#0" expanded="true" />
+                <element signature="e#15260#15270#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -681,7 +680,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423350960015</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="assigns times to activities without set time (probably)">
+      <created>1423424488942</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1423424488942</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -698,17 +703,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21574344" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24852072" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27705976" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16397415" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14657535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39940828" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24852072" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24898374" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2682216" sideWeight="0.49961567" order="2" side_tool="false" content_ui="tabs" />
@@ -769,14 +774,29 @@
     <MESSAGE value="employee certifications" />
     <MESSAGE value="add session name to activities" />
     <MESSAGE value="trigger update started" />
-    <option name="LAST_COMMIT_MESSAGE" value="trigger update started" />
+    <MESSAGE value="assigns times to activities without set time (probably)" />
+    <option name="LAST_COMMIT_MESSAGE" value="assigns times to activities without set time (probably)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
+          <line>187</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
+          <line>193</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="2" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1154,15 +1174,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.237337" vertical-offset="209" max-vertical-offset="2115">
-          <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6444122" vertical-offset="381" max-vertical-offset="3120">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
           <folding>
+            <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="e#3322#3332#0" expanded="true" />
-            <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="e#8291#8301#0" expanded="true" />
+            <element signature="e#3329#3339#0" expanded="true" />
+            <element signature="e#10464#10474#0" expanded="true" />
+            <element signature="e#10690#10700#0" expanded="true" />
+            <element signature="e#14962#14972#0" expanded="true" />
+            <element signature="e#15260#15270#0" expanded="true" />
           </folding>
         </state>
       </provider>
