@@ -1,19 +1,27 @@
-var main = function(campers){
-    $('#create-camper').on('click', function(){
+var main = function(users){
+    $('#create-user').on('click', function(){
+
+    if ($('#password').val()!= $('#confirmation').val()){
+        alert("Password inputs are not the same!")
+        return;
+    }
+
     var data = {
-        name: $('#camper-name').val(),
-        age: $('#camper-age').val(),
-        extraInfo: $('#camper-info').val()
+        username: $('#user-name').val(),
+        password: $('#password').val(),
+        usertype: "customers"
     };
+
+    console.log(JSON.stringify(data));
 
     $.ajax({
         type: 'POST',
-        url: '/api/campers',
+        url: '/api/users',
         data: JSON.stringify(data),
         contentType: 'application/JSON',
         success: function(data){
-             alert('Camper Registered.');
-             window.location.replace('register_camper.html');
+             alert('User Created.');
+             window.location.replace('index.html');
         },
         error: function(request, status, error){
              alert(error);
@@ -22,10 +30,10 @@ var main = function(campers){
 
     });
 }
-//eventually get campers and sessions and pass to main function
+
 $(document).ready(function(){
-       $.get('/api/campers', function(campers){
-                main(campers);
+       $.get('/api/users', function(users){
+                main(users);
        });
 
 });
