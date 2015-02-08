@@ -7,3 +7,5 @@ camptimetest.rest.CamperResourceFactoryMachine
 camptimetest.rest.CamperResourceRouterFactoryMachine
 camptimetest.rest.EmployeeResourceFactoryMachine
 camptimetest.rest.EmployeeResourceRouterFactoryMachine
+camptimetest.rest.UserResourceFactoryMachine
+camptimetest.rest.UserResourceRouterFactoryMachine

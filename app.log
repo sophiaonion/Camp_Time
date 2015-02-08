@@ -11370,18 +11370,110 @@ java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Stri
 16:03:32.959 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 18.63 s
 16:49:56.018 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 3.553 s
 17:15:43.777 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 1.378 s
-17:18:32.772 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 378.0 ms
-17:24:42.566 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 183.5 ms
-17:30:02.779 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 401.5 ms
-17:32:12.725 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 356.7 ms
-17:43:03.850 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 1.478 s
-17:46:22.537 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 193.5 ms
-17:47:52.514 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 172.2 ms
-17:48:32.428 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 87.27 ms
-19:30:33.596 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 390.5 ms
-19:33:33.302 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 104.8 ms
-19:36:13.547 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 353.9 ms
-19:44:43.537 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 362.6 ms
-19:46:33.210 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 40.06 ms
-20:11:17.123 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 3.980 s
-21:36:24.151 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.199 s
+20:06:16.100 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+20:06:16.589 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+20:06:22.303 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+20:06:22.304 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+20:06:33.375 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 10 sources compiled in 7.917 s
+20:06:34.830 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+20:06:37.499 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+20:35:16.645 [qtp1753447031-37 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+20:35:17.283 [qtp1753447031-37 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /users - per request factory created in 1.828 s
+20:35:18.348 [qtp1753447031-37 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> OK - 1.064 s
+20:35:29.798 [qtp1753447031-38 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 644.5 ms
+20:38:12.003 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> OK - 80.41 ms
+20:39:13.676 [qtp1753447031-41 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 46.24 ms
+20:41:22.797 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.224 s
+20:41:27.702 [qtp1753447031-43 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> OK - 9.255 ms
+20:41:36.503 [qtp1753447031-43 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> OK - 6.836 ms
+20:41:43.248 [qtp1753447031-45 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 16.90 ms
+20:47:14.659 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 3.218 s
+21:42:22.695 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.878 s
+21:43:03.547 [qtp1753447031-106] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /users - per request factory created in 1.456 s
+21:43:03.817 [qtp1753447031-106] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> OK - 246.9 ms
+21:43:09.583 [qtp1753447031-107] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 239.2 ms
+22:01:12.190 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.585 s
+22:20:21.202 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+22:20:56.116 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+22:20:57.183 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+22:21:01.655 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+22:21:01.681 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+22:21:03.356 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+22:21:03.937 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+22:30:51.787 [qtp1753447031-31 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+22:30:52.335 [qtp1753447031-31 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /users/Test/ - per request factory created in 2.195 s
+22:30:52.341 [qtp1753447031-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users/Test/ >> NOT_FOUND - 5.571 ms
+22:31:12.766 [qtp1753447031-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users/Test/12345 >> UNAUTHORIZED - 120.7 ms
+23:44:53.650 [qtp1753447031-64 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /users - per request factory created in 248.1 ms
+23:44:53.670 [qtp1753447031-64 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> UNAUTHORIZED - 2.254 ms
+23:45:32.326 [qtp1753447031-66 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> UNAUTHORIZED - 1.486 ms
+23:45:42.513 [qtp1753447031-66 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> UNAUTHORIZED - 1.755 ms
+23:51:52.578 [qtp1753447031-71 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/securityHandling.js - per request factory created in 205.5 ms
+23:51:54.103 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> UNAUTHORIZED - 40.80 ms
+23:51:54.105 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> UNAUTHORIZED - 3.169 ms
+23:51:58.223 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> OK - 2.032 s
+23:51:58.641 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 11.18 ms
+23:51:58.780 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 150.5 ms
+23:52:03.856 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 9.467 ms
+23:52:03.868 [qtp1753447031-70 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 11.58 ms
+23:52:03.927 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 10.48 ms
+23:52:03.943 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 25.30 ms
+23:52:04.371 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 321.4 ms
+23:52:04.849 [qtp1753447031-70 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/activity - per request factory created in 205.1 ms
+23:52:04.897 [qtp1753447031-63 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/employee - per request factory created in 251.4 ms
+23:52:04.861 [qtp1753447031-71 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/user - per request factory created in 216.3 ms
+23:52:05.072 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 241.4 ms
+23:52:05.119 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 133.8 ms
+23:52:05.124 [qtp1753447031-70 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 173.9 ms
+23:52:05.128 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 396.6 ms
+23:52:05.128 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 399.5 ms
+23:52:05.128 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 142.3 ms
+23:52:05.140 [qtp1753447031-75 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 4.955 ms
+23:52:05.237 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 23.62 ms
+23:52:05.243 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 16.23 ms
+23:52:05.275 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 70.27 ms
+23:52:05.279 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 56.27 ms
+23:52:05.291 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 77.06 ms
+23:52:05.306 [qtp1753447031-70 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 63.09 ms
+23:52:05.339 [qtp1753447031-75 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 36.03 ms
+23:52:05.387 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 27.11 ms
+23:52:14.524 [qtp1753447031-70 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 6.455 ms
+23:52:14.544 [qtp1753447031-75 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 20.76 ms
+23:52:15.419 [qtp1753447031-71 ] INFO  org.reflections.Reflections - Reflections took 154 ms to scan 2 urls, producing 20 keys and 23 values 
+23:52:15.448 [qtp1753447031-71 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=GET&path=/users/{username}/{password} >> OK - 320.0 ms
+23:52:30.594 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users/Test/12345 >> OK - 784.2 ms
+23:52:37.583 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 7.522 ms
+23:52:37.584 [qtp1753447031-75 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 7.876 ms
+23:52:37.639 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 7.216 ms
+23:52:37.650 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 8.565 ms
+23:52:39.185 [qtp1753447031-72 ] INFO  org.reflections.Reflections - Reflections took 827 ms to scan 2 urls, producing 5 keys and 64 values 
+23:52:39.454 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/factory >> OK - 1.784 s
+23:52:43.934 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 3.922 ms
+23:52:43.935 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 5.230 ms
+23:52:44.002 [qtp1753447031-76 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 10.77 ms
+23:52:44.006 [qtp1753447031-75 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 14.59 ms
+23:52:49.926 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 6.733 ms
+23:52:49.927 [qtp1753447031-70 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 6.716 ms
+23:52:53.609 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 5.550 ms
+23:52:53.626 [qtp1753447031-76 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/errors/descriptors >> OK - 6.525 ms
+23:52:53.632 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 4.349 ms
+23:52:53.663 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 6.162 ms
+23:52:53.679 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 5.366 ms
+23:52:58.839 [qtp1753447031-72 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 6.179 ms
+23:52:58.844 [qtp1753447031-73 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 15.22 ms
+23:52:58.889 [qtp1753447031-74 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 7.508 ms
+23:52:58.921 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 3.475 ms
+23:52:59.346 [qtp1753447031-75 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/monitor >> OK - 188.6 ms
+23:52:59.490 [qtp1753447031-76 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/metrics >> OK - 334.8 ms

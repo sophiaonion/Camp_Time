@@ -9,6 +9,7 @@ import org.jongo.marshall.jackson.oid.ObjectId;
 public class User {
     @Id
     @ObjectId
+    private String userID;
     private String username;//still referred to as _id on client side!!!
     //still have to have some designated id field to use though
     private String password;
