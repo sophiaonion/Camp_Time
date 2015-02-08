@@ -5,6 +5,7 @@ var main = function(camp_sessions){
             ID: session._id //extra value can have any name
         };
     });
+
     //get session ID and query for session info -- at this time just get camper list
     var uponSelect =  function(event, ui){
         selected_sessionID = ui.item.ID;
