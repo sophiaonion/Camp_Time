@@ -92,7 +92,7 @@ public class ConstraintChecker {
 
         //set up domain for all set time activities: should be only time it already is
         for(int i=0; i<list.size(); i++) {//for each activity
-            if (list.get(i).get("fixed") == true || list.get(i).get("set") == true) {
+            if ((boolean)list.get(i).get("fixed") == true || (boolean)list.get(i).get("set") == true) {
                 domain.add((DateTime) list.get(i).get("time"));//list of available times contains only the time it is set at
                 takenArea.put(((DateTime) list.get(i).get("time")), String.valueOf(list.get(i).get("activityarea")));//add to list of unavailable actibity slots
                 domains.set(i, domain);//add to domains arraylist
@@ -102,7 +102,7 @@ public class ConstraintChecker {
 
         //set up domain for all non-set time activities: domain will be all times that are currently not filled (& also times where not already doing something???)
         for(int i=0; i<list.size(); i++) {
-            if ((list.get(i).get("fixed") == false) && (list.get(i).get("set") == false)) {
+            if (((boolean)list.get(i).get("fixed") == false) && ((boolean)list.get(i).get("set") == false)) {
                 //need to get date at which current object's session starts & ends so can calculate possible time slots
                 DBObject sessionDates = (DBObject) campSessions.get().findOne("{session: " + list.get(i).get("session") + " } { startDate: 1, endDate: 1, _id:0 }");//should return DBObject with just start and end date of current session
                 DateTime start = (DateTime) sessionDates.get("startDate");

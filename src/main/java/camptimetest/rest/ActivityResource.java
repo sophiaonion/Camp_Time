@@ -33,6 +33,7 @@ public class ActivityResource {
         JongoCollection activitiesCopy = activities;
         JongoCollection campSessionsCopy = campSessions;
         ConstraintChecker cc = new ConstraintChecker(activitiesCopy, campSessionsCopy);
+        cc.update();
         return activities.get().find().as(Activity.class);
     }
 
