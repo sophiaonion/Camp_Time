@@ -2,6 +2,7 @@ package camptimetest.domain;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import org.joda.time.DateTime;
@@ -25,6 +26,9 @@ public class ConstraintChecker {
         this.campSessions = campSessions;
     }
 
+
+
+
     public JongoCollection update() {
         //scheduling activities
         int i = this.checkConflicts();
@@ -40,6 +44,9 @@ public class ConstraintChecker {
         return this.activities;
     }//end update()
 
+
+
+
     //sees if any activities are in conflict with each other
     private int checkConflicts() {
 
@@ -49,12 +56,12 @@ public class ConstraintChecker {
             return 1;
         }
 
-
         DBCursor cursor1 = activities.get().getDBCollection().find(); //can iterate through all activities - points to DBObjects
         while(cursor1.hasNext()) {//for each activity
             DBCursor cursor2 = activities.get().getDBCollection().find();//second iterator through all activities
             while(cursor2.hasNext()) {
                 if(cursor1.curr() != cursor2.curr()) {//make sure not comparing same activity
+
                     //if same session in two different places at same time
                     if(cursor1.curr().get("session") == cursor2.curr().get("session")
                             && (cursor1.curr().get("time") == cursor2.curr().get("time"))
@@ -74,17 +81,18 @@ public class ConstraintChecker {
         return 0;
     }//end checkconflicts()
 
+
+
+
     //associates an array of possible time assignments (called domain) to each activity in list
     private ArrayList< ArrayList<DateTime> > findDomain(List<DBObject> list) {
         ArrayList< ArrayList<DateTime> > domains = new ArrayList< ArrayList<DateTime> >(); //list of possible domains for each i
         ArrayList<DateTime> domain = new ArrayList<DateTime>();//domain specific to i
-        Multimap<DateTime, String> takenArea = ArrayListMultimap.create();//maps time to activity area
-        ArrayList<DateTime> takenSession = new ArrayList<DateTime>();//dates where session is already doing something
+        Multimap<DateTime, String> takenArea = ArrayListMultimap.create();//maps time to activity area ~~represents time that activity area is taken
 
-        //set up domain for all fixed time activities: should be only time it already is
+        //set up domain for all set time activities: should be only time it already is
         for(int i=0; i<list.size(); i++) {//for each activity
-
-            if (list.get(i).get("fixed") == true) {
+            if (list.get(i).get("fixed") == true || list.get(i).get("set") == true) {
                 domain.add((DateTime) list.get(i).get("time"));//list of available times contains only the time it is set at
                 takenArea.put(((DateTime) list.get(i).get("time")), String.valueOf(list.get(i).get("activityarea")));//add to list of unavailable actibity slots
                 domains.set(i, domain);//add to domains arraylist
@@ -92,9 +100,9 @@ public class ConstraintChecker {
             domain.clear();
         }
 
-        //set up domain for all non-fixed time activities: domain will be all times that are currently not filled (& also times where not already doing something???)
+        //set up domain for all non-set time activities: domain will be all times that are currently not filled (& also times where not already doing something???)
         for(int i=0; i<list.size(); i++) {
-            if (list.get(i).get("fixed") == false) {
+            if ((list.get(i).get("fixed") == false) && (list.get(i).get("set") == false)) {
                 //need to get date at which current object's session starts & ends so can calculate possible time slots
                 DBObject sessionDates = (DBObject) campSessions.get().findOne("{session: " + list.get(i).get("session") + " } { startDate: 1, endDate: 1, _id:0 }");//should return DBObject with just start and end date of current session
                 DateTime start = (DateTime) sessionDates.get("startDate");
@@ -118,14 +126,23 @@ public class ConstraintChecker {
                 }//remove times from domain that would place activity in area at same time as another session
 
                 //take out unavailable times aka times when this session is already doing a thing
-
-
+                String sessionString = String.valueOf(list.get(i).get("session"));
+                DBObject sessionObj = new BasicDBObject("session:", sessionString);
+                DBCursor cursor = campSessions.get().getDBCollection().find(sessionObj);//points to list of activities for session
+                while (cursor.hasNext()) {//won't matter if it is not fixed bc then won't have date and thus won't interfere ~~probably
+                    for(int j=0; j<domain.size(); j++)
+                        if( cursor.curr().get("time").equals(domain.get(j))) {
+                            domain.remove(j);
+                        }
+                }//removes all time slots where activity is already scheduled for this session
                 domains.set(i, domain);//add possible open times to domain for index i (which corresponds to activity i in list)
-            }
+            }//end set up domain for non-set time activities
             domain.clear();
         }//end set up corresponding domain i for each activity i in list
         return domains;
     }//end finddomain()
+
+
 
 
     //uses heuristic repair to fix conflicts betweeen activities
@@ -138,13 +155,25 @@ public class ConstraintChecker {
 
         //if there are activities without a time set
         if(type==1) {
-            //find least constrained activity -- well all the non fixed activities should be almost equally constrained, so not super important
+            //find most constrained activity
+            int mostConst = 0;
+            for(int i=0; i<acts.size(); i++)
+                if (domains.get(i).size() < domains.get(mostConst).size())
+                    mostConst = i;
+
+            //give it a time that works
+
+
+            //propogate constraints by calling findDomain again
         }
         else {//type=2/3 -- some other type of conflict
-
+            //not sure what to use for heuristic, just do whatever?
         }
         return;
     }//end fixconflicts()
+
+
+
 
     //checks if everything is staffed appropriately
     private boolean checkStaffConflicts() {

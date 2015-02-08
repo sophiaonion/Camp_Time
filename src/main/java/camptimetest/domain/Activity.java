@@ -16,7 +16,8 @@ public class Activity {
     private DateTime time;
     private String session;
     private String activityArea;
-    private Boolean fixed;
+    private Boolean fixed;//whether time is fixed by admin
+    private Boolean set;//whether time has been set by algorithm
 
 
     @Id
@@ -61,6 +62,14 @@ public class Activity {
     public Activity setEmployees(ArrayList<Employee> workers){
         this.workers = workers;
         return this;
+    }
+
+    public Boolean getSet() {
+        return set;
+    }
+
+    public void setSet(Boolean set) {
+        this.set = set;
     }
 
     public Boolean getFixed() {

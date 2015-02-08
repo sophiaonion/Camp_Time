@@ -113,9 +113,11 @@ public class CampSessionResource {
                         DateTime time = day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0);//set time to given time
                         a.setTime(time);
                         a.setFixed(true);//activity is fixed time
+                        a.setSet(true);//activity time is vacuously set
                     }
                     else
                         a.setFixed(false);//activity is not fixed time
+                        a.setSet(false);//activity time is not yet set by algorithm
                 }
                 activityList.add(a);
                 activities.get().save(a);
