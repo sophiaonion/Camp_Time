@@ -12,9 +12,7 @@ var main = function(activities){
 
 
     $('#approve-update').on('click', function(){
-
-
-
+        //post activities copy as new activities?
     });
 
     $('#cancel').on('click', function(){
