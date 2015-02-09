@@ -20,18 +20,18 @@ import javax.inject.Named;
 public class ActivityResource {
 
     private JongoCollection activities;
-    private JongoCollection campSessions;
+    private JongoCollection campsessions;
 
-    public ActivityResource(@Named("activities") JongoCollection activities, @Named("campSessions") JongoCollection campSessions){
+    public ActivityResource(@Named("activities") JongoCollection activities, @Named("campsessions") JongoCollection campSessions){
         this.activities = activities;
-        this.campSessions = campSessions;
+        this.campsessions = campSessions;
     }
 
     //this is to get schedule to work with for stuff
     @GET("/activities")
     public Iterable<Activity> getActivities(){
         JongoCollection activitiesCopy = activities;
-        JongoCollection campSessionsCopy = campSessions;
+        JongoCollection campSessionsCopy = campsessions;
         ConstraintChecker cc = new ConstraintChecker(activitiesCopy, campSessionsCopy);
         //constraint checker assigns updated schedule to activitiesCopy, campSessionCopy
         cc.update();

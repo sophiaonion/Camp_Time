@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ActivityArea.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ActivityArea.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/Certification.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/Certification.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/trigger_update.html" afterPath="$PROJECT_DIR$/src/main/webapp/trigger_update.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CAMPTIMETEST.iws" />
@@ -29,21 +36,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Activity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Activity.java">
+      <file leaf-file-name="ConstraintChecker.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1215">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="31" />
-              <folding />
+            <state vertical-scroll-proportion="0.41426146" vertical-offset="3611" max-vertical-offset="5445">
+              <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
+                <element signature="e#3492#3513#0" expanded="true" />
+                <element signature="e#3605#3615#0" expanded="true" />
+                <element signature="e#11887#11897#0" expanded="true" />
+                <element signature="e#12180#12190#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CampSessionResource.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
+      <file leaf-file-name="ActivityResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.38679245" vertical-offset="1705" max-vertical-offset="2235">
-              <caret line="120" column="47" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+              <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -52,38 +66,8 @@
       <file leaf-file-name="CampSession.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1440">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_session.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/create_session.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.0" vertical-offset="0" max-vertical-offset="2880">
-              <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_session.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/create_session.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3529413" vertical-offset="0" max-vertical-offset="1455">
-              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home_page_test.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/home_page_test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.75" vertical-offset="0" max-vertical-offset="990">
-              <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+              <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="107" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -97,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/AppServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/AppModule.java" />
         <option value="$PROJECT_DIR$/src/main/java/playground/datetest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/add_activity.js" />
@@ -121,12 +104,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/jquery-ui-1.11.2.custom/jquery-ui.min.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/styles/schedule.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_activity.html" />
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/session_schedule.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/delete_employee.js" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/EmployeeResource.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/view_employees.js" />
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/ActivityArea.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/createdata/info.txt" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/Employee.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/add_employee.js" />
@@ -139,15 +120,18 @@
         <option value="$PROJECT_DIR$/src/main/webapp/home_page_test.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/edit_session.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/add_registration.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/trigger_update.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/schedule_update.js" />
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/Activity.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/session_schedule.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/create_session.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_session.html" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/trigger_update.html" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/Certification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/ActivityArea.java" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
       </list>
     </option>
   </component>
@@ -246,6 +230,32 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -296,6 +306,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="camptimetest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camptimetest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camptimetest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -668,7 +738,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423449111034</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="activity area actually working">
+      <created>1423449151892</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1423449151892</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -693,8 +769,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18739903" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18082191" sideWeight="0.49919224" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20436187" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1369863" sideWeight="0.49919224" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -765,10 +841,30 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
+          <line>263</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
+          <line>289</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="2" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -777,14 +873,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1290">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/sample.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="578">
@@ -869,20 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Certification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14957266" vertical-offset="0" max-vertical-offset="702">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ActivityArea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7008547" vertical-offset="153" max-vertical-offset="870">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/add_employee.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2359155" vertical-offset="136" max-vertical-offset="750">
@@ -934,13 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08227848" vertical-offset="216" max-vertical-offset="720">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20886075" vertical-offset="591" max-vertical-offset="1095">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="64" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1045,54 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/schedule_update.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20710059" vertical-offset="0" max-vertical-offset="570">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5555556" vertical-offset="0" max-vertical-offset="702">
-          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/trigger_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44247788" vertical-offset="0" max-vertical-offset="678">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2597968" vertical-offset="1" max-vertical-offset="1230">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="e#3324#3345#0" expanded="false" />
-            <element signature="e#3437#3447#0" expanded="false" />
-            <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#fixConflicts#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="e#11538#11548#0" expanded="false" />
-            <element signature="e#11771#11781#0" expanded="false" />
-            <element signature="e#16102#16112#0" expanded="false" />
-            <element signature="e#18709#18710#0" expanded="false" />
-            <element signature="e#18737#18738#0" expanded="false" />
-            <element signature="e#18838#18839#0" expanded="false" />
-            <element signature="e#18860#18861#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/edit_session.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.375" vertical-offset="0" max-vertical-offset="680">
@@ -1109,14 +1128,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1305">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/session_schedule.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.0726495" vertical-offset="0" max-vertical-offset="2040">
@@ -1125,43 +1136,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/home_page_test.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.75" vertical-offset="0" max-vertical-offset="990">
-          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_session.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3529413" vertical-offset="0" max-vertical-offset="1455">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.34210527" vertical-offset="0" max-vertical-offset="1215">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/create_session.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.0" vertical-offset="0" max-vertical-offset="2880">
+        <state vertical-scroll-proportion="1.4917127" vertical-offset="0" max-vertical-offset="2880">
           <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_session.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.23121387" vertical-offset="0" max-vertical-offset="1455">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/home_page_test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2637362" vertical-offset="0" max-vertical-offset="990">
+          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/Certification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ActivityArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="780">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/trigger_update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="465">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/schedule_update.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/camptimetest/rest/ActivityResourceRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325792" vertical-offset="228" max-vertical-offset="1230">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.38679245" vertical-offset="1705" max-vertical-offset="2235">
-          <caret line="120" column="47" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.7795824" vertical-offset="1719" max-vertical-offset="2235">
+          <caret line="157" column="41" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="926" max-vertical-offset="1440">
+          <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="107" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77102804" vertical-offset="0" max-vertical-offset="1290">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="690">
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41426146" vertical-offset="3611" max-vertical-offset="5445">
+          <caret line="289" column="44" selection-start-line="289" selection-start-column="44" selection-end-line="289" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="e#3492#3513#0" expanded="true" />
+            <element signature="e#3605#3615#0" expanded="true" />
+            <element signature="e#11887#11897#0" expanded="true" />
+            <element signature="e#12180#12190#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
