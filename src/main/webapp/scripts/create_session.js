@@ -49,7 +49,7 @@ var tableBuilt = false;
         $('#schedule input').each(function(){
             $(this).autocomplete({
                                        source: [ "pool", "art", "meal", "sports",
-                                       "counselor time", "canoeing", "archery", "creek hopping", "check in/out", "unit"
+                                       "counselor", "canoeing", "archery", "creek", "check in/out", "unit"
                                         , "other"],
                                        autoFocus: true,
                                        //select: uponSelect

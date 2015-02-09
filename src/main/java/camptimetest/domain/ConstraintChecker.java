@@ -23,6 +23,8 @@ public class ConstraintChecker {
     private JongoCollection campSessions;
 
 
+
+
     public ConstraintChecker(JongoCollection activities, JongoCollection campSessions) {
         this.activities = activities;
         this.campSessions = campSessions;
@@ -80,21 +82,27 @@ public class ConstraintChecker {
                 }
             }
         }
-        return 0;
+        return 0;//no conflicts
     }//end checkconflicts()
 
 
 
 
-    //associates an array of possible time assignments (called domain) to each activity in list
-    private ArrayList< ArrayList<DateTime> > findDomain(List<DBObject> list) {
-        ArrayList< ArrayList<DateTime> > domains = new ArrayList< ArrayList<DateTime> >(); //list of possible domains for each i
+    //associates an array of possible time assignments (called domain) to each activity in list can include or exclude times that have a set but not fixed activity
+    private ArrayList< ArrayList<DateTime> > findDomain(ArrayList<DBObject> list, Boolean excludeSetActivities) {
+        ArrayList<ArrayList<DateTime>> domains = new ArrayList<ArrayList<DateTime>>(); //list of possible domains for each i
         ArrayList<DateTime> domain = new ArrayList<DateTime>();//domain specific to i
         Multimap<DateTime, String> takenArea = ArrayListMultimap.create();//maps time to activity area ~~represents time that activity area is taken
 
+        String setOrfixed = "";
+        if(excludeSetActivities)
+            setOrfixed = "fixed";
+        else
+            setOrfixed = "set";
+
         //set up domain for all set time activities: should be only time it already is
         for(int i=0; i<list.size(); i++) {//for each activity
-            if ((boolean)list.get(i).get("fixed") == true || (boolean)list.get(i).get("set") == true) {
+            if ((boolean)list.get(i).get(setOrfixed) == true /*|| (boolean)list.get(i).get("set") == true*/) {
                 domain.add((DateTime) list.get(i).get("time"));//list of available times contains only the time it is set at
                 takenArea.put(((DateTime) list.get(i).get("time")), String.valueOf(list.get(i).get("activityarea")));//add to list of unavailable actibity slots
                 domains.set(i, domain);//add to domains arraylist
@@ -104,7 +112,7 @@ public class ConstraintChecker {
 
         //set up domain for all non-set time activities: domain will be all times that are currently not filled (& also times where not already doing something???)
         for(int i=0; i<list.size(); i++) {
-            if (((boolean)list.get(i).get("fixed") == false) && ((boolean)list.get(i).get("set") == false)) {
+            if (((boolean)list.get(i).get(setOrfixed) == false)  /*&& ((boolean)list.get(i).get("set") == false)*/ ) {
                 //need to get date at which current object's session starts & ends so can calculate possible time slots
                 DBObject sessionDates = (DBObject) campSessions.get().findOne("{session: " + list.get(i).get("session") + " } { startDate: 1, endDate: 1, _id:0 }");//should return DBObject with just start and end date of current session
                 DateTime start = (DateTime) sessionDates.get("startDate");
@@ -146,6 +154,9 @@ public class ConstraintChecker {
     }//end finddomain()
 
 
+
+
+    //returns index of most constrained activity in arraylist
     private int getMostConstrained(ArrayList< ArrayList<DateTime> > domains) {
         //assuming domains with 1 or no items have already been assigned or whatevs
         int numConst = 100000000;//number of options for most constrained activity
@@ -159,22 +170,86 @@ public class ConstraintChecker {
         }
 
         return mostConst;
-    }
+    }//end getMostConstrained
 
 
 
 
-    //uses heuristic repair to fix conflicts betweeen activities
-    private void fixConflicts(int type) {
+    //returns index of most constrained activity
+    private int getMostConflicts(ArrayList<Integer> conflicts) {
+        int most = 0;
+        int mostInd = -1;
+        for(int i=0; i<conflicts.size(); i++) {
+            if(conflicts.get(i) > most) {
+                most = conflicts.get(i);
+                mostInd = i;
+            }
+        }
+        return mostInd;
+    }//end getMostConflicts
 
-        //get domains of all activities
-        DBCursor cursor = activities.get().getDBCollection().find();
-        List<DBObject> actArray = cursor.toArray();
-        ArrayList< ArrayList<DateTime> > domains = findDomain(actArray);//possible domains of times for activity with corresponding index in acts
-        ArrayList<DateTime> newDomain = new ArrayList<DateTime>();
 
-        //assign values to everything
+
+
+    //returns array of conflict count with indices corresponding to index of activity list (fixed time activities don't count bd can't change them anywayss)
+    private ArrayList<Integer> countConflicts(ArrayList<DBObject> list) {
+        ArrayList<Integer> numConflicts = new ArrayList<>();
+        for(int i=0; i<list.size(); i++) {//initialize all so have no conflicts
+            numConflicts.set(i, 0);
+        }
+
+        for(int i=0; i<list.size(); i++) {//for each activity
+            for(int j=0; j<list.size(); j++) {//for each other activity
+                if(i!=j) {//make sure not comparing same activity
+
+                    //if same session in two different places at same time
+                    if(list.get(i).get("session") == list.get(j).get("session")
+                            && (list.get(i).get("time") == list.get(j).get("time"))
+                            && (list.get(i).get("activityAreaID") != list.get(j).get("activityAreaID"))) {
+
+                        //add conflict to each thing thing only if not fixed time cuz we can't change those anyway
+                        if( !((Boolean) list.get(i).get("fixed")) )
+                            numConflicts.set(i, (numConflicts.get(i)+1) );
+                        if( !((Boolean) list.get(j).get("fixed")) )
+                            numConflicts.set(j, (numConflicts.get(j)+1) );
+
+                    }//end two places at once conflict
+
+                    //if two different sessions in same place at same time
+                    if( (list.get(i).get("activityAreaID") == list.get(j).get("activityAreaID"))//if activity in same time & place
+                            && (list.get(i).get("time") == list.get(j).get("time"))
+                            && (list.get(i).get("session") != list.get(j).get("session"))) {
+
+                        //add conflict to each thing thing only if not fixed time cuz we can't change those anyway
+                        if( !((Boolean) list.get(i).get("fixed")) )
+                            numConflicts.set(i, (numConflicts.get(i)+1) );
+                        if( !((Boolean) list.get(j).get("fixed")) )
+                            numConflicts.set(j, (numConflicts.get(j)+1) );
+
+                    }//end two sessions at once conflict
+
+                }//end compare two different activities
+            }
+        }//end compare all activities for conflicts
+
+        return numConflicts;
+    }//end countConflicts
+
+
+
+
+    //uses heuristic repair to fix conflicts between activities
+    private Boolean fixConflicts(int type) {
+
+        //assign values to everything without them
         if(type==1) {//type 1: there are variables without assigned value
+
+            //get domains of all activities
+            DBCursor cursor = activities.get().getDBCollection().find();
+            List<DBObject> arrry = cursor.toArray();
+            ArrayList<DBObject> actArray = new ArrayList<DBObject>(arrry);
+            ArrayList< ArrayList<DateTime> > domains = findDomain(actArray, false);//possible domains of times for activity with corresponding index in acts
+            ArrayList<DateTime> newDomain = new ArrayList<DateTime>();
 
             while(!(actArray.isEmpty())) {
                 //assign all activities with only one option in domain
@@ -191,7 +266,7 @@ public class ConstraintChecker {
 
                     //if only one option in domain (will catch stuff from previous if statement)
                     if(domains.get(i).size() == 1) {
-                        if((boolean)actArray.get(i).get("set") == false) {//if activity's time is not yet set
+                        if(!((Boolean) actArray.get(i).get("set"))) {//if activity's time is not yet set
 
                             DateTime time = domains.get(i).get(0);//time is only available time in domain
 
@@ -212,8 +287,6 @@ public class ConstraintChecker {
                                     }
                                 }
                             }//end update domains of other activities
-
-                            //ok i think it's done
                         }//end setting time for unset activity
 
                         //remove activity from actArray because it is set and no longer needs to be looked at
@@ -230,19 +303,55 @@ public class ConstraintChecker {
                     domains.set(mostConst, newDomain);
                     newDomain.clear();
                 } else {} //probably the thing is empty? idk do nothing for now
-
             }//end assign times to all previously non-fixed activities
-
-
-        }//end assign values to all variables without time assigned
+        }//end assign values to all variables without time assigned in case of type 1
 
         //heuristic repair time: there's conflicting stuff so fix it
-        if(checkConflicts() > 0) {
 
-        }
+        while(checkConflicts() > 0) {///might just swap back and forth 5ever
 
+            //get domains of all activities
+            DBCursor cursor = activities.get().getDBCollection().find();
+            List<DBObject> arrry = cursor.toArray();
+            ArrayList<DBObject> actArray = new ArrayList<DBObject>(arrry);
+            ArrayList< ArrayList<DateTime> > domainsWithSet = findDomain(actArray, false);//possible domains of times for activity with corresponding index in acts
+            ArrayList< ArrayList<DateTime> > domainsExcludeSet = findDomain(actArray, true);
 
-        return;
+            //conflict count for each activity at same index
+            ArrayList<Integer> numConflicts = countConflicts(actArray);
+
+            //change mostConflicted ~~ doesn't include fixed time ones bc can't change them anywho
+            int mostConf = getMostConflicts(numConflicts);
+            if(numConflicts.get(mostConf) > 0) {//there are conflicts
+
+                //remove current time from domains
+                DateTime current = (DateTime) actArray.get(mostConf).get("time");
+                domainsWithSet.remove(current);
+                domainsExcludeSet.remove(current);
+
+                //new time
+                DateTime newTime = new DateTime();
+
+                //check if any times that don't conflict other set times
+                if(domainsWithSet.get(mostConf).size() > 0) {
+                    newTime = domainsWithSet.get(mostConf).get(0);
+                }
+                //otherwise assign to another time (will cause conflicts, but won't conflict with fixed time thingy)
+                else if (domainsExcludeSet.get(mostConf).size() > 0) {
+                    //TODO need to use some sort of heuristic to choose index of domain that will cause least conflicts (for now just taking first option)
+                    newTime = domainsExcludeSet.get(mostConf).get(0);
+                }
+                else return false;//can't assign to anything - some conflict with amongst fixed activities
+
+                //update activity in collection
+                String ID = String.valueOf(actArray.get(mostConf).get("_id"));
+                activities.get().findAndModify("{query: {_id: " + ID + " }, update: { $set: { set: true }, {time: "+ newTime +" }");
+                                                                                                           //'query' finds activity with appropriate id, '$set' changes set to true
+                //SHOULD ALSO CHANGE ACTIVITY IN CAMPSESSION COLLECTION?? IDK TODO
+            }//end change most conflicted
+            else return false; //if checkconflicts says there are conflicts but numconflicts are all 0--means fixed activities are conflicting each other
+        }//end heuristic repair
+        return true;
     }//end fixconflicts()
 
 
@@ -253,8 +362,11 @@ public class ConstraintChecker {
         return false;
     }
 
+
+
+
     //uses heuristic repair to fix any staffing conflicts
     private void fixStaffConflicts() {
-
+        return;
     }
 }

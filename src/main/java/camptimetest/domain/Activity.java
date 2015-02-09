@@ -17,18 +17,13 @@ public class Activity {
     private String session;
     private String activityArea;
     private Boolean fixed;//whether time is fixed by admin
-    private Boolean set;//whether time has been set by algorithm
+    private Boolean isSet;//whether time has beeisSetet by algorithm
 
 
     @Id
     @ObjectId
     private String key;
 
-//    public Activity(String title, Date day, Date hour, String acactivityArea{
-//        this.title = title;
-//        this.day = day;
-//        this.hour = hour;
-//        this.acactivityArea acactivityArea//    }
 
     //key will be generated automagically if not specified in passed in JSON object
     public Activity setKey(String key){
@@ -64,12 +59,12 @@ public class Activity {
         return this;
     }
 
-    public Boolean getSet() {
-        return set;
+    public Boolean getIsSet() {
+        return this.isSet;
     }
 
-    public void setSet(Boolean set) {
-        this.set = set;
+    public void setIsSet(Boolean isSet) {
+        this.isSet = isSet;
     }
 
     public Boolean getFixed() {
@@ -101,7 +96,7 @@ public class Activity {
     }
 
     public String getActivityArea() {
-        return activityArea;
+        return this.activityArea;
     }
 
     public void setActivityArea(String activityArea) {
