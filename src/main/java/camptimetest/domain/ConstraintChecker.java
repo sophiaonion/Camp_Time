@@ -367,6 +367,6 @@ public class ConstraintChecker {
 
     //uses heuristic repair to fix any staffing conflicts
     private void fixStaffConflicts() {
-
+        return;
     }
 }

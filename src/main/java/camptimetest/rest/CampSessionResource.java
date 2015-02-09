@@ -100,9 +100,35 @@ public class CampSessionResource {
             for(int i=0; i<activityInfo.size(); i++) {
                 Activity a = new Activity();
                 System.out.println("title: " + activityInfo.get(i).get("title"));
-                a.setTitle(activityInfo.get(i).get("title"));
+                String title = String.valueOf(activityInfo.get(i).get("title"));
+                a.setTitle(title);
                 a.setSession(String.valueOf(info.get("name")));
-                //a.setActivityArea(ehhh); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! TODO: need to calculate in thingy
+
+                if(title == "unit")
+                    a.setActivityArea("unit");
+                else if(title == "pool")
+                    a.setActivityArea("pool");
+                else if (title == "art")
+                    a.setActivityArea("art");
+                else if (title == "sports")
+                    a.setActivityArea("sports");
+                else if (title == "canoeing")
+                    a.setActivityArea("canoeing");
+                else if (title == "archery")
+                    a.setActivityArea("archery");
+                else if (title == "creek")
+                    a.setActivityArea("creek");
+                System.out.print("HEHREHRHEH");
+
+//                switch (name) {
+//                    case "unit": a.setActivityArea("unit");
+//                    case "pool": a.setActivityArea("pool");
+//                    case "art":a.setActivityArea("art");
+//                    case "sports":a.setActivityArea("sports");
+//                    case "canoeing": a.setActivityArea("canoeing");
+//                    case "archery": a.setActivityArea("archery");
+//                    case "creek": a.setActivityArea("creek");
+//                }
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
                     if (activityInfo.get(i).get("time") != null) { //if the activity is required time field will be null
@@ -112,12 +138,14 @@ public class CampSessionResource {
                         //hours, minutes, seconds, milli
                         DateTime time = day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0);//set time to given time
                         a.setTime(time);
+                        //a.setIsSet(false);
                         a.setFixed(true);//activity is fixed time
-                        a.setSet(true);//activity time is vacuously set
+                        a.setIsSet(true);//activity time is vacuously set
                     }
-                    else
+                    else {
                         a.setFixed(false);//activity is not fixed time
-                        a.setSet(false);//activity time is not yet set by algorithm
+                        a.setIsSet(false);//activity time is not yet set by algorithm
+                    }
                 }
                 activityList.add(a);
                 activities.get().save(a);
