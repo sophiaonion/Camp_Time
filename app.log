@@ -11540,3 +11540,86 @@ java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Stri
 13:39:33.252 [qtp1753447031-88 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/campers/54d442c40364e540bfbb1d9f >> OK - 166.4 ms
 13:42:54.638 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 7.127 s
 13:43:03.224 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+21:11:37.764 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+21:11:38.242 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+21:11:39.989 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+21:11:39.990 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+21:11:43.904 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 3.289 s
+21:11:44.417 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+21:11:44.807 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+21:13:13.024 [qtp1753447031-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+21:13:13.376 [qtp1753447031-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 1.026 s
+21:13:14.666 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 1.290 s
+21:16:36.978 [qtp1753447031-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 42.19 ms
+21:22:35.193 [qtp1753447031-34 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 63.00 ms
+21:26:36.468 [qtp1753447031-37 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 45.01 ms
+21:26:42.144 [qtp1753447031-37 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/campers/54d442c40364e540bfbb1d9f >> OK - 152.6 ms
+21:29:19.363 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 48.39 ms
+21:29:43.183 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 36.39 ms
+21:36:45.850 [qtp1753447031-45 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 32.48 ms
+22:08:45.246 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.376 s
+22:11:50.406 [qtp1753447031-83 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 636.1 ms
+22:11:50.602 [qtp1753447031-83 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 181.6 ms
+22:11:53.610 [qtp1753447031-83 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.877 ms
+22:11:56.727 [qtp1753447031-84 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.213 ms
+22:24:31.294 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 7.781 s
+22:29:36.341 [qtp1753447031-102] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 784.4 ms
+22:29:36.383 [qtp1753447031-102] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 29.19 ms
+22:29:45.166 [qtp1753447031-102] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 370.3 ms
+22:37:57.351 [qtp1753447031-110] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 909.5 ms
+22:38:00.223 [qtp1753447031-110] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 65.90 ms
+22:38:01.178 [qtp1753447031-109] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 6.525 ms
+22:38:05.863 [qtp1753447031-111] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 7.671 ms
+22:38:06.251 [qtp1753447031-109] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 4.914 ms
+22:38:06.404 [qtp1753447031-109] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 5.326 ms
+22:38:15.359 [qtp1753447031-109] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 26.17 ms
+22:38:20.846 [qtp1753447031-109] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 54.18 ms
+22:38:27.740 [qtp1753447031-111] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 4.881 ms
+22:39:39.001 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 27.26 ms
+22:39:41.934 [qtp1753447031-115] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 5.385 ms
+22:40:08.796 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 6.819 ms
+22:40:49.766 [qtp1753447031-116] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/admin.css - per request factory created in 284.3 ms
+22:40:49.940 [qtp1753447031-113] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/admin.js - per request factory created in 325.7 ms
+22:40:49.940 [qtp1753447031-114] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/securityHandling.js - per request factory created in 326.0 ms
+22:40:52.236 [qtp1753447031-111] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> UNAUTHORIZED - 2.456 ms
+22:40:52.320 [qtp1753447031-116] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> UNAUTHORIZED - 24.37 ms
+22:40:59.230 [qtp1753447031-116] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> OK - 2.048 s
+22:40:59.583 [qtp1753447031-117] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 4.408 ms
+22:40:59.589 [qtp1753447031-111] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 4.948 ms
+22:41:05.135 [qtp1753447031-113] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 3.741 ms
+22:41:05.144 [qtp1753447031-112] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 7.077 ms
+22:41:05.179 [qtp1753447031-111] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 5.884 ms
+22:41:05.190 [qtp1753447031-117] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 7.116 ms
+22:41:05.387 [qtp1753447031-113] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 42.72 ms
+22:41:06.081 [qtp1753447031-118] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 42.54 ms
+22:41:06.124 [qtp1753447031-111] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 144.3 ms
+22:41:06.137 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 101.9 ms
+22:41:06.142 [qtp1753447031-117] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 101.1 ms
+22:41:06.145 [qtp1753447031-112] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 41.29 ms
+22:41:06.153 [qtp1753447031-113] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 21.74 ms
+22:41:06.179 [qtp1753447031-118] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 23.13 ms
+22:41:06.217 [qtp1753447031-111] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 48.78 ms
+22:41:06.226 [qtp1753447031-119] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 14.42 ms
+22:41:06.250 [qtp1753447031-112] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 4.376 ms
+22:41:06.275 [qtp1753447031-117] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 39.34 ms
+22:41:06.278 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 37.35 ms
+22:41:06.301 [qtp1753447031-113] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 38.40 ms
+22:41:06.354 [qtp1753447031-118] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 21.49 ms
+22:41:06.361 [qtp1753447031-111] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 24.45 ms
+22:41:10.558 [qtp1753447031-117] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 7.262 ms
+22:41:10.570 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 16.66 ms
+22:41:11.128 [qtp1753447031-113] INFO  org.reflections.Reflections - Reflections took 153 ms to scan 2 urls, producing 20 keys and 23 values 
+22:41:11.144 [qtp1753447031-113] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=GET&path=/campsessions/{sessionName} >> OK - 277.7 ms
+22:41:21.732 [qtp1753447031-113] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/First >> OK - 31.56 ms
+22:42:04.695 [qtp1753447031-119] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 20.68 ms
+22:42:07.535 [qtp1753447031-118] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 4.398 ms
+22:48:29.904 [qtp1753447031-120] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 18.22 ms
+22:48:32.608 [qtp1753447031-123] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 4.794 ms
+22:51:25.076 [qtp1753447031-125] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 25.05 ms
+22:53:17.576 [qtp1753447031-127] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 20.95 ms

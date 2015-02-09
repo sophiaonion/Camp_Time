@@ -191,7 +191,7 @@ public class ConstraintChecker {
 
                     //if only one option in domain (will catch stuff from previous if statement)
                     if(domains.get(i).size() == 1) {
-                        if(actArray.get(i).get("set") == false) {//if activity's time is not yet set
+                        if((boolean)actArray.get(i).get("set") == false) {//if activity's time is not yet set
 
                             DateTime time = domains.get(i).get(0);//time is only available time in domain
 

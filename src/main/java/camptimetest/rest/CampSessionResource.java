@@ -1,9 +1,6 @@
 package camptimetest.rest;
 
-import camptimetest.domain.Activity;
-import camptimetest.domain.CampSession;
-import camptimetest.domain.Camper;
-import camptimetest.domain.SessionRegistration;
+import camptimetest.domain.*;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -71,6 +68,16 @@ public class CampSessionResource {
         @GET("/campsessions/agegroup/{agegroup}")
         public Iterable<CampSession> getCampSessionsOfAgeGroup(String agegroup){
             return campSession.get().find("{ageGroup: #}", agegroup).as(CampSession.class);
+        }
+
+        @GET("/campsessions/{sessionName}")
+        public ArrayList<Activity> getActivities(String sessionName){
+            Iterable<CampSession> itr= campSession.get().find("{name: #}", sessionName).as(CampSession.class);
+            ArrayList<Activity> activities= new ArrayList<Activity>();
+            for(CampSession session : itr){
+                activities= session.getActivities();
+            }
+            return activities;
         }
 
 
