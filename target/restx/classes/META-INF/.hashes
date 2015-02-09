@@ -1,13 +1,13 @@
 src\main\java**camptimetest\createdata\TestData.java**15f981894f2269829dd8de219d2903d6**1422928912000
 src\main\java**camptimetest\domain\Camper.java**970b60cc2ab95713b27fe230267a4b19**1422928945000
-src/main/java**camptimetest/rest/CampSessionResource.java**eb9b784a5be516165b5a8e320873688c**1423449142000
+src/main/java**camptimetest/rest/CampSessionResource.java**dc0f05a5106c10ce9ed84e86f75e2b0c**1423520852000
 src/main/java**camptimetest/rest/UserResource.java**7b06b421490e27a16f9d25ee62c909aa**1423384731000
 src\main\java**playground\datetest.java**8426ffaf6587671afe35871e90ebb352**1422675267000
 src\main\java**camptimetest\rest\CampSessionResource.java**264ff861aa84da0f31d274860c6a74e8**1423278660081
 src/main/java**camptimetest/domain/CampSession.java**5e46871ab6221c416b1a9c5373824e0f**1423456438000
 src/main/java**camptimetest/domain/Activity.java**fb0782b8b52ba6faee18361468ccc7e4**1423442923000
 src/main/java**camptimetest/rest/CamperResource.java**027afed3a19701cb3c4105d1d09fd3d1**1423287952000
-src/main/java**camptimetest/rest/ActivityResource.java**8395956047fa44a427a969b727c19302**1423456712000
+src/main/java**camptimetest/rest/ActivityResource.java**9afbf0e82766baaa2be29c0238615743**1423466299000
 src/main/java**camptimetest/domain/MasterSchedule.java**68aa46aafbc649d4e44dce95e5f8a43b**1423287952000
 src\main\java**camptimetest\domain\MasterSchedule.java**abbcfc0b4f8157530e50c95e695eaec2**1423103206571
 src\main\java**camptimetest\domain\SessionRegistration.java**cf06e0823173a774e93234e017cfb588**1422940990000
@@ -22,7 +22,7 @@ src/main/java**camptimetest/domain/ActivityArea.java**6b50f98a339b16d8e7bf604cb2
 src\main\java**camptimetest\domain\ActivityArea.java**a8f6b857bed7a353054355c9709efcfe**1423092277353
 src/main/java**playground/datetest.java**8426ffaf6587671afe35871e90ebb352**1422675267000
 src\main\java**camptimetest\domain\CampSession.java**94ab2cbb772a1723520b4980001aa8f2**1423283682718
-src/main/java**camptimetest/domain/ConstraintChecker.java**e3df0a5ba482d02ec75a2bc6d3183f1c**1423461670000
+src/main/java**camptimetest/domain/ConstraintChecker.java**ff7fb4e086077524c9b9fae7d50b7a86**1423521292000
 src\main\java**camptimetest\domain\ConstraintChecker.java**75cc3af2a60035728be453f198aa3ea0**1423103236930
 src\main\java**camptimetest\domain\Hour.java**a6fcb334f9dbc85f80ca94c07d3eb623**1423102753000
 src/main/java**camptimetest/createdata/TestData.java**15f981894f2269829dd8de219d2903d6**1422928912000
