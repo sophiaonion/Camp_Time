@@ -11762,3 +11762,42 @@ java.lang.NumberFormatException: For input string: ""
 20:13:54.716 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 20.82 ms
 20:14:14.571 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 342.7 ms
 20:19:01.384 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 68.52 ms
+20:23:20.266 [qtp895947612-33  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 54.89 ms
+20:23:46.491 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+20:25:31.238 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+20:25:31.772 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+20:25:35.424 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+20:25:35.438 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+20:25:37.111 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+20:25:37.248 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+20:25:53.028 [qtp895947612-26  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+20:25:53.199 [qtp895947612-26  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 551.3 ms
+20:25:53.503 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 304.0 ms
+20:26:06.607 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 162.4 ms
+20:26:44.383 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+20:26:55.199 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+20:26:55.437 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+20:26:56.328 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+20:26:56.329 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+20:26:56.821 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+20:26:57.063 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+20:27:11.402 [qtp895947612-27  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+20:27:11.530 [qtp895947612-27  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 486.9 ms
+20:27:11.610 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 79.67 ms
+20:27:25.827 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 324.7 ms
+20:30:47.840 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 926.8 ms
+20:30:49.620 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 298.3 ms
+20:30:49.624 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 2.693 ms
+20:31:04.415 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 109.9 ms

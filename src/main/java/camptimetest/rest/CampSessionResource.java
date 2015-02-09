@@ -16,6 +16,7 @@ import javax.inject.Named;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 
 import static restx.common.MorePreconditions.checkEquals;
 
@@ -104,20 +105,21 @@ public class CampSessionResource {
                 a.setTitle(title);
                 a.setSession(String.valueOf(info.get("name")));
 
-                if(title == "unit")
+                if(title.equals("unit"))
                     a.setActivityArea("unit");
-                else if(title == "pool")
+                else if(title.equals("pool"))
                     a.setActivityArea("pool");
-                else if (title == "art")
+                else if (title.equals("art"))
                     a.setActivityArea("art");
-                else if (title == "sports")
+                else if (title.equals("sports"))
                     a.setActivityArea("sports");
-                else if (title == "canoeing")
+                else if (title.equals("canoeing"))
                     a.setActivityArea("canoeing");
-                else if (title == "archery")
+                else if (title.equals("archery"))
                     a.setActivityArea("archery");
-                else if (title == "creek")
+                else if (title.equals("creek"))
                     a.setActivityArea("creek");
+                else
                 System.out.print("HEHREHRHEH");
 
 //                switch (name) {
