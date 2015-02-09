@@ -11477,573 +11477,103 @@ java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.Stri
 23:52:58.921 [qtp1753447031-63 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 3.475 ms
 23:52:59.346 [qtp1753447031-75 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/monitor >> OK - 188.6 ms
 23:52:59.490 [qtp1753447031-76 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/metrics >> OK - 334.8 ms
-14:46:05.579 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-14:46:05.956 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-14:46:07.926 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-14:46:07.926 [main             ] INFO  restx.RestxMainRouterFactory - 
+00:46:01.439 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:46:02.246 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:46:03.739 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:46:03.739 [main             ] INFO  restx.RestxMainRouterFactory - 
 --------------------------------------
  -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
  -- for admin console,
  --   VISIT http://127.0.0.1:8080/api/@/ui/
  --
 
-14:46:12.794 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 12 sources compiled in 4.457 s
-14:46:13.177 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-14:46:13.614 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-14:46:15.169 [qtp1020923989-22 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-14:46:15.594 [qtp1020923989-22 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs - per request factory created in 1.098 s
-14:46:15.772 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:15.834 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 239.7 ms
-14:46:16.058 [qtp1020923989-26 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:16.771 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/camp-session - per request factory created in 855.2 ms
-14:46:16.772 [qtp1020923989-23 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:16.807 [qtp1020923989-27 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/camper - per request factory created in 856.0 ms
-14:46:16.809 [qtp1020923989-27 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:16.926 [qtp1020923989-28 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:16.956 [qtp1020923989-22 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/user - per request factory created in 857.2 ms
-14:46:16.957 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:16.974 [qtp1020923989-24 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.008 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 33.93 ms
-14:46:17.011 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 84.79 ms
-14:46:17.044 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 235.9 ms
-14:46:17.068 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 297.3 ms
-14:46:17.187 [qtp1020923989-23 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.217 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 30.09 ms
-14:46:17.265 [qtp1020923989-27 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.346 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 390.0 ms
-14:46:17.372 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 106.9 ms
-14:46:17.431 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 1.374 s
-14:46:17.483 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/monitor - per request factory created in 255.8 ms
-14:46:17.484 [qtp1020923989-23 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.489 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.490 [qtp1020923989-27 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.501 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 11.86 ms
-14:46:17.502 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 12.01 ms
-14:46:17.514 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 29.87 ms
-14:46:17.520 [qtp1020923989-28 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/mount-resources - per request factory created in 455.0 ms
-14:46:17.521 [qtp1020923989-28 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.524 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 3.026 ms
-14:46:17.528 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/mount-sources - per request factory created in 431.7 ms
-14:46:17.529 [qtp1020923989-24 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.530 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 1.689 ms
-14:46:17.540 [qtp1020923989-26 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.553 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 12.42 ms
-14:46:17.610 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:17.630 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 20.47 ms
-14:46:23.530 [qtp1020923989-28 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:23.795 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:23.834 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:23.842 [qtp1020923989-26 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:23.911 [qtp1020923989-27 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.123 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.211 [qtp1020923989-23 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.215 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> UNAUTHORIZED - 4.475 ms
-14:46:24.260 [qtp1020923989-24 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.261 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> UNAUTHORIZED - 1.193 ms
-14:46:24.280 [qtp1020923989-26 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.488 [qtp1020923989-28 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.584 [qtp1020923989-23 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.588 [qtp1020923989-27 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.711 [qtp1020923989-23 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.717 [qtp1020923989-27 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.768 [qtp1020923989-26 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.774 [qtp1020923989-24 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.778 [qtp1020923989-22 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/alertify.core.css - per request factory created in 287.1 ms
-14:46:24.779 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:24.788 [qtp1020923989-28 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:27.994 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:28.303 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> UNAUTHORIZED - 308.9 ms
-14:46:32.212 [qtp1020923989-22 ] WARN  r.security.RestxSessionCookieFilter - invalid restx session signature. session was: {"principal":"admin","sessionKey":"2dd85ff1-e077-41ea-8f69-d4fb0e7ce64a","_expires":"2015-03-10T14:35:40.203-05:00"}. Ignoring session cookie.
-14:46:32.591 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> OK - 379.3 ms
-14:46:33.278 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 8.209 ms
-14:46:33.323 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 20.13 ms
-14:46:37.243 [qtp1020923989-27 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/securityHandling.js - per request factory created in 321.8 ms
-14:46:37.352 [qtp1020923989-28 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/js/controllers/ApisController.js - per request factory created in 243.8 ms
-14:46:37.641 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 11.95 ms
-14:46:37.670 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 38.79 ms
-14:46:37.817 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 65.24 ms
-14:46:37.877 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 18.60 ms
-14:46:37.958 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 17.19 ms
-14:46:38.295 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 58.31 ms
-14:46:38.331 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 100.4 ms
-14:46:38.366 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 87.81 ms
-14:46:38.446 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 44.74 ms
-14:46:38.476 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 67.96 ms
-14:46:38.535 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 201.8 ms
-14:46:38.565 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 5.852 ms
-14:46:38.596 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 4.459 ms
-14:46:38.632 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 27.63 ms
-14:46:38.709 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 11.13 ms
-14:46:38.755 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 13.39 ms
-14:46:38.832 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 12.20 ms
-14:46:38.920 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 353.1 ms
-14:46:38.930 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 130.0 ms
-14:46:39.031 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 18.16 ms
-14:46:47.125 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 5.252 ms
-14:46:47.192 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 22.34 ms
-14:46:47.322 [qtp1020923989-22 ] INFO  org.reflections.Reflections - Reflections took 39 ms to scan 2 urls, producing 21 keys and 24 values 
-14:46:47.326 [qtp1020923989-22 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=GET&path=/sessions/current >> OK - 93.12 ms
-14:46:53.780 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 5.552 ms
-14:47:38.147 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 13.18 ms
-14:47:38.294 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 11.42 ms
-14:47:38.337 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 11.32 ms
-14:47:38.406 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 12.29 ms
-14:47:38.452 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 54.06 ms
-14:47:38.485 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 50.58 ms
-14:47:38.549 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 49.37 ms
-14:47:38.657 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 28.10 ms
-14:47:38.700 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 7.347 ms
-14:47:38.709 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 78.95 ms
-14:47:38.718 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 149.2 ms
-14:47:38.755 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 10.07 ms
-14:47:38.949 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/mount-resources - per request factory created in 397.8 ms
-14:47:38.981 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 182.6 ms
-14:47:38.983 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 33.94 ms
-14:47:39.034 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 37.67 ms
-14:47:39.034 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 204.0 ms
-14:47:43.415 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 18.99 ms
-14:47:43.419 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 27.48 ms
-14:47:43.501 [qtp1020923989-26 ] INFO  org.reflections.Reflections - Reflections took 13 ms to scan 2 urls, producing 21 keys and 24 values 
-14:47:43.502 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 20.07 ms
-14:53:00.841 [qtp1020923989-33 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 7.746 ms
-14:53:01.014 [qtp1020923989-32 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 19.05 ms
-14:53:01.161 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 99.63 ms
-14:53:01.164 [qtp1020923989-33 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 21.67 ms
-14:53:01.237 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 3.677 ms
-14:53:01.255 [qtp1020923989-33 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 27.40 ms
-14:53:01.304 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 206.8 ms
-14:53:01.366 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 18.48 ms
-14:53:01.440 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 7.270 ms
-14:53:01.450 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 411.0 ms
-14:53:01.490 [qtp1020923989-34 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 487.4 ms
-14:53:01.502 [qtp1020923989-33 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 81.81 ms
-14:53:01.509 [qtp1020923989-32 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 433.3 ms
-14:53:01.583 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 11.14 ms
-14:53:01.598 [qtp1020923989-33 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 62.81 ms
-14:53:01.691 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 67.28 ms
-14:53:04.988 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 24.23 ms
-14:53:05.023 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 17.70 ms
-14:53:05.119 [qtp1020923989-31 ] INFO  org.reflections.Reflections - Reflections took 17 ms to scan 2 urls, producing 21 keys and 24 values 
-14:53:05.121 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/users >> OK - 23.70 ms
-14:53:08.148 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/schemas/camptimetest.domain.User >> OK - 180.1 ms
-14:59:43.352 [qtp1020923989-36 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 40.42 ms
-14:59:43.362 [qtp1020923989-37 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 78.48 ms
-14:59:43.457 [qtp1020923989-39 ] INFO  org.reflections.Reflections - Reflections took 19 ms to scan 2 urls, producing 21 keys and 24 values 
-14:59:43.458 [qtp1020923989-39 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/users >> OK - 26.72 ms
-15:00:36.615 [qtp1020923989-40 ] WARN  restx.StdRestxMainRouter - request raised JsonParseException
-com.fasterxml.jackson.core.JsonParseException: Unexpected character ('n' (code 110)): was expecting double-quote to start field name
- at [Source: restx.servlet.HttpServletRestxRequest$1@64564820; line: 2, column: 2]
-	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1524) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:557) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:475) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleOddName(UTF8StreamJsonParser.java:1784) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._parseName(UTF8StreamJsonParser.java:1481) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:701) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:118) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1270) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:865) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at restx.jackson.JsonEntityRequestBodyReader.readBody(JsonEntityRequestBodyReader.java:30) ~[restx-core-0.32.jar:na]
-	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:115) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
-	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-15:00:36.623 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> BAD_REQUEST - 75.17 ms
-15:00:58.775 [qtp1020923989-38 ] WARN  restx.StdRestxMainRouter - request raised JsonParseException
-com.fasterxml.jackson.core.JsonParseException: Unexpected character (''' (code 39)): was expecting double-quote to start field name
- at [Source: restx.servlet.HttpServletRestxRequest$1@5cbecd00; line: 2, column: 2]
-	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1524) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:557) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:475) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleOddName(UTF8StreamJsonParser.java:1784) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._parseName(UTF8StreamJsonParser.java:1481) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:701) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:118) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1270) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:865) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at restx.jackson.JsonEntityRequestBodyReader.readBody(JsonEntityRequestBodyReader.java:30) ~[restx-core-0.32.jar:na]
-	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:115) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
-	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-15:00:58.785 [qtp1020923989-38 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> BAD_REQUEST - 18.28 ms
-15:01:40.203 [qtp1020923989-36 ] WARN  restx.StdRestxMainRouter - request raised JsonMappingException
-com.fasterxml.jackson.databind.JsonMappingException: Can not deserialize instance of java.util.ArrayList out of VALUE_STRING token
- at [Source: restx.servlet.HttpServletRestxRequest$1@54f797db; line: 3, column: 24] (through reference chain: camptimetest.domain.User["roles"])
-	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:164) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.DeserializationContext.mappingException(DeserializationContext.java:691) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.DeserializationContext.mappingException(DeserializationContext.java:685) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.handleNonArray(StringCollectionDeserializer.java:216) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.deserialize(StringCollectionDeserializer.java:164) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.deserialize(StringCollectionDeserializer.java:154) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer.deserialize(StringCollectionDeserializer.java:19) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:525) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:99) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:242) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:118) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1270) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:865) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at restx.jackson.JsonEntityRequestBodyReader.readBody(JsonEntityRequestBodyReader.java:30) ~[restx-core-0.32.jar:na]
-	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:115) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
-	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-15:01:40.206 [qtp1020923989-36 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> BAD_REQUEST - 16.99 ms
-15:02:11.996 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 231.0 ms
-15:02:24.616 [qtp1020923989-36 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 22.42 ms
-15:02:24.666 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 11.34 ms
-15:02:24.754 [qtp1020923989-36 ] INFO  org.reflections.Reflections - Reflections took 12 ms to scan 2 urls, producing 21 keys and 24 values 
-15:02:24.756 [qtp1020923989-36 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=GET&path=/users >> OK - 20.51 ms
-15:02:27.073 [qtp1020923989-36 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> OK - 57.21 ms
-15:03:55.192 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 4.711 ms
-15:03:55.431 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 165.3 ms
-15:03:55.522 [qtp1020923989-42 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 206.8 ms
-15:03:55.532 [qtp1020923989-45 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 140.3 ms
-15:03:55.564 [qtp1020923989-43 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 247.4 ms
-15:03:55.582 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 6.945 ms
-15:03:55.591 [qtp1020923989-44 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 240.2 ms
-15:03:55.683 [qtp1020923989-41 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 275.7 ms
-15:03:55.689 [qtp1020923989-45 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 48.30 ms
-15:03:55.706 [qtp1020923989-43 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 33.78 ms
-15:03:55.779 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 12.73 ms
-15:03:55.819 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 6.511 ms
-15:03:56.078 [qtp1020923989-44 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 44.62 ms
-15:03:56.119 [qtp1020923989-42 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 52.94 ms
-15:03:56.202 [qtp1020923989-44 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 10.31 ms
-15:03:56.239 [qtp1020923989-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 81.70 ms
-15:04:01.426 [qtp1020923989-41 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 50.18 ms
-15:04:01.447 [qtp1020923989-45 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 51.36 ms
-15:04:01.518 [qtp1020923989-42 ] INFO  org.reflections.Reflections - Reflections took 11 ms to scan 2 urls, producing 21 keys and 24 values 
-15:04:01.521 [qtp1020923989-42 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 19.83 ms
-15:04:08.791 [qtp1020923989-43 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/schemas/restx.security.Session >> OK - 16.86 ms
-15:06:24.036 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-15:06:24.508 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-15:06:26.513 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-15:06:26.514 [main             ] INFO  restx.RestxMainRouterFactory - 
+00:46:06.697 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 5 sources compiled in 2.509 s
+00:46:07.331 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+00:46:07.799 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:46:46.043 [qtp1753447031-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:46:46.397 [qtp1753447031-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 1.264 s
+00:46:47.108 [qtp1753447031-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 711.1 ms
+00:46:58.803 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 236.9 ms
+00:47:20.105 [qtp1753447031-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 85.85 ms
+00:47:40.041 [qtp1753447031-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 33.46 ms
+01:59:20.885 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+11:58:26.902 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+11:58:27.636 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+11:58:34.048 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+11:58:34.130 [main             ] INFO  restx.RestxMainRouterFactory - 
 --------------------------------------
  -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
  -- for admin console,
  --   VISIT http://127.0.0.1:8080/api/@/ui/
  --
 
-15:06:27.363 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-15:06:31.526 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-15:06:40.253 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-15:06:40.451 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/ - per request factory created in 842.5 ms
-15:06:41.257 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/admin.css - per request factory created in 267.7 ms
-15:06:41.448 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/bootstrap.min.css - per request factory created in 412.7 ms
-15:06:41.516 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/securityHandling.js - per request factory created in 461.2 ms
-15:06:42.098 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 115.5 ms
-15:06:42.158 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 91.93 ms
-15:06:46.720 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 8.139 ms
-15:06:46.859 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 64.46 ms
-15:06:46.881 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 33.60 ms
-15:06:46.967 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 18.60 ms
-15:06:47.188 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 25.31 ms
-15:06:47.374 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 65.32 ms
-15:06:47.465 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 46.28 ms
-15:06:47.674 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 46.39 ms
-15:06:47.703 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 67.11 ms
-15:06:47.755 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 20.85 ms
-15:06:47.790 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/camp-session - per request factory created in 324.0 ms
-15:06:48.016 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/admin-pages - per request factory created in 482.3 ms
-15:06:48.038 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 21.28 ms
-15:06:48.077 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 286.9 ms
-15:06:48.110 [qtp1020923989-27 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/mount-resources - per request factory created in 383.8 ms
-15:06:48.118 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 19.30 ms
-15:06:48.127 [qtp1020923989-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/metrics - per request factory created in 369.9 ms
-15:06:48.137 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/config - per request factory created in 341.2 ms
-15:06:48.160 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 22.32 ms
-15:06:48.172 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 61.67 ms
-15:06:48.185 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 57.72 ms
-15:06:48.364 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 12.97 ms
-15:06:48.380 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 31.20 ms
-15:06:48.410 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 53.94 ms
-15:06:48.507 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 43.29 ms
-16:32:50.508 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-16:32:50.797 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-16:32:53.117 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-16:32:53.118 [main             ] INFO  restx.RestxMainRouterFactory - 
+11:58:40.161 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+11:58:41.732 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+12:22:40.839 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 788.6 ms
+12:23:11.383 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+12:23:20.372 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+12:23:20.748 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+12:23:22.502 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+12:23:22.502 [main             ] INFO  restx.RestxMainRouterFactory - 
 --------------------------------------
  -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
  -- for admin console,
  --   VISIT http://127.0.0.1:8080/api/@/ui/
  --
 
-16:32:58.339 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 5 sources compiled in 4.704 s
-16:32:59.164 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-16:32:59.851 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-16:33:17.814 [qtp1020923989-23 ] ERROR restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/ - Exception when using factory to load router: 
-  QueryByClass{componentClass=restx.RestxRouting[AppClassLoader]}
-    |       \__=> Name{name='RestxRouting', clazz=restx.RestxRouting[AppClassLoader]}
-    |
-    +-> QueryByClass{componentClass=restx.RestxRouter[AppClassLoader]}
-      |       \__=> Name{name='UserResourceRouter', clazz=camptimetest.rest.UserResourceRouter[HotCompile[2]]}
-      |
-      +-> QueryByClass{componentClass=camptimetest.rest.UserResource[HotCompile[2]]}
-        |       \__=> Name{name='UserResource', clazz=camptimetest.rest.UserResource[HotCompile[2]]}
-        |
-        +-> QueryByName{name=Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]}}
-              |
-              +--: Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]} can't be satisfied in 015-015<<006(114): no machine found to build it.
-
-Pro Tip: Set HTTP Header RestxDebug to have a dump of the factory in your logs when you get this error.
-16:33:17.815 [qtp1020923989-23 ] WARN  restx.AbstractResponse - no charset defined while getting writer to write http response. Make sure you call setContentType() before calling getWriter(). Using UTF-8 charset.
-16:33:17.817 [qtp1020923989-23 ] ERROR restx.RestxMainRouterFactory - Error when loading Factory to process your request.
-One or more dependency injections can be sastifed.
-
-  
-    QueryByClass{componentClass=restx.RestxRouting[AppClassLoader]}
-      |       \__=> Name{name='RestxRouting', clazz=restx.RestxRouting[AppClassLoader]}
-      |
-      +-> QueryByClass{componentClass=restx.RestxRouter[AppClassLoader]}
-        |       \__=> Name{name='UserResourceRouter', clazz=camptimetest.rest.UserResourceRouter[HotCompile[2]]}
-        |
-        +-> QueryByClass{componentClass=camptimetest.rest.UserResource[HotCompile[2]]}
-          |       \__=> Name{name='UserResource', clazz=camptimetest.rest.UserResource[HotCompile[2]]}
-          |
-          +-> QueryByName{name=Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]}}
-                |
-                +--: Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]} can't be satisfied in 015-015<<006(114): no machine found to build it.
-
-16:34:13.712 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-16:34:14.152 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-16:34:16.245 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-16:34:16.246 [main             ] INFO  restx.RestxMainRouterFactory - 
+12:23:25.318 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 2.219 s
+12:23:25.838 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+12:23:26.284 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+12:44:26.992 [qtp1753447031-43 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+12:44:27.457 [qtp1753447031-43 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 1.799 s
+12:44:28.335 [qtp1753447031-43 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 877.3 ms
+12:44:52.207 [qtp1753447031-43 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 206.2 ms
+12:56:10.306 [qtp1753447031-56 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 75.39 ms
+12:56:54.519 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 146.7 ms
+12:57:09.449 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 30.29 ms
+13:27:22.431 [qtp1753447031-76 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 93.19 ms
+13:30:39.989 [qtp1753447031-79 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 40.66 ms
+13:31:24.660 [qtp1753447031-80 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 1.981 s
+13:31:31.575 [qtp1753447031-81 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 44.67 ms
+13:32:01.691 [qtp1753447031-80 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 20.89 ms
+13:39:20.302 [qtp1753447031-87 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 36.55 ms
+13:39:33.252 [qtp1753447031-88 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/campers/54d442c40364e540bfbb1d9f >> OK - 166.4 ms
+13:42:54.638 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 7.127 s
+13:43:03.224 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+16:58:14.531 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+16:58:14.849 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+16:58:16.173 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+16:58:16.173 [main             ] INFO  restx.RestxMainRouterFactory - 
 --------------------------------------
  -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
  -- for admin console,
  --   VISIT http://127.0.0.1:8080/api/@/ui/
  --
 
-16:34:16.659 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-16:34:17.086 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-16:34:28.846 [qtp1020923989-23 ] ERROR restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/ - Exception when using factory to load router: 
-  QueryByClass{componentClass=restx.RestxRouting[AppClassLoader]}
-    |       \__=> Name{name='RestxRouting', clazz=restx.RestxRouting[AppClassLoader]}
-    |
-    +-> QueryByClass{componentClass=restx.RestxRouter[AppClassLoader]}
-      |       \__=> Name{name='UserResourceRouter', clazz=camptimetest.rest.UserResourceRouter[HotCompile[2]]}
-      |
-      +-> QueryByClass{componentClass=camptimetest.rest.UserResource[HotCompile[2]]}
-        |       \__=> Name{name='UserResource', clazz=camptimetest.rest.UserResource[HotCompile[2]]}
-        |
-        +-> QueryByName{name=Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]}}
-              |
-              +--: Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]} can't be satisfied in 015-015<<006(114): no machine found to build it.
-
-Pro Tip: Set HTTP Header RestxDebug to have a dump of the factory in your logs when you get this error.
-16:34:28.846 [qtp1020923989-23 ] WARN  restx.AbstractResponse - no charset defined while getting writer to write http response. Make sure you call setContentType() before calling getWriter(). Using UTF-8 charset.
-16:34:28.848 [qtp1020923989-23 ] ERROR restx.RestxMainRouterFactory - Error when loading Factory to process your request.
-One or more dependency injections can be sastifed.
-
-  
-    QueryByClass{componentClass=restx.RestxRouting[AppClassLoader]}
-      |       \__=> Name{name='RestxRouting', clazz=restx.RestxRouting[AppClassLoader]}
-      |
-      +-> QueryByClass{componentClass=restx.RestxRouter[AppClassLoader]}
-        |       \__=> Name{name='UserResourceRouter', clazz=camptimetest.rest.UserResourceRouter[HotCompile[2]]}
-        |
-        +-> QueryByClass{componentClass=camptimetest.rest.UserResource[HotCompile[2]]}
-          |       \__=> Name{name='UserResource', clazz=camptimetest.rest.UserResource[HotCompile[2]]}
-          |
-          +-> QueryByName{name=Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]}}
-                |
-                +--: Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]} can't be satisfied in 015-015<<006(114): no machine found to build it.
-
-16:35:47.202 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-16:35:47.620 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-16:35:49.614 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-16:35:49.615 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-16:35:54.369 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 23 sources compiled in 4.519 s
-16:35:54.669 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-16:35:55.308 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-16:35:59.206 [qtp1020923989-23 ] ERROR restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/ - Exception when using factory to load router: 
-  QueryByClass{componentClass=restx.RestxRouting[AppClassLoader]}
-    |       \__=> Name{name='RestxRouting', clazz=restx.RestxRouting[AppClassLoader]}
-    |
-    +-> QueryByClass{componentClass=restx.RestxRouter[AppClassLoader]}
-      |       \__=> Name{name='UserResourceRouter', clazz=camptimetest.rest.UserResourceRouter[HotCompile[2]]}
-      |
-      +-> QueryByClass{componentClass=camptimetest.rest.UserResource[HotCompile[2]]}
-        |       \__=> Name{name='UserResource', clazz=camptimetest.rest.UserResource[HotCompile[2]]}
-        |
-        +-> QueryByName{name=Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]}}
-              |
-              +--: Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]} can't be satisfied in 015-015<<006(114): no machine found to build it.
-
-Pro Tip: Set HTTP Header RestxDebug to have a dump of the factory in your logs when you get this error.
-16:35:59.206 [qtp1020923989-23 ] WARN  restx.AbstractResponse - no charset defined while getting writer to write http response. Make sure you call setContentType() before calling getWriter(). Using UTF-8 charset.
-16:35:59.208 [qtp1020923989-23 ] ERROR restx.RestxMainRouterFactory - Error when loading Factory to process your request.
-One or more dependency injections can be sastifed.
-
-  
-    QueryByClass{componentClass=restx.RestxRouting[AppClassLoader]}
-      |       \__=> Name{name='RestxRouting', clazz=restx.RestxRouting[AppClassLoader]}
-      |
-      +-> QueryByClass{componentClass=restx.RestxRouter[AppClassLoader]}
-        |       \__=> Name{name='UserResourceRouter', clazz=camptimetest.rest.UserResourceRouter[HotCompile[2]]}
-        |
-        +-> QueryByClass{componentClass=camptimetest.rest.UserResource[HotCompile[2]]}
-          |       \__=> Name{name='UserResource', clazz=camptimetest.rest.UserResource[HotCompile[2]]}
-          |
-          +-> QueryByName{name=Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]}}
-                |
-                +--: Name{name='credentialsStrategy', clazz=restx.security.BCryptCredentialsStrategy[AppClassLoader]} can't be satisfied in 015-015<<006(114): no machine found to build it.
-
-16:36:31.947 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-16:36:32.223 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-16:36:34.217 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-16:36:34.219 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-16:36:39.494 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 23 sources compiled in 5.011 s
-16:36:39.694 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-16:36:40.118 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-16:36:41.284 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-16:36:41.557 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/ - per request factory created in 1.127 s
-16:36:42.099 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/securityHandling.js - per request factory created in 293.9 ms
-16:36:42.149 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/bootstrap.min.css - per request factory created in 388.8 ms
-16:36:43.046 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> UNAUTHORIZED - 3.429 ms
-16:36:43.135 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> UNAUTHORIZED - 1.722 ms
-16:36:43.636 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/login.html ? backTo=http://localhost:8080/api/@/ui/ - per request factory created in 399.7 ms
-16:37:08.866 [qtp1020923989-23 ] ERROR restx.StdRestxMainRouter - request raised Network: Read operation to server localhost/127.0.0.1:27017 failed on database camptimetest
-com.mongodb.MongoException$Network: Read operation to server localhost/127.0.0.1:27017 failed on database camptimetest
-	at com.mongodb.DBTCPConnector.innerCall(DBTCPConnector.java:253) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBTCPConnector.call(DBTCPConnector.java:216) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:288) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:273) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBCollection.findOne(DBCollection.java:728) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBCollection.findOne(DBCollection.java:708) ~[mongo-java-driver-2.11.3.jar:na]
-	at org.jongo.FindOne.map(FindOne.java:50) ~[jongo-1.0.jar:na]
-	at org.jongo.FindOne.as(FindOne.java:46) ~[jongo-1.0.jar:na]
-	at restx.jongo.JongoUserRepository.findUserByName(JongoUserRepository.java:36) ~[restx-jongo-0.32.jar:na]
-	at restx.security.StdUserService.findUserByName(StdUserService.java:26) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.StdUserService.findAndCheckCredentials(StdUserService.java:38) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.StdBasicPrincipalAuthenticator.authenticate(StdBasicPrincipalAuthenticator.java:30) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.SessionResource.authenticate(SessionResource.java:43) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.SessionResourceRouter$1.doRoute(SessionResourceRouter.java:47) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.SessionResourceRouter$1.doRoute(SessionResourceRouter.java:43) ~[restx-security-basic-0.32.jar:na]
+16:58:27.972 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 4 sources compiled in 11.30 s
+16:58:31.132 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+16:58:31.823 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+17:10:26.350 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 5.116 s
+18:28:29.724 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.534 s
+18:36:57.689 [qtp895947612-53  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+18:36:58.047 [qtp895947612-53  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 1.919 s
+18:36:58.299 [qtp895947612-53  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 251.6 ms
+18:37:49.528 [qtp895947612-52  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 797.1 ms
+18:37:53.804 [qtp895947612-53  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 188.7 ms
+18:38:11.393 [qtp895947612-52  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 56.26 ms
+18:39:50.390 [qtp895947612-54  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 34.30 ms
+18:39:58.898 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 694.0 ms
+18:40:05.566 [qtp895947612-55  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 77.25 ms
+18:40:38.489 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 284.9 ms
+18:40:39.389 [qtp895947612-56  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 49.01 ms
+18:40:59.681 [qtp895947612-55  ] WARN  restx.StdRestxMainRouter - request raised NumberFormatException: For input string: ""
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[na:1.8.0_31]
+	at java.lang.Integer.parseInt(Integer.java:592) ~[na:1.8.0_31]
+	at java.lang.Integer.valueOf(Integer.java:766) ~[na:1.8.0_31]
+	at camptimetest.rest.CampSessionResource.createCampSession(CampSessionResource.java:93) ~[classes/:na]
+	at camptimetest.rest.CampSessionResourceRouter$4.doRoute(CampSessionResourceRouter.java:133) ~[classes/:na]
+	at camptimetest.rest.CampSessionResourceRouter$4.doRoute(CampSessionResourceRouter.java:129) ~[classes/:na]
 	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
 	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
 	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
@@ -12084,331 +11614,39 @@ com.mongodb.MongoException$Network: Read operation to server localhost/127.0.0.1
 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_05]
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_05]
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_05]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_05]
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_05]
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_05]
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_05]
-	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_05]
-	at com.mongodb.DBPort._open(DBPort.java:223) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBPort.go(DBPort.java:125) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBPort.call(DBPort.java:92) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBTCPConnector.innerCall(DBTCPConnector.java:244) ~[mongo-java-driver-2.11.3.jar:na]
-	... 55 common frames omitted
-16:37:08.867 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> INTERNAL_SERVER_ERROR - 3.558 s
-16:37:34.580 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> OK - 1.402 s
-16:37:35.431 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 10.92 ms
-16:37:35.487 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 11.45 ms
-16:37:38.628 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/lib/underscore.string.js - per request factory created in 236.3 ms
-16:37:38.632 [qtp1020923989-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/css/docs.css - per request factory created in 249.6 ms
-16:37:38.933 [qtp1020923989-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/admin.js - per request factory created in 221.9 ms
-16:37:39.243 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 6.624 ms
-16:37:39.283 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 7.819 ms
-16:37:39.417 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 10.46 ms
-16:37:39.428 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 32.66 ms
-16:37:39.591 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 45.78 ms
-16:37:39.933 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 95.53 ms
-16:37:39.988 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 126.3 ms
-16:37:40.035 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 69.88 ms
-16:37:40.123 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 30.58 ms
-16:37:40.165 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 95.75 ms
-16:37:40.273 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 65.73 ms
-16:37:40.340 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 18.17 ms
-16:37:40.357 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 15.33 ms
-16:37:40.554 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 160.3 ms
-16:37:40.569 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 101.8 ms
-16:37:40.602 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 67.69 ms
-16:37:40.645 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 143.6 ms
-16:37:40.647 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 110.2 ms
-16:37:40.737 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 37.85 ms
-16:37:40.758 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 84.88 ms
-16:37:51.331 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 6.904 ms
-16:37:51.359 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 25.96 ms
-16:37:51.608 [qtp1020923989-24 ] INFO  org.reflections.Reflections - Reflections took 49 ms to scan 2 urls, producing 21 keys and 24 values 
-16:37:51.613 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/users >> OK - 109.2 ms
-16:37:56.750 [qtp1020923989-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/sources/css/app.css - per request factory created in 207.7 ms
-16:37:57.557 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/sources/main/camptimetest/rest/UserResource.java >> OK - 5.472 ms
-16:37:57.616 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 19.64 ms
-16:37:57.665 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/sources/main/camptimetest/rest/ >> OK - 15.33 ms
-16:37:57.721 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/sources/main/camptimetest/rest/ >> OK - 19.27 ms
-16:37:57.792 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 246.9 ms
-16:37:57.795 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/sources/main/camptimetest/rest/UserResource.java >> OK - 246.1 ms
-16:37:57.816 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 4.929 ms
-16:37:57.917 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 6.126 ms
-16:38:00.561 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 77.96 ms
-16:38:00.598 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 4.379 ms
-16:38:00.699 [qtp1020923989-26 ] INFO  org.reflections.Reflections - Reflections took 17 ms to scan 2 urls, producing 21 keys and 24 values 
-16:38:00.701 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/users >> OK - 22.86 ms
-16:38:41.618 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 417.7 ms
-16:38:55.189 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 35.88 ms
-16:38:55.197 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 4.739 ms
-16:38:55.291 [qtp1020923989-24 ] INFO  org.reflections.Reflections - Reflections took 13 ms to scan 2 urls, producing 21 keys and 24 values 
-16:38:55.292 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=GET&path=/users >> OK - 19.23 ms
-16:39:01.358 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> OK - 47.65 ms
-16:39:04.664 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /users >> OK - 10.37 ms
-16:39:10.667 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 17.70 ms
-16:39:10.722 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 7.146 ms
-16:39:10.834 [qtp1020923989-26 ] INFO  org.reflections.Reflections - Reflections took 13 ms to scan 2 urls, producing 21 keys and 24 values 
-16:39:10.835 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/users >> OK - 22.92 ms
-16:39:12.775 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 13.34 ms
-16:39:12.818 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 15.17 ms
-16:39:12.884 [qtp1020923989-23 ] INFO  org.reflections.Reflections - Reflections took 12 ms to scan 2 urls, producing 21 keys and 24 values 
-16:39:12.887 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/login >> OK - 24.10 ms
-16:40:01.175 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> NO_CONTENT - 147.4 ms
-16:41:36.846 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 15.16 ms
-16:41:36.868 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 19.56 ms
-16:41:36.983 [qtp1020923989-28 ] INFO  org.reflections.Reflections - Reflections took 12 ms to scan 2 urls, producing 21 keys and 24 values 
-16:41:36.985 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/users >> OK - 23.36 ms
-16:42:56.983 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-16:42:57.333 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-16:42:59.239 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-16:42:59.241 [main             ] INFO  restx.RestxMainRouterFactory - 
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+18:40:59.682 [qtp895947612-55  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> BAD_REQUEST - 102.6 ms
+18:41:07.915 [qtp895947612-55  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 38.94 ms
+18:43:49.577 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 1.312 s
+18:45:08.455 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 247.4 ms
+18:45:13.411 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+18:46:06.597 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+18:46:06.880 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+18:46:07.904 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+18:46:07.905 [main             ] INFO  restx.RestxMainRouterFactory - 
 --------------------------------------
  -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
  -- for admin console,
  --   VISIT http://127.0.0.1:8080/api/@/ui/
  --
 
-16:42:59.673 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-16:43:00.107 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-16:43:09.029 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-16:43:09.223 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/ - per request factory created in 763.4 ms
-16:43:10.122 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/admin.css - per request factory created in 223.4 ms
-16:43:10.329 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/bootstrap.min.css - per request factory created in 512.6 ms
-16:43:10.716 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 45.37 ms
-16:43:10.835 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 70.58 ms
-16:43:15.553 [qtp1020923989-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/css/docs.css - per request factory created in 387.7 ms
-16:43:15.831 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/js/app.js - per request factory created in 578.1 ms
-16:43:15.882 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/lib/jquery.scrollto.js - per request factory created in 703.7 ms
-16:43:16.483 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 26.11 ms
-16:43:16.589 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 5.917 ms
-16:43:16.631 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 51.82 ms
-16:43:16.711 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 24.03 ms
-16:43:16.813 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 28.45 ms
-16:43:17.002 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 126.4 ms
-16:43:17.263 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/camper - per request factory created in 281.1 ms
-16:43:17.308 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 347.3 ms
-16:43:17.340 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 65.53 ms
-16:43:17.305 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 211.3 ms
-16:43:17.283 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 104.6 ms
-16:43:17.291 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 67.85 ms
-16:43:17.370 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 50.62 ms
-16:43:17.562 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 44.45 ms
-16:43:17.564 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 37.45 ms
-16:43:17.515 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 35.92 ms
-16:43:17.790 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 154.4 ms
-16:43:17.873 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 25.40 ms
-16:43:17.920 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/sessions - per request factory created in 366.1 ms
-16:43:17.940 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 19.67 ms
-16:43:17.949 [qtp1020923989-27 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/metrics - per request factory created in 608.3 ms
-16:43:18.008 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 58.93 ms
-16:43:18.058 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 459.9 ms
-16:43:22.936 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 10.44 ms
-16:43:22.981 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 12.44 ms
-16:43:23.195 [qtp1020923989-24 ] INFO  org.reflections.Reflections - Reflections took 47 ms to scan 2 urls, producing 21 keys and 24 values 
-16:43:23.199 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 75.75 ms
-16:43:28.062 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/schemas/restx.security.Session >> OK - 88.48 ms
-16:43:44.002 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 46.29 ms
-16:43:44.014 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 28.91 ms
-16:43:44.113 [qtp1020923989-23 ] INFO  org.reflections.Reflections - Reflections took 15 ms to scan 2 urls, producing 21 keys and 24 values 
-16:43:44.115 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 24.14 ms
-16:43:54.974 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/schemas/restx.security.Session >> OK - 28.21 ms
-16:44:20.186 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 23.99 ms
-16:44:20.208 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 5.067 ms
-16:44:20.329 [qtp1020923989-30 ] INFO  org.reflections.Reflections - Reflections took 13 ms to scan 2 urls, producing 21 keys and 24 values 
-16:44:20.332 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 23.99 ms
-16:44:47.122 [qtp1020923989-26 ] WARN  restx.StdRestxMainRouter - request raised JsonParseException
-com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'hi': was expecting ('true', 'false' or 'null')
- at [Source: restx.servlet.HttpServletRestxRequest$1@3ce04f1c; line: 3, column: 12]
-	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1524) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:557) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._reportInvalidToken(UTF8StreamJsonParser.java:3095) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(UTF8StreamJsonParser.java:2340) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:767) ~[jackson-core-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.std.MapDeserializer._readAndBindStringMap(MapDeserializer.java:416) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:312) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:26) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1270) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:865) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at restx.jackson.JsonEntityRequestBodyReader.readBody(JsonEntityRequestBodyReader.java:30) ~[restx-core-0.32.jar:na]
-	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:115) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
-	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-16:44:47.176 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> BAD_REQUEST - 75.82 ms
-16:44:56.665 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> UNAUTHORIZED - 186.5 ms
-16:44:57.460 [qtp1020923989-29 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/alertify.default.css - per request factory created in 449.6 ms
-16:45:06.173 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> OK - 328.0 ms
-16:45:06.790 [qtp1020923989-29 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/lib/underscore.string.js - per request factory created in 396.7 ms
-16:45:07.135 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 15.58 ms
-16:45:07.187 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 6.129 ms
-16:45:07.336 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 13.20 ms
-16:45:07.429 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/pages - per request factory created in 240.7 ms
-16:45:07.449 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 19.67 ms
-16:45:07.599 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 19.28 ms
-16:45:07.699 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 43.04 ms
-16:45:07.753 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 20.34 ms
-16:45:07.806 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 17.07 ms
-16:45:07.966 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 25.81 ms
-16:45:08.015 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 13.76 ms
-16:45:08.135 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 86.67 ms
-16:45:08.209 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 107.0 ms
-16:45:08.285 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 43.29 ms
-16:45:08.330 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 13.75 ms
-16:45:08.382 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 18.83 ms
-16:45:08.651 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 13.05 ms
-16:45:08.702 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 20.24 ms
-16:45:08.724 [qtp1020923989-29 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/sessions - per request factory created in 341.0 ms
-16:45:08.741 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 16.39 ms
-16:45:08.747 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 611.4 ms
-16:45:08.850 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 61.75 ms
-16:45:13.883 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 8.274 ms
-16:45:13.930 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 14.50 ms
-16:45:14.038 [qtp1020923989-29 ] INFO  org.reflections.Reflections - Reflections took 11 ms to scan 2 urls, producing 21 keys and 24 values 
-16:45:14.039 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 19.56 ms
-16:45:22.943 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 4.751 ms
-16:45:23.013 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 24.12 ms
-16:45:23.024 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 16.00 ms
-16:45:23.147 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 16.83 ms
-16:45:23.227 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 186.4 ms
-16:45:23.264 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 170.6 ms
-16:45:23.276 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 15.99 ms
-16:45:23.318 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 152.5 ms
-16:45:23.361 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 6.487 ms
-16:45:23.375 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 49.89 ms
-16:45:23.413 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 11.99 ms
-16:45:23.437 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 52.24 ms
-16:45:23.497 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 14.46 ms
-16:45:23.545 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 39.29 ms
-16:45:23.570 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/api-docs/sessions - per request factory created in 208.1 ms
-16:45:23.584 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 19.55 ms
-16:45:23.588 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 16.54 ms
-16:45:27.585 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 5.026 ms
-16:45:27.606 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 17.24 ms
-16:45:27.694 [qtp1020923989-29 ] INFO  org.reflections.Reflections - Reflections took 11 ms to scan 2 urls, producing 21 keys and 24 values 
-16:45:27.695 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=GET&path=/sessions/current >> OK - 18.75 ms
-16:45:31.508 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 18.56 ms
-16:45:40.329 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 9.699 ms
-16:45:40.395 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 15.85 ms
-16:45:40.466 [qtp1020923989-29 ] INFO  org.reflections.Reflections - Reflections took 11 ms to scan 2 urls, producing 21 keys and 24 values 
-16:45:40.467 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 21.92 ms
-16:45:48.388 [qtp1020923989-24 ] WARN  restx.StdRestxMainRouter - request raised JsonMappingException
-com.fasterxml.jackson.databind.JsonMappingException: No content to map due to end-of-input
- at [Source: restx.servlet.HttpServletRestxRequest$1@6f325ee4; line: 1, column: 1]
-	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:164) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader._initForReading(ObjectReader.java:1352) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1253) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:865) ~[jackson-databind-2.3.0.jar:2.3.0]
-	at restx.jackson.JsonEntityRequestBodyReader.readBody(JsonEntityRequestBodyReader.java:30) ~[restx-core-0.32.jar:na]
-	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:115) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
-	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-16:45:48.408 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> BAD_REQUEST - 26.34 ms
-16:45:52.045 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 53.28 ms
-16:45:52.075 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 11.44 ms
-16:45:52.129 [qtp1020923989-27 ] INFO  org.reflections.Reflections - Reflections took 12 ms to scan 2 urls, producing 21 keys and 24 values 
-16:45:52.131 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=GET&path=/sessions/current >> OK - 17.35 ms
-16:45:56.271 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 3.874 ms
-16:46:01.713 [qtp1020923989-30 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 14.74 ms
-16:46:01.738 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 33.05 ms
-16:46:01.808 [qtp1020923989-24 ] INFO  org.reflections.Reflections - Reflections took 11 ms to scan 2 urls, producing 21 keys and 24 values 
-16:46:01.809 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 17.74 ms
-16:46:04.952 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 10.22 ms
-16:46:05.002 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 12.30 ms
-16:46:05.059 [qtp1020923989-31 ] INFO  org.reflections.Reflections - Reflections took 11 ms to scan 2 urls, producing 21 keys and 24 values 
-16:46:05.061 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=GET&path=/sessions/current >> OK - 16.73 ms
-16:46:08.542 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 3.820 ms
-16:46:17.508 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 10.30 ms
-16:46:17.545 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 17.93 ms
-16:46:17.643 [qtp1020923989-29 ] INFO  org.reflections.Reflections - Reflections took 11 ms to scan 2 urls, producing 21 keys and 24 values 
-16:46:17.645 [qtp1020923989-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 18.43 ms
-16:46:48.514 [qtp1020923989-27 ] ERROR restx.StdRestxMainRouter - request raised NullPointerException: null value in entry: password=null
-java.lang.NullPointerException: null value in entry: password=null
-	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33) ~[guava-15.0.jar:na]
-	at com.google.common.collect.RegularImmutableMap.<init>(RegularImmutableMap.java:88) ~[guava-15.0.jar:na]
-	at com.google.common.collect.ImmutableMap.copyOf(ImmutableMap.java:294) ~[guava-15.0.jar:na]
-	at restx.security.SessionResource.authenticate(SessionResource.java:43) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.SessionResourceRouter$1.doRoute(SessionResourceRouter.java:47) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.SessionResourceRouter$1.doRoute(SessionResourceRouter.java:43) ~[restx-security-basic-0.32.jar:na]
+18:46:08.557 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+18:46:08.713 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+18:46:16.263 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+18:46:16.639 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 735.3 ms
+18:46:16.712 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 72.94 ms
+18:46:39.958 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 290.2 ms
+18:48:44.994 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 58.33 ms
+18:48:50.923 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 2.263 s
+18:48:58.611 [qtp895947612-25  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /campsessions - per request factory created in 206.7 ms
+18:48:58.686 [qtp895947612-25  ] WARN  restx.StdRestxMainRouter - request raised NumberFormatException: For input string: ""
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[na:1.8.0_31]
+	at java.lang.Integer.parseInt(Integer.java:592) ~[na:1.8.0_31]
+	at java.lang.Integer.valueOf(Integer.java:766) ~[na:1.8.0_31]
+	at camptimetest.rest.CampSessionResource.createCampSession(CampSessionResource.java:93) ~[classes/:na]
+	at camptimetest.rest.CampSessionResourceRouter$4.doRoute(CampSessionResourceRouter.java:133) ~[classes/:na]
+	at camptimetest.rest.CampSessionResourceRouter$4.doRoute(CampSessionResourceRouter.java:129) ~[classes/:na]
 	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
 	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
 	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
@@ -12449,466 +11687,117 @@ java.lang.NullPointerException: null value in entry: password=null
 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-16:46:48.517 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> INTERNAL_SERVER_ERROR - 40.27 ms
-16:47:05.020 [qtp1020923989-31 ] ERROR restx.StdRestxMainRouter - request raised NullPointerException: null value in entry: usertype=null
-java.lang.NullPointerException: null value in entry: usertype=null
-	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33) ~[guava-15.0.jar:na]
-	at com.google.common.collect.RegularImmutableMap.<init>(RegularImmutableMap.java:88) ~[guava-15.0.jar:na]
-	at com.google.common.collect.ImmutableMap.copyOf(ImmutableMap.java:294) ~[guava-15.0.jar:na]
-	at restx.security.SessionResource.authenticate(SessionResource.java:43) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.SessionResourceRouter$1.doRoute(SessionResourceRouter.java:47) ~[restx-security-basic-0.32.jar:na]
-	at restx.security.SessionResourceRouter$1.doRoute(SessionResourceRouter.java:43) ~[restx-security-basic-0.32.jar:na]
-	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
-	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-16:47:05.024 [qtp1020923989-31 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> INTERNAL_SERVER_ERROR - 92.18 ms
-16:47:10.706 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /sessions >> UNAUTHORIZED - 68.10 ms
-16:47:11.587 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/jquery.querystring.js - per request factory created in 341.6 ms
-16:47:14.931 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 77.59 ms
-16:47:14.946 [qtp1020923989-32 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 60.55 ms
-16:47:15.883 [qtp1020923989-24 ] INFO  org.reflections.Reflections - Reflections took 11 ms to scan 2 urls, producing 21 keys and 24 values 
-16:47:15.884 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/sessions >> OK - 15.57 ms
-18:37:21.849 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-18:37:22.265 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-18:37:23.686 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-18:37:23.687 [main             ] INFO  restx.RestxMainRouterFactory - 
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+18:48:58.687 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> BAD_REQUEST - 60.49 ms
+18:49:30.088 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 66.64 ms
+18:50:44.909 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 40.21 ms
+18:50:49.595 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 935.7 ms
+18:50:58.943 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 59.57 ms
+18:52:12.147 [qtp895947612-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 26.78 ms
+18:52:19.451 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 791.7 ms
+18:52:26.576 [qtp895947612-30  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /campsessions - per request factory created in 410.4 ms
+18:52:26.667 [qtp895947612-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 77.09 ms
+18:53:30.339 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.679 s
+18:53:44.875 [qtp895947612-30  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 219.1 ms
+18:53:44.892 [qtp895947612-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 1.725 ms
+18:53:58.399 [qtp895947612-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 44.83 ms
+18:54:15.977 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 68.06 ms
+18:54:49.360 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 699.0 ms
+18:55:55.896 [qtp895947612-34  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 38.63 ms
+18:56:19.990 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 106.8 ms
+18:56:25.670 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 22.81 ms
+18:56:27.749 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 19.88 ms
+18:56:29.383 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d684500364a58a80bc03de/54d8052603645a894019e556 >> OK - 62.05 ms
+18:56:34.487 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.019 ms
+18:56:36.505 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 16.49 ms
+18:56:37.380 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d6846b0364a58a80bc03e0/54d8052603645a894019e556 >> OK - 2.427 ms
+18:56:40.436 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.204 ms
+18:56:42.437 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 15.07 ms
+18:56:43.094 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d684860364a58a80bc03e2/54d8052603645a894019e556 >> OK - 2.119 ms
+18:56:45.943 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.414 ms
+18:56:48.131 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 20.33 ms
+18:56:50.801 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d684950364a58a80bc03e4/54d805b303645a894019e562 >> OK - 4.068 ms
+19:37:30.001 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.352 s
+19:38:29.803 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.154 s
+19:38:48.943 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 294.6 ms
+19:39:28.883 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 235.8 ms
+19:39:47.194 [qtp895947612-77  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 207.4 ms
+19:39:47.228 [qtp895947612-77  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 34.22 ms
+19:40:01.163 [qtp895947612-77  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 104.0 ms
+19:40:59.276 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 629.4 ms
+19:41:28.973 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 326.9 ms
+19:41:42.167 [qtp895947612-79  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 44.37 ms
+19:41:55.822 [qtp895947612-79  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 59.60 ms
+19:42:28.884 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 238.3 ms
+19:42:39.514 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 868.8 ms
+19:42:45.169 [qtp895947612-80  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 52.71 ms
+19:42:56.557 [qtp895947612-80  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 37.17 ms
+19:47:49.039 [qtp895947612-90  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 66.76 ms
+19:47:49.450 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 807.6 ms
+19:48:08.632 [qtp895947612-90  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /campsessions - per request factory created in 257.0 ms
+19:48:08.766 [qtp895947612-90  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 133.5 ms
+19:50:38.978 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 337.1 ms
+19:52:09.244 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 604.6 ms
+19:52:11.304 [qtp895947612-84  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 470.4 ms
+19:52:11.324 [qtp895947612-84  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 19.95 ms
+19:52:23.689 [qtp895947612-88  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 78.71 ms
+19:53:59.578 [qtp895947612-84  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 22.62 ms
+19:54:59.533 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+20:13:27.823 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+20:13:28.399 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+20:13:29.748 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+20:13:29.749 [main             ] INFO  restx.RestxMainRouterFactory - 
 --------------------------------------
  -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
  -- for admin console,
  --   VISIT http://127.0.0.1:8080/api/@/ui/
  --
 
-18:37:26.481 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.539 s
-18:37:26.809 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-18:37:27.419 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-18:37:42.087 [qtp1020923989-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-18:37:42.353 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/ - per request factory created in 822.4 ms
-18:37:43.794 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/js/admin.js - per request factory created in 432.7 ms
-18:37:44.355 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 34.24 ms
-18:37:44.441 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 32.28 ms
-18:37:47.480 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/lib/keymaster.min.js - per request factory created in 221.1 ms
-18:37:47.579 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/api-docs/js/app.js - per request factory created in 231.6 ms
-18:37:48.008 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 15.04 ms
-18:37:48.065 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 9.604 ms
-18:37:48.311 [qtp1020923989-27 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/pages - per request factory created in 224.0 ms
-18:37:48.366 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 53.61 ms
-18:37:48.396 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 6.398 ms
-18:37:48.487 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 18.50 ms
-18:37:48.867 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/activity >> OK - 68.85 ms
-18:37:48.948 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/employee >> OK - 39.90 ms
-18:37:49.031 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 40.17 ms
-18:37:49.103 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/admin-pages >> OK - 26.28 ms
-18:37:49.237 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camper >> OK - 43.73 ms
-18:37:49.299 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/camp-session >> OK - 24.38 ms
-18:37:49.353 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-sources >> NOT_FOUND - 7.184 ms
-18:37:49.407 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/config >> OK - 16.26 ms
-18:37:49.467 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/metrics >> OK - 23.10 ms
-18:37:49.520 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/monitor >> OK - 14.32 ms
-18:37:49.581 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/sessions >> OK - 23.20 ms
-18:37:49.637 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/json-schema >> OK - 20.14 ms
-18:37:49.735 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/specs >> OK - 18.12 ms
-18:37:49.791 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/session >> OK - 19.33 ms
-18:37:49.912 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/mount-resources >> NOT_FOUND - 56.91 ms
-18:37:55.568 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 20.43 ms
-18:37:55.582 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 11.37 ms
-18:37:55.728 [qtp1020923989-27 ] INFO  org.reflections.Reflections - Reflections took 33 ms to scan 2 urls, producing 21 keys and 24 values 
-18:37:55.733 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/login >> OK - 67.39 ms
-18:37:59.603 [qtp1020923989-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/sources/css/app.css - per request factory created in 299.1 ms
-18:37:59.784 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /@/ui/css/admin.css - per request factory created in 463.5 ms
-18:38:00.467 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/sources/main/camptimetest/rest/UserResource.java >> OK - 11.47 ms
-18:38:00.579 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 195.5 ms
-18:38:00.717 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /sessions/current - per request factory created in 248.9 ms
-18:38:00.727 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/sources/main/camptimetest/rest/UserResource.java >> OK - 4.541 ms
-18:38:00.766 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/sources/main/camptimetest/rest/ >> OK - 312.9 ms
-18:38:00.778 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 60.57 ms
-18:38:00.828 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/pages >> OK - 30.24 ms
-18:38:00.906 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/sources/main/camptimetest/rest/ >> OK - 14.30 ms
-18:38:00.954 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /sessions/current >> OK - 10.44 ms
-18:38:02.457 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs/user >> OK - 30.98 ms
-18:38:02.461 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/api-docs >> OK - 68.97 ms
-18:38:02.576 [qtp1020923989-28 ] INFO  org.reflections.Reflections - Reflections took 23 ms to scan 2 urls, producing 21 keys and 24 values 
-18:38:02.579 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /@/specs ? httpMethod=POST&path=/login >> OK - 34.36 ms
-18:38:39.234 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> NO_CONTENT - 353.2 ms
-18:39:53.202 [qtp1020923989-28 ] ERROR restx.ResponseCloserFilter - ERROR while closing response: null
-java.lang.NullPointerException: null
-	at restx.specs.RestxSpecTape$2.close(RestxSpecTape.java:185) ~[restx-core-0.32.jar:na]
-	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:30) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) [restx-core-0.32.jar:na]
-	at restx.CacheFilter$1.handle(CacheFilter.java:40) [restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) [restx-core-0.32.jar:na]
-	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) [restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) [restx-core-0.32.jar:na]
-	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) [restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) [restx-core-0.32.jar:na]
-	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:154) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
-	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-18:39:53.203 [qtp1020923989-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> NO_CONTENT - 157.2 ms
-18:39:53.203 [qtp1020923989-28 ] WARN  restx.RestxMainRouterFactory - can't save spec, not properly recorded for [RESTX REQUEST] POST /login
-18:40:03.590 [qtp1020923989-23 ] INFO  org.reflections.Reflections - Reflections took 13 ms to scan 2 urls, producing 21 keys and 24 values 
-18:40:03.593 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /@/specs/null/wts/0/then >> NOT_FOUND - 52.18 ms
-18:40:17.679 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> NO_CONTENT - 137.6 ms
-18:42:58.430 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-18:42:58.689 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-18:43:00.703 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-18:43:00.705 [main             ] INFO  restx.RestxMainRouterFactory - 
+20:13:31.655 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.539 s
+20:13:32.070 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+20:13:32.422 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+20:13:52.574 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+20:13:52.973 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 903.1 ms
+20:13:53.064 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 90.24 ms
+20:13:54.716 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 20.82 ms
+20:14:14.571 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 342.7 ms
+20:19:01.384 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 68.52 ms
+20:23:20.266 [qtp895947612-33  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 54.89 ms
+20:23:46.491 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+20:25:31.238 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+20:25:31.772 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+20:25:35.424 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+20:25:35.438 [main             ] INFO  restx.RestxMainRouterFactory - 
 --------------------------------------
  -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
  -- for admin console,
  --   VISIT http://127.0.0.1:8080/api/@/ui/
  --
 
-18:43:03.171 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.194 s
-18:43:03.441 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-18:43:03.860 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-18:43:12.490 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-18:43:12.668 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 718.8 ms
-18:43:13.288 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> NO_CONTENT - 619.7 ms
-18:44:44.235 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-18:44:44.628 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-18:44:46.593 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-18:44:46.594 [main             ] INFO  restx.RestxMainRouterFactory - 
+20:25:37.111 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+20:25:37.248 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+20:25:53.028 [qtp895947612-26  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+20:25:53.199 [qtp895947612-26  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 551.3 ms
+20:25:53.503 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 304.0 ms
+20:26:06.607 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 162.4 ms
+20:26:44.383 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+20:26:55.199 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+20:26:55.437 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+20:26:56.328 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+20:26:56.329 [main             ] INFO  restx.RestxMainRouterFactory - 
 --------------------------------------
  -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
  -- for admin console,
  --   VISIT http://127.0.0.1:8080/api/@/ui/
  --
 
-18:44:49.097 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.239 s
-18:44:49.280 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-18:44:49.705 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-18:44:58.150 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-18:44:58.376 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 724.7 ms
-18:44:59.118 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 741.3 ms
-21:44:04.511 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:44:04.745 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:44:06.880 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:44:06.881 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:44:14.252 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 23 sources compiled in 6.876 s
-21:44:14.538 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:44:16.732 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:52:29.348 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:52:29.783 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:52:31.888 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:52:31.889 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:52:32.266 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:52:32.721 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:54:02.733 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:54:03.019 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:54:05.233 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:54:05.234 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:54:05.674 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:54:06.243 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:54:32.021 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:54:32.316 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:54:34.560 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:54:34.561 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:54:35.003 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:54:35.563 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:55:10.322 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:55:10.577 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:55:12.476 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:55:12.498 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:55:13.078 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:55:13.585 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:55:38.706 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:55:39.128 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:55:41.194 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:55:41.195 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:55:41.557 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:55:42.039 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:55:53.011 [qtp1020923989-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-21:55:53.190 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 897.9 ms
-21:55:56.565 [qtp1020923989-24 ] ERROR restx.StdRestxMainRouter - request raised Network: Read operation to server localhost/127.0.0.1:27017 failed on database camptimetest
-com.mongodb.MongoException$Network: Read operation to server localhost/127.0.0.1:27017 failed on database camptimetest
-	at com.mongodb.DBTCPConnector.innerCall(DBTCPConnector.java:253) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBTCPConnector.call(DBTCPConnector.java:216) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:288) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBApiLayer$MyCollection.__find(DBApiLayer.java:273) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBCollection.findOne(DBCollection.java:728) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBCollection.findOne(DBCollection.java:708) ~[mongo-java-driver-2.11.3.jar:na]
-	at org.jongo.FindOne.map(FindOne.java:50) ~[jongo-1.0.jar:na]
-	at org.jongo.FindOne.as(FindOne.java:46) ~[jongo-1.0.jar:na]
-	at restx.jongo.JongoUserRepository.findUserByName(JongoUserRepository.java:36) ~[restx-jongo-0.32.jar:na]
-	at camptimetest.rest.UserResource.logIn(UserResource.java:69) ~[classes/:na]
-	at camptimetest.rest.UserResourceRouter$3.doRoute(UserResourceRouter.java:102) ~[classes/:na]
-	at camptimetest.rest.UserResourceRouter$3.doRoute(UserResourceRouter.java:98) ~[classes/:na]
-	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
-	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
-	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
-	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
-	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_05]
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_05]
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_05]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_05]
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_05]
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_05]
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_05]
-	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_05]
-	at com.mongodb.DBPort._open(DBPort.java:223) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBPort.go(DBPort.java:125) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBPort.call(DBPort.java:92) ~[mongo-java-driver-2.11.3.jar:na]
-	at com.mongodb.DBTCPConnector.innerCall(DBTCPConnector.java:244) ~[mongo-java-driver-2.11.3.jar:na]
-	... 52 common frames omitted
-21:55:56.574 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> INTERNAL_SERVER_ERROR - 3.384 s
-21:56:18.968 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:56:19.288 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:56:21.798 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:56:21.799 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:56:22.276 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:56:22.760 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:56:31.904 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-21:56:32.103 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 746.1 ms
-21:56:32.468 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 365.2 ms
-21:56:52.188 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:56:52.477 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:56:54.451 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:56:54.451 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:56:54.826 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:56:55.265 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:57:00.756 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-21:57:00.954 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 787.2 ms
-21:57:01.227 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 272.3 ms
-21:57:25.627 [qtp1020923989-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 202.3 ms
-21:57:25.668 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 39.76 ms
-21:57:33.408 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 25.41 ms
-21:58:22.309 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:58:22.748 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:58:25.059 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:58:25.060 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:58:25.551 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:58:26.010 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:58:32.300 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-21:58:32.491 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 744.6 ms
-21:58:32.745 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 253.6 ms
-21:58:44.192 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-21:58:44.610 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-21:58:46.603 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-21:58:46.604 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-21:58:46.966 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-21:58:47.394 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-21:58:55.601 [qtp1020923989-26 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-21:58:55.792 [qtp1020923989-26 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 738.5 ms
-21:58:56.058 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 266.0 ms
-21:59:05.465 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 581.9 ms
-21:59:21.169 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 64.63 ms
-22:32:25.747 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-22:32:26.174 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-22:32:28.005 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-22:32:28.005 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-22:32:33.111 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 23 sources compiled in 4.899 s
-22:32:33.391 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-22:32:33.882 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-22:32:46.949 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-22:32:47.137 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 1.484 s
-22:32:47.608 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> FORBIDDEN - 469.1 ms
-22:33:11.241 [qtp1020923989-27 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 280.5 ms
-22:33:20.001 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> FORBIDDEN - 502.9 ms
-22:41:25.542 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-22:41:25.864 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-22:41:28.344 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-22:41:28.345 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-22:41:30.991 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 2.386 s
-22:41:31.207 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-22:41:31.684 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-22:41:43.606 [qtp1020923989-23 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-22:41:43.821 [qtp1020923989-23 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 708.8 ms
-22:41:44.599 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 776.6 ms
-22:42:06.767 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 45.01 ms
-22:42:53.705 [qtp1020923989-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 21.21 ms
-22:50:18.967 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
-22:50:19.218 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
-22:50:21.659 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
-22:50:21.660 [main             ] INFO  restx.RestxMainRouterFactory - 
---------------------------------------
- -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
- -- for admin console,
- --   VISIT http://127.0.0.1:8080/api/@/ui/
- --
-
-22:50:22.085 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src\main\java, src\main\resources]; current location is C:\Users\Eric\restx_examples\CAMPTIMETEST\.
-22:50:22.556 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
-22:50:35.110 [qtp1020923989-25 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
-22:50:35.314 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 766.8 ms
-22:50:36.054 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 739.6 ms
-22:51:48.041 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 218.9 ms
-22:51:48.117 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 75.30 ms
-22:52:08.850 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 97.05 ms
-22:52:32.004 [qtp1020923989-26 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 76.89 ms
+20:26:56.821 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+20:26:57.063 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+20:27:11.402 [qtp895947612-27  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+20:27:11.530 [qtp895947612-27  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 486.9 ms
+20:27:11.610 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 79.67 ms
+20:27:25.827 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 324.7 ms
+20:30:47.840 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 926.8 ms
+20:30:49.620 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 298.3 ms
+20:30:49.624 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 2.693 ms
+20:31:04.415 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 109.9 ms
