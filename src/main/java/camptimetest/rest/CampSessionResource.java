@@ -119,18 +119,7 @@ public class CampSessionResource {
                     a.setActivityArea("archery");
                 else if (title.equals("creek"))
                     a.setActivityArea("creek");
-                else
-                System.out.print("HEHREHRHEH");
 
-//                switch (name) {
-//                    case "unit": a.setActivityArea("unit");
-//                    case "pool": a.setActivityArea("pool");
-//                    case "art":a.setActivityArea("art");
-//                    case "sports":a.setActivityArea("sports");
-//                    case "canoeing": a.setActivityArea("canoeing");
-//                    case "archery": a.setActivityArea("archery");
-//                    case "creek": a.setActivityArea("creek");
-//                }
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
                     if (activityInfo.get(i).get("time") != null) { //if the activity is required time field will be null
