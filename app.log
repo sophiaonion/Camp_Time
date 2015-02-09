@@ -15568,3 +15568,1553 @@ Caused by: com.mongodb.util.JSONParseException:
 23:56:43.720 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 370.8 ms
 23:57:33.331 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.305 s
 00:01:12.594 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 580.2 ms
+00:07:49.938 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:08:11.317 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:08:11.530 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:08:12.570 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:08:12.571 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:08:14.392 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.387 s
+00:08:14.717 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:08:14.891 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:08:35.811 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:08:36.193 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 695.0 ms
+00:08:36.475 [qtp895947612-23  ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Unable execute update operation using query { query: { _id:"" + ID2 + ""}
+java.lang.IllegalArgumentException: Unable execute update operation using query { query: { _id:"" + ID2 + ""}
+	at org.jongo.Update.createQuery(Update.java:86) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.<init>(Update.java:38) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.update(MongoCollection.java:124) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.update(MongoCollection.java:113) ~[jongo-1.0.jar:na]
+	at camptimetest.domain.ConstraintChecker.fixConflicts(ConstraintChecker.java:291) ~[classes/:na]
+	at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43) ~[classes/:na]
+	at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+Caused by: java.lang.IllegalArgumentException: Cannot parse query: { query: { _id:"" + ID2 + ""}
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:169) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.createQuery(Update.java:83) ~[jongo-1.0.jar:na]
+	... 49 common frames omitted
+Caused by: com.mongodb.util.JSONParseException: 
+{ query: { _id:"" + ID2 + ""}
+                  ^
+	at com.mongodb.util.JSONParser.read(JSON.java:272) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:241) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:231) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:145) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSON.parse(JSON.java:81) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:130) ~[jongo-1.0.jar:na]
+	... 50 common frames omitted
+00:08:36.480 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> BAD_REQUEST - 287.1 ms
+00:09:05.477 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:09:10.263 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:09:10.508 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:09:11.334 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:09:11.336 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:09:12.654 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.032 s
+00:09:12.898 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:09:13.035 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:09:30.222 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:09:30.333 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 443.1 ms
+00:09:30.566 [qtp895947612-23  ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Unable execute update operation using query { _id:"" + ID2 + ""}
+java.lang.IllegalArgumentException: Unable execute update operation using query { _id:"" + ID2 + ""}
+	at org.jongo.Update.createQuery(Update.java:86) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.<init>(Update.java:38) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.update(MongoCollection.java:124) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.update(MongoCollection.java:113) ~[jongo-1.0.jar:na]
+	at camptimetest.domain.ConstraintChecker.fixConflicts(ConstraintChecker.java:291) ~[classes/:na]
+	at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43) ~[classes/:na]
+	at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+Caused by: java.lang.IllegalArgumentException: Cannot parse query: { _id:"" + ID2 + ""}
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:169) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.createQuery(Update.java:83) ~[jongo-1.0.jar:na]
+	... 49 common frames omitted
+Caused by: com.mongodb.util.JSONParseException: 
+{ _id:"" + ID2 + ""}
+         ^
+	at com.mongodb.util.JSONParser.read(JSON.java:272) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:241) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:145) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSON.parse(JSON.java:81) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:130) ~[jongo-1.0.jar:na]
+	... 50 common frames omitted
+00:09:30.571 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> BAD_REQUEST - 237.0 ms
+00:10:08.391 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:10:28.571 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:10:28.801 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:10:29.709 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:10:29.711 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:10:30.863 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.000 s
+00:10:31.016 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:10:31.141 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:10:39.757 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:10:39.903 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 474.7 ms
+00:10:40.186 [qtp895947612-23  ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Cannot parse query: { $set: { isSet: true, time: "2015-02-01T11:00:00.000Z" }
+java.lang.IllegalArgumentException: Cannot parse query: { $set: { isSet: true, time: "2015-02-01T11:00:00.000Z" }
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:169) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.with(Update.java:46) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.with(Update.java:42) ~[jongo-1.0.jar:na]
+	at camptimetest.domain.ConstraintChecker.fixConflicts(ConstraintChecker.java:291) ~[classes/:na]
+	at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43) ~[classes/:na]
+	at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+Caused by: com.mongodb.util.JSONParseException: 
+{ $set: { isSet: true, time: "2015-02-01T11:00:00.000Z" }
+                                                         ^
+	at com.mongodb.util.JSONParser.read(JSON.java:272) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:241) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:145) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSON.parse(JSON.java:81) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:130) ~[jongo-1.0.jar:na]
+	... 48 common frames omitted
+00:10:40.192 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> BAD_REQUEST - 288.2 ms
+00:11:16.808 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:11:22.074 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:11:22.272 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:11:23.044 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:11:23.045 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:11:24.320 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 998.2 ms
+00:11:24.574 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:11:24.719 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:11:34.337 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:11:34.450 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 439.3 ms
+00:11:34.695 [qtp895947612-23  ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Cannot parse query: { $set: { isSet: "true", time: "2015-02-01T11:00:00.000Z" }
+java.lang.IllegalArgumentException: Cannot parse query: { $set: { isSet: "true", time: "2015-02-01T11:00:00.000Z" }
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:169) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.with(Update.java:46) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.with(Update.java:42) ~[jongo-1.0.jar:na]
+	at camptimetest.domain.ConstraintChecker.fixConflicts(ConstraintChecker.java:291) ~[classes/:na]
+	at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43) ~[classes/:na]
+	at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+Caused by: com.mongodb.util.JSONParseException: 
+{ $set: { isSet: "true", time: "2015-02-01T11:00:00.000Z" }
+                                                           ^
+	at com.mongodb.util.JSONParser.read(JSON.java:272) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:241) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:145) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSON.parse(JSON.java:81) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:130) ~[jongo-1.0.jar:na]
+	... 48 common frames omitted
+00:11:34.700 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> BAD_REQUEST - 249.9 ms
+00:12:52.975 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:12:57.484 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:12:57.699 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:12:58.556 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:12:58.557 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:12:59.998 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.080 s
+00:13:00.150 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:13:00.292 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:13:09.744 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:13:09.854 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 402.5 ms
+00:13:10.220 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 365.7 ms
+00:13:41.403 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:13:46.386 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:13:46.571 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:13:47.642 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:13:47.643 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:13:48.848 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.034 s
+00:13:49.118 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:13:49.273 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:13:52.816 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:13:52.967 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 475.7 ms
+00:13:53.335 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 367.6 ms
+00:14:55.993 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:15:00.738 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:15:00.956 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:15:01.798 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:15:01.799 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:15:03.243 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.135 s
+00:15:03.385 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:15:03.526 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:15:11.858 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:15:11.973 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 416.0 ms
+00:15:12.204 [qtp895947612-24  ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Unable execute update operation using query { _id:54d81be8036429e30bb13382}
+java.lang.IllegalArgumentException: Unable execute update operation using query { _id:54d81be8036429e30bb13382}
+	at org.jongo.Update.createQuery(Update.java:86) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.<init>(Update.java:38) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.update(MongoCollection.java:124) ~[jongo-1.0.jar:na]
+	at org.jongo.MongoCollection.update(MongoCollection.java:113) ~[jongo-1.0.jar:na]
+	at camptimetest.domain.ConstraintChecker.fixConflicts(ConstraintChecker.java:291) ~[classes/:na]
+	at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43) ~[classes/:na]
+	at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+Caused by: java.lang.IllegalArgumentException: Cannot parse query: { _id:54d81be8036429e30bb13382}
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:169) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.createQuery(Update.java:83) ~[jongo-1.0.jar:na]
+	... 49 common frames omitted
+Caused by: com.mongodb.util.JSONParseException: 
+{ _id:54d81be8036429e30bb13382}
+        ^
+	at com.mongodb.util.JSONParser.read(JSON.java:272) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:241) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:145) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSON.parse(JSON.java:81) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:130) ~[jongo-1.0.jar:na]
+	... 50 common frames omitted
+00:15:12.209 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> BAD_REQUEST - 235.8 ms
+00:16:13.133 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:17:21.018 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:17:21.300 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:17:22.169 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:17:22.170 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:17:23.194 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 872.7 ms
+00:17:23.428 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:17:23.567 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:17:32.795 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:17:32.916 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 436.6 ms
+00:17:33.218 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 301.7 ms
+00:20:46.214 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:21:04.201 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:21:04.548 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:21:05.969 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:21:05.970 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:21:07.405 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.102 s
+00:21:07.793 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:21:07.966 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:21:10.064 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:21:10.266 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 584.1 ms
+00:21:10.583 [qtp895947612-23  ] ERROR restx.StdRestxMainRouter - request raised BSONException: Invalid type 75 for field 
+org.bson.BSONException: Invalid type 75 for field 
+	at org.bson.LazyBSONObject.getElementBSONSize(LazyBSONObject.java:515) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.LazyBSONObject.getElement(LazyBSONObject.java:368) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.LazyBSONObject.get(LazyBSONObject.java:347) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder.putObject(BasicBSONEncoder.java:158) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder._putObjectField(BasicBSONEncoder.java:229) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder.putObject(BasicBSONEncoder.java:174) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder._putObjectField(BasicBSONEncoder.java:229) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder.putObject(BasicBSONEncoder.java:174) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder.putObject(BasicBSONEncoder.java:120) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.DefaultDBEncoder.writeObject(DefaultDBEncoder.java:27) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.bson.BsonDBEncoder.writeObject(BsonDBEncoder.java:35) ~[jongo-1.0.jar:na]
+	at com.mongodb.OutMessage.putObject(OutMessage.java:289) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.OutMessage.writeUpdate(OutMessage.java:175) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.OutMessage.update(OutMessage.java:62) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.DBApiLayer$MyCollection.update(DBApiLayer.java:325) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.DBCollection.update(DBCollection.java:178) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.Update.with(Update.java:47) ~[jongo-1.0.jar:na]
+	at camptimetest.domain.ConstraintChecker.fixConflicts(ConstraintChecker.java:291) ~[classes/:na]
+	at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43) ~[classes/:na]
+	at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+00:21:10.588 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> INTERNAL_SERVER_ERROR - 322.1 ms
+00:24:39.818 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:24:45.581 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:24:45.825 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:24:46.712 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:24:46.713 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:24:47.822 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 879.0 ms
+00:24:47.967 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:24:48.109 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:25:03.169 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:25:03.274 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 432.4 ms
+00:25:03.507 [qtp895947612-24  ] ERROR restx.StdRestxMainRouter - request raised BSONException: Invalid type 75 for field 
+org.bson.BSONException: Invalid type 75 for field 
+	at org.bson.LazyBSONObject.getElementBSONSize(LazyBSONObject.java:515) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.LazyBSONObject.getElement(LazyBSONObject.java:368) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.LazyBSONObject.get(LazyBSONObject.java:347) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder.putObject(BasicBSONEncoder.java:158) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder._putObjectField(BasicBSONEncoder.java:229) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder.putObject(BasicBSONEncoder.java:174) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder._putObjectField(BasicBSONEncoder.java:229) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder.putObject(BasicBSONEncoder.java:174) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.bson.BasicBSONEncoder.putObject(BasicBSONEncoder.java:120) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.DefaultDBEncoder.writeObject(DefaultDBEncoder.java:27) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.bson.BsonDBEncoder.writeObject(BsonDBEncoder.java:35) ~[jongo-1.0.jar:na]
+	at com.mongodb.OutMessage.putObject(OutMessage.java:289) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.OutMessage.writeUpdate(OutMessage.java:175) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.OutMessage.update(OutMessage.java:62) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.DBApiLayer$MyCollection.update(DBApiLayer.java:325) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.DBCollection.update(DBCollection.java:178) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.Update.with(Update.java:47) ~[jongo-1.0.jar:na]
+	at camptimetest.domain.ConstraintChecker.fixConflicts(ConstraintChecker.java:293) ~[classes/:na]
+	at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43) ~[classes/:na]
+	at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+00:25:03.512 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> INTERNAL_SERVER_ERROR - 237.0 ms
+00:25:51.032 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:25:56.504 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:25:56.753 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:25:57.663 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:25:57.664 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:25:58.689 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 873.5 ms
+00:25:58.967 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:25:59.112 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:26:03.158 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:26:03.297 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 482.5 ms
+00:26:03.564 [qtp895947612-23  ] WARN  restx.StdRestxMainRouter - request raised IllegalArgumentException: Cannot parse query: { $set: { isSet:true, time:2015-02-01T11:00:00.000Z } }
+java.lang.IllegalArgumentException: Cannot parse query: { $set: { isSet:true, time:2015-02-01T11:00:00.000Z } }
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:169) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.with(Update.java:46) ~[jongo-1.0.jar:na]
+	at org.jongo.Update.with(Update.java:42) ~[jongo-1.0.jar:na]
+	at camptimetest.domain.ConstraintChecker.fixConflicts(ConstraintChecker.java:293) ~[classes/:na]
+	at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43) ~[classes/:na]
+	at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47) ~[classes/:na]
+	at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43) ~[classes/:na]
+	at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.CacheFilter$1.handle(CacheFilter.java:40) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99) ~[restx-core-0.32.jar:na]
+	at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56) ~[restx-core-0.32.jar:na]
+	at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133) ~[restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174) [restx-core-0.32.jar:na]
+	at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326) [restx-core-0.32.jar:na]
+	at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48) [restx-servlet-0.32.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:770) [javax.servlet-api-3.0.1.jar:3.0.1]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536) [jetty-security-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382) [jetty-servlet-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.Server.handle(Server.java:365) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.8.v20121106.jar:8.1.8.v20121106]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+Caused by: com.mongodb.util.JSONParseException: 
+{ $set: { isSet:true, time:2015-02-01T11:00:00.000Z } }
+                               ^
+	at com.mongodb.util.JSONParser.read(JSON.java:272) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:241) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parseObject(JSON.java:231) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:195) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSONParser.parse(JSON.java:145) ~[mongo-java-driver-2.11.3.jar:na]
+	at com.mongodb.util.JSON.parse(JSON.java:81) ~[mongo-java-driver-2.11.3.jar:na]
+	at org.jongo.query.BsonQueryFactory.createQuery(BsonQueryFactory.java:130) ~[jongo-1.0.jar:na]
+	... 48 common frames omitted
+00:26:03.570 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> BAD_REQUEST - 272.5 ms
+00:26:34.807 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:26:39.954 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:26:40.162 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:26:41.015 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:26:41.016 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:26:42.305 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.040 s
+00:26:42.536 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:26:42.671 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:26:52.156 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:26:52.267 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 405.8 ms
+00:27:04.901 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:27:04.901 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-24,5,main]
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:44)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:27:04.902 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:27:04.903 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:27:04.904 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:27:04.905 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:27:04.906 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:28:52.002 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:28:52.168 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:28:52.985 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:28:52.987 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:28:54.296 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.051 s
+00:28:54.536 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:28:54.676 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:29:02.663 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:29:02.793 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 435.3 ms
+00:29:14.530 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:29:14.530 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-24,5,main]
+00:29:14.530 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:29:14.530 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:41)
+00:29:14.530 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:29:14.530 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:29:14.531 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:29:14.532 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:29:14.533 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:29:14.534 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:29:46.581 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:29:46.798 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:29:47.846 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:29:47.847 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:29:48.954 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 960.9 ms
+00:29:49.255 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:29:49.420 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:29:53.152 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:29:53.317 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 485.8 ms
+00:29:59.338 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-24,5,main]
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:41)
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:59.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:29:59.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:29:59.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:29:59.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:29:59.343 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:29:59.343 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:29:59.343 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:31:59.642 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:31:59.904 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:32:00.828 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:32:00.828 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:32:01.923 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 949.8 ms
+00:32:02.162 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:32:02.299 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:32:05.411 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:32:05.562 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 489.4 ms
+00:32:19.011 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:32:19.012 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-23,5,main]
+00:32:19.012 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:32:19.012 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:41)
+00:32:19.012 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:32:19.012 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:32:19.013 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:32:19.014 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:32:19.015 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:32:19.016 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:32:19.016 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:32:52.945 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:32:53.216 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:32:54.140 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:32:54.141 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:32:55.250 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 976.4 ms
+00:32:55.392 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:32:55.528 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:33:07.232 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:33:07.388 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 472.6 ms
+00:33:12.159 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:33:12.159 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-23,5,main]
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:41)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:33:12.160 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:33:12.161 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:33:12.162 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:33:12.163 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:33:12.164 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:33:12.164 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:37:21.895 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:37:22.144 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:37:23.048 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:37:23.050 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:37:24.177 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 887.9 ms
+00:37:24.324 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:37:24.464 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:37:29.372 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:37:29.510 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 463.0 ms
+00:37:35.080 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:37:35.080 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-24,5,main]
+00:37:35.080 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:37:35.080 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:41)
+00:37:35.080 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:37:35.080 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:37:35.080 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:37:35.081 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:37:35.082 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:37:35.083 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:37:35.084 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:37:35.084 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:37:35.084 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:37:35.084 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:37:35.084 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:37:35.084 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:38:17.710 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:38:17.972 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:38:18.825 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:38:18.826 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:38:20.074 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.081 s
+00:38:20.214 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:38:20.355 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:38:24.939 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:38:25.071 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 434.0 ms
+00:38:28.860 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:38:28.860 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-23,5,main]
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:41)
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:38:28.861 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:38:28.862 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:38:28.863 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:38:28.864 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:38:28.865 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:39:18.840 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:39:19.009 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:39:19.839 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:39:19.844 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:39:21.230 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.024 s
+00:39:21.388 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:39:21.538 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:39:27.139 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:39:27.255 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 424.6 ms
+00:39:31.957 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:39:31.957 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-23,5,main]
+00:39:31.957 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:39:31.957 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:41)
+00:39:31.957 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:39:31.958 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:39:31.959 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:39:31.960 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:39:31.961 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:39:31.961 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+00:43:06.783 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+00:43:06.964 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+00:43:07.785 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+00:43:07.793 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+00:43:09.227 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.144 s
+00:43:09.497 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+00:43:09.667 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+00:43:14.548 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+00:43:14.649 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 464.0 ms
+00:43:19.558 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+00:43:19.558 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-24,5,main]
+00:43:19.558 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:41)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+00:43:19.559 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+00:43:19.560 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+00:43:19.561 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+00:43:19.562 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+00:43:19.562 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+00:43:19.562 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+00:43:19.562 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+01:12:03.572 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+01:12:03.828 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+01:12:04.768 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+01:12:04.769 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+01:12:06.003 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.088 s
+01:12:06.204 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+01:12:06.380 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+01:12:16.344 [qtp895947612-24  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+01:12:16.482 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 538.2 ms
+01:12:26.945 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+01:12:26.945 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-24,5,main]
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:73)
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43)
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+01:12:26.946 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+01:12:26.947 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+01:12:26.948 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+01:12:26.949 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+01:12:26.949 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+01:12:54.003 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+01:12:54.169 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+01:12:54.884 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+01:12:54.885 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+01:12:55.217 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+01:12:55.411 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+01:13:06.023 [qtp910091170-25  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+01:13:06.193 [qtp910091170-25  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 621.4 ms
+01:13:24.183 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+01:13:24.183 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp910091170-25,5,main]
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:73)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:13:24.184 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+01:13:24.185 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+01:13:24.186 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+01:13:24.187 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+01:13:24.188 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+01:15:12.650 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+01:15:12.914 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+01:15:13.869 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+01:15:13.874 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+01:15:15.176 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.075 s
+01:15:15.324 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+01:15:15.469 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+01:15:24.834 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+01:15:24.941 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 431.3 ms
+01:15:31.330 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+01:15:31.330 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-23,5,main]
+01:15:31.339 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:73)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+01:15:31.340 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+01:15:31.341 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+01:15:31.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+01:15:31.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+01:15:31.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+01:15:31.342 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+01:15:31.345 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+01:15:31.345 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+01:15:31.345 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+01:15:31.345 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+01:15:31.345 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+01:15:31.346 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+01:15:31.347 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+01:15:31.347 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+01:25:02.069 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+01:25:02.364 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+01:25:03.730 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+01:25:03.731 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+01:25:05.520 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 2 sources compiled in 1.536 s
+01:25:05.694 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+01:25:05.834 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+01:25:17.237 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+01:25:17.351 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 429.4 ms
+01:25:26.176 [Thread-0         ] WARN  o.e.j.util.thread.QueuedThreadPool - 1 threads could not be stopped
+01:25:26.177 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool - Couldn't stop Thread[qtp895947612-23,5,main]
+01:25:26.177 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.checkConflicts(ConstraintChecker.java:71)
+01:25:26.177 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.domain.ConstraintChecker.update(ConstraintChecker.java:43)
+01:25:26.177 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResource.getActivities(ActivityResource.java:37)
+01:25:26.177 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:47)
+01:25:26.177 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at camptimetest.rest.ActivityResourceRouter$1.doRoute(ActivityResourceRouter.java:43)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.entity.StdEntityRoute.handle(StdEntityRoute.java:118)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.ResponseCloserFilter.handle(ResponseCloserFilter.java:28)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.CacheFilter$1.handle(CacheFilter.java:40)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionLogFilter.handle(RestxSessionLogFilter.java:45)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.security.RestxSessionCookieFilter.handle(RestxSessionCookieFilter.java:99)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxHandlerMatch.handle(RestxHandlerMatch.java:56)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.StdRestxMainRouter.route(StdRestxMainRouter.java:133)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$PerRequestFactoryLoader.route(RestxMainRouterFactory.java:217)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$RecordingMainRouter.route(RestxMainRouterFactory.java:174)
+01:25:26.178 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.RestxMainRouterFactory$CompilationManagerRouter.route(RestxMainRouterFactory.java:326)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at restx.servlet.AbstractRestxMainRouterServlet.service(AbstractRestxMainRouterServlet.java:48)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at javax.servlet.http.HttpServlet.service(HttpServlet.java:770)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:536)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+01:25:26.179 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.Server.handle(Server.java:365)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+01:25:26.180 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+01:25:26.181 [Thread-0         ] INFO  o.e.j.util.thread.QueuedThreadPool -  at java.lang.Thread.run(Thread.java:745)
+01:25:26.181 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+01:25:34.181 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+01:25:34.469 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+01:25:35.676 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+01:25:35.677 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+01:25:35.900 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+01:25:36.075 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+01:25:40.588 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+01:25:40.705 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 463.9 ms
+01:25:40.911 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 205.4 ms
+01:25:45.698 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
