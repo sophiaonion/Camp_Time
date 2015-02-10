@@ -99,13 +99,13 @@ public class CampSession {
         return "CampSession{" +
                 "sessionID='" + sessionID + '\'' +
                 ", name='" + name + '\'' +
-                ", ageGroup='" + ageGroup + '\'' +
-                ", enrollmentCap=" + enrollmentCap +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", activities=" + activities +
-                ", activities=" + activities +
-                ", counselors=" + counselors +
+//                ", ageGroup='" + ageGroup + '\'' +
+//                ", enrollmentCap=" + enrollmentCap +
+//                ", startDate=" + startDate +
+//                ", endDate=" + endDate +
+//                ", activities=" + activities +
+//                ", activities=" + activities +
+//                ", counselors=" + counselors +
                 '}';
     }
 

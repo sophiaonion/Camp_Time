@@ -10,6 +10,8 @@ import java.util.ArrayList;
  */
 public class ActivityArea {
 
+    //THIS CLASS IS PROBS NOT NECESSARY
+
     @Id
     @ObjectId
     private String name; //name of the certification

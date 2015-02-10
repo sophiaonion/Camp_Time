@@ -8,6 +8,9 @@ import org.jongo.marshall.jackson.oid.ObjectId;
  */
 public class Certification {
 
+
+    //THIS CLASS IS MAYBE NOT NECESSARY
+
     @Id
     @ObjectId
     private String name; //name of the certification

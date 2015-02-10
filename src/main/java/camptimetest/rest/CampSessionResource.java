@@ -1,11 +1,9 @@
 package camptimetest.rest;
 
-import camptimetest.domain.Activity;
-import camptimetest.domain.CampSession;
-import camptimetest.domain.Camper;
-import camptimetest.domain.SessionRegistration;
+import camptimetest.domain.*;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import restx.annotations.*;
@@ -74,6 +72,16 @@ public class CampSessionResource {
             return campSession.get().find("{ageGroup: #}", agegroup).as(CampSession.class);
         }
 
+        @GET("/campsessions/{sessionName}")
+        public ArrayList<Activity> getActivities(String sessionName){
+            Iterable<CampSession> itr= campSession.get().find("{name: #}", sessionName).as(CampSession.class);
+            ArrayList<Activity> activities= new ArrayList<Activity>();
+            for(CampSession session : itr){
+                activities= session.getActivities();
+            }
+            return activities;
+        }
+
 
         @POST("/campsessions")
         public CampSession createCampSession(Map<String, Object> info){//change camp session to a mpa, pull out each individual thing and save into campsession
@@ -81,10 +89,9 @@ public class CampSessionResource {
 
             //convert stuff into dates
             DateTimeFormatter fmt = DateTimeFormat.forPattern("yy-MM-dd");
-            System.out.println(info.get("startDate").toString());
-            System.out.println(info.get("endDate").toString());
-            DateTime start = fmt.parseDateTime(info.get("startDate").toString());
-            DateTime end = fmt.parseDateTime(info.get("endDate").toString());
+            //DateTimeFormatter fmt = fmt1.withZoneUTC();
+            DateTime start = new DateTime( fmt.parseDateTime(info.get("startDate").toString()));
+            DateTime end = new DateTime( fmt.parseDateTime(info.get("endDate").toString()));
 
             //take items from map of info from inputted page
             newCS.setStartDate(start);
@@ -122,12 +129,14 @@ public class CampSessionResource {
 
                 if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
                     //set time to appropriate time
-                    if (activityInfo.get(i).get("time") != null) { //if the activity is required time field will be null
+                    if (activityInfo.get(i).get("time") != null) { //if the activity were required time field would be null
                         String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
+
 
                         DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
                         //hours, minutes, seconds, milli
-                        DateTime time = day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0);//set time to given time
+                        DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0));//set time to given time
+                        DateTime time = new DateTime(time1.withZone(DateTimeZone.UTC));
                         a.setTime(time);
                         //a.setIsSet(false);
                         a.setFixed(true);//activity is fixed time
