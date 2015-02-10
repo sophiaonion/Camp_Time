@@ -38,6 +38,12 @@ public class ActivityResource {
         return activities.get().find().as(Activity.class);//returns copy of activities
     }
 
+    //get list of activities with certain activity area
+    @GET("/activities/{areaName}")
+    public Iterable<Activity> getAreaActivities(String areaName){
+        return activities.get().find("{activityArea:#}",areaName).as(Activity.class);
+    }
+
     @POST("/activities")//will work for creating activities specific to sessions or generic ones
     public Activity createActivity(Activity activity){
         activities.get().save(activity);

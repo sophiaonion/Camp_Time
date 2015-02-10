@@ -81,7 +81,6 @@ public class CampSessionResource {
             return activities;
         }
 
-
         @POST("/campsessions")
         public CampSession createCampSession(Map<String, Object> info){//change camp session to a mpa, pull out each individual thing and save into campsession
             CampSession newCS = new CampSession();

@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Area Schedule</title>
+    <title>Staff Schedule</title>
     <link href="styles/sample.css" type="text/css" rel="stylesheet">
     <link href="styles/session_schedule.css" type="text/css" rel="stylesheet">
     <link href="styles/schedule.css" type="text/css" rel="stylesheet">
@@ -10,21 +10,14 @@
 </head>
 <body>
 <header>
-    <h1>Area Schedule</h1>
+    <h1>Staff Schedule</h1>
 </header>
 <main>
     <p>
-    <div class="area-select-con">
-        <label for="select-area">Select Activity Area:</label>
-        <select name="select-area" id="select-area">
+    <div class="staff-select-con">
+        <label for="select-staff">Select Activity Area:</label>
+        <select name="select-staff" id="select-staff">
             <option value=""></option>
-            <option value="unit">Unit</option>
-            <option value="pool">Pool</option>
-            <option value="art">Art </option>
-            <option value="sports">Sports </option>
-            <option value="canoeing">Canoeing</option>
-            <option value="archery">Archery</option>
-            <option value="creek">Creek</option>
         </select>
     </div></p>
 
@@ -36,7 +29,7 @@
         </select>
     </div></p>
 
-    <div class="area-schedule">
+    <div class="day-schedule">
         <table id="schedule" class="ui-widget" cellspacing="10">
             <tbody> <!--id convention first number hour, second number date -->
             <tr id="dates">  <td>Time</td>  <td>Activity</td>   <td>Session</td></tr>

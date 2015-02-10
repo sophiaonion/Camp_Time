@@ -68,6 +68,7 @@ var main = function(camp_sessions){
 //            console.log('activity time string: ' + activity.time);
             var act_date = new Date(activity.time);
             var column = dateDiffInDays(new Date(session.startDate), new Date(act_date)) + 1;
+            console.log(column);
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
 //            console.log('activity time: ' + act_date.toUTCString());
 //            console.log('hour: ' + act_date.getHours());
