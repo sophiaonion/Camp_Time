@@ -83,7 +83,7 @@ public class CamperResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Camper>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, hasRole("admin"));
+                securityManager.check(request, open());
                 return Optional.of(resource.getCampers(
                         
                 ));

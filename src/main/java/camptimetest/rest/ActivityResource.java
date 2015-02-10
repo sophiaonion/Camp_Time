@@ -31,10 +31,10 @@ public class ActivityResource {
     @GET("/activities")
     public Iterable<Activity> getActivities(){
         JongoCollection activitiesCopy = activities;
-        JongoCollection campSessionsCopy = campSessions;
-        ConstraintChecker cc = new ConstraintChecker(activitiesCopy, campSessionsCopy);
-        //constraint checker assigns updated schedule to activitiesCopy, campSessionCopy
-        cc.update();
+//        JongoCollection campSessionsCopy = campSessions;
+//        ConstraintChecker cc = new ConstraintChecker(activitiesCopy, campSessionsCopy);
+//        //constraint checker assigns updated schedule to activitiesCopy, campSessionCopy
+//        cc.update();
         return activities.get().find().as(Activity.class);//returns copy of activities
     }
 
