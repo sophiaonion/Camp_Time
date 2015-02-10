@@ -20,18 +20,11 @@ public class ConstraintChecker {
     private JongoCollection campSessions;
 
 
-    //CURRENT ISSUES: COMPARING DBOBJECTS IS PROBABLY BY REFERENCE NOT VALUE, WILL NEED TO FIX
-    //CHECK COUNTCONFLICTS OK
-    //CHECK HEURISTIC REPAIR
-
-
-
 
     public ConstraintChecker(JongoCollection activities, JongoCollection campSessions) {
         this.activities = activities;
         this.campSessions = campSessions;
     }
-
 
 
 
@@ -161,9 +154,9 @@ public class ConstraintChecker {
 
                 for ( int a=0; a<takenTimesArray.size(); a++) {
                     DateTime takenTimeBad = new DateTime(takenTimesArray.get(a).get("time"));
-                    DateTime takenTime = new DateTime( takenTimeBad.withZone(DateTimeZone.UTC) );
+                    DateTime takenTime = new DateTime( takenTimeBad.withZoneRetainFields(DateTimeZone.UTC) );
                     for(int j=0; j<newDomain.size(); j++) {
-                        if (takenTime.withZone(DateTimeZone.UTC).equals(newDomain.get(j).withZone(DateTimeZone.UTC))) {
+                        if (takenTime.withZoneRetainFields(DateTimeZone.UTC).equals(newDomain.get(j).withZoneRetainFields(DateTimeZone.UTC))) {
                             newDomain.remove(j);
                         }
                     }
@@ -329,7 +322,7 @@ public class ConstraintChecker {
                         //remove activity from actArray because it is set and no longer needs to be looked at
                         actArray.remove(i);
                         domains.remove(i);//remove from domains so indices still match
-                       // i--;//because size of array is one smaller
+                        //i--;//because size of array is one smaller? do i need this
                     }
                 }//end assign all activities with only one option in domain
 
@@ -344,7 +337,8 @@ public class ConstraintChecker {
         }//end assign values to all variables without time assigned in case of type 1
 
         //heuristic repair time: there's conflicting stuff so fix it
-        if(checkConflicts() > 0) {///might just swap back and forth 5ever
+        while(checkConflicts() > 0) {///might just swap back and forth 5ever
+            System.out.println("eee");
             //get domains of all activities
             DBCursor cursor = activities.get().getDBCollection().find();
             List<DBObject> arrry = cursor.toArray();
@@ -359,7 +353,7 @@ public class ConstraintChecker {
             int mostConf = getMostConflicts(numConflicts);
             if(mostConf > 0)
             if(numConflicts.get(mostConf) > 0) {//there are conflicts
-                System.out.println("got da most conflicted, it is # "+mostConf+" ya");
+                System.out.println("got the most conflicted, it is # "+mostConf+" ya");
 
                 //remove current time from domains
                 DateTime current = new DateTime(actArray.get(mostConf).get("time"));
@@ -369,34 +363,32 @@ public class ConstraintChecker {
                 //new time
                 DateTime newTime = new DateTime();
 
-
                 //check if any times that don't conflict other set times
                 if(domainsWithSet.get(mostConf).size() > 0) {
-                    System.out.println("there's a free spot so puttin it there");
+                    System.out.println("there's a free spot so putting it there");
                     newTime = domainsWithSet.get(mostConf).get(0);
                 }
                 //otherwise assign to another time (will cause conflicts, but won't conflict with fixed time thingy)
                 else if (domainsExcludeSet.get(mostConf).size() > 0) {
                     //TODO need to use some sort of heuristic to choose index of domain that will cause least conflicts (for now just taking first option)
                     newTime = domainsExcludeSet.get(mostConf).get(0);
-                    System.out.println("there isn't a free spot so switchin it up");
+                    System.out.println("there isn't a free spot so switching it up");
                 }
                 else {
-                    System.out.println("error line 370");
+                    System.out.println("error line 378");
                     return false;//can't assign to anything - some conflict with amongst fixed activities
                 }
 
                 //update activity in collection
-                //update activity in collection
-                System.out.println("saving the thing as a thing");
+                System.out.println("saving the activity as new thing");
                 String ID = String.valueOf(actArray.get(mostConf).get("_id"));
                 ObjectId ID2 = new ObjectId(ID);
                 activities.get().update(ID2).with("{ $set: { isSet:" + true + ", time:\"" + newTime+ "\" } }");
-                //SHOULD ALSO CHANGE ACTIVITY IN CAMPSESSION COLLECTION?? IDK TODO
-
             }//end change most conflicted
-            else
-                return false; //if checkconflicts says there are conflicts but numconflicts are all 0--means fixed activities are conflicting each other
+            else {
+                System.out.println("error 389");
+                return false;
+            } //if checkconflicts says there are conflicts but numconflicts are all 0--means fixed activities are conflicting each other
         }//end heuristic repair
         return true;
     }//end fixconflicts()

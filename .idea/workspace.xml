@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -35,16 +35,19 @@
       <file leaf-file-name="ConstraintChecker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53625375" vertical-offset="1565" max-vertical-offset="5490">
-              <caret line="186" column="25" selection-start-line="186" selection-start-column="25" selection-end-line="186" selection-end-column="25" />
+            <state vertical-scroll-proportion="-0.57416266" vertical-offset="2220" max-vertical-offset="3030">
+              <caret line="334" column="10" selection-start-line="334" selection-start-column="10" selection-end-line="334" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="e#7673#7683#0" expanded="true" />
+                <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
+                <element signature="e#7303#7313#0" expanded="true" />
                 <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
+                <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
+                <element signature="e#18046#18055#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,7 +70,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/create_camper.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/styles/home_page_test.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/styles/sample.css" />
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_camper.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/register_camper.html" />
@@ -108,6 +110,7 @@
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
       </list>
     </option>
@@ -343,6 +346,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camptimetest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="createdata" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -733,7 +766,19 @@
       <option name="project" value="LOCAL" />
       <updated>1423466812052</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="THE TIMEZONES WERE DIFFERENT I'M SO MAD">
+      <created>1423521337560</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1423521337560</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fixed some things">
+      <created>1423530464564</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1423530464564</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -779,7 +824,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20436187" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.71643835" sideWeight="0.49919224" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08493151" sideWeight="0.49919224" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24898374" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -848,28 +893,24 @@
     <MESSAGE value="activity area actually working" />
     <MESSAGE value="working on fixing constraint checker" />
     <MESSAGE value="heuristic repair part running infinitely for some reason but i can't be bothered to figure out why yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="heuristic repair part running infinitely for some reason but i can't be bothered to figure out why yet" />
+    <MESSAGE value="THE TIMEZONES WERE DIFFERENT I'M SO MAD" />
+    <MESSAGE value="fixed some things" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
-          <line>368</line>
+          <line>352</line>
           <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
-          <line>363</line>
-          <properties />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="15" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -931,13 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="544">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14957266" vertical-offset="0" max-vertical-offset="702">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1234,18 +1268,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40942928" vertical-offset="0" max-vertical-offset="403">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53625375" vertical-offset="1565" max-vertical-offset="5490">
-          <caret line="186" column="25" selection-start-line="186" selection-start-column="25" selection-end-line="186" selection-end-column="25" />
+        <state vertical-scroll-proportion="-0.57416266" vertical-offset="2220" max-vertical-offset="3030">
+          <caret line="334" column="10" selection-start-line="334" selection-start-column="10" selection-end-line="334" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="e#7673#7683#0" expanded="true" />
+            <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="e#7303#7313#0" expanded="true" />
             <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="e#18046#18055#0" expanded="true" />
           </folding>
         </state>
       </provider>
