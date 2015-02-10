@@ -22500,3 +22500,5 @@ org.bson.BSONException: Invalid type 75 for field 
 22:31:49.227 [qtp1020923989-23 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 722.3 ms
 22:31:53.755 [qtp1020923989-25 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /employees/time/2015-02-10T06:09:00.000Z - per request factory created in 242.7 ms
 22:31:53.794 [qtp1020923989-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees/time/2015-02-10T06:09:00.000Z >> OK - 38.98 ms
+22:36:18.035 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 23 sources compiled in 5.284 s
+22:36:18.961 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 872.9 ms

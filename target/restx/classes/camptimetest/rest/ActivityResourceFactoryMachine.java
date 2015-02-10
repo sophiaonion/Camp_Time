@@ -11,7 +11,7 @@ public class ActivityResourceFactoryMachine extends SingleNameFactoryMachine<Act
     public ActivityResourceFactoryMachine() {
         super(0, new StdMachineEngine<ActivityResource>(NAME, BoundlessComponentBox.FACTORY) {
 private final Factory.Query<restx.jongo.JongoCollection> activities = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "activities")).mandatory();
-private final Factory.Query<restx.jongo.JongoCollection> campSessions = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "campsessions")).mandatory();
+private final Factory.Query<restx.jongo.JongoCollection> campSessions = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "campSessions")).mandatory();
 
             @Override
             public BillOfMaterials getBillOfMaterial() {
