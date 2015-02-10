@@ -40,6 +40,12 @@ public class EmployeeResource {
         return employees.get().find().as(Employee.class);
     }
 
+    //get list of activities with certain Employee
+    @GET("/employees/{employeeID}")
+    public Iterable<Activity> getEmployeeActivities(String employeeID){
+        return employees.get().find("{employee:#}",employeeID).as(Activity.class);
+    }
+
 
     //if parameter isn't specified in URI path with {}, assumes it is the message body
     //Jackson library automatically tries to map sent JSON to specified class,

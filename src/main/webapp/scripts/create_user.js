@@ -9,7 +9,7 @@ var main = function(){
     var data = {
         name: $('#user-name').val(),
         password: $('#password').val(),
-        roles: ["admin"]
+        roles: [$('#role').val()]
     };
 
     console.log(JSON.stringify(data));

@@ -60,6 +60,37 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#findEmployee()";
             }
         },
+        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Activity>>("default#EmployeeResource#getEmployeeActivities",
+                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
+                writerRegistry.<java.lang.Iterable<camptimetest.domain.Activity>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Activity.class), Optional.<String>absent()),
+                new StdRestxRequestMatcher("GET", "/employees/{employeeID}"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<java.lang.Iterable<camptimetest.domain.Activity>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.getEmployeeActivities(
+                        /* [PATH] employeeID */ match.getPathParam("employeeID")
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription employeeID = new OperationParameterDescription();
+                employeeID.name = "employeeID";
+                employeeID.paramType = OperationParameterDescription.ParamType.path;
+                employeeID.dataType = "string";
+                employeeID.schemaKey = "";
+                employeeID.required = true;
+                operation.parameters.add(employeeID);
+
+
+                operation.responseClass = "LIST[Activity]";
+                operation.inEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "camptimetest.domain.Activity";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#getEmployeeActivities(java.lang.String)";
+            }
+        },
         new StdEntityRoute<camptimetest.domain.Employee, camptimetest.domain.Employee>("default#EmployeeResource#createEmployee",
                 readerRegistry.<camptimetest.domain.Employee>build(camptimetest.domain.Employee.class, Optional.<String>absent()),
                 writerRegistry.<camptimetest.domain.Employee>build(camptimetest.domain.Employee.class, Optional.<String>absent()),

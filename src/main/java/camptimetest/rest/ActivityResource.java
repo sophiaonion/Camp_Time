@@ -44,6 +44,7 @@ public class ActivityResource {
         return activities.get().find("{activityArea:#}",areaName).as(Activity.class);
     }
 
+
     @POST("/activities")//will work for creating activities specific to sessions or generic ones
     public Activity createActivity(Activity activity){
         activities.get().save(activity);
