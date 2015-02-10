@@ -35,7 +35,7 @@ public class ConstraintChecker {
     public JongoCollection update() {
         //scheduling activities
         int i = this.checkConflicts();
-        while(i>0) { // !!!!!!!!!!!! NEED TO CHANGE BACK TO WHILEEEE
+        if(i>0) { // !!!!!!!!!!!! NEED TO CHANGE BACK TO WHILEEEE
             this.fixConflicts(i);
             System.out.println("after fix: ");
             i=this.checkConflicts();
@@ -126,6 +126,15 @@ public class ConstraintChecker {
         //set up domain for all non-set time activities: domain will be all times that are currently not filled (& also times where not already doing something???)
         for(int i=0; i<list.size(); i++) {
             if (!((boolean)list.get(i).get(setOrfixed))) {
+
+                System.out.println("looking for session: "+list.get(i).get("session"));
+
+                if(campSessions.get().find("{name: \"#\" }", list.get(i).get("session")).as(CampSession.class) != null)
+                    System.out.print("not null");
+                        //.getStartDate();
+
+
+
                 //need to get date at which current object's session starts & ends so can calculate possible time slots
                 DateTime start = new DateTime((campSessions.get().findOne("{name: \"" + list.get(i).get("session") + "\" }").as(CampSession.class)).getStartDate());
                 DateTime end = new DateTime((campSessions.get().findOne("{name: \"" + list.get(i).get("session") + "\" }").as(CampSession.class)).getEndDate());
