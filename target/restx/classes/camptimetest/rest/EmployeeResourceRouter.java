@@ -215,6 +215,37 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#addEmployeeToActivity(java.util.Map<java.lang.String,java.lang.String>)";
             }
         },
+        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.String>, camptimetest.domain.Activity>("default#EmployeeResource#removeEmployeeFromActivity",
+                readerRegistry.<java.util.Map<java.lang.String,java.lang.String>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.String.class), Optional.<String>absent()),
+                writerRegistry.<camptimetest.domain.Activity>build(camptimetest.domain.Activity.class, Optional.<String>absent()),
+                new StdRestxRequestMatcher("PUT", "/employees/activities/remove"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<camptimetest.domain.Activity> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.removeEmployeeFromActivity(
+                        /* [BODY] values */ checkValid(validator, body)
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription values = new OperationParameterDescription();
+                values.name = "values";
+                values.paramType = OperationParameterDescription.ParamType.body;
+                values.dataType = "String>";
+                values.schemaKey = "";
+                values.required = true;
+                operation.parameters.add(values);
+
+
+                operation.responseClass = "Activity";
+                operation.inEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "camptimetest.domain.Activity";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#removeEmployeeFromActivity(java.util.Map<java.lang.String,java.lang.String>)";
+            }
+        },
         });
     }
 
