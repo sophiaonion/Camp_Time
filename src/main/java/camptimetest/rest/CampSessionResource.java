@@ -111,9 +111,9 @@ public class CampSessionResource {
                 a.setTitle(title);
                 a.setSession(String.valueOf(info.get("name")));
 
-                if(title.equals("unit"))
-                    a.setActivityArea("unit");
-                else if(title.equals("pool"))
+//                if(title.equals("unit"))
+//                    a.setActivityArea("unit");
+                if(title.equals("pool"))
                     a.setActivityArea("pool");
                 else if (title.equals("art"))
                     a.setActivityArea("art");
@@ -135,7 +135,8 @@ public class CampSessionResource {
                         DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
                         //hours, minutes, seconds, milli
                         DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0));//set time to given time
-                        DateTime time = new DateTime(time1.withZone(DateTimeZone.UTC));
+                        DateTime time = new DateTime(time1.withZoneRetainFields(DateTimeZone.UTC));
+                                //(DateTimeZone.UTC));
                         a.setTime(time);
                         //a.setIsSet(false);
                         a.setFixed(true);//activity is fixed time
