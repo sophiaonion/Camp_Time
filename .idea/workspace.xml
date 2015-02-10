@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/createdata/TestData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CAMPTIMETEST.iws" />
@@ -35,19 +32,19 @@
       <file leaf-file-name="ConstraintChecker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.57416266" vertical-offset="2220" max-vertical-offset="3030">
-              <caret line="334" column="10" selection-start-line="334" selection-start-column="10" selection-end-line="334" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.45310014" vertical-offset="0" max-vertical-offset="3060">
+              <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="e#7303#7313#0" expanded="true" />
+                <element signature="e#7455#7465#0" expanded="true" />
                 <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
                 <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="e#18046#18055#0" expanded="true" />
+                <element signature="e#18202#18211#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -778,7 +775,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423530464564</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fixed some things">
+      <created>1423535715269</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1423535715269</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -824,7 +827,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20436187" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08493151" sideWeight="0.49919224" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08219178" sideWeight="0.49919224" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24898374" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -902,7 +905,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
-          <line>352</line>
+          <line>354</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
@@ -1278,19 +1281,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.57416266" vertical-offset="2220" max-vertical-offset="3030">
-          <caret line="334" column="10" selection-start-line="334" selection-start-column="10" selection-end-line="334" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.45310014" vertical-offset="0" max-vertical-offset="3060">
+          <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="e#7303#7313#0" expanded="true" />
+            <element signature="e#7455#7465#0" expanded="true" />
             <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="e#18046#18055#0" expanded="true" />
+            <element signature="e#18202#18211#0" expanded="true" />
           </folding>
         </state>
       </provider>

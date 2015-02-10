@@ -16,6 +16,9 @@ import java.util.*;
 
 public class ConstraintChecker {
 
+    //CURRENT ISSUES: SOMETHING FUNKY GOING ON WITH TIMES AND TIMEZONES
+    //ALSO: SOME SORT OF INFINITE LOOP SHINDIG SOMEWHERE IN WHILELOOP LINE 285
+
     private JongoCollection activities;
     private JongoCollection campSessions;
 
@@ -279,7 +282,6 @@ public class ConstraintChecker {
             ArrayList<ArrayList<DateTime>> domains = findDomain(actArray, false);//possible domains of times for activity with corresponding index in acts
             ArrayList<DateTime> newDomain = new ArrayList<DateTime>();
 
-
             while(actArray.size() > 0) {
                 //assign all activities with only one option in domain
                 for(int i=0; i<actArray.size(); i++) {
@@ -338,7 +340,7 @@ public class ConstraintChecker {
 
         //heuristic repair time: there's conflicting stuff so fix it
         while(checkConflicts() > 0) {///might just swap back and forth 5ever
-            System.out.println("eee");
+            System.out.println("lkjhkjlh");
             //get domains of all activities
             DBCursor cursor = activities.get().getDBCollection().find();
             List<DBObject> arrry = cursor.toArray();
