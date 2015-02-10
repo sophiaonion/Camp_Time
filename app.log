@@ -13408,3 +13408,171 @@ java.lang.NullPointerException: null
 02:40:46.766 [qtp895947612-24  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 489.9 ms
 02:40:47.063 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 296.9 ms
 02:41:51.207 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 62.35 ms
+02:43:48.961 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 3.176 s
+02:44:11.943 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+02:44:51.223 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+02:44:51.397 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+02:44:52.425 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+02:44:52.426 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+02:44:52.779 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+02:44:52.932 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+02:45:12.893 [qtp895947612-25  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+02:45:13.149 [qtp895947612-25  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 639.3 ms
+02:45:13.490 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 340.0 ms
+02:46:34.182 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 122.4 ms
+02:46:42.105 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 7.217 ms
+02:46:47.177 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.873 ms
+02:47:05.133 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 129.7 ms
+02:47:06.843 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 8.528 ms
+02:47:11.800 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 29.37 ms
+02:47:20.556 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c5890364e175c561f991/54d99ae2036494cf6c5ca9ed >> OK - 42.96 ms
+02:47:24.085 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.766 ms
+02:47:27.819 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 9.180 ms
+02:47:29.232 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 7.143 ms
+02:47:31.637 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 32.91 ms
+02:47:33.783 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c59f0364e175c561f993/54d99b5a036494cf6c5ca9fe >> OK - 2.950 ms
+02:47:36.581 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.353 ms
+02:47:41.969 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 7.583 ms
+02:47:43.461 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.256 ms
+02:47:46.190 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 25.35 ms
+02:47:48.097 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c5ad0364e175c561f995/54d99ae2036494cf6c5ca9ed >> OK - 11.16 ms
+02:47:50.911 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.258 ms
+02:47:54.985 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 7.668 ms
+02:47:56.434 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.757 ms
+02:47:58.930 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/daisy >> OK - 30.86 ms
+02:48:00.879 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c5ba0364e175c561f997/54d99b5a036494cf6c5ca9fe >> OK - 5.813 ms
+02:48:04.809 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.332 ms
+02:48:12.125 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 8.935 ms
+02:48:13.430 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.896 ms
+02:48:15.853 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/brownie >> OK - 22.94 ms
+02:48:18.091 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c5cc0364e175c561f999/54d99bbf036494cf6c5caa2c >> OK - 2.644 ms
+02:48:20.710 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.097 ms
+02:48:25.487 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 7.538 ms
+02:48:27.123 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.394 ms
+02:48:29.497 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/brownie >> OK - 62.29 ms
+02:48:34.217 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c5d90364e175c561f99b/54d99bbf036494cf6c5caa2c >> OK - 3.525 ms
+02:48:36.588 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.652 ms
+02:48:41.422 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 7.245 ms
+02:48:42.954 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.562 ms
+02:48:45.145 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/brownie >> OK - 26.55 ms
+02:48:47.396 [qtp895947612-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c5e90364e175c561f99d/54d99d11036494cf6c5caadc >> OK - 2.262 ms
+02:48:50.466 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.335 ms
+02:49:00.643 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 6.380 ms
+02:49:02.656 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.893 ms
+02:49:05.193 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/junior >> OK - 27.46 ms
+02:49:07.080 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c5fc0364e175c561f99f/54d99c13036494cf6c5caa6b >> OK - 2.922 ms
+02:49:09.449 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.665 ms
+02:49:13.415 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 5.453 ms
+02:49:14.759 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.316 ms
+02:49:17.203 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/junior >> OK - 24.35 ms
+02:49:18.317 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c6090364e175c561f9a1/54d99c13036494cf6c5caa6b >> OK - 3.711 ms
+02:49:21.565 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.789 ms
+02:49:28.070 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 5.501 ms
+02:49:29.445 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.744 ms
+02:49:32.376 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/junior >> OK - 47.63 ms
+02:49:34.453 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c6180364e175c561f9a3/54d99c74036494cf6c5caaac >> OK - 3.655 ms
+02:49:37.237 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.914 ms
+02:49:42.370 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 5.828 ms
+02:49:43.762 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.260 ms
+02:49:46.229 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/junior >> OK - 18.01 ms
+02:49:49.198 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c6260364e175c561f9a5/54d99c74036494cf6c5caaac >> OK - 1.879 ms
+02:49:52.503 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 5.327 ms
+02:50:00.478 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 5.724 ms
+02:50:02.220 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.105 ms
+02:50:04.718 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/cadette >> OK - 14.92 ms
+02:50:06.852 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c6380364e175c561f9a7/54d99d7e036494cf6c5cab22 >> OK - 2.875 ms
+02:50:09.350 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 2.416 ms
+02:50:14.554 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campers >> OK - 5.534 ms
+02:50:16.496 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 3.108 ms
+02:50:19.851 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/agegroup/cadette >> OK - 16.09 ms
+02:50:20.963 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] PUT /campers/54d9c6460364e175c561f9a9/54d99d7e036494cf6c5cab22 >> OK - 2.296 ms
+02:50:50.536 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 66.46 ms
+02:51:05.035 [qtp895947612-29  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 12.44 ms
+02:51:23.336 [qtp895947612-29  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 11.76 ms
+02:51:45.321 [qtp895947612-29  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 11.23 ms
+02:52:04.968 [qtp895947612-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 12.73 ms
+02:52:22.112 [qtp895947612-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 12.89 ms
+02:52:36.561 [qtp895947612-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 13.17 ms
+02:52:51.034 [qtp895947612-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 14.72 ms
+02:53:23.294 [qtp895947612-31  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 9.418 ms
+02:53:38.589 [qtp895947612-31  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 11.31 ms
+02:53:53.340 [qtp895947612-31  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 10.35 ms
+02:54:09.126 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 43.17 ms
+02:54:23.945 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 7.955 ms
+02:54:41.022 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /employees >> OK - 9.422 ms
+02:54:47.195 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 8.735 ms
+02:54:51.603 [qtp895947612-32  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 5.779 ms
+02:56:52.854 [qtp895947612-33  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 242.7 ms
+02:57:03.856 [qtp895947612-33  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 596.4 ms
+02:57:06.837 [qtp895947612-36  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 22.90 ms
+02:57:10.328 [qtp895947612-33  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees/undefined >> OK - 4.599 ms
+02:57:16.004 [qtp895947612-33  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 25.51 ms
+02:57:33.430 [qtp895947612-36  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 6.787 ms
+02:57:51.352 [qtp895947612-33  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 7.064 ms
+02:58:38.324 [qtp895947612-38  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 152.0 ms
+02:58:44.822 [qtp895947612-39  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 156.1 ms
+02:59:37.067 [qtp895947612-38  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.046 ms
+02:59:56.978 [qtp895947612-36  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.105 ms
+03:00:00.567 [qtp895947612-38  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d9c6380364e175c561f9a7 >> OK - 16.53 ms
+03:00:47.276 [qtp895947612-39  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 6.843 ms
+03:01:49.632 [qtp895947612-39  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 4.349 ms
+03:01:52.961 [qtp895947612-40  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers/registrations/54d9c6380364e175c561f9a7 >> OK - 27.41 ms
+03:02:45.591 [qtp895947612-40  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 9.176 ms
+03:03:09.267 [qtp895947612-40  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 7.306 ms
+03:03:18.481 [qtp895947612-40  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] DELETE /employees/54d9c7310364e175c561f9b6 >> OK - 5.435 ms
+03:03:33.025 [qtp895947612-40  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 34.75 ms
+03:03:42.555 [qtp895947612-40  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /campsessions >> OK - 136.4 ms
+03:03:48.287 [qtp895947612-40  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 27.13 ms
+03:04:24.359 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 5.342 ms
+03:04:29.083 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 52.25 ms
+03:04:32.305 [qtp895947612-43  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 34.40 ms
+03:04:40.141 [qtp895947612-43  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions/undefined >> OK - 5.858 ms
+03:05:04.352 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 9.051 ms
+03:05:06.188 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees/undefined >> OK - 3.463 ms
+03:05:10.254 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 16.98 ms
+03:05:30.449 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 25.05 ms
+03:05:32.537 [qtp895947612-44  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities/sports >> OK - 38.83 ms
+03:05:39.008 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities/unit >> OK - 3.855 ms
+03:07:27.552 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 4.118 s
+03:07:33.075 [qtp895947612-46  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 45.62 ms
+03:08:25.966 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 22.20 ms
+03:08:27.867 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities/art >> OK - 8.162 ms
+03:08:51.974 [qtp895947612-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities/canoeing >> OK - 6.460 ms
+03:15:54.266 [qtp895947612-53  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 39.27 ms
+03:16:13.912 [qtp895947612-54  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 55.71 ms
+03:16:31.684 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+03:17:00.414 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+03:17:00.883 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+03:17:05.023 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+03:17:05.059 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+03:17:07.017 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+03:17:07.821 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+03:17:18.193 [qtp895947612-23  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+03:17:18.522 [qtp895947612-23  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campers - per request factory created in 950.1 ms
+03:17:18.851 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 329.3 ms
+03:17:22.086 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 30.37 ms
+03:17:24.926 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campers >> OK - 8.156 ms
+03:17:30.150 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 183.0 ms
+03:17:33.624 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 22.94 ms
+03:17:43.447 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 130.7 ms
+03:17:46.104 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 15.55 ms
+03:17:47.916 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees/undefined >> OK - 3.017 ms
+03:17:59.498 [qtp895947612-25  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 64.18 ms
+03:18:11.987 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 14.48 ms
+03:18:16.529 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 72.26 ms
+03:18:18.734 [qtp895947612-24  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities/art >> OK - 49.85 ms
+03:18:29.623 [qtp895947612-23  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 1.535 s
+03:19:42.033 [qtp895947612-26  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 1.286 s
+03:20:37.542 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 1.226 s

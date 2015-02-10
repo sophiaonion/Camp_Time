@@ -152,6 +152,11 @@ var main = function(camp_sessions){
     //build schedule for default selected session
     console.log('#session-select: ' + $('#session-select').val());
     buildTableSchedule(camp_sessions[$('#session-select').val()]);
+
+
+         $('#cancel').on('click', function(){
+            window.location.replace('home_page_test.html');
+        });
 };
 
 $(document).ready(function(){

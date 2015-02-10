@@ -21,6 +21,11 @@ var main = function(campers){
     });
 
     });
+
+
+        $('#cancel').on('click', function(){
+            window.location.replace('home_page_test.html');
+        });
 }
 //eventually get campers and sessions and pass to main function
 $(document).ready(function(){

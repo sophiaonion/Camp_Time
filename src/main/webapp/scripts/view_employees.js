@@ -5,6 +5,10 @@ var main = function(employees){
         $(".employees").append(emp);
     });
 
+     $('#cancel').on('click', function(){
+        window.location.replace('home_page_test.html');
+    });
+
 
 };
 

@@ -77,6 +77,10 @@ var main = function(camp_sessions){
 
 
     });
+
+        $('#cancel').on('click', function(){
+            window.location.replace('home_page_test.html');
+        });
 };
 
 $(document).ready(function(){
