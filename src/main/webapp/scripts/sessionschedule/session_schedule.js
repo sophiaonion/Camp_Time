@@ -1,4 +1,5 @@
 var main = function(camp_sessions){
+    console.log('session schedule hi');
     //add option to be selected for each session and also tack on index data to access session in camp_sessions array
     //once selected
     Date.prototype.myToString = function(){
@@ -68,6 +69,7 @@ var main = function(camp_sessions){
 //            console.log('activity time string: ' + activity.time);
             var act_date = new Date(activity.time);
             var column = dateDiffInDays(new Date(session.startDate), new Date(act_date)) + 1;
+            console.log(column);
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
 //            console.log('activity time: ' + act_date.toUTCString());
 //            console.log('hour: ' + act_date.getHours());
@@ -77,7 +79,9 @@ var main = function(camp_sessions){
             var act_cell = $('td:eq(' + column + ')', act_row);
 //            console.log('row index: ' + row_index + ' column: ' + column);
 
-            $('input', $(act_cell)).val(activity.title).data('activity', activity);
+            //turn input into <p> so activity is not editable
+            var activity_to_place = $('<p>').text(activity.title).data('activity', activity).addClass('activity');
+            $('input', $(act_cell)).replaceWith(activity_to_place);
 
 
         }
@@ -91,19 +95,40 @@ var main = function(camp_sessions){
         $('#required-activities').text(activity_titles.join(', '));
 
 
+
         //set up autocomplete for activites
+        var source = [ "pool", "art", "meal", "sports",
+                    "counselor", "canoeing", "archery", "creek", "check in/out", "unit"
+                     , "other"];
+
+        var previousValue = "";
         $('#schedule input').each(function(){
             $(this).autocomplete({
-                                       source: [ "pool", "art", "meal", "sports",
-                                       "counselor", "canoeing", "archery", "creek", "check in/out", "unit"
-                                        , "other"],
+                                       source: source,
                                        autoFocus: true,
-                                       //select: uponSelect
-                                  });
+                                       close: function(event, ui){
+                                            if (($.inArray($(this).val(), source)) === -1){
+                                            $(this).val("");
+                                            }
+                                       }
+                                  }).keyup(function() {
+            var valid = false;
+            //http://stackoverflow.com/questions/6373512/source-only-allowed-values-in-jquery-ui-autocomplete-plugin
+            for(index in source){
+                if(source[index].toLowerCase().match($(this).val().toLowerCase())){
+                    valid = true;
+                }
+            }
+
+            if (!valid){
+                $(this).val(previousValue);
+            } else {
+                previousValue = $(this).val()
+            }
         }); //end autocomplete creation
 
         //set up click handller to display activity info
-        $('#schedule input').on('click', function(){
+        $('.activity').on('click', function(){
             var activity = $(this).data('activity');
             $('.activity-info #activity-title').text(activity.title);
             var act_date = new Date(activity.time);
@@ -116,11 +141,16 @@ var main = function(camp_sessions){
             } else {
             $('.activity-info #employees-working').hide();
             $('.activity-info #num-employees').text('0');}
+            $('.selected').removeClass('selected');
+            $(this).addClass('selected');
 
-        })
-
+        });
+    });//end build autocomplete
 
     }; //end buildTableSchedule
+    //build schedule for default selected session
+    console.log('#session-select: ' + $('#session-select').val());
+    buildTableSchedule(camp_sessions[$('#session-select').val()]);
 };
 
 $(document).ready(function(){

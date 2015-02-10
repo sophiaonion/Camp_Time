@@ -4,6 +4,7 @@ import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Eric on 1/23/2015.
@@ -17,6 +18,7 @@ public class Employee {
     private String job;
     private String gender;
     private ArrayList<String> certifications;
+    private ArrayList<Activity> activities = new ArrayList<>();
 
     @Id @ObjectId //designates as key in mongoDB, not sure of difference between @Id and @ObjectId
     private String key;
@@ -68,6 +70,26 @@ public class Employee {
 
     public void setCertifications(ArrayList<String> certifications) {
         this.certifications = certifications;
+    }
+
+    public ArrayList<Activity> getActivites(){
+        return this.activities;
+    }
+
+    public Employee setActivities(ArrayList<Activity> activities){
+        this.activities = activities;
+        return this;
+    }
+
+
+    public Employee addActivity(Activity activity){
+            activities.add(activity);
+        return this;
+    }
+
+    public Employee removeActivity(Activity activity){
+        activities.remove(activity);
+        return this;
     }
 
     @Override

@@ -5,13 +5,14 @@ import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Eric on 1/29/2015.
  */
 public class Activity {
 
-    private ArrayList<Employee> workers;
+    private ArrayList<Employee> employees = new ArrayList<>();
     private String title;
     private DateTime time;
     private String session;
@@ -26,6 +27,7 @@ public class Activity {
 
 
     //key will be generated automagically if not specified in passed in JSON object
+
     public Activity setKey(String key){
         this.key = key;
         return this;
@@ -45,17 +47,22 @@ public class Activity {
     }
 
     public Activity addEmployee(Employee employee){
-        workers.add(employee);
+//        if (employees != null){
+            employees.add(employee);
+//        } else {
+//            employees = new ArrayList<>();
+//            employees.add(employee);
+//        }
         return this;
     }
 
     public Activity removeEmployee(Employee employee){
-        workers.remove(employee);
+        employees.remove(employee);
         return this;
     }
 
-    public Activity setEmployees(ArrayList<Employee> workers){
-        this.workers = workers;
+    public Activity setEmployees(ArrayList<Employee> employees){
+        this.employees = employees;
         return this;
     }
 
@@ -84,7 +91,7 @@ public class Activity {
     }
 
     public ArrayList<Employee> getEmployees(){
-        return workers;
+        return employees;
     }
 
     public DateTime getTime() {

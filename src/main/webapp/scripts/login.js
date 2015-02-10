@@ -1,26 +1,41 @@
 var main = function(){
     $('#login').on('click', function(){
+        console.log('login clicked');
     var username = $('#username').val();
     var password = $('#password').val()
 
-    $.ajax({
-        type: 'GET',
-        url: '/api/users',
-        contentType: 'application/JSON',
-        beforeSend: function (xhr) { //add authentication to the request, the text is a way of authenticating
-        //from Stackoverflow
-                xhr.setRequestHeader('Authorization', "Basic " + btoa(username + ":" + password));
-            },
-        success: function(data){
-             window.location.replace('home_page_test.html');
-        },
-        error: function(request, status, error){
-            alert(error);
-             alert("Not be able to log in! ");
-        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/login',
+            contentType: 'application/JSON',
+            data: JSON.stringify({
+                name: username,
+                password: password
+                    })
+            }).done(function(data, textStatus, jqXHR){//returns user with response as username
+                console.log(data.name);
+                if(data.name === 'pw'){
+                    alert('Invalid password');
+                    $('#password').val("").focus();
+                } else if(data.name === 'usr'){
+                    alert('Invalid username');
+                    $('#password').val("");
+                    $('#username').val("").focus();
+                } else {
+                    window.location.href = "home_page_test.html";
+
+               }
+
+            }); //end done handler
+        }); //end login click handler
+
+    $('#register').on('click', function(){
+        window.location.href = "create_user.html";
     });
 
-    });
-}
+    };//end main
+
+
 
 $(document).ready(main);

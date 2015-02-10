@@ -6,8 +6,8 @@ import org.jongo.marshall.jackson.oid.ObjectId;
 import java.util.ArrayList;
 
 /**
- * Created by sophiawang on 2/4/15.
- */
+* Created by sophiawang on 2/4/15.
+*/
 public class Day {
     @Id
     @ObjectId

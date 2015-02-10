@@ -122,6 +122,68 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#deleteEmployee(java.lang.String)";
             }
         },
+        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Employee>>("default#EmployeeResource#findAvailableEmployees",
+                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
+                writerRegistry.<java.lang.Iterable<camptimetest.domain.Employee>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Employee.class), Optional.<String>absent()),
+                new StdRestxRequestMatcher("GET", "/employees/time/{time}"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<java.lang.Iterable<camptimetest.domain.Employee>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.findAvailableEmployees(
+                        /* [PATH] time */ match.getPathParam("time")
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription time = new OperationParameterDescription();
+                time.name = "time";
+                time.paramType = OperationParameterDescription.ParamType.path;
+                time.dataType = "string";
+                time.schemaKey = "";
+                time.required = true;
+                operation.parameters.add(time);
+
+
+                operation.responseClass = "LIST[Employee]";
+                operation.inEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "camptimetest.domain.Employee";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#findAvailableEmployees(java.lang.String)";
+            }
+        },
+        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.String>, camptimetest.domain.Activity>("default#EmployeeResource#addEmployeeToActivity",
+                readerRegistry.<java.util.Map<java.lang.String,java.lang.String>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.String.class), Optional.<String>absent()),
+                writerRegistry.<camptimetest.domain.Activity>build(camptimetest.domain.Activity.class, Optional.<String>absent()),
+                new StdRestxRequestMatcher("PUT", "/employees/activities/add"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<camptimetest.domain.Activity> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.addEmployeeToActivity(
+                        /* [BODY] values */ checkValid(validator, body)
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription values = new OperationParameterDescription();
+                values.name = "values";
+                values.paramType = OperationParameterDescription.ParamType.body;
+                values.dataType = "String>";
+                values.schemaKey = "";
+                values.required = true;
+                operation.parameters.add(values);
+
+
+                operation.responseClass = "Activity";
+                operation.inEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "camptimetest.domain.Activity";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#addEmployeeToActivity(java.util.Map<java.lang.String,java.lang.String>)";
+            }
+        },
         });
     }
 

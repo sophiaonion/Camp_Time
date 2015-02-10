@@ -11,18 +11,21 @@ public class EmployeeResourceFactoryMachine extends SingleNameFactoryMachine<Emp
     public EmployeeResourceFactoryMachine() {
         super(0, new StdMachineEngine<EmployeeResource>(NAME, BoundlessComponentBox.FACTORY) {
 private final Factory.Query<restx.jongo.JongoCollection> employees = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "employees")).mandatory();
+private final Factory.Query<restx.jongo.JongoCollection> activities = Factory.Query.byName(Name.of(restx.jongo.JongoCollection.class, "activities")).mandatory();
 
             @Override
             public BillOfMaterials getBillOfMaterial() {
                 return new BillOfMaterials(ImmutableSet.<Factory.Query<?>>of(
-employees
+employees,
+activities
                 ));
             }
 
             @Override
             protected EmployeeResource doNewComponent(SatisfiedBOM satisfiedBOM) {
                 return new EmployeeResource(
-satisfiedBOM.getOne(employees).get().getComponent()
+satisfiedBOM.getOne(employees).get().getComponent(),
+satisfiedBOM.getOne(activities).get().getComponent()
                 );
             }
         });
