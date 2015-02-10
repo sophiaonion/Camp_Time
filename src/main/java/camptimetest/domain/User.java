@@ -20,7 +20,6 @@ public class User implements RestxPrincipal {
     private String name;//still referred to as _id on client side!!!
     //still have to have some designated id field to use though
     private String password;
-    private String usertype;
     private Collection<String> roles;
 
 
@@ -62,14 +61,14 @@ public class User implements RestxPrincipal {
         return this;
     }
 
-    public String getUsertype(){
-        return usertype;
-    }
-
-    public User setUsertype(String usertype){
-        this.usertype = usertype;
-        return this;
-    }
+//    public String getUsertype(){
+//        return usertype;
+//    }
+//
+//    public User setUsertype(String usertype){
+//        this.usertype = usertype;
+//        return this;
+//    }
 
     @Override @JsonIgnore //won't try to convert to property of json object
     public ImmutableSet<String> getPrincipalRoles() {

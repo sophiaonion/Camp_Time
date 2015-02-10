@@ -30,6 +30,12 @@ var main = function(){
             }); //end done handler
         }); //end login click handler
 
+    $('#register').on('click', function(){
+        window.location.href = "create_user.html";
+    });
+
     };//end main
+
+
 
 $(document).ready(main);

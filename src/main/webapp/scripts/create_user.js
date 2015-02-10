@@ -1,4 +1,4 @@
-var main = function(users){
+var main = function(){
     $('#create-user').on('click', function(){
 
     if ($('#password').val()!= $('#confirmation').val()){
@@ -7,9 +7,9 @@ var main = function(users){
     }
 
     var data = {
-        username: $('#user-name').val(),
+        name: $('#user-name').val(),
         password: $('#password').val(),
-        usertype: "customers"
+        roles: ["admin"]
     };
 
     console.log(JSON.stringify(data));
@@ -31,9 +31,4 @@ var main = function(users){
     });
 }
 
-$(document).ready(function(){
-       $.get('/api/users', function(users){
-                main(users);
-       });
-
-});
+$(document).ready(main);

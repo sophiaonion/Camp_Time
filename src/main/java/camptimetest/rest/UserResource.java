@@ -54,7 +54,7 @@ public class UserResource {
 //        return usertype;
 //    }
 
-    @RolesAllowed(ADMIN)
+    //@RolesAllowed(ADMIN)
     @POST("/users") //user repository handles hashing
     public User createUser(User user)
     {
