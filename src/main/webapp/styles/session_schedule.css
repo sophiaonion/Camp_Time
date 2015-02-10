@@ -37,7 +37,7 @@ button:hover {
 }
 
 .confirm-buttons{
-    visibility: hidden;
+    visibility: show;
     display: inline;
     overflow: visible;
 }
@@ -48,4 +48,5 @@ select {
 
 .selected {
     background-color: rgb(200, 200, 200);
+}
 }

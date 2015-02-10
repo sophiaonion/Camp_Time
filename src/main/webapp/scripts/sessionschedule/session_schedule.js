@@ -2,6 +2,7 @@ var main = function(camp_sessions){
     console.log('session schedule hi');
     //add option to be selected for each session and also tack on index data to access session in camp_sessions array
     //once selected
+
     Date.prototype.myToString = function(){
         var utcDate = this.toUTCString(); //returns correct date as Day, Date Month Year time
         utcDate = utcDate.slice(0, utcDate.indexOf('2015') - 1);
