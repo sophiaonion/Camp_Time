@@ -1,3 +1,51 @@
 .activity-info #employees-working{
     display: none;
 }
+
+.activity {
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.activity-control {
+    display: inline-block;
+    padding: 5px;
+    overflow: visible;
+}
+
+.activity-control p {
+    padding: 0px;
+    margin: 0px;
+    width: 150px;
+    display: inline-block;
+}
+
+.activity-control button {
+    width: 100%;
+    border: solid 1px white;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #EB6841;
+}
+
+.activity-info {
+    display: inline-block;
+    width: 200px;
+}
+
+.confirm-buttons{
+    visibility: hidden;
+    display: inline;
+    overflow: visible;
+}
+
+select {
+    width: 100px;
+}
+
+.selected {
+    background-color: rgb(200, 200, 200);
+}

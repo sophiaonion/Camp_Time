@@ -11,6 +11,9 @@ import restx.factory.Component;
 import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
 import camptimetest.domain.SessionRegistration;
+import restx.security.RolesAllowed;
+import static camptimetest.AppModule.Roles.*;
+
 import javax.inject.Named;
 import java.io.Console;
 import java.util.ArrayList;
@@ -55,6 +58,7 @@ public class CamperResource {
 //        }
 //    }
 
+
     @GET("/campers/registrations/{camperID}")
     public Iterable<CampSession> getCampers(String camperID){
         Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #}", camperID).as(SessionRegistration.class);
@@ -66,6 +70,7 @@ public class CamperResource {
 
         return campSessions.get().find("{_id: {$in:#}}", sessionIDs).as(CampSession.class);
     }
+
 
     @POST("/campers")
     public Camper createCamper(Camper camper){
