@@ -1,5 +1,6 @@
 package camptimetest;
 
+import camptimetest.domain.User;
 import camptimetest.rest.MyUserRepository;
 import com.google.common.base.Charsets;
 import restx.factory.Module;
@@ -17,6 +18,9 @@ import javax.inject.Named;
  */
 @Module
 public class AppModule {
+    public static User currentUser() {
+        return (User) RestxSession.current().getPrincipal().get();
+    }
 
     @Provides //signaturekey is used to sign cookies for security and session management
     public SignatureKey signatureKey(){
@@ -27,14 +31,16 @@ public class AppModule {
     //tiers of permissions for user
     public static final class Roles {
         public static final String ADMIN = "admin";
+        public static final String CUSTOMER = "customer";
+        public static final String COUNSELOR = "counselor";
+        public static final String SPECIALTY = "specialty";
     }
     //provides database name for behind the scenes injection and connection. Oddly don't have to specify port number
     //or anything else
     //@Named names injection to be addressed later, if class is unique like SignatureKey compiler will know to use that
     //@Provides method, however in this case since it is just a string it should be named
     @Provides @Named(MongoModule.MONGO_DB_NAME)
-    public String dbName(){
-        return "camptimetest";}
+    public String dbName(){return "camptimetest";}
 
     @Provides @Named("credentialsStrategy")//way of comparing/hashing credentials/passwords
     public CredentialsStrategy credentialsStrategy(){

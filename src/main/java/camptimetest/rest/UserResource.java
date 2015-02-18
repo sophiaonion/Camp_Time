@@ -1,5 +1,6 @@
 package camptimetest.rest;
 
+import camptimetest.AppModule;
 import camptimetest.domain.User;
 import org.eclipse.jetty.http.HttpStatus;
 import restx.annotations.GET;
@@ -22,7 +23,7 @@ import javax.inject.Named;
 
 @Component
 @RestxResource
-@PermitAll
+
 public class UserResource {
 
     private final MyUserRepository myUserRepository; //Database access object, will inject when resource is created/called
@@ -65,6 +66,7 @@ public class UserResource {
         return myUserRepository.createUser(user);
     }
 
+    @PermitAll
     @POST("/login")
     public User logIn(User user){
         Optional<User> dbOptUser = myUserRepository.findUserByName(user.getName());
@@ -77,8 +79,6 @@ public class UserResource {
             if(passwordMatch){
                 //authenticateAs creates new session with permissions based on roles of user
                 RestxSession.current().authenticateAs(dbUser);
-                System.out.println("authenticated as: " + RestxSession.current().toString());
-                System.out.println("logged in!");
                 return dbUser; //user from database returned
             } else {
                 return (new User()).setName("pw"); //dummy user sent back denoting wrong password
@@ -87,6 +87,12 @@ public class UserResource {
             System.out.println("user login not present");
             return (new User()).setName("usr"); //
         }
+    }
+
+    //??!!!
+    @GET("/role")
+    public String getUserRole(){
+        return AppModule.currentUser().getRoles().iterator().next();
     }
 
 //    @DELETE("/users/{userID}") //!!!!!!!!!!!!!!!!!!!!!!!!
