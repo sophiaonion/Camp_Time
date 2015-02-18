@@ -16613,3 +16613,22 @@ java.lang.ClassCastException: org.bson.LazyDBList cannot be cast to java.util.Ma
 16:50:03.792 [qtp895947612-29  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
 16:50:05.572 [qtp895947612-29  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 3.922 s
 16:50:06.854 [qtp895947612-29  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 1.281 s
+16:53:41.238 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+18:52:18.164 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+18:52:19.187 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+18:52:28.896 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+18:52:29.125 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+18:52:32.038 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.180 s
+18:52:32.718 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/rachelfeltes/HelloWorld/.
+18:52:33.222 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+18:52:45.947 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 3.068 s
+18:53:40.962 [qtp895947612-28  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+18:53:41.519 [qtp895947612-28  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /activities - per request factory created in 3.400 s
+18:53:43.017 [qtp895947612-28  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities >> OK - 1.498 s
+18:54:00.916 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
