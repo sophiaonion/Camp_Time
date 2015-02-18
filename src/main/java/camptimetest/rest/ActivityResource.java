@@ -2,6 +2,7 @@ package camptimetest.rest;
 
 import camptimetest.domain.Activity;
 import camptimetest.domain.ConstraintChecker;
+import camptimetest.domain.StaffConstraintChecker;
 import restx.annotations.GET;
 import restx.annotations.POST;
 import restx.annotations.RestxResource;
@@ -20,21 +21,28 @@ import javax.inject.Named;
 public class ActivityResource {
 
     private JongoCollection activities;
-    private JongoCollection campSessions;
+    private JongoCollection campsessions;
+    private JongoCollection employees;
+    private JongoCollection registrations;
 
-    public ActivityResource(@Named("activities") JongoCollection activities, @Named("campsessions") JongoCollection campSessions){
+    public ActivityResource(@Named("registrations") JongoCollection registrations, @Named("employees") JongoCollection employees, @Named("activities") JongoCollection activities, @Named("campsessions") JongoCollection campsessions){
         this.activities = activities;
-        this.campSessions = campSessions;
+        this.campsessions = campsessions;
+        this.employees = employees;
+        this.registrations = registrations;
     }
 
     //this is to get schedule to work with for stuff
     @GET("/activities")
     public Iterable<Activity> getActivities(){
-        JongoCollection activitiesCopy = activities;
-        JongoCollection campSessionsCopy = campSessions;
-        ConstraintChecker cc = new ConstraintChecker(activitiesCopy, campSessionsCopy);
+
         //constraint checker assigns updated schedule to activitiesCopy, campSessionCopy
+        ConstraintChecker cc = new ConstraintChecker(activities, campsessions);
         cc.update();
+
+        StaffConstraintChecker scc = new StaffConstraintChecker(activities, employees, registrations, campsessions);
+        scc.update();
+
         return activities.get().find().as(Activity.class);//returns copy of activities
     }
 

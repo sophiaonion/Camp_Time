@@ -12,6 +12,7 @@ import restx.security.PermitAll;
 
 import javax.inject.Named;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 
 /**
@@ -80,19 +81,20 @@ public class EmployeeResource {
          return employees.get().find("{_id: {$nin: #}}", workingEmps).as(Employee.class);
     }
 
+
     //get sent Map of key value pairs
     //employee_id and activity_id
     @PUT("/employees/activities/add")
     public Activity addEmployeeToActivity(Map<String, String> values){
-        ObjectId empId = new ObjectId(values.get("employee_id"));
         Employee emp = employees.get().findOne("{_id: #}", new ObjectId(values.get("employee_id"))).as(Employee.class);
-        //rather than update -- retrieve activity -- add employee to activity and add activity to employee and save both
+
         Activity act = activities.get().findOne("{_id: #}", new ObjectId(values.get("activity_id"))).as(Activity.class);
 
 
         activities.get().update("{_id:#}", new ObjectId(values.get("employee_id"))).with("{$push: {employees: #}}", emp);
-        employees.get().update("{_id:#", new ObjectId(values.get("activity_id"))).with("{$push: {activities: #}}", act);
+        employees.get().update("{_id:#}", new ObjectId(values.get("activity_id"))).with("{$push: {activities: #}}", act);
 
+//rather than update can retrieve activity -- add employee to activity and add activity to employee and save both
 //brutish way but works as well, duplicating array adding and setting again ... ran into object marshalling problems when using an
 //add employee method on activity and then trying to save
 //        ArrayList<Employee> updatedEmps = act.getEmployees();
@@ -101,6 +103,20 @@ public class EmployeeResource {
 //        activities.get().save(act);
 // will just overwrite objects in database with same ObjectId instead of duplicating
         return act;
+    }
+
+    //employee_id and activity_id
+    @PUT("/employees/activities/remove")
+    public Activity removeEmployeeFromActivity(Map<String, String> values){
+        Employee emp = employees.get().findOne("{_id: #}", new ObjectId(values.get("employee_id"))).as(Employee.class);
+
+        Activity act = activities.get().findOne("{_id: #}", new ObjectId(values.get("activity_id"))).as(Activity.class);
+
+
+        activities.get().update("{_id:#}", new ObjectId(values.get("employee_id"))).with("{$pull: {employees: #}}", emp);
+        employees.get().update("{_id:#}", new ObjectId(values.get("activity_id"))).with("{pull: {activities: #}}", act);
+
+    return act;
     }
 
 

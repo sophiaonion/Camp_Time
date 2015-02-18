@@ -17,8 +17,9 @@ public class Activity {
     private DateTime time;
     private String session;
     private String activityArea;
-    private Boolean fixed;//whether time is fixed by admin
-    private Boolean isSet;//whether time has beeisSetet by algorithm
+    private boolean fixed;//whether time is fixed by admin
+    private boolean isSet;//whether time has been set by algorithm
+    private boolean conflictOK;//whether other activities can be in the same place at the same time
 
 
     @Id
@@ -27,7 +28,6 @@ public class Activity {
 
 
     //key will be generated automagically if not specified in passed in JSON object
-
     public Activity setKey(String key){
         this.key = key;
         return this;

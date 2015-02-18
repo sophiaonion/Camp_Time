@@ -3,10 +3,15 @@ var button_handler = function(){
     $('button').not($('.confirm-buttons')).click(function(event){
         if(!$('.selected')) return;
         $('.activity-control').hide();
-        $('.confirm-buttons').show();
+        $('.confirm-buttons').css('visibility', 'visible');
         $('.edit-section').show();
     });
 
+
+    $('.available-emp option').each(function(){
+    console.log($(this).text);
+    console.log($(this).data('employee')._id);
+    });
 
     $('#edit-employees').click(function(event){
         var activity = $('.selected').data('activity');
@@ -15,9 +20,10 @@ var button_handler = function(){
 
         $('.edit-section').load('/scripts/sessionschedule/edit_employees.html');
         var working = $('.working-emp');
+        console.log(working);
         if (activity.employees){//check if employees uninitialized
             activity.employees.forEach(function(employee){
-                var nextEmp = $('<option>').val(employee).text(employee.name);
+                var nextEmp = $('<option>').text(employee.name).data('employee', employee);
                 working.append(nextEmp);
             });
         }
@@ -26,12 +32,11 @@ var button_handler = function(){
 
         //get available employees at time and append to available select
         console.log('activity time: ' + activity.time)
-        var available = $('.available-emp');
-        available.attr('caption', 'available');
         $.get('/api/employees/time/' + activity.time, function(employees){
             employees.forEach(function(emp){
-                var nextEmp = $('<option>').val(emp).text(emp.name);
-                available.append(nextEmp);
+                var nextEmp = $('<option>').text(emp.name).data('employee', emp);
+                console.log(nextEmp.data('employee')._id);
+                $('.available-emp').append(nextEmp);
             });
 
         });

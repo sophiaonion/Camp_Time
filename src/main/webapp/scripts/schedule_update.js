@@ -12,7 +12,7 @@ var main = function(activities){
 
 
     $('#approve-update').on('click', function(){
-        //post activities copy as new activities?
+        window.location.replace('session_schedule.html');
     });
 
     $('#cancel').on('click', function(){
@@ -20,6 +20,8 @@ var main = function(activities){
     });
 
 };
+
+
 
 $(document).ready(function(){
        $.get('api/activities', function(activities){
