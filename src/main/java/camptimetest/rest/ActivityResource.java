@@ -22,7 +22,7 @@ public class ActivityResource {
     private JongoCollection activities;
     private JongoCollection campSessions;
 
-    public ActivityResource(@Named("activities") JongoCollection activities, @Named("campSessions") JongoCollection campSessions){
+    public ActivityResource(@Named("activities") JongoCollection activities, @Named("campsessions") JongoCollection campSessions){
         this.activities = activities;
         this.campSessions = campSessions;
     }
