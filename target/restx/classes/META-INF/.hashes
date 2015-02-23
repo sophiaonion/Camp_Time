@@ -1,10 +1,10 @@
 src/main/java**camptimetest/rest/CampSessionResource.java**eaff9707badd39fd4af4451ddf675ef6**1424018353000
 src/main/java**camptimetest/domain/User.java**f6918785b846e78909c3f199d48c991a**1423555534000
-src/main/java**camptimetest/rest/ActivityResource.java**cddcce3e0fcbebe6783112944350aeb6**1424221367000
+src/main/java**camptimetest/rest/ActivityResource.java**0d91560ab91f7898326afe0fe842bfae**1424658264000
 src/main/java**camptimetest/domain/SessionRegistration.java**cf06e0823173a774e93234e017cfb588**1422940990000
 src\main\java**camptimetest\domain\Activity.java**b2640c53e56529b1d95c2c467fbdf4f2**1423275086151
-src/main/java**camptimetest/rest/EmployeeResource.java**0624d04f57721fe044d6035400b411f7**1424224427000
-src/main/java**camptimetest/domain/Employee.java**02cdc192f8e4fc35462bc99c1017461b**1423555534000
+src/main/java**camptimetest/rest/EmployeeResource.java**41f7c083e94ee948101b170fa6025f6d**1424668573000
+src/main/java**camptimetest/domain/Employee.java**f90d8b1a22555771291ff17ae17490b6**1424668795000
 src\main\java**camptimetest\domain\MasterSchedule.java**abbcfc0b4f8157530e50c95e695eaec2**1423103206571
 src\main\java**camptimetest\rest\CamperResource.java**10e0aec3a5fd04a3f7f1b6930fba9cc6**1423263562600
 src\main\java**camptimetest\domain\CampSession.java**94ab2cbb772a1723520b4980001aa8f2**1423283682718
@@ -12,7 +12,7 @@ src/main/java**camptimetest/createdata/TestData.java**01c7019efaa9101a77371eaf1e
 src\main\java**camptimetest\domain\ActivityArea.java**a8f6b857bed7a353054355c9709efcfe**1423092277353
 src/main/java**camptimetest/rest/myAuthenticator.java**47cd6acf74cd9fce4a1a37b36438f92d**1423555534000
 src/main/java**camptimetest/domain/ActivityArea.java**6b50f98a339b16d8e7bf604cb29881d8**1423467164000
-src/main/java**camptimetest/domain/Activity.java**b6c10ab9465daa5579510944a9b3504e**1424221284000
+src/main/java**camptimetest/domain/Activity.java**123a823b384256c7a05092f1273c9bb5**1424668795000
 src\main\java**camptimetest\rest\CampSessionResource.java**264ff861aa84da0f31d274860c6a74e8**1423278660081
 src\main\java**camptimetest\domain\Day.java**2dce4180000ea965d78af635fe14fabf**1423092277364
 src/main/java**camptimetest/rest/CamperResource.java**89f517bf916110245373dc414135b43b**1423555534000

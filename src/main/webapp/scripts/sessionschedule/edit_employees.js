@@ -32,8 +32,6 @@ var edit_employees_setup = function() {
             $(this).detach();
             $('.working-emp').append($(this));
 
-
-
             if(indexIfIn !== -1){
                 //detach one item starting at index given
                 remove_employees.splice(indexIfIn, -1);

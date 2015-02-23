@@ -43,7 +43,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Employee>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, hasRole("admin"));
                 return Optional.of(resource.findEmployee(
                         
                 ));
@@ -67,7 +67,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Activity>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.getEmployeeActivities(
                         /* [PATH] employeeID */ match.getPathParam("employeeID")
                 ));
@@ -98,7 +98,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<camptimetest.domain.Employee> doRoute(RestxRequest request, RestxRequestMatch match, camptimetest.domain.Employee body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.createEmployee(
                         /* [BODY] employee */ checkValid(validator, body)
                 ));
@@ -129,7 +129,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<restx.Status> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.deleteEmployee(
                         /* [PATH] employeeID */ match.getPathParam("employeeID")
                 ));
@@ -153,37 +153,6 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#deleteEmployee(java.lang.String)";
             }
         },
-        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Employee>>("default#EmployeeResource#findAvailableEmployees",
-                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
-                writerRegistry.<java.lang.Iterable<camptimetest.domain.Employee>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Employee.class), Optional.<String>absent()),
-                new StdRestxRequestMatcher("GET", "/employees/time/{time}"),
-                HttpStatus.OK, RestxLogLevel.DEFAULT) {
-            @Override
-            protected Optional<java.lang.Iterable<camptimetest.domain.Employee>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
-                return Optional.of(resource.findAvailableEmployees(
-                        /* [PATH] time */ match.getPathParam("time")
-                ));
-            }
-
-            @Override
-            protected void describeOperation(OperationDescription operation) {
-                super.describeOperation(operation);
-                                OperationParameterDescription time = new OperationParameterDescription();
-                time.name = "time";
-                time.paramType = OperationParameterDescription.ParamType.path;
-                time.dataType = "string";
-                time.schemaKey = "";
-                time.required = true;
-                operation.parameters.add(time);
-
-
-                operation.responseClass = "LIST[Employee]";
-                operation.inEntitySchemaKey = "";
-                operation.outEntitySchemaKey = "camptimetest.domain.Employee";
-                operation.sourceLocation = "camptimetest.rest.EmployeeResource#findAvailableEmployees(java.lang.String)";
-            }
-        },
         new StdEntityRoute<java.util.Map<java.lang.String,java.lang.String>, java.lang.String>("default#EmployeeResource#addEmployeeToActivity",
                 readerRegistry.<java.util.Map<java.lang.String,java.lang.String>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.String.class), Optional.<String>absent()),
                 writerRegistry.<java.lang.String>build(java.lang.String.class, Optional.<String>absent()),
@@ -191,7 +160,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.String> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.addEmployeeToActivity(
                         /* [BODY] values */ checkValid(validator, body)
                 ));
@@ -222,7 +191,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<camptimetest.domain.Activity> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.removeEmployeeFromActivity(
                         /* [BODY] values */ checkValid(validator, body)
                 ));

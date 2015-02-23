@@ -18,9 +18,10 @@ public class Employee {
     private String job;
     private String gender;
     private ArrayList<String> certifications;
-    private ArrayList<Activity> activities = new ArrayList<>();
+    private ArrayList<String> activities = new ArrayList<>();
 
-    @Id @ObjectId //designates as key in mongoDB, not sure of difference between @Id and @ObjectId
+    @ObjectId
+    @Id  //designates as key in mongoDB, not sure of difference between @Id and @ObjectId
     private String key;
 
     public String getKey(){
@@ -72,23 +73,27 @@ public class Employee {
         this.certifications = certifications;
     }
 
-    public ArrayList<Activity> getActivites(){
+    public ArrayList<String> getActivites(){
         return this.activities;
     }
 
-    public Employee setActivities(ArrayList<Activity> activities){
+    public Employee setActivities(ArrayList<String> activities){
         this.activities = activities;
         return this;
     }
 
 
     public Employee addActivity(Activity activity){
-            activities.add(activity);
+        if (activities.contains(activity.getKey()))
+        {}
+        else{
+            activities.add(activity.getKey());
+        }
         return this;
     }
 
     public Employee removeActivity(Activity activity){
-        activities.remove(activity);
+        activities.remove(activity.getKey());
         return this;
     }
 

@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Activity {
 
-    private ArrayList<Employee> employees = new ArrayList<>();
+    private ArrayList<String> employees = new ArrayList<>();
     private String title;
     private DateTime time;
     private String session;
@@ -21,9 +21,8 @@ public class Activity {
     private boolean isSet;//whether time has been set by algorithm
     private boolean conflictOK;//whether other activities can be in the same place at the same time
 
-
-    @Id
     @ObjectId
+    @Id
     private String key;
 
 
@@ -47,21 +46,20 @@ public class Activity {
     }
 
     public Activity addEmployee(Employee employee){
-//        if (employees != null){
-            employees.add(employee);
-//        } else {
-//            employees = new ArrayList<>();
-//            employees.add(employee);
-//        }
+        if (employees.contains(employee.getKey()))
+        {}
+        else{
+            employees.add(employee.getKey());
+        }
         return this;
     }
 
     public Activity removeEmployee(Employee employee){
-        employees.remove(employee);
+        employees.remove(employee.getKey());
         return this;
     }
 
-    public Activity setEmployees(ArrayList<Employee> employees){
+    public Activity setEmployees(ArrayList<String> employees){
         this.employees = employees;
         return this;
     }
@@ -90,7 +88,7 @@ public class Activity {
         this.session = session;
     }
 
-    public ArrayList<Employee> getEmployees(){
+    public ArrayList<String> getEmployees(){
         return employees;
     }
 
