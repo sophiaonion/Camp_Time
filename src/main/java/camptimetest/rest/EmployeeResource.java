@@ -5,15 +5,19 @@ import camptimetest.domain.Employee;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import restx.Status;
+import restx.admin.AdminPagesResource;
 import restx.annotations.*;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
+import restx.security.RolesAllowed;
+
 
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import static camptimetest.AppModule.Roles.*;
 
 /**
  * @Component designates class as injectable and for factory to be set up for it at compile time
@@ -21,7 +25,6 @@ import java.util.Map;
  */
 
 @Component @RestxResource
-@PermitAll //will eventually want to change to allow only certain roles
 public class EmployeeResource {
     private final JongoCollection employees; //Database access object, will inject when resource is created/called
     private final JongoCollection activities;
@@ -34,7 +37,7 @@ public class EmployeeResource {
         this.activities = activities;
     }
 
-
+    @RolesAllowed(ADMIN)
     @GET("/employees") //has to return iterable since .find() returns iterable of objects
     //even if only one entry is returned, .findOne will return object not wrapped in iterable
     public Iterable<Employee> findEmployee() {

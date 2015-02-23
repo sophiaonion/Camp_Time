@@ -16,6 +16,20 @@ import java.util.*;
  */
 
 
+/*
+Number codes:
+-1: error
+0: no conflict
+1: activity with no employees
+2: only 1 staff when need 2
+3:
+4: no staff over 18 and woman
+5: ratios for camper age not met
+6: activity area certification requirements not met
+7: employee working 2 activities at same time
+*/
+
+
 public class StaffConstraintChecker {
 
     private JongoCollection activities;
@@ -49,7 +63,7 @@ public class StaffConstraintChecker {
 
         DBCursor cursor = activities.get().getDBCollection().find();
         List<DBObject> arrry = cursor.toArray();
-        ArrayList<DBObject> list = new ArrayList<DBObject>(arrry);
+        ArrayList<DBObject> actList = new ArrayList<DBObject>(arrry);
 
         //if there is an activity without employees
         if( (activities.get().count( "{employees: {$exists: false} }" ) != 0)
@@ -58,14 +72,12 @@ public class StaffConstraintChecker {
             return 1;
         }
 
-        //make sure employees aren't working two activities at the same time
-
 
         //for each activity make sure has appropriate number of employees
-        for(int i=0; i<list.size(); i++) {
+        for(int i=0; i<actList.size(); i++) {
         //get necessary facts to use for the checking of constraints:
             //get number of campers in session
-            String session = String.valueOf(list.get(i).get("session")); //get session name
+            String session = String.valueOf(actList.get(i).get("session")); //get session name
             String sessionID = campsessions.get().findOne("{name: # }", session).as(CampSession.class).getSessionID();
             ObjectId ID = new ObjectId(sessionID);
             int numCampers = (int) registrations.get().count("{sessionID: #}", ID); //get session id from that
@@ -74,13 +86,13 @@ public class StaffConstraintChecker {
             String age = String.valueOf(campsessions.get().findOne("{_id: # }", ID).as(CampSession.class).getAgeGroup());
 
             //get location of activity
-            String activityArea = String.valueOf(list.get(i).get("activityArea"));
+            String activityArea = String.valueOf(actList.get(i).get("activityArea"));
 
             //get number of employees working session
             int numStaff = 0;
             BasicDBList e = null;
-            if (list.get(i).get("employees") != null) {//can maybe get rid of this laterzzz
-                e = (BasicDBList) list.get(i).get("employees");
+            if (actList.get(i).get("employees") != null) {//can maybe get rid of this laterzzz
+                e = (BasicDBList) actList.get(i).get("employees");
                 numStaff = e.size();
             } else System.out.println("is empty");//return 1;//no employees scheduled yet
 
@@ -129,7 +141,7 @@ public class StaffConstraintChecker {
             }
 
             //ensure that areas requiring certifications have those certifications
-            if (list.get(i).get("activityArea") != null) {
+            if (actList.get(i).get("activityArea") != null) {
                 int numLifeGuards = 0;
                 boolean hasArt, hasNature, hasArchery, hasStore, canDrive;
                 hasArt=false; hasNature=false; hasArchery=false; hasStore=false; canDrive=false;
@@ -179,9 +191,27 @@ public class StaffConstraintChecker {
             }//end check for required certifications
         }//end check for correct ratios
 
-        //check that employees aren't schedule multiple places at same time todo
+        //check that employees aren't schedule multiple places at same time
+        DBCursor cursor2 = employees.get().getDBCollection().find();
+        List<DBObject> arrry2 = cursor2.toArray();
+        ArrayList<DBObject> empList = new ArrayList<>(arrry2);
+        for(int i=0; i<empList.size(); i++) {//for each employee
+            ArrayList<Activity> a = (ArrayList<Activity>) empList.get(i).get("activities");
+            for(int j=0; j<a.size(); j++)//for each activity employee is working
+                for(int k=0; k<a.size(); k++) { //for each other activity employee is working
+                    if (j != k && a.get(j).getTime().equals(a.get(k).getTime())) {//not sure if works, compare each activity
+                        System.out.println("employee working two activities at same time");
+                        return 7;
+                    }
+                }
+        }
 
-        //check that employees have appropriate number of breaks todo
+
+
+        //check that employees have appropriate number of breaks
+        for(int i=0; i<empList.size(); i++) {
+
+        }
 
         System.out.println("checked conflicts");
         return 0;
