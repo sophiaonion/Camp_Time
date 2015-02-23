@@ -109,4 +109,6 @@ public class Activity {
     public void setActivityArea(String activityArea) {
         this.activityArea = activityArea;
     }
+
+
 }

@@ -44,7 +44,8 @@ $('#add-employee').on('click', function(){
         age: $('#employee-age').val(),
         gender: gender,
         job: $('#job').val(),
-        certifications: certifications
+        certifications: certifications,
+        activities: []
     };
 
     $.ajax({

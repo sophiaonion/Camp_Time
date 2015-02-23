@@ -96,11 +96,12 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
+                ", age='" + age + '\'' +
                 ", job='" + job + '\'' +
                 ", gender='" + gender + '\'' +
                 ", certifications=" + certifications +
                 ", key='" + key + '\'' +
+                ", activities='" + activities + '\'' +
                 '}';
     }
 }

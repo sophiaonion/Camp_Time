@@ -88,24 +88,36 @@ public class EmployeeResource {
     //get sent Map of key value pairs
     //employee_id and activity_id
     @PUT("/employees/activities/add")
-    public Activity addEmployeeToActivity(Map<String, String> values){
+    public String addEmployeeToActivity(Map<String, String> values){
         Employee emp = employees.get().findOne("{_id: #}", new ObjectId(values.get("employee_id"))).as(Employee.class);
 
         Activity act = activities.get().findOne("{_id: #}", new ObjectId(values.get("activity_id"))).as(Activity.class);
 
 
-        activities.get().update("{_id:#}", new ObjectId(values.get("employee_id"))).with("{$push: {employees: #}}", emp);
-        employees.get().update("{_id:#}", new ObjectId(values.get("activity_id"))).with("{$push: {activities: #}}", act);
 
-//rather than update can retrieve activity -- add employee to activity and add activity to employee and save both
-//brutish way but works as well, duplicating array adding and setting again ... ran into object marshalling problems when using an
-//add employee method on activity and then trying to save
-//        ArrayList<Employee> updatedEmps = act.getEmployees();
-//        updatedEmps.add(emp);
-//        act.setEmployees(updatedEmps);
-//        activities.get().save(act);
-// will just overwrite objects in database with same ObjectId instead of duplicating
-        return act;
+//        activities.get().update("{_id: #}", new ObjectId(values.get("employee_id"))).
+//                with("{$addToSet: {employees: #}}", values.get("activity_id"));
+//
+//        employees.get().update("{_id:#}", new ObjectId(values.get("activity_id"))).
+//                with("{$push: {activities: #}}", values.get("employee_id"));
+
+
+
+//        act.addEmployee(emp);
+//        emp.addActivity(act);
+        ArrayList<Employee> updateEmps = act.getEmployees();
+        updateEmps.add(emp);
+        act.setEmployees(updateEmps);
+
+        ArrayList<Activity> updateActs = emp.getActivites();
+        updateActs.add(act);
+        emp.setActivities(updateActs);
+
+        employees.get().save(emp);
+        activities.get().save(act);
+//will just overwrite objects in database with same ObjectId instead of duplicating -- save implemented as try to update
+        //if not found insert
+        return "200";
     }
 
     //employee_id and activity_id
@@ -117,7 +129,7 @@ public class EmployeeResource {
 
 
         activities.get().update("{_id:#}", new ObjectId(values.get("employee_id"))).with("{$pull: {employees: #}}", emp);
-        employees.get().update("{_id:#}", new ObjectId(values.get("activity_id"))).with("{pull: {activities: #}}", act);
+        employees.get().update("{_id:#}", new ObjectId(values.get("activity_id"))).with("{$pull: {activities: #}}", act);
 
     return act;
     }
