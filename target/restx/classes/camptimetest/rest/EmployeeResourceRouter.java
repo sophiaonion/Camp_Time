@@ -184,13 +184,13 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#findAvailableEmployees(java.lang.String)";
             }
         },
-        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.String>, camptimetest.domain.Activity>("default#EmployeeResource#addEmployeeToActivity",
+        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.String>, java.lang.String>("default#EmployeeResource#addEmployeeToActivity",
                 readerRegistry.<java.util.Map<java.lang.String,java.lang.String>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.String.class), Optional.<String>absent()),
-                writerRegistry.<camptimetest.domain.Activity>build(camptimetest.domain.Activity.class, Optional.<String>absent()),
+                writerRegistry.<java.lang.String>build(java.lang.String.class, Optional.<String>absent()),
                 new StdRestxRequestMatcher("PUT", "/employees/activities/add"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
-            protected Optional<camptimetest.domain.Activity> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
+            protected Optional<java.lang.String> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
                 securityManager.check(request, open());
                 return Optional.of(resource.addEmployeeToActivity(
                         /* [BODY] values */ checkValid(validator, body)
@@ -209,9 +209,9 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.parameters.add(values);
 
 
-                operation.responseClass = "Activity";
+                operation.responseClass = "string";
                 operation.inEntitySchemaKey = "";
-                operation.outEntitySchemaKey = "camptimetest.domain.Activity";
+                operation.outEntitySchemaKey = "";
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#addEmployeeToActivity(java.util.Map<java.lang.String,java.lang.String>)";
             }
         },
