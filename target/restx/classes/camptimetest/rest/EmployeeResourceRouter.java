@@ -43,7 +43,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Employee>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, hasRole("admin"));
                 return Optional.of(resource.findEmployee(
                         
                 ));
@@ -67,7 +67,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Activity>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.getEmployeeActivities(
                         /* [PATH] employeeID */ match.getPathParam("employeeID")
                 ));
@@ -98,7 +98,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<camptimetest.domain.Employee> doRoute(RestxRequest request, RestxRequestMatch match, camptimetest.domain.Employee body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.createEmployee(
                         /* [BODY] employee */ checkValid(validator, body)
                 ));
@@ -129,7 +129,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<restx.Status> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.deleteEmployee(
                         /* [PATH] employeeID */ match.getPathParam("employeeID")
                 ));
@@ -160,7 +160,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Employee>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.findAvailableEmployees(
                         /* [PATH] time */ match.getPathParam("time")
                 ));
@@ -191,7 +191,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<camptimetest.domain.Activity> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.addEmployeeToActivity(
                         /* [BODY] values */ checkValid(validator, body)
                 ));
@@ -222,7 +222,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<camptimetest.domain.Activity> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
-                securityManager.check(request, open());
+                securityManager.check(request, isAuthenticated());
                 return Optional.of(resource.removeEmployeeFromActivity(
                         /* [BODY] values */ checkValid(validator, body)
                 ));
