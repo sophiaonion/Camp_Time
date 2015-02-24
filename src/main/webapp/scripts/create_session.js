@@ -108,6 +108,7 @@ var tableBuilt = false;
             this.title = name;
             this.day = day;
             this.time = time;
+            this.employees = []
         };
 
         //list of activities

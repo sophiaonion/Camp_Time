@@ -44,9 +44,10 @@ console.log($('#start-break').val());
         age: $('#employee-age').val(),
         gender: gender,
         job: $('#job').val(),
-        certifications: certifications,
         startBreak: $('#start-break').val(),
         intervalBreak: $('#interval-break').val(),
+        certifications: certifications,
+        activities: []
     };
 
     $.ajax({

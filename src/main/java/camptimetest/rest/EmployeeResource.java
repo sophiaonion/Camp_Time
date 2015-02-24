@@ -96,7 +96,6 @@ public class EmployeeResource {
         return Status.of("deleted");
     }
 
-
     @GET("/employees/time/{time}") //get all unscheduled employees at time
     public Iterable<Employee>findAvailableEmployees(String time){
         //first get all activities happening at that time
@@ -104,49 +103,44 @@ public class EmployeeResource {
         //get ObjectIds of all working employees
         ArrayList<ObjectId> workingEmps = new ArrayList<>();
         for(Activity act : concurrentActs){
-            for(Employee emp : act.getEmployees()){
-                workingEmps.add(new ObjectId(emp.getKey()));
+            for(String key : act.getEmployees()){
+                workingEmps.add(new ObjectId(key));
             }
         }
         //query based on all employee ids not in workingEmps array
          return employees.get().find("{_id: {$nin: #}}", workingEmps).as(Employee.class);
     }
 
-
     //get sent Map of key value pairs
     //employee_id and activity_id
     @PUT("/employees/activities/add")
-    public Activity addEmployeeToActivity(Map<String, String> values){
-        Employee emp = employees.get().findOne("{_id: #}", new ObjectId(values.get("employee_id"))).as(Employee.class);
+    public String addEmployeeToActivity(Map<String, String> values){
+        ObjectId employeeId= new ObjectId(values.get("employee_id"));
+        ObjectId activityId= new ObjectId(values.get("activity_id"));
+        Employee emp = employees.get().findOne("{_id: #}", employeeId).as(Employee.class);
+        Activity act = activities.get().findOne("{_id: #}", activityId).as(Activity.class);
 
-        Activity act = activities.get().findOne("{_id: #}", new ObjectId(values.get("activity_id"))).as(Activity.class);
+        emp.addActivity(act);
+        act.addEmployee(emp);
 
+        employees.get().save(emp);
+        activities.get().save(act);
 
-        activities.get().update("{_id:#}", new ObjectId(values.get("employee_id"))).with("{$push: {employees: #}}", emp);
-        employees.get().update("{_id:#}", new ObjectId(values.get("activity_id"))).with("{$push: {activities: #}}", act);
-
-//rather than update can retrieve activity -- add employee to activity and add activity to employee and save both
-//brutish way but works as well, duplicating array adding and setting again ... ran into object marshalling problems when using an
-//add employee method on activity and then trying to save
-//        ArrayList<Employee> updatedEmps = act.getEmployees();
-//        updatedEmps.add(emp);
-//        act.setEmployees(updatedEmps);
-//        activities.get().save(act);
-// will just overwrite objects in database with same ObjectId instead of duplicating
-        return act;
+        return "200";
     }
 
     //employee_id and activity_id
     @PUT("/employees/activities/remove")
     public Activity removeEmployeeFromActivity(Map<String, String> values){
         Employee emp = employees.get().findOne("{_id: #}", new ObjectId(values.get("employee_id"))).as(Employee.class);
-
         Activity act = activities.get().findOne("{_id: #}", new ObjectId(values.get("activity_id"))).as(Activity.class);
 
 
-        activities.get().update("{_id:#}", new ObjectId(values.get("employee_id"))).with("{$pull: {employees: #}}", emp);
-        employees.get().update("{_id:#}", new ObjectId(values.get("activity_id"))).with("{pull: {activities: #}}", act);
+        emp.removeActivity(act);
+        act.removeEmployee(emp);
 
+        employees.get().save(emp);
+        activities.get().save(act);
     return act;
     }
 

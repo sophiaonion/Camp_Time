@@ -41,7 +41,7 @@ public class ActivityResource {
         cc.update();
 
         StaffConstraintChecker scc = new StaffConstraintChecker(activities, employees, registrations, campsessions);
-        scc.update();
+//        scc.update();
 
         return activities.get().find().as(Activity.class);//returns copy of activities
     }

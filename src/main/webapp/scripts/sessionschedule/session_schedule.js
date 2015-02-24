@@ -1,5 +1,5 @@
 var main = function(camp_sessions){
-    console.log('session schedule hi');
+    //console.log('session schedule hi');
     //add option to be selected for each session and also tack on index data to access session in camp_sessions array
     //once selected
 
@@ -24,7 +24,6 @@ var main = function(camp_sessions){
     }
 
     camp_sessions.forEach(function(session, index){
-
         var ses_option = $('<option>').val(index).text(session.name);
         $('#session-select').append(ses_option);
     });
@@ -34,15 +33,15 @@ var main = function(camp_sessions){
     });
 
     var buildTableSchedule = function(session){
-        console.log('buildTableSchedule called');
+        //console.log('buildTableSchedule called');
         $('#schedule').show();
         $('caption').text(session.name + ' Schedule');
         var currentDate = new Date(session.startDate); //keep adding columns until startDate === endDate + 1
         var stopDate = new Date(session.endDate); //date types returned as strings
         stopDate.setDate(stopDate.getDate() + 1);
-        console.log(currentDate);
-        console.log(stopDate);
-        console.log('date type: ' + typeof session.startDate);
+        //console.log(currentDate);
+        //console.log(stopDate);
+        //console.log('date type: ' + typeof session.startDate);
 
         $('.empty').remove() //remove last selected session table
         while(currentDate.valueOf() !== stopDate.valueOf()){
@@ -60,7 +59,7 @@ var main = function(camp_sessions){
         var required_activities = [];
         session.activities.forEach(function(activity){
         //if activity does not have a time field, it is a required activity
-        console.log(activity.time);
+        //console.log(activity.time);
         if(!(activity.time)){
             required_activities.push(activity);
         } else {
@@ -70,7 +69,7 @@ var main = function(camp_sessions){
 //            console.log('activity time string: ' + activity.time);
             var act_date = new Date(activity.time);
             var column = dateDiffInDays(new Date(session.startDate), new Date(act_date)) + 1;
-            console.log(column);
+            //console.log(column);
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
 //            console.log('activity time: ' + act_date.toUTCString());
 //            console.log('hour: ' + act_date.getHours());
@@ -134,9 +133,13 @@ var main = function(camp_sessions){
             $('.activity-info #activity-title').text(activity.title);
             var act_date = new Date(activity.time);
             $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.getHours() + ':00');
-            if(activity.workers){
-                $('.activity-info #num-employees').text(activity.workers.length);
-                activity.workers.forEach(function(employee){
+            console.log("activity is: ");
+            console.log(activity);
+            console.log(activity._id);
+
+            if(activity.employees){
+                $('.activity-info #num-employees').text(activity.employees.length);
+                activity.employees.forEach(function(employee){
                     $('.activity-info #employees-working').append($('<li>').text(employee.name));
                 });
             } else {
@@ -150,13 +153,13 @@ var main = function(camp_sessions){
 
     }; //end buildTableSchedule
     //build schedule for default selected session
-    console.log('#session-select: ' + $('#session-select').val());
+    //console.log('#session-select: ' + $('#session-select').val());
     buildTableSchedule(camp_sessions[$('#session-select').val()]);
 
 
-         $('#cancel').on('click', function(){
-            window.location.replace('home_page_test.html');
-        });
+     $('#cancel').on('click', function(){
+        window.location.replace('home_page_test.html');
+    });
 };
 
 $(document).ready(function(){

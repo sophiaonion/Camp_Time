@@ -5,6 +5,7 @@ import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Eric on 1/23/2015.
@@ -18,11 +19,12 @@ public class Employee {
     private String job;
     private String gender;
     private ArrayList<String> certifications;
-    private ArrayList<Activity> activities = new ArrayList<>();
     private DateTime startBreak;
     private int intervalBreak;
+    private ArrayList<String> activities = new ArrayList<>();
 
-    @Id @ObjectId //designates as key in mongoDB, not sure of difference between @Id and @ObjectId
+    @ObjectId
+    @Id  //designates as key in mongoDB, not sure of difference between @Id and @ObjectId
     private String key;
 
     public String getKey(){
@@ -74,23 +76,27 @@ public class Employee {
         this.certifications = certifications;
     }
 
-    public ArrayList<Activity> getActivites(){
+    public ArrayList<String> getActivites(){
         return this.activities;
     }
 
-    public Employee setActivities(ArrayList<Activity> activities){
+    public Employee setActivities(ArrayList<String> activities){
         this.activities = activities;
         return this;
     }
 
 
     public Employee addActivity(Activity activity){
-            activities.add(activity);
+        if (activities.contains(activity.getKey()))
+        {}
+        else{
+            activities.add(activity.getKey());
+        }
         return this;
     }
 
     public Employee removeActivity(Activity activity){
-        activities.remove(activity);
+        activities.remove(activity.getKey());
         return this;
     }
 
@@ -114,11 +120,12 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
+                ", age='" + age + '\'' +
                 ", job='" + job + '\'' +
                 ", gender='" + gender + '\'' +
                 ", certifications=" + certifications +
                 ", key='" + key + '\'' +
+                ", activities='" + activities + '\'' +
                 '}';
     }
 }
