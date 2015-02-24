@@ -22,7 +22,6 @@ public class User implements RestxPrincipal {
     private String password;
     private Collection<String> roles;
 
-
     public User setUserID(final String userID){
         this.userID = userID;
         return this;

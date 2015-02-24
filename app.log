@@ -30567,3 +30567,174 @@ Caused by: java.lang.StackOverflowError: null
 23:50:14.096 [qtp1753447031-67 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 27.17 ms
 23:51:18.133 [qtp1753447031-68 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 75.88 ms
 23:52:01.212 [qtp1753447031-66 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 569.6 ms
+00:04:23.506 [qtp1753447031-79 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 161.8 ms
+00:04:52.159 [qtp1753447031-81 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 146.2 ms
+00:06:38.335 [qtp1753447031-80 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 127.9 ms
+01:17:16.626 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+01:17:18.106 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+01:17:19.922 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+01:17:19.922 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+01:17:20.890 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+01:17:21.361 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+01:17:35.589 [qtp1753447031-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+01:17:36.295 [qtp1753447031-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 1.850 s
+01:17:37.673 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 1.377 s
+01:17:59.039 [qtp1753447031-25 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 187.5 ms
+01:23:14.772 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 138.2 ms
+01:23:32.059 [qtp1753447031-29 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 146.5 ms
+01:36:49.938 [qtp1753447031-42 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 11.55 ms
+01:38:37.376 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 11.11 ms
+01:41:31.014 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 12.03 ms
+01:41:50.580 [qtp1753447031-40 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 10.15 ms
+01:41:57.049 [qtp1753447031-48 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 285.2 ms
+01:46:22.203 [qtp1753447031-51 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 288.0 ms
+01:46:29.325 [qtp1753447031-47 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 139.7 ms
+01:46:29.505 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 10.08 ms
+01:46:38.991 [qtp1753447031-52 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 15.39 ms
+01:46:58.110 [qtp1753447031-47 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 153.8 ms
+01:46:58.352 [qtp1753447031-52 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 6.356 ms
+01:48:03.913 [qtp1753447031-52 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 139.9 ms
+01:48:04.158 [qtp1753447031-47 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 7.739 ms
+01:48:22.021 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+01:48:39.828 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+01:48:40.453 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+01:48:46.438 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+01:48:46.469 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+01:48:48.539 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+01:48:49.011 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+01:51:33.339 [qtp782378927-30  ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+01:51:34.547 [qtp782378927-30  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /role - per request factory created in 3.239 s
+01:51:36.086 [qtp782378927-30  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 1.538 s
+01:52:01.758 [qtp782378927-29  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 455.8 ms
+01:52:02.073 [qtp782378927-27  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 19.21 ms
+01:52:53.518 [qtp782378927-29  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 13.12 ms
+01:54:50.786 [qtp782378927-35  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 16.79 ms
+01:56:35.110 [qtp782378927-35  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 13.90 ms
+01:59:17.377 [qtp782378927-38  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 11.83 ms
+02:01:23.474 [qtp782378927-39  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 16.33 ms
+02:03:56.335 [qtp782378927-41  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 11.16 ms
+02:04:23.032 [qtp782378927-43  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 14.35 ms
+02:04:31.237 [qtp782378927-42  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 12.58 ms
+02:05:13.417 [qtp782378927-41  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 7.291 ms
+02:08:25.828 [qtp782378927-41  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 13.47 ms
+02:09:00.504 [qtp782378927-41  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 13.81 ms
+02:17:09.932 [qtp782378927-55  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.866 ms
+02:20:57.490 [qtp782378927-55  ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /role - per request factory created in 222.8 ms
+02:20:57.745 [qtp782378927-55  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 222.5 ms
+02:24:49.795 [qtp782378927-59  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 9.283 ms
+02:32:09.085 [qtp782378927-65  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.789 ms
+02:34:35.440 [qtp782378927-65  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 6.245 ms
+02:36:01.649 [qtp782378927-74  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.067 ms
+02:36:11.627 [qtp782378927-66  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 9.327 ms
+02:36:36.688 [qtp782378927-74  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 9.184 ms
+02:37:00.665 [qtp782378927-74  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 5.783 ms
+02:37:39.368 [qtp782378927-74  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.208 ms
+02:38:53.133 [qtp782378927-76  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 169.1 ms
+02:38:53.388 [qtp782378927-76  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 13.47 ms
+02:40:33.555 [qtp782378927-77  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.255 ms
+02:40:35.970 [qtp782378927-66  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.350 ms
+02:45:28.301 [qtp782378927-84  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 9.473 ms
+02:45:31.309 [qtp782378927-79  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 5.621 ms
+02:52:40.067 [qtp782378927-93  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 9.895 ms
+02:52:43.369 [qtp782378927-91  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.175 ms
+02:54:49.454 [qtp782378927-93  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 5.292 ms
+02:57:59.215 [qtp782378927-89  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 170.9 ms
+02:58:01.329 [qtp782378927-91  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.677 ms
+02:58:10.301 [qtp782378927-91  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 4.319 ms
+03:00:45.533 [qtp782378927-97  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 11.09 ms
+03:01:51.234 [qtp782378927-89  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 7.454 ms
+03:01:54.711 [qtp782378927-98  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 574.2 ms
+03:02:00.847 [qtp782378927-98  ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.242 ms
+13:09:36.667 [qtp782378927-268 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /role - per request factory created in 962.5 ms
+13:09:39.970 [qtp782378927-268 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 1.883 s
+13:09:40.456 [qtp782378927-269 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees >> OK - 324.0 ms
+13:10:27.469 [qtp782378927-269 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /employees/undefined >> OK - 19.33 ms
+13:24:43.070 [qtp782378927-284 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 153.5 ms
+13:24:50.071 [qtp782378927-284 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 143.9 ms
+13:24:50.600 [qtp782378927-283 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 6.909 ms
+13:26:57.172 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 5.465 s
+13:27:02.201 [pool-2-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 740.7 ms
+13:27:11.515 [Thread-0         ] INFO  o.e.jetty.util.thread.ShutdownThread - shutdown already commenced
+22:07:56.423 [main             ] INFO  org.eclipse.jetty.server.Server - jetty-8.1.8.v20121106
+22:07:57.479 [main             ] INFO  o.e.j.w.StandardDescriptorProcessor - NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+22:08:03.838 [main             ] INFO  restx.RestxMainRouterFactory - LOADING MAIN ROUTER
+22:08:03.839 [main             ] INFO  restx.RestxMainRouterFactory - 
+--------------------------------------
+ -- RESTX >> LOAD ON REQUEST << >> DEV MODE << >> AUTO COMPILE <<
+ -- for admin console,
+ --   VISIT http://127.0.0.1:8080/api/@/ui/
+ --
+
+22:08:07.110 [pool-1-thread-1  ] INFO  restx.classloader.CompilationManager - compilation finished: 1 sources compiled in 1.596 s
+22:08:08.066 [main             ] INFO  restx.classloader.CompilationManager - watching for changes in [src/main/java, src/main/resources]; current location is /Users/sophiawang/Desktop/computer science/410/.
+22:08:08.550 [main             ] INFO  restx.monitor.MetricsConfiguration - registering Metrics JVM metrics
+22:08:29.003 [qtp1753447031-24 ] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.0.1.Final
+22:08:29.433 [qtp1753447031-24 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /login - per request factory created in 1.171 s
+22:08:30.714 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 1.281 s
+22:08:31.366 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 16.65 ms
+22:08:40.937 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 204.3 ms
+22:08:50.264 [qtp1753447031-24 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /activities/unit >> OK - 44.88 ms
+22:14:07.214 [qtp1753447031-28 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 1.276 s
+22:31:47.475 [qtp1753447031-47 ] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] POST /users - per request factory created in 456.3 ms
+22:31:48.766 [qtp1753447031-47 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 1.271 s
+22:31:55.000 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 135.4 ms
+22:31:55.785 [qtp1753447031-47 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.937 ms
+22:32:08.299 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 8.832 ms
+22:32:13.712 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 194.8 ms
+22:33:11.343 [qtp1753447031-51 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 33.76 ms
+22:33:54.629 [qtp1753447031-46 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 97.54 ms
+22:37:14.833 [qtp1753447031-53 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 131.8 ms
+22:37:15.071 [qtp1753447031-52 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 10.56 ms
+22:37:37.742 [qtp1753447031-54 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 39.53 ms
+22:40:35.043 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 142.5 ms
+22:40:43.653 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 140.7 ms
+22:40:43.924 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 10.10 ms
+22:40:56.311 [qtp1753447031-55 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 39.29 ms
+22:41:25.683 [qtp1753447031-56 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 145.8 ms
+22:41:25.939 [qtp1753447031-56 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 6.312 ms
+22:41:48.177 [qtp1753447031-56 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 35.68 ms
+22:42:58.598 [qtp1753447031-57 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /users >> OK - 137.8 ms
+22:53:43.362 [qtp1753447031-68 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 5.066 ms
+22:53:46.715 [qtp1753447031-68 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 12.42 ms
+22:54:03.354 [qtp1753447031-68 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 124.6 ms
+22:54:03.619 [qtp1753447031-68 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 4.019 ms
+22:54:05.862 [qtp1753447031-68 ] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 24.84 ms
+23:27:42.512 [qtp1753447031-103] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 510.2 ms
+23:27:42.860 [qtp1753447031-103] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 4.281 ms
+23:27:44.900 [qtp1753447031-102] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 20.16 ms
+23:27:44.985 [qtp1753447031-102] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 4.722 ms
+23:39:00.947 [qtp1753447031-113] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 1.532 s
+23:39:01.505 [qtp1753447031-113] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 535.2 ms
+23:39:01.789 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 22.94 ms
+23:40:54.808 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 146.4 ms
+23:40:55.264 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 4.449 ms
+23:40:59.999 [qtp1753447031-113] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 21.89 ms
+23:41:48.424 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 34.82 ms
+23:41:58.151 [qtp1753447031-114] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 22.53 ms
+23:47:00.966 [qtp1753447031-121] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 148.9 ms
+23:47:01.234 [qtp1753447031-121] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 5.239 ms
+23:47:03.368 [qtp1753447031-121] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 24.71 ms
+23:47:03.431 [qtp1753447031-121] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 9.670 ms
+23:47:23.067 [qtp1753447031-124] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 39.11 ms
+23:47:23.170 [qtp1753447031-122] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 15.33 ms
+23:49:58.894 [qtp1753447031-125] INFO  restx.RestxMainRouterFactory - [RESTX REQUEST] GET /campsessions - per request factory created in 262.6 ms
+23:49:58.926 [qtp1753447031-125] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 31.67 ms
+23:49:58.988 [qtp1753447031-122] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 6.252 ms
+23:54:02.060 [qtp1753447031-133] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 74.72 ms
+23:54:02.118 [qtp1753447031-130] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 7.036 ms
+23:54:17.008 [qtp1753447031-132] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] POST /login >> OK - 124.3 ms
+23:54:17.312 [qtp1753447031-125] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 5.197 ms
+23:54:18.696 [qtp1753447031-128] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /campsessions >> OK - 18.11 ms
+23:54:18.759 [qtp1753447031-125] INFO  restx.StdRestxMainRouter - << [RESTX REQUEST] GET /role >> OK - 4.517 ms

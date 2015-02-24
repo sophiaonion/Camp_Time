@@ -23,20 +23,19 @@ var main = function(){
                 $('#password').val("");
                 $('#username').val("").focus();
             } else {
-                roles= data.roles;
-
-                key=roles[0];
-                var address;
-                if(key == "counselor"){
-                    console.log("first if");
-                    address = "home_page_counselor.html";}
-                if (key == "specialty"){
-                    console.log("second if");
-                    address = "home_page_specialty.html";}
-                if (key == "admin"){
-                    console.log("third if");
-                    address = "home_page_test.html";}
-                window.location.href = address;
+               // roles= data.roles;
+               // key=roles[0];
+               // var address;
+               // if(key == "counselor"){
+               //     console.log("first if");
+               //     address = "home_page_counselor.html";}
+               // if (key == "specialty"){
+               //     console.log("second if");
+               //     address = "home_page_specialty.html";}
+               // if (key == "admin"){
+               //     console.log("third if");
+               //     address = "home_page_test.html";}
+                window.location.href = "home_page_test.html";
 
            }
 
