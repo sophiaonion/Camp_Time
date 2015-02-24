@@ -202,6 +202,37 @@ public class CamperResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.CamperResource#deleteRegistration(java.lang.String,java.lang.String)";
             }
         },
+        new StdEntityRoute<Void, restx.Status>("default#CamperResource#deleteCamper",
+                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
+                writerRegistry.<restx.Status>build(restx.Status.class, Optional.<String>absent()),
+                new StdRestxRequestMatcher("DELETE", "/campers/{camperID}"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<restx.Status> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.deleteCamper(
+                        /* [PATH] camperID */ match.getPathParam("camperID")
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription camperID = new OperationParameterDescription();
+                camperID.name = "camperID";
+                camperID.paramType = OperationParameterDescription.ParamType.path;
+                camperID.dataType = "string";
+                camperID.schemaKey = "";
+                camperID.required = true;
+                operation.parameters.add(camperID);
+
+
+                operation.responseClass = "Status";
+                operation.inEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "restx.Status";
+                operation.sourceLocation = "camptimetest.rest.CamperResource#deleteCamper(java.lang.String)";
+            }
+        },
         });
     }
 

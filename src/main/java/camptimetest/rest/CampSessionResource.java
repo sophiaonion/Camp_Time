@@ -134,10 +134,8 @@ public class CampSessionResource {
 
                         DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
                         //hours, minutes, seconds, milli
-                        DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0));//set time to given time
-                        DateTime time = new DateTime(time1.withZoneRetainFields(DateTimeZone.UTC));
-                                //(DateTimeZone.UTC));
-                        a.setTime(time);
+                        DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0).withZone(DateTimeZone.UTC));//set time to given time
+                        a.setTime(time1);
                         //a.setIsSet(false);
                         a.setFixed(true);//activity is fixed time
                         a.setIsSet(true);//activity time is vacuously set

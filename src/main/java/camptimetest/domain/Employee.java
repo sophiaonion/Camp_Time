@@ -104,7 +104,7 @@ public class Employee {
                 ", age='" + age + '\'' +
                 ", job='" + job + '\'' +
                 ", gender='" + gender + '\'' +
-                ", certifications=" + certifications +
+                ", certifications='" + certifications + '\'' +
                 ", key='" + key + '\'' +
                 ", activities='" + activities + '\'' +
                 '}';
