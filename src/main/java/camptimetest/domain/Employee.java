@@ -1,5 +1,6 @@
 package camptimetest.domain;
 
+import org.joda.time.DateTime;
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
@@ -18,6 +19,8 @@ public class Employee {
     private String job;
     private String gender;
     private ArrayList<String> certifications;
+    private DateTime startBreak;
+    private int intervalBreak;
     private ArrayList<String> activities = new ArrayList<>();
 
     @ObjectId
@@ -95,6 +98,22 @@ public class Employee {
     public Employee removeActivity(Activity activity){
         activities.remove(activity.getKey());
         return this;
+    }
+
+    public DateTime getStartBreak() {
+        return startBreak;
+    }
+
+    public void setStartBreak(DateTime startBreak) {
+        this.startBreak = startBreak;
+    }
+
+    public int getIntervalBreak() {
+        return intervalBreak;
+    }
+
+    public void setIntervalBreak(int intervalBreak) {
+        this.intervalBreak = intervalBreak;
     }
 
     @Override
