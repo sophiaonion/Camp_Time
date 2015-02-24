@@ -84,4 +84,13 @@ public class CamperResource {
         registrations.get().remove("{camperID:\""+camperID+"\", sessionID:\""+sessionID+"\"}");
         return Status.of("deleted");
     }
+
+    @DELETE("/campers/{camperID}")
+    public Status deleteCamper(String camperID){
+        registrations.get().remove("{camperID: #}", camperID);
+        campers.get().remove("{camperID: #}", camperID);
+
+        return Status.of("deleted");
+
+    }
 }

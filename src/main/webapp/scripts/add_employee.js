@@ -24,8 +24,8 @@ $('#add-employee').on('click', function(){
 
     //choose gender (man/woman)
     var gender;
-    if ($('#man').is(':checked')) {
-        gender = "man";
+    if ($('#not-woman').is(':checked')) {
+        gender = "notMan";
     }
     else {//generally assume will be woman
         gender = "woman";
@@ -42,13 +42,15 @@ $('#add-employee').on('click', function(){
 
 
     console.log($('#employee-age').val());
-
+console.log($('#start-break').val());
     //save all info into data
     var data = {
         name: $('#employee-name').val(),
         age: $('#employee-age').val(),
         gender: gender,
         job: $('#job').val(),
+        startBreak: $('#start-break').val(),
+        intervalBreak: $('#interval-break').val(),
         certifications: certifications,
         activities: []
     };

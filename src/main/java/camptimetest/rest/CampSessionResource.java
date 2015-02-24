@@ -88,7 +88,6 @@ public class CampSessionResource {
 
             //convert stuff into dates
             DateTimeFormatter fmt = DateTimeFormat.forPattern("yy-MM-dd");
-            //DateTimeFormatter fmt = fmt1.withZoneUTC();
             DateTime start = new DateTime( fmt.parseDateTime(info.get("startDate").toString()));
             DateTime end = new DateTime( fmt.parseDateTime(info.get("endDate").toString()));
 
@@ -99,56 +98,53 @@ public class CampSessionResource {
             newCS.setAgeGroup(String.valueOf(info.get("ageGroup")));
             newCS.setEnrollmentCap(Integer.valueOf(String.valueOf(info.get("enrollmentCap"))));
 
-            //make activitites
+            //make activititties
             ArrayList<Activity> activityList = new ArrayList<Activity>();
 
             @SuppressWarnings("unchecked")
             ArrayList< Map<String, String> > activityInfo = (ArrayList< Map<String, String> >) info.get("activities");
             for(int i=0; i<activityInfo.size(); i++) {
-                Activity a = new Activity();
-                System.out.println("title: " + activityInfo.get(i).get("title"));
-                String title = String.valueOf(activityInfo.get(i).get("title"));
-                a.setTitle(title);
-                a.setSession(String.valueOf(info.get("name")));
+                if ( !activityInfo.get(i).get("title").equals("n/a")) {//activity is filled out
+                    Activity a = new Activity();
+                    System.out.println("title: " + activityInfo.get(i).get("title"));
+                    String title = String.valueOf(activityInfo.get(i).get("title"));
+                    a.setTitle(title);
+                    a.setSession(String.valueOf(info.get("name")));
 
-//                if(title.equals("unit"))
-//                    a.setActivityArea("unit");
-                if(title.equals("pool"))
-                    a.setActivityArea("pool");
-                else if (title.equals("art"))
-                    a.setActivityArea("art");
-                else if (title.equals("sports"))
-                    a.setActivityArea("sports");
-                else if (title.equals("canoeing"))
-                    a.setActivityArea("canoeing");
-                else if (title.equals("archery"))
-                    a.setActivityArea("archery");
-                else if (title.equals("creek"))
-                    a.setActivityArea("creek");
+                    if (title.equals("pool"))
+                        a.setActivityArea("pool");
+                    else if (title.equals("art"))
+                        a.setActivityArea("art");
+                    else if (title.equals("sports"))
+                        a.setActivityArea("sports");
+                    else if (title.equals("canoeing"))
+                        a.setActivityArea("canoeing");
+                    else if (title.equals("archery"))
+                        a.setActivityArea("archery");
+                    else if (title.equals("creek"))
+                        a.setActivityArea("creek");
 
-                if( !( String.valueOf(activityInfo.get(i).get("day")).isEmpty() ) ) {//day # if has a value in it (i.e. is fixed-time)
-                    //set time to appropriate time
-                    if (activityInfo.get(i).get("time") != null) { //if the activity were required time field would be null
-                        String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
+                    if (!(String.valueOf(activityInfo.get(i).get("day")).isEmpty())) {//day # if has a value in it (i.e. is fixed-time)
+                        //set time to appropriate time
+                        if (activityInfo.get(i).get("time") != null) { //if the activity were required time field would be null
+                            String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
 
 
-                        DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
-                        //hours, minutes, seconds, milli
-                        DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0));//set time to given time
-                        DateTime time = new DateTime(time1.withZoneRetainFields(DateTimeZone.UTC));
-                                //(DateTimeZone.UTC));
-                        a.setTime(time);
-                        //a.setIsSet(false);
-                        a.setFixed(true);//activity is fixed time
-                        a.setIsSet(true);//activity time is vacuously set
+                            DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
+                            //hours, minutes, seconds, milli
+                            DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0).withZone(DateTimeZone.UTC));//set time to given time
+                            a.setTime(time1);
+                            //a.setIsSet(false);
+                            a.setFixed(true);//activity is fixed time
+                            a.setIsSet(true);//activity time is vacuously set
+                        } else {
+                            a.setFixed(false);//activity is not fixed time
+                            a.setIsSet(false);//activity time is not yet set by algorithm
+                        }
                     }
-                    else {
-                        a.setFixed(false);//activity is not fixed time
-                        a.setIsSet(false);//activity time is not yet set by algorithm
-                    }
+                    activityList.add(a);
+                    activities.get().save(a);
                 }
-                activityList.add(a);
-                activities.get().save(a);
             }
             System.out.println("Number of activities created: " + activityList.size());
             newCS.setActivities(activityList);
