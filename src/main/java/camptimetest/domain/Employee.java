@@ -1,10 +1,10 @@
 package camptimetest.domain;
 
+import org.joda.time.DateTime;
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Eric on 1/23/2015.
@@ -19,6 +19,8 @@ public class Employee {
     private String gender;
     private ArrayList<String> certifications;
     private ArrayList<Activity> activities = new ArrayList<>();
+    private DateTime startBreak;
+    private int intervalBreak;
 
     @Id @ObjectId //designates as key in mongoDB, not sure of difference between @Id and @ObjectId
     private String key;
@@ -90,6 +92,22 @@ public class Employee {
     public Employee removeActivity(Activity activity){
         activities.remove(activity);
         return this;
+    }
+
+    public DateTime getStartBreak() {
+        return startBreak;
+    }
+
+    public void setStartBreak(DateTime startBreak) {
+        this.startBreak = startBreak;
+    }
+
+    public int getIntervalBreak() {
+        return intervalBreak;
+    }
+
+    public void setIntervalBreak(int intervalBreak) {
+        this.intervalBreak = intervalBreak;
     }
 
     @Override

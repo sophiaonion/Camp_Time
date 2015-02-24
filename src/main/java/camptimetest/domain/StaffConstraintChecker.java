@@ -1,6 +1,8 @@
 package camptimetest.domain;
 
 import com.mongodb.BasicDBList;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import restx.jongo.JongoCollection;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
@@ -27,8 +29,9 @@ Number codes:
 5: ratios for camper age not met
 6: activity area certification requirements not met
 7: employee working 2 activities at same time
+8: employee does not have 2 hour break
+9: employee does not have 24 hour break
 */
-
 
 public class StaffConstraintChecker {
 
@@ -50,12 +53,26 @@ public class StaffConstraintChecker {
 
         //staffing activities
         int i = this.checkConflicts();
-        while(this.checkConflicts() > 0) {
+        if(i > 0) {
             System.out.println("type "+i+" conflict");
-            break; //just here while testing
+            this.fixConflicts(i); //just here while testing
+            i=this.checkConflicts();
         }
         return this.activities;
     }//end update()
+
+    private void fixConflicts(int type) {
+        System.out.println("fixing conflicts...");
+
+
+        DBCursor cursor = activities.get().getDBCollection().find();
+        List<DBObject> arrry = cursor.toArray();
+        ArrayList<DBObject> actList = new ArrayList<DBObject>(arrry);
+
+        if(type==1) {//have unemployed activities
+            //ArrayList<ArrayList<DateTime>> domains = findDomain(actArray, false);
+        }//end assign employees to unemployed activities
+    }
 
     private int checkConflicts() {
         System.out.println("checking conflicts...");
@@ -163,7 +180,7 @@ public class StaffConstraintChecker {
                 //based on activity area see if necessary certifications are present
                 boolean certsOK = false;
                 switch(activityArea) {
-                    case "pool":
+                    case "pool"://pretty sure this equation works: need
                         if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - ((numCampers + numStaff) / 25))) >= 12)) {certsOK = true;}
                         break;
                     case "canoeing":
@@ -206,10 +223,39 @@ public class StaffConstraintChecker {
                 }
         }
 
-
-
         //check that employees have appropriate number of breaks
+        DateTimeFormatter dtf =  DateTimeFormat.forPattern("MM/dd/YYY");
         for(int i=0; i<empList.size(); i++) {
+            ArrayList<Activity> a = (ArrayList<Activity>) empList.get(i).get("activities");
+            Map<String, boolean[]> working = new HashMap<String, boolean[]>();
+            //puts date of each activity into map (no duplicates) of day to array of booleans indicating hour business
+
+            //calculate hours worked for employee
+            for(int j=0; j<a.size(); j++) {//for each activity
+                String day = dtf.print(a.get(j).getTime());
+                int hour = a.get(j).getTime().getHourOfDay();
+
+                //if day hasn't been looked at yet put into map
+                working.putIfAbsent(day, new boolean[25]);
+
+                //update taken hour
+                boolean[] hours = working.get(day);
+                hours[hour] = true;
+
+                //update working schedule
+                working.replace(day, hours);
+            }//end get hours working for employee
+
+            //check that employee has 2 hour break every day they are working
+            for (boolean[] hours : working.values()) {
+                if (((hours[9] || hours[10])) && ((hours[10] || hours[11])) && ((hours[13] || hours[14])) && //if working any of the possible 2 hour break slots
+                        ((hours[14] || hours[15])) && ((hours[15] || hours[16])) && ((hours[19] || hours[20]))) {
+                    System.out.println("employee does not have 2 hour break");
+                    return 8;
+                }
+            }//end check 2 hour break
+
+            //check that employee has 24 hour break every designated interval
 
         }
 

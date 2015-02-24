@@ -386,7 +386,7 @@ public class ConstraintChecker {
                 if( !(activities.get().findOne("{_id: # }", ID2).as(Activity.class).getFixed()) )
                     activities.get().update(ID2).with("{ $set: { isSet:" + true + ", time:\"" + newTime+ "\" } }");
 
-                //reset domains and stuff
+                //reset domainsc and stuff
                 DBCursor cursor2 = activities.get().getDBCollection().find();
                 List<DBObject> arrry2 = cursor.toArray();
                 ArrayList<DBObject> actArray2 = new ArrayList<DBObject>(arrry2);
@@ -402,18 +402,4 @@ public class ConstraintChecker {
         }//end heuristic repair
         return true;
     }//end fixconflicts()
-
-
-
-    //checks if everything is staffed appropriately
-    private boolean checkStaffConflicts() {
-        return false;
-    }
-
-
-
-    //uses heuristic repair to fix any staffing conflicts
-    private void fixStaffConflicts() {
-        return;
-    }
 }

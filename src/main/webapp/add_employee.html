@@ -3,7 +3,9 @@
 <head>
 	<meta charset='utf-8'>
 	<title>Add Employee</title>
-	<link rel='stylesheet' type='text/css' href='styles/sample.css'>
+    <link href="styles/sample.css" type="text/css" rel="stylesheet">
+    <link href="scripts/jquery-ui-1.11.2.custom/jquery-ui.min.css" type="text/css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='styles/schedule.css'>
 </head>
 <body>
 	<header>
@@ -12,7 +14,7 @@
 	<div id="employee-info">
         <p>Employee Name: <input type="text" id="employee-name"></p>
         <p>Age: <input type="text" id="employee-age"></p>
-        <p>Gender: <input type="checkbox" name="woman" value="woman">Woman<input type="checkbox" name="man" value="man">Man</p>
+        <p>Gender: <input type="checkbox" name="woman" value="woman">Woman<input type="checkbox" name="not-woman" value="not-woman">Not Woman</p>
         <p>Job Type:
             <select name="job" id="job">
                 <option value="admin">Administrator</option>
@@ -37,9 +39,17 @@
             <select name="certifications" id="certifications" multiple size="10" style="width: 100px"></select>
             <button type="remove-certification" id="remove-certification">Remove</button>
         </div>
+            <p><label>Begin regular 24 hour break on (yy-mm-dd):</label>
+                <input type="date" name="start-break" id="start-break"></p>
+            <p><label>24 hour break occurs every (must be no more than 10):</label>
+                <input type="number" name="interval-break" id="interval-break"> days</p>
+
+
         <br><button type="button" id="add-employee">Add Employee</button> &nbsp <button type="button" id="cancel">Cancel</button>
 	</div>
-		<script src="scripts/jquery-2.1.3.js"></script>
-		<script src="scripts/add_employee.js"></script>
+    <script src='scripts/jquery-2.1.3.js'></script>
+    <script src='scripts/jquery-ui-1.11.2.custom/jquery-ui.min.js'></script>
+    <script src='scripts/add_employee.js'></script>
 </body>
+
 </html>

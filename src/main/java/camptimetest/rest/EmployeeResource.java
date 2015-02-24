@@ -4,6 +4,8 @@ import camptimetest.domain.Activity;
 import camptimetest.domain.Employee;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import restx.Status;
 import restx.admin.AdminPagesResource;
 import restx.annotations.*;
@@ -24,7 +26,9 @@ import static camptimetest.AppModule.Roles.*;
  * @RestxResource designates class to receive http routing requests
  */
 
-@Component @RestxResource
+@Component
+@RestxResource
+@PermitAll
 public class EmployeeResource {
     private final JongoCollection employees; //Database access object, will inject when resource is created/called
     private final JongoCollection activities;
@@ -55,10 +59,34 @@ public class EmployeeResource {
     //Jackson library automatically tries to map sent JSON to specified class,
     //setting fields that match and ignoring others
     //parameters sent by POST are automatically put into message body
+//    @POST("/employees")
+//    public Employee createEmployee(Employee employee){
+//        employees.get().save(employee);
+//        return employee; //can return anything doesn't have to be sent object
+//    }
+
     @POST("/employees")
-    public Employee createEmployee(Employee employee){
-        employees.get().save(employee);
-        return employee; //can return anything doesn't have to be sent object
+    public Employee createEmployee(Map<String, Object> info){
+
+        //convert date into date
+        DateTimeFormatter fmt = DateTimeFormat.forPattern("yy-MM-dd");
+        DateTime startBreak = new DateTime( fmt.parseDateTime(info.get("startBreak").toString()));
+
+        //convert certifications to arraylist
+        ArrayList<String> certs = (ArrayList<String>) info.get("certifications");
+
+        Employee newEmp = new Employee();
+        newEmp.setName(String.valueOf(info.get("name")));
+        newEmp.setAge(Integer.valueOf(String.valueOf(info.get("age"))));
+        newEmp.setGender(String.valueOf(info.get("gender")));
+        newEmp.setJob(String.valueOf(info.get("job")));
+        newEmp.setIntervalBreak(Integer.valueOf(String.valueOf(info.get("intervalBreak"))));
+        newEmp.setStartBreak(startBreak);
+        newEmp.setCertifications(certs);
+
+
+        employees.get().save(newEmp);
+        return newEmp; //can return anything doesn't have to be sent object
     }
 
     @DELETE("/employees/{employeeID}")
