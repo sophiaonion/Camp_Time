@@ -1,5 +1,4 @@
 var main = function(camp_sessions){
-    //console.log('session schedule hi');
     //add option to be selected for each session and also tack on index data to access session in camp_sessions array
     //once selected
 
