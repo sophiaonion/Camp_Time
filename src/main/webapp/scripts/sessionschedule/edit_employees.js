@@ -47,13 +47,11 @@ var edit_employees_setup = function() {
         var activity = $('.selected').data('activity');
         console.log('activity id' + activity._id);
 
-        add_employees.forEach(function(employee_id){
-            console.log(activity._id)
-            $.ajax({
+        $.ajax({
                 type: 'PUT',
                 url: '/api/employees/activities/add',
                 data: JSON.stringify({
-                    employee_id: employee_id,
+                    employees: add_employees,
                     activity_id: activity._id
                 }),
                 contentType: 'application/JSON'
@@ -62,20 +60,18 @@ var edit_employees_setup = function() {
                 });
             }); //end add_employees forEach
 
-        console.log('activity')
-        remove_employees.forEach(function(employee_id){
+
             $.ajax({
                 type: 'PUT',
                 url: '/api/employees/activities/remove',
                 data: JSON.stringify({
-                    employee_id: employee_id,
+                    employees: remove_employees,
                     activity_id: activity._id
                 }),
                 contentType: 'application/JSON'
                 }).done(function(activity){
                     console.log(activity.name)
                 });
-            }); //end add_employees forEach
 
         }); //end employee click
 
