@@ -1,4 +1,15 @@
 var main = function(){
+    var role;
+
+//    $('#role').on('change', function(){
+//        role = $('#role').val().replace(/\s+/g, '');
+//        if( role == "counselor"){
+
+//        }
+//        if( role == "specialty"){}
+//        if( role == "customer"){}
+//    });
+
     $('#create-user').on('click', function(){
 
     if ($('#password').val()!= $('#confirmation').val()){

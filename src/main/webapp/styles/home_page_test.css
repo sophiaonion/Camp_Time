@@ -7,6 +7,10 @@ nav {
     text-align: center;
 }
 
+div {
+    display:inline;
+}
+
 /* hide nested lists */
 nav ul ul {
     display: none;

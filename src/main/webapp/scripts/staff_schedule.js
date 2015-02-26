@@ -24,14 +24,8 @@ var main = function(){
     //get the current role ??????????!!!!!!!!!!! it works.....but is this a good method????
     $.get('/api/role', function(role){
          console.log(role);
-         if(role.localeCompare("counselor")){
-                             console.log("first if");
-                             address = "home_page_counselor.html";}
-         if (role.localeCompare("specialty")){
-                             console.log("second if");
-                             address = "home_page_specialty.html";}
-
-         if (role.localeCompare("admin")){
+         role = role.replace(/\s+/g, '');
+         if (role == "admin"){
             $('.staff-select-con').show();
             //get the list of employees
             $.get('/api/employees', function(employees){

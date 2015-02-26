@@ -1,5 +1,10 @@
 var main = function(employees){
 
+    var userRole;
+    $.get('/api/role', function(role){
+        userRole=role.replace(/\s+/g, '');
+     });
+
     //add/remove session curriculum
     $('#add-certification').click(function(){
             $('#select-from option:selected').each( function() {
