@@ -3,14 +3,18 @@ package camptimetest.rest;
 import camptimetest.domain.Activity;
 import camptimetest.domain.ConstraintChecker;
 import camptimetest.domain.StaffConstraintChecker;
+import org.bson.types.ObjectId;
 import restx.annotations.GET;
 import restx.annotations.POST;
+import restx.annotations.PUT;
 import restx.annotations.RestxResource;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
 
 import javax.inject.Named;
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by Eric on 1/30/2015.
@@ -58,6 +62,18 @@ public class ActivityResource {
         activities.get().save(activity);
         return activity;
     }
+
+    @PUT("/activities/campsession")
+    public Iterable<Activity> getSessionActivities(Map<String, ArrayList<String>> data){
+        System.out.println(data.get("activityIds").get(1));
+        ArrayList<ObjectId> actIds = new ArrayList<>();
+        for(String id: data.get("activityIds")){
+            actIds.add(new ObjectId(id));
+        }
+        Iterable<Activity> sessionActivities =  activities.get().find("{_id: {$in: #}}", actIds).as(Activity.class);
+        return sessionActivities;
+    }
+
 
 
 

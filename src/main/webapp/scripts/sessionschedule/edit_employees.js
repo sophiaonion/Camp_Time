@@ -58,20 +58,20 @@ var edit_employees_setup = function() {
                 }).done(function(activity){
                     console.log(activity.name)
                 });
-            }); //end add_employees forEach
 
 
-            $.ajax({
-                type: 'PUT',
-                url: '/api/employees/activities/remove',
-                data: JSON.stringify({
-                    employees: remove_employees,
-                    activity_id: activity._id
-                }),
-                contentType: 'application/JSON'
-                }).done(function(activity){
-                    console.log(activity.name)
-                });
+
+//            $.ajax({
+//                type: 'PUT',
+//                url: '/api/employees/activities/remove',
+//                data: JSON.stringify({
+//                    employees: remove_employees,
+//                    activity_id: activity._id
+//                }),
+//                contentType: 'application/JSON'
+//                }).done(function(activity){
+//                    console.log(activity.name);
+//                });
 
         }); //end employee click
 

@@ -3,6 +3,8 @@ package camptimetest.domain;
 import org.joda.time.DateTime;
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
+import static org.jongo.Oid.withOid;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +51,13 @@ public class Activity {
         if (employees.contains(employee.getKey()))
         {}
         else{
-            employees.add(employee.getKey());
+            employees.add((employee.getKey()));
         }
+        return this;
+    }
+
+    public Activity addEmployees(ArrayList<String> employeeIds){
+        employees.addAll(employeeIds);
         return this;
     }
 

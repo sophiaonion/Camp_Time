@@ -86,11 +86,11 @@ public class Employee {
     }
 
 
-    public Employee addActivity(Activity activity){
-        if (activities.contains(activity.getKey()))
+    public Employee addActivity(String activity){
+        if (activities.contains(activity))
         {}
         else{
-            activities.add(activity.getKey());
+            activities.add(activity);
         }
         return this;
     }

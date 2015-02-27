@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import static camptimetest.AppModule.Roles.*;
+import static org.jongo.Oid.withOid;
 
 /**
  * @Component designates class as injectable and for factory to be set up for it at compile time
@@ -101,10 +102,10 @@ public class EmployeeResource {
         //first get all activities happening at that time
         Iterable<Activity> concurrentActs = activities.get().find("{time: #}", time).as(Activity.class);
         //get ObjectIds of all working employees
-        ArrayList<ObjectId> workingEmps = new ArrayList<>();
+        ArrayList<String> workingEmps = new ArrayList<>();
         for(Activity act : concurrentActs){
             for(String key : act.getEmployees()){
-                workingEmps.add(new ObjectId(key));
+                workingEmps.add(key);
             }
         }
         //query based on all employee ids not in workingEmps array
@@ -114,35 +115,46 @@ public class EmployeeResource {
     //get sent Map of key value pairs
     //employee_id and activity_id
     @PUT("/employees/activities/add")
-    public String addEmployeeToActivity(Map<String, String> values){
-        ObjectId employeeId= new ObjectId(values.get("employee_id"));
-        ObjectId activityId= new ObjectId(values.get("activity_id"));
-        Employee emp = employees.get().findOne("{_id: #}", employeeId).as(Employee.class);
-        Activity act = activities.get().findOne("{_id: #}", activityId).as(Activity.class);
+    public String addEmployeeToActivity(Map<String, Object> values){
+        ArrayList<String> idsToConvert = (ArrayList<String>)values.get("employees");
+        ArrayList<ObjectId> employeeIds = new ArrayList<>();
+        for(String empId: idsToConvert){
+            employeeIds.add(new ObjectId(empId));
+        }
 
-        emp.addActivity(act);
-        act.addEmployee(emp);
+        String activityId = (String)values.get("activity_id");
 
-        employees.get().save(emp);
+
+//        employees.get().update("{key: {$in: #}}", employeeIds).with("{$push : {activities: #}}", activityId);
+//        activities.get().update("{key: #}", withOid(activityId)).with("{$push : {employees: #}}", idsToConvert);
+        Iterable<Employee> emps = employees.get().find("{_id: {$in: #}}", employeeIds).as(Employee.class);
+        Activity act = activities.get().findOne("{_id: #}", new ObjectId(activityId)).as(Activity.class);
+
+        for(Employee emp: emps){
+            emp.addActivity(activityId);
+            employees.get().save(emp);
+        }
+
+        act.addEmployees(idsToConvert);
         activities.get().save(act);
 
         return "200";
     }
 
-    //employee_id and activity_id
-    @PUT("/employees/activities/remove")
-    public Activity removeEmployeeFromActivity(Map<String, String> values){
-        Employee emp = employees.get().findOne("{_id: #}", new ObjectId(values.get("employee_id"))).as(Employee.class);
-        Activity act = activities.get().findOne("{_id: #}", new ObjectId(values.get("activity_id"))).as(Activity.class);
-
-
-        emp.removeActivity(act);
-        act.removeEmployee(emp);
-
-        employees.get().save(emp);
-        activities.get().save(act);
-    return act;
-    }
+//    //employee_id and activity_id
+//    @PUT("/employees/activities/remove")
+//    public Activity removeEmployeeFromActivity(Map<String, Object> values){
+//        Employee emp = employees.get().findOne("{_id: #}", new ObjectId(values.get("employee_id"))).as(Employee.class);
+//        Activity act = activities.get().findOne("{_id: #}", new ObjectId(values.get("activity_id"))).as(Activity.class);
+//
+//
+//        emp.removeActivity(act);
+//        act.removeEmployee(emp);
+//
+//        employees.get().save(emp);
+//        activities.get().save(act);
+//    return act;
+//    }
 
 
 

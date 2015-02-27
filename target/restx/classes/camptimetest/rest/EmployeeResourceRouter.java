@@ -67,7 +67,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Activity>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, isAuthenticated());
+                securityManager.check(request, open());
                 return Optional.of(resource.getEmployeeActivities(
                         /* [PATH] employeeID */ match.getPathParam("employeeID")
                 ));
@@ -91,35 +91,35 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#getEmployeeActivities(java.lang.String)";
             }
         },
-        new StdEntityRoute<camptimetest.domain.Employee, camptimetest.domain.Employee>("default#EmployeeResource#createEmployee",
-                readerRegistry.<camptimetest.domain.Employee>build(camptimetest.domain.Employee.class, Optional.<String>absent()),
+        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.Object>, camptimetest.domain.Employee>("default#EmployeeResource#createEmployee",
+                readerRegistry.<java.util.Map<java.lang.String,java.lang.Object>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.Object.class), Optional.<String>absent()),
                 writerRegistry.<camptimetest.domain.Employee>build(camptimetest.domain.Employee.class, Optional.<String>absent()),
                 new StdRestxRequestMatcher("POST", "/employees"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
-            protected Optional<camptimetest.domain.Employee> doRoute(RestxRequest request, RestxRequestMatch match, camptimetest.domain.Employee body) throws IOException {
-                securityManager.check(request, isAuthenticated());
+            protected Optional<camptimetest.domain.Employee> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.Object> body) throws IOException {
+                securityManager.check(request, open());
                 return Optional.of(resource.createEmployee(
-                        /* [BODY] employee */ checkValid(validator, body)
+                        /* [BODY] info */ checkValid(validator, body)
                 ));
             }
 
             @Override
             protected void describeOperation(OperationDescription operation) {
                 super.describeOperation(operation);
-                                OperationParameterDescription employee = new OperationParameterDescription();
-                employee.name = "employee";
-                employee.paramType = OperationParameterDescription.ParamType.body;
-                employee.dataType = "Employee";
-                employee.schemaKey = "camptimetest.domain.Employee";
-                employee.required = true;
-                operation.parameters.add(employee);
+                                OperationParameterDescription info = new OperationParameterDescription();
+                info.name = "info";
+                info.paramType = OperationParameterDescription.ParamType.body;
+                info.dataType = "Object>";
+                info.schemaKey = "";
+                info.required = true;
+                operation.parameters.add(info);
 
 
                 operation.responseClass = "Employee";
-                operation.inEntitySchemaKey = "camptimetest.domain.Employee";
+                operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "camptimetest.domain.Employee";
-                operation.sourceLocation = "camptimetest.rest.EmployeeResource#createEmployee(camptimetest.domain.Employee)";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#createEmployee(java.util.Map<java.lang.String,java.lang.Object>)";
             }
         },
         new StdEntityRoute<Void, restx.Status>("default#EmployeeResource#deleteEmployee",
@@ -129,7 +129,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<restx.Status> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, isAuthenticated());
+                securityManager.check(request, open());
                 return Optional.of(resource.deleteEmployee(
                         /* [PATH] employeeID */ match.getPathParam("employeeID")
                 ));
@@ -160,7 +160,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Employee>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, isAuthenticated());
+                securityManager.check(request, open());
                 return Optional.of(resource.findAvailableEmployees(
                         /* [PATH] time */ match.getPathParam("time")
                 ));
@@ -184,14 +184,14 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#findAvailableEmployees(java.lang.String)";
             }
         },
-        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.String>, java.lang.String>("default#EmployeeResource#addEmployeeToActivity",
-                readerRegistry.<java.util.Map<java.lang.String,java.lang.String>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.String.class), Optional.<String>absent()),
+        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.Object>, java.lang.String>("default#EmployeeResource#addEmployeeToActivity",
+                readerRegistry.<java.util.Map<java.lang.String,java.lang.Object>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.Object.class), Optional.<String>absent()),
                 writerRegistry.<java.lang.String>build(java.lang.String.class, Optional.<String>absent()),
                 new StdRestxRequestMatcher("PUT", "/employees/activities/add"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
-            protected Optional<java.lang.String> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
-                securityManager.check(request, isAuthenticated());
+            protected Optional<java.lang.String> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.Object> body) throws IOException {
+                securityManager.check(request, open());
                 return Optional.of(resource.addEmployeeToActivity(
                         /* [BODY] values */ checkValid(validator, body)
                 ));
@@ -203,7 +203,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                                 OperationParameterDescription values = new OperationParameterDescription();
                 values.name = "values";
                 values.paramType = OperationParameterDescription.ParamType.body;
-                values.dataType = "String>";
+                values.dataType = "Object>";
                 values.schemaKey = "";
                 values.required = true;
                 operation.parameters.add(values);
@@ -212,38 +212,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.responseClass = "string";
                 operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "";
-                operation.sourceLocation = "camptimetest.rest.EmployeeResource#addEmployeeToActivity(java.util.Map<java.lang.String,java.lang.String>)";
-            }
-        },
-        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.String>, camptimetest.domain.Activity>("default#EmployeeResource#removeEmployeeFromActivity",
-                readerRegistry.<java.util.Map<java.lang.String,java.lang.String>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.String.class), Optional.<String>absent()),
-                writerRegistry.<camptimetest.domain.Activity>build(camptimetest.domain.Activity.class, Optional.<String>absent()),
-                new StdRestxRequestMatcher("PUT", "/employees/activities/remove"),
-                HttpStatus.OK, RestxLogLevel.DEFAULT) {
-            @Override
-            protected Optional<camptimetest.domain.Activity> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.String> body) throws IOException {
-                securityManager.check(request, isAuthenticated());
-                return Optional.of(resource.removeEmployeeFromActivity(
-                        /* [BODY] values */ checkValid(validator, body)
-                ));
-            }
-
-            @Override
-            protected void describeOperation(OperationDescription operation) {
-                super.describeOperation(operation);
-                                OperationParameterDescription values = new OperationParameterDescription();
-                values.name = "values";
-                values.paramType = OperationParameterDescription.ParamType.body;
-                values.dataType = "String>";
-                values.schemaKey = "";
-                values.required = true;
-                operation.parameters.add(values);
-
-
-                operation.responseClass = "Activity";
-                operation.inEntitySchemaKey = "";
-                operation.outEntitySchemaKey = "camptimetest.domain.Activity";
-                operation.sourceLocation = "camptimetest.rest.EmployeeResource#removeEmployeeFromActivity(java.util.Map<java.lang.String,java.lang.String>)";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#addEmployeeToActivity(java.util.Map<java.lang.String,java.lang.Object>)";
             }
         },
         });

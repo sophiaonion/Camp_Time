@@ -29,11 +29,23 @@ var main = function(camp_sessions){
     });
 
     $('#session-select').on('change', function(){
-        buildTableSchedule(camp_sessions[$(this).val()]);
-    });
+            camp_session = camp_sessions[$(this).val()];
+            console.log(camp_session.activities);
+            $.ajax({
+                url: "/api/activities/campsession",
+                data: JSON.stringify({activityIds: camp_session.activities}),
+                type: "PUT",
+                contentType: 'application/JSON'
+            }).done(function(activities, textStatus, jxQHR){
+                console.log('activities');
+                console.log(activities);
+                camp_session.activity_objects = activities;
+                buildTableSchedule(camp_session);
+            }).fail(alert.bind(null, 'error retrieving session activities'));
+        });
 
     var buildTableSchedule = function(session){
-        //console.log('buildTableSchedule called');
+        console.log('buildTableSchedule called');
         $('#schedule').show();
         $('caption').text(session.name + ' Schedule');
         var currentDate = new Date(session.startDate); //keep adding columns until startDate === endDate + 1
@@ -57,7 +69,7 @@ var main = function(camp_sessions){
 
         //now need to iterate through activities putting them in proper place of schedule table table
         var required_activities = [];
-        session.activities.forEach(function(activity){
+        camp_session.activity_objects.forEach(function(activity){
         //if activity does not have a time field, it is a required activity
         //console.log(activity.time);
         if(!(activity.time)){
@@ -152,9 +164,8 @@ var main = function(camp_sessions){
     });//end build autocomplete
 
     }; //end buildTableSchedule
-    //build schedule for default selected session
-    //console.log('#session-select: ' + $('#session-select').val());
-    buildTableSchedule(camp_sessions[$('#session-select').val()]);
+
+    $('#session-select').trigger('change');
 
 
      $('#cancel').on('click', function(){
