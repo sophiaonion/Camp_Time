@@ -22,7 +22,7 @@ public class CampSession {
     private DateTime startDate;
     private DateTime endDate;
     private ArrayList<String> activities = new ArrayList<>(); //list of all activities, required or not
-    private List<String> counselors;
+    private ArrayList<String> counselors;
 
     public String getSessionID() {
         return sessionID;
@@ -79,11 +79,11 @@ public class CampSession {
     }
 
     public ArrayList<String> getCounselorIDs() {
-        return counselorIDs;
+        return counselors;
     }
 
     public void setCounselorIDs(ArrayList<String> counselorIDs) {
-        this.counselorIDs = counselorIDs;
+        this.counselors = counselorIDs;
     }
 
     public ArrayList<String> getActivities() {
