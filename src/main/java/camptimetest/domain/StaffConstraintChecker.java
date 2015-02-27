@@ -458,7 +458,7 @@ public class StaffConstraintChecker {
             }
         }
 
-        System.out.println("checked conflicts");
+        System.out.println("checked conflicts: there are none");
         return 0;
     }
 }
