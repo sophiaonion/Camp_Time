@@ -1,6 +1,8 @@
 package camptimetest;
 
 import com.google.common.base.Optional;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import restx.server.WebServer;
 import restx.server.JettyWebServer;
 /**
@@ -17,6 +19,8 @@ public class AppServer {
 
     public static void main(String[] args) throws Exception {
 
+        DateTimeZone.setDefault(DateTimeZone.UTC);
+        System.out.println(DateTimeZone.getDefault());
         //google's guava allows for optional parameters with Optional.fromNullable
         //get port from hosting env or default to 8080
         int port = Integer.valueOf(Optional.fromNullable(System.getenv("PORT")).or("8080"));

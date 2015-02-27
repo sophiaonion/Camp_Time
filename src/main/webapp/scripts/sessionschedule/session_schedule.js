@@ -2,6 +2,8 @@ var main = function(camp_sessions){
     //add option to be selected for each session and also tack on index data to access session in camp_sessions array
     //once selected
 
+
+
     Date.prototype.myToString = function(){
         var utcDate = this.toUTCString(); //returns correct date as Day, Date Month Year time
         utcDate = utcDate.slice(0, utcDate.indexOf('2015') - 1);
@@ -28,11 +30,23 @@ var main = function(camp_sessions){
     });
 
     $('#session-select').on('change', function(){
-        buildTableSchedule(camp_sessions[$(this).val()]);
-    });
+            camp_session = camp_sessions[$(this).val()];
+            console.log(camp_session.activities);
+            $.ajax({
+                url: "/api/activities/campsession",
+                data: JSON.stringify({activityIds: camp_session.activities}),
+                type: "PUT",
+                contentType: 'application/JSON'
+            }).done(function(activities, textStatus, jxQHR){
+                console.log('activities');
+                console.log(activities);
+                camp_session.activity_objects = activities;
+                buildTableSchedule(camp_session);
+            }).fail(alert.bind(null, 'error retrieving session activities'));
+        });
 
     var buildTableSchedule = function(session){
-        //console.log('buildTableSchedule called');
+        console.log('buildTableSchedule called');
         $('#schedule').show();
         $('caption').text(session.name + ' Schedule');
         var currentDate = new Date(session.startDate); //keep adding columns until startDate === endDate + 1
@@ -56,7 +70,7 @@ var main = function(camp_sessions){
 
         //now need to iterate through activities putting them in proper place of schedule table table
         var required_activities = [];
-        session.activities.forEach(function(activity){
+        camp_session.activity_objects.forEach(function(activity){
         //if activity does not have a time field, it is a required activity
         //console.log(activity.time);
         if(!(activity.time)){
@@ -67,13 +81,15 @@ var main = function(camp_sessions){
 //            console.log('activity: ' + activity.title);
 //            console.log('activity time string: ' + activity.time);
             var act_date = new Date(activity.time);
-            var column = dateDiffInDays(new Date(session.startDate), new Date(act_date)) + 1;
-            //console.log(column);
+            console.log('act_date: ');
+            console.log(act_date);
+            var column = dateDiffInDays(new Date(session.startDate), new Date(act_date));
+            console.log(column);
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
-//            console.log('activity time: ' + act_date.toUTCString());
-//            console.log('hour: ' + act_date.getHours());
-//            console.log('minutes: should be 0: ' +act_date.getMinutes());
-            var row_index = act_date.getHours() - 9 + 1;
+            console.log('activity time: ' + act_date.toUTCString());
+            console.log('hour: ' + act_date.getHours());
+            console.log('minutes: should be 0: ' +act_date.getMinutes());
+            var row_index = act_date.getUTCHours() - 9 + 1;
             var act_row = $('#schedule tbody tr:eq(' + row_index + ')');
             var act_cell = $('td:eq(' + column + ')', act_row);
 //            console.log('row index: ' + row_index + ' column: ' + column);
@@ -130,7 +146,10 @@ var main = function(camp_sessions){
         $('.activity').on('click', function(){
             var activity = $(this).data('activity');
             $('.activity-info #activity-title').text(activity.title);
+
             var act_date = new Date(activity.time);
+            console.log('utc string');
+            console.log(act_date.toUTCString());
             $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.getHours() + ':00');
             console.log("activity is: ");
             console.log(activity);
@@ -151,9 +170,8 @@ var main = function(camp_sessions){
     });//end build autocomplete
 
     }; //end buildTableSchedule
-    //build schedule for default selected session
-    //console.log('#session-select: ' + $('#session-select').val());
-    buildTableSchedule(camp_sessions[$('#session-select').val()]);
+
+    $('#session-select').trigger('change');
 
 
      $('#cancel').on('click', function(){

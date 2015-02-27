@@ -12,4 +12,5 @@
         <servlet-name>restx</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+
 </web-app>

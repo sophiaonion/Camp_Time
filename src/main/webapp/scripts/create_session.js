@@ -1,4 +1,4 @@
-var main = function(camp_sessions){//get the format we want and correct time zone for date String
+var main = function(){//get the format we want and correct time zone for date String
 Date.prototype.myToString = function(){
     var utcDate = this.toUTCString(); //returns correct date as Day, Date Month Year time
     utcDate = utcDate.slice(0, utcDate.indexOf('2015') - 1);
@@ -25,6 +25,7 @@ var tableBuilt = false;
     var startDate, endDate; //following functions will be able to directly access
 
     var buildTable = function(){ //constructs schedule table
+        $('.remove').remove();
         sDate = new Date(startDate);
         var daysOfSession = dateDiffInDays(sDate, new Date(endDate)) + 1; //+1 include last day in for loop then
         var i = 0;
@@ -32,6 +33,7 @@ var tableBuilt = false;
         for(i; i<daysOfSession; i++){
             var dateHead = $('<td>').text(sDate.myToString()); //create date cell to add
             dateHead.attr('id', '0' + i.toString()); //id will always be 0dayofcamp
+            dateHead.addClass('remove');
             $('#dates').append(dateHead);
             var toClone = $('.clone'); //get clone column
             console.log('loop');
@@ -40,6 +42,7 @@ var tableBuilt = false;
                 next.removeClass('clone'); //otherwise it will be included in elements to clone next for loop iteration
                 var cloneId = $('input', this).attr('id');
                 next.attr('id', cloneId + i.toString());
+                next.addClass('remove');
                 $(this).parent().append(next);
             }); //end forEach cloning loop
             sDate.setDate(sDate.getDate() + 1);
@@ -181,8 +184,4 @@ var tableBuilt = false;
 };
 
 //eventually get campers and sessions and pass to main function
-$(document).ready(function(){
-   $.get('/api/campsessions', function(camp_sessions){
-            main(camp_sessions);
-   });
-});
+$(document).ready(main);

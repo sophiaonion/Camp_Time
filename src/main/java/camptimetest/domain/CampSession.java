@@ -21,8 +21,8 @@ public class CampSession {
     private int enrollmentCap;
     private DateTime startDate;
     private DateTime endDate;
-    private ArrayList<Activity> activities; //list of all activities, required or not
-    private ArrayList<String> counselorIDs;
+    private ArrayList<String> activities = new ArrayList<>(); //list of all activities, required or not
+    private List<String> counselors;
 
     public String getSessionID() {
         return sessionID;
@@ -86,11 +86,17 @@ public class CampSession {
         this.counselorIDs = counselorIDs;
     }
 
-    public ArrayList<Activity> getActivities() {
+    public ArrayList<String> getActivities() {
         return activities;
     }
 
-    public void setActivities(ArrayList<Activity> activities) { this.activities = activities;
+    public void setActivities(ArrayList<String> activities) { this.activities = activities;
+    }
+
+    public CampSession addActivity(String objectId){//must be object id of activity
+
+        this.activities.add(objectId);
+        return this;
     }
 
     @Override

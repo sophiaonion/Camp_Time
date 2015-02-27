@@ -13,6 +13,7 @@ import restx.security.PermitAll;
 import javax.inject.Named;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 
@@ -46,7 +47,9 @@ public class CampSessionResource {
 
         @GET("/campsessions")
         public Iterable<CampSession> getSessions(){
-            return campSession.get().find().as(CampSession.class);
+
+            Iterable<CampSession> CSessions = campSession.get().find().as(CampSession.class);
+            return CSessions;
         }
 
         @GET("/campsessions/campers/{id}")
@@ -72,15 +75,16 @@ public class CampSessionResource {
             return campSession.get().find("{ageGroup: #}", agegroup).as(CampSession.class);
         }
 
-        @GET("/campsessions/{sessionName}")
-        public ArrayList<Activity> getActivities(String sessionName){
-            Iterable<CampSession> itr= campSession.get().find("{name: #}", sessionName).as(CampSession.class);
-            ArrayList<Activity> activities= new ArrayList<Activity>();
-            for(CampSession session : itr){
-                activities= session.getActivities();
-            }
-            return activities;
-        }
+//        @GET("/campsessions/{sessionName}")
+//        public ArrayList<Activity> getActivities(String sessionName){
+//            Iterable<CampSession> itr= campSession.get().findOne("{name: #}", sessionName).as(CampSession.class);
+//            ArrayList<Activity> activities= new ArrayList<Activity>();
+//            for(CampSession session : itr){
+//                activities= session.getActivities();
+//
+//            }
+//            return activities;
+//        }
 
         @POST("/campsessions")
         public CampSession createCampSession(Map<String, Object> info){//change camp session to a mpa, pull out each individual thing and save into campsession
@@ -98,7 +102,7 @@ public class CampSessionResource {
             newCS.setAgeGroup(String.valueOf(info.get("ageGroup")));
             newCS.setEnrollmentCap(Integer.valueOf(String.valueOf(info.get("enrollmentCap"))));
 
-            //make activititties
+            //make activitities
             ArrayList<Activity> activityList = new ArrayList<Activity>();
 
             @SuppressWarnings("unchecked")
@@ -130,7 +134,7 @@ public class CampSessionResource {
                             String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
 
 
-                            DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
+                            DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))).withZone(DateTimeZone.UTC));//make day be startDate plus day number in session
                             //hours, minutes, seconds, milli
                             DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0).withZone(DateTimeZone.UTC));//set time to given time
                             a.setTime(time1);
@@ -142,12 +146,14 @@ public class CampSessionResource {
                             a.setIsSet(false);//activity time is not yet set by algorithm
                         }
                     }
-                    activityList.add(a);
                     activities.get().save(a);
+                    System.out.println(a.getKey());
+                    newCS.addActivity(a.getKey());
                 }
             }
             System.out.println("Number of activities created: " + activityList.size());
-            newCS.setActivities(activityList);
+
+//            newCS.setActivities(activityList);
             campSession.get().save(newCS);
             return newCS;
         }
