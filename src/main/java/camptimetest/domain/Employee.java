@@ -76,7 +76,7 @@ public class Employee {
         this.certifications = certifications;
     }
 
-    public ArrayList<String> getActivites(){
+    public ArrayList<String> getActivities(){
         return this.activities;
     }
 
