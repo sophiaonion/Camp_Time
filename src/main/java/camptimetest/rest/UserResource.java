@@ -3,6 +3,8 @@ package camptimetest.rest;
 import camptimetest.AppModule;
 import camptimetest.domain.User;
 import org.eclipse.jetty.http.HttpStatus;
+import restx.Status;
+import restx.annotations.DELETE;
 import restx.annotations.GET;
 import restx.annotations.POST;
 import restx.annotations.RestxResource;
@@ -16,6 +18,7 @@ import static camptimetest.AppModule.Roles.*;
 import com.google.common.base.Optional;
 
 import javax.inject.Named;
+import java.util.ArrayList;
 
 /**
  * Created by sophiawang on 2/7/15.
@@ -43,17 +46,6 @@ public class UserResource {
     public Iterable<User> findUser() {
         return myUserRepository.findAllUsers();
     }
-
-//    @GET("/users/{username}/{password}")
-//    public String authentication(String username, String password) { //& return usertype
-//        String usertype="";
-//        String query = "{username:\"" + username + "\", password:\"" + password + "\"}";
-//        Iterable<User> result = users.get().find(query).as(User.class);
-//        for(User itr : result){
-//            usertype= itr.getUsertype();
-//        }
-//        return usertype;
-//    }
 
     //@RolesAllowed(ADMIN)
     @POST("/users") //user repository handles hashing
@@ -89,19 +81,30 @@ public class UserResource {
         }
     }
 
+    //get the Session key of the current session
+    @PermitAll
+    @GET("/login/current")
+    public String currentSession(){
+        String sessionKey = RestxSession.current().get(String.class, Session.SESSION_DEF_KEY).get();
+        RestxPrincipal principal = RestxSession.current().getPrincipal().get();
 
+        Session test = new Session(sessionKey, principal);
+        return test.getKey();
+    }
 
-    //??!!!
+    @PermitAll// delete the current session by session key
+    @DELETE("/login/current/{sessionKey}")
+    public String logout(String sessionKey){
+        RestxSession.current().clearPrincipal();
+        RestxSession.current().define(String.class, Session.SESSION_DEF_KEY, null);
+        return "200";
+    }
+
+    @PermitAll
     @GET("/role")
     public String getUserRole(){
         return AppModule.currentUser().getRoles().iterator().next();
     }
 
-//    @DELETE("/users/{userID}") //!!!!!!!!!!!!!!!!!!!!!!!!
-//    public Status deleteEmployee(String employeeID){
-//        ObjectId employeeId= new ObjectId(employeeID);
-//        employees.get().remove("{_id:#}", employeeId);
-//        return Status.of("deleted");
-//    }
 
 }

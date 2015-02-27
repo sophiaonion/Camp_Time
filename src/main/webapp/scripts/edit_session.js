@@ -46,19 +46,19 @@ var main = function(camp_sessions){
             camperID: selected_camperID
         };
 
-        $.ajax({
-            type: 'DELETE',
-            url: '/api/campers/' + data.camperID + '/' + data.sessionID,
-            data: JSON.stringify(data),
-            contentType: 'application/JSON',
-            success: function(data){
-                alert('Successfully delete registration');
-                window.location.replace('home_page_test.html');
-            },
-            error: function(request, status, error){
-                alert(error);
-            }
-        });
+    $.ajax({
+        type: 'DELETE',
+        url: '/api/campers/' + data.camperID + '/' + data.sessionID,
+        data: JSON.stringify(data),
+        contentType: 'application/JSON',
+        success: function(data){
+            alert('Successfully delete registration');
+            window.location.replace('home_page_test.html');
+        },
+        error: function(request, status, error){
+            alert(error);
+        }
+    });
     });
 
     $('#cancel').on('click', function(){
