@@ -61,8 +61,13 @@ public class Activity {
         return this;
     }
 
-    public Activity removeEmployee(Employee employee){
-        employees.remove(employee.getKey());
+    public Activity removeEmployee(String employee){
+        employees.remove(employee);
+        return this;
+    }
+
+    public Activity removeEmployees(ArrayList<String> employees){
+        employees.removeAll(employees);
         return this;
     }
 

@@ -13,11 +13,13 @@ import restx.factory.Component;
 import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
 import restx.security.RolesAllowed;
+import camptimetest.rest.CollectionHelper;
 
 
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import static camptimetest.AppModule.Roles.*;
 import static org.jongo.Oid.withOid;
@@ -97,10 +99,11 @@ public class EmployeeResource {
         return Status.of("deleted");
     }
 
-    @GET("/employees/time/{time}") //get all unscheduled employees at time
-    public Iterable<Employee>findAvailableEmployees(String time){
+    @GET("/employees/time/{time}") //returns object map object with scheduled, available Employee fields
+    public Map<String, Employee> employeesToActivity(String time){
         //first get all activities happening at that time
         Iterable<Activity> concurrentActs = activities.get().find("{time: #}", time).as(Activity.class);
+        Map<String, ArrayList<Employee>> data = new HashMap<>();
         //get ObjectIds of all working employees
         ArrayList<String> workingEmps = new ArrayList<>();
         for(Activity act : concurrentActs){
@@ -108,25 +111,19 @@ public class EmployeeResource {
                 workingEmps.add(key);
             }
         }
+
         //query based on all employee ids not in workingEmps array
-         return employees.get().find("{_id: {$nin: #}}", workingEmps).as(Employee.class);
+         employees.get().find("{_id: {$nin: #}}", CollectionHelper.stringsToObjectIds(workingEmps)).as(Employee.class);
     }
 
     //get sent Map of key value pairs
     //employee_id and activity_id
     @PUT("/employees/activities/add")
     public String addEmployeeToActivity(Map<String, Object> values){
-        ArrayList<String> idsToConvert = (ArrayList<String>)values.get("employees");
-        ArrayList<ObjectId> employeeIds = new ArrayList<>();
-        for(String empId: idsToConvert){
-            employeeIds.add(new ObjectId(empId));
-        }
-
+        ArrayList<String> stringIds = (ArrayList<String>)values.get("employees");
+        ArrayList<ObjectId> employeeIds = CollectionHelper.stringsToObjectIds(stringIds);
         String activityId = (String)values.get("activity_id");
 
-
-//        employees.get().update("{key: {$in: #}}", employeeIds).with("{$push : {activities: #}}", activityId);
-//        activities.get().update("{key: #}", withOid(activityId)).with("{$push : {employees: #}}", idsToConvert);
         Iterable<Employee> emps = employees.get().find("{_id: {$in: #}}", employeeIds).as(Employee.class);
         Activity act = activities.get().findOne("{_id: #}", new ObjectId(activityId)).as(Activity.class);
 
@@ -135,26 +132,31 @@ public class EmployeeResource {
             employees.get().save(emp);
         }
 
-        act.addEmployees(idsToConvert);
+        act.addEmployees(stringIds);
         activities.get().save(act);
 
         return "200";
     }
 
-//    //employee_id and activity_id
-//    @PUT("/employees/activities/remove")
-//    public Activity removeEmployeeFromActivity(Map<String, Object> values){
-//        Employee emp = employees.get().findOne("{_id: #}", new ObjectId(values.get("employee_id"))).as(Employee.class);
-//        Activity act = activities.get().findOne("{_id: #}", new ObjectId(values.get("activity_id"))).as(Activity.class);
-//
-//
-//        emp.removeActivity(act);
-//        act.removeEmployee(emp);
-//
-//        employees.get().save(emp);
-//        activities.get().save(act);
-//    return act;
-//    }
+    //employee_id and activity_id
+    @PUT("/employees/activities/remove")
+    public Activity removeEmployeeFromActivity(Map<String, Object> values){
+        ArrayList<String> employeeStringIds = (ArrayList<String>)values.get("employees");
+        ArrayList<ObjectId> employeeIds = CollectionHelper.stringsToObjectIds(employeeStringIds);
+        String activityId = (String)values.get("activity_id");
+
+        Iterable<Employee> emps = employees.get().find("{_id: {$in: #}}", employeeIds).as(Employee.class);
+        Activity act = activities.get().findOne("{_id: #}", new ObjectId(activityId)).as(Activity.class);
+
+        for(Employee emp: emps){
+            emp.removeActivity(activityId);
+            employees.get().save(emp);
+        }
+
+        act.removeEmployees(employeeStringIds);
+        activities.get().save(act);
+    return act;
+    }
 
 
 

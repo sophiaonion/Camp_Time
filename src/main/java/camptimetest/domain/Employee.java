@@ -95,8 +95,8 @@ public class Employee {
         return this;
     }
 
-    public Employee removeActivity(Activity activity){
-        activities.remove(activity.getKey());
+    public Employee removeActivity(String activity){
+        activities.remove(activity);
         return this;
     }
 
