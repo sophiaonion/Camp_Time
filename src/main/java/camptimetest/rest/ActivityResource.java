@@ -58,7 +58,4 @@ public class ActivityResource {
         activities.get().save(activity);
         return activity;
     }
-
-
-
 }

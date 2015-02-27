@@ -304,7 +304,7 @@ public class ConstraintChecker {
                             //update activity in collection
                             String ID = String.valueOf(actArray.get(i).get("_id"));
                             ObjectId ID2 = new ObjectId(ID);
-                            activities.get().update(ID2).with("{ $set: { isSet:" + true + ", time:\"" + time+ "\" } }");
+                            activities.get().update("{_id: #}",ID2).with("{ $set: { isSet:" + true + ", time:\"" + time+ "\" } }");
 
 
                             //update domains of other activities to remove taken time
@@ -384,7 +384,7 @@ public class ConstraintChecker {
                 String ID = String.valueOf(actArray.get(mostConf).get("_id"));
                 ObjectId ID2 = new ObjectId(ID);
                 if( !(activities.get().findOne("{_id: # }", ID2).as(Activity.class).getFixed()) )
-                    activities.get().update(ID2).with("{ $set: { isSet:" + true + ", time:\"" + newTime+ "\" } }");
+                    activities.get().update("{_id: #}",ID2).with("{ $set: { isSet:" + true + ", time:\"" + newTime + "\" } }");
 
                 //reset domainsc and stuff
                 DBCursor cursor2 = activities.get().getDBCollection().find();
