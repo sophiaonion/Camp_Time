@@ -1,8 +1,10 @@
 $('.view-schedule').hide();
+$('.customer-options').hide();
+$('.counselor-options').hide();
 var main = function(){
 
     console.log("try to get current role");
-    //get the current role ??????????!!!!!!!!!!! it works.....but is this a good method????
+
     $.get('/api/role', function(role){
          role = role.replace(/\s+/g, ''); //eliminate unnessacery whitespace, from stackoverflow
          if(role == "counselor"){
@@ -12,6 +14,7 @@ var main = function(){
             $('.spec-schedule').hide();
             $('.trigger-update').hide();
             $('.view-schedule').show();
+            $('.counselor-options').show();
          }
 
          if (role == "specialty"){
@@ -29,6 +32,7 @@ var main = function(){
              $('.trigger-update').hide();
              $('.spec-schedule').hide();
              $('.view-schedule').show();
+             $('.customer-options').show();
         }
 
     });
