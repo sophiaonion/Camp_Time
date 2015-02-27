@@ -134,7 +134,7 @@ public class CampSessionResource {
                             String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
 
 
-                            DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))));//make day be startDate plus day number in session
+                            DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))).withZone(DateTimeZone.UTC));//make day be startDate plus day number in session
                             //hours, minutes, seconds, milli
                             DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0).withZone(DateTimeZone.UTC));//set time to given time
                             a.setTime(time1);

@@ -3,6 +3,8 @@ var main = function(camp_sessions){
     //add option to be selected for each session and also tack on index data to access session in camp_sessions array
     //once selected
 
+
+
     Date.prototype.myToString = function(){
         var utcDate = this.toUTCString(); //returns correct date as Day, Date Month Year time
         utcDate = utcDate.slice(0, utcDate.indexOf('2015') - 1);
@@ -80,13 +82,15 @@ var main = function(camp_sessions){
 //            console.log('activity: ' + activity.title);
 //            console.log('activity time string: ' + activity.time);
             var act_date = new Date(activity.time);
-            var column = dateDiffInDays(new Date(session.startDate), new Date(act_date)) + 1;
-            //console.log(column);
+            console.log('act_date: ');
+            console.log(act_date);
+            var column = dateDiffInDays(new Date(session.startDate), new Date(act_date));
+            console.log(column);
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
-//            console.log('activity time: ' + act_date.toUTCString());
-//            console.log('hour: ' + act_date.getHours());
-//            console.log('minutes: should be 0: ' +act_date.getMinutes());
-            var row_index = act_date.getHours() - 9 + 1;
+            console.log('activity time: ' + act_date.toUTCString());
+            console.log('hour: ' + act_date.getHours());
+            console.log('minutes: should be 0: ' +act_date.getMinutes());
+            var row_index = act_date.getUTCHours() - 9 + 1;
             var act_row = $('#schedule tbody tr:eq(' + row_index + ')');
             var act_cell = $('td:eq(' + column + ')', act_row);
 //            console.log('row index: ' + row_index + ' column: ' + column);
@@ -143,7 +147,10 @@ var main = function(camp_sessions){
         $('.activity').on('click', function(){
             var activity = $(this).data('activity');
             $('.activity-info #activity-title').text(activity.title);
+
             var act_date = new Date(activity.time);
+            console.log('utc string');
+            console.log(act_date.toUTCString());
             $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.getHours() + ':00');
             console.log("activity is: ");
             console.log(activity);

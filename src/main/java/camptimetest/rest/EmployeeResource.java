@@ -100,10 +100,9 @@ public class EmployeeResource {
     }
 
     @GET("/employees/time/{time}") //returns object map object with scheduled, available Employee fields
-    public Map<String, Employee> employeesToActivity(String time){
+    public Iterable<Employee> employeesToActivity(String time){
         //first get all activities happening at that time
         Iterable<Activity> concurrentActs = activities.get().find("{time: #}", time).as(Activity.class);
-        Map<String, ArrayList<Employee>> data = new HashMap<>();
         //get ObjectIds of all working employees
         ArrayList<String> workingEmps = new ArrayList<>();
         for(Activity act : concurrentActs){
@@ -112,8 +111,9 @@ public class EmployeeResource {
             }
         }
 
-        //query based on all employee ids not in workingEmps array
-         employees.get().find("{_id: {$nin: #}}", CollectionHelper.stringsToObjectIds(workingEmps)).as(Employee.class);
+        //query get all employee ids not in workingEmps array
+        Iterable<Employee> available = employees.get().find("{_id: {$nin: #}}", CollectionHelper.stringsToObjectIds(workingEmps)).as(Employee.class);
+        return available;
     }
 
     //get sent Map of key value pairs
