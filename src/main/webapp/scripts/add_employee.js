@@ -33,12 +33,23 @@ $('#add-employee').on('click', function(){
 
     //put certifications into list
     var certifications = [];
+var cert;
+    $( "#certifications option" ).each(function(index) {
 
-    $( "#certifications" ).each(function(index) {
-
-        certifications.push( $(this).text() + "," ) //added comma to use for splitting up string laterzz
+        if($(this).text() == "First Aid") {cert="first-aid";}
+        else if($(this).text() == "CPR") {cert="cpr";}
+        else if($(this).text() == "Health Supervisor") {cert="health";}
+        else if($(this).text() == "Lifeguard") {cert="lifeguard";}
+        else if($(this).text() == "Art Director") {cert="art";}
+        else if($(this).text() == "Nature Director") {cert="nature";}
+        else if($(this).text() == "Archery") {cert="archery";}
+        else if($(this).text() == "Camp Store") {cert="store";}
+        else if($(this).text() == "Driving") {cert="drive";}
+        console.log(cert),
+        certifications.push(new String(cert))
 
     });
+
 
 
     console.log($('#employee-age').val());

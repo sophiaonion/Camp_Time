@@ -60,7 +60,7 @@ public class StaffConstraintChecker {
         List<DBObject> arrry = cursor.toArray();
         ArrayList<DBObject> actList = new ArrayList<DBObject>(arrry);
 
-        while (type==1 || type==2) {//have un(der)employed activities
+        if (type==1 || type==2) {//have un(der)employed activities todo CHANGE BACK TO WHILE
         System.out.println("fixing type 1/2 errors...");
 
             //add staff as required
@@ -97,10 +97,10 @@ public class StaffConstraintChecker {
 
                     //adds employees with required certifications to session until acceptable
                     switch (activityArea) {
-                        case "pool": //todo check for infinite looping in case of not enough staff
+                        case "pool": //todo check for infinite looping in case of not enough staff for now
                             int count=0;
                             while (count<100000000 && (((numCampers + numStaff) / numLifeGuards) < 25)) {
-                                emps.add(findEmployeeToWork(a, "lifeguard", "", false, false));
+                                emps.add(findEmployeeToWork(a, "lifeguard", null, false, false));
                                 activities.get().update("{_id: #}", a.getKey()).with("{$set: {employees: #}}", emps);
                                 numStaff++;
                                 numLifeGuards++;
@@ -119,7 +119,10 @@ public class StaffConstraintChecker {
                             break;
                         case "art":
                             if (!hasArt) {
+                                System.out.println("adding art dir");
+                                //System.out.println("employee found: "+findEmployeeToWork(a, "art", "", false, false));
                                 emps.add(findEmployeeToWork(a, "art", "", false, false));
+                                        //add(findEmployeeToWork(a, "art", "", false, false));
                                 activities.get().update("{_id: #}", a.getKey()).with("{$set: {employees: #}}", emps);}
                             break;
                         case "nature":
@@ -270,6 +273,7 @@ public class StaffConstraintChecker {
 
     //finds available employee (if there is one, if not?? wat do)
     private String findEmployeeToWork(Activity a, String cert, String sessionID, boolean overAge, boolean woman) {
+        System.out.println("finding employee to work");
         ArrayList<String> options = new ArrayList<>();
 
         //looking for staff with specific certification
@@ -278,14 +282,28 @@ public class StaffConstraintChecker {
             if (overAge && woman) {
                 cursor = employees.get().find("{certifications: #, woman: true, age: {$gt: 18}}", cert).as(Employee.class);
             } else {
-                cursor = employees.get().find("{certifications: #, woman: true, age: {$gt: 18}}", cert).as(Employee.class);
+                cursor = employees.get().find("{\"certifications\": #}", cert).as(Employee.class);
             }
+
+            //db.employees.find({certifications: "art", woman: true, age: {$gt: 18}})
+
             Iterator<Employee> itr = cursor.iterator();
+            Employee e = itr.next();
+            System.out.println("looking at employee "+e.getName());
+            if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
+                System.out.println("they can work it");
+                //if (true) //check not already working somewhere?
+                options.add(e.getKey());
+            }
+            else System.out.println("cant work");
+
             while(itr.hasNext()) {
-                Employee e = itr.next();
-                if(!(checkHas24HourBreakOnDate(e, a.getTime()) || checkHasTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())))
-                    if(true) //check not already working somewhere?
-                    options.add(e.getKey());
+                //todo do seomthing here about being more than one option
+                if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
+                    //if (true) //check not already working somewhere?
+                        options.add(e.getKey());
+                }
+                e = itr.next();
             }
         }
         //looking for counselor assigned to session
@@ -297,7 +315,7 @@ public class StaffConstraintChecker {
             while(cItr.hasNext()) {
                 String Id = cItr.next();
                 Employee e = employees.get().findOne("{_id: #", Id).as(Employee.class);
-                if(!(checkHas24HourBreakOnDate(e, a.getTime()) || checkHasTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay()))) {
+                if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
                     if (overAge && woman) {
                         if (e.getGender().equals("woman") && e.getAge() >= 18) options.add(e.getKey());
                     } //need a mature lady
@@ -313,15 +331,17 @@ public class StaffConstraintChecker {
             }
         }
 
-        if(options.size()>0)
+        if(options.size()>0) {
+            System.out.println("employee to add: "+options.get(0));
             return options.get(0);
+        }
         else
             return "oop";
     }
 
     //for given day, checks whether employee has 2 hours off for break,
     //can also get result for what would happen if added a specific hour (ifAdd)
-    private boolean checkHasTwoHourBreakOnDate(Employee e, DateTime day, int ifAdd) {
+    private boolean checkIfNeedsTwoHourBreakOnDate(Employee e, DateTime day, int ifAdd) {
         ArrayList<String> a = e.getActivities();
         boolean[] hours = new boolean[25];
         for(int i=0; i<a.size(); i++)
@@ -333,16 +353,21 @@ public class StaffConstraintChecker {
         if (((hours[9] || hours[10])) && ((hours[10] || hours[11])) && ((hours[13] || hours[14])) && //if working any of the possible 2 hour break slots
                 ((hours[14] || hours[15])) && ((hours[15] || hours[16])) && ((hours[19] || hours[20]))) {
             System.out.println("employee does not have 2 hour break");
-            return false;
+            return true;
         }
-        return true;
+        System.out.println("employee does not need 2 hour break here");
+        return false;
     }
 
     private boolean checkHas24HourBreakOnDate(Employee e, DateTime day) {
         int interval = e.getIntervalBreak();
         DateTime start = e.getStartBreak();
+        System.out.println("uo");
+        System.out.println("interval: "+interval+" day checking: "+day.getDayOfYear()+" start: "+start.getDayOfYear());
+        System.out.println((day.getDayOfYear() - start.getDayOfYear())%interval);
         if( (day.getDayOfYear() - start.getDayOfYear())%interval == 0 ) return true;
-        else return false;
+        else
+            System.out.println("does not has 24 now");return false;
     }
 
     private ArrayList<ArrayList<String>> findDomain(ArrayList<DBObject> actList) {
