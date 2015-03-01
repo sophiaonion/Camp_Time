@@ -101,7 +101,7 @@ public class CampSessionResource {
             newCS.setName(String.valueOf(info.get("name")));
             newCS.setAgeGroup(String.valueOf(info.get("ageGroup")));
             newCS.setEnrollmentCap(Integer.valueOf(String.valueOf(info.get("enrollmentCap"))));
-            newCS.setCounselorIDs((ArrayList<String>) info.get("counselorIDs"));
+            newCS.setCounselorIDs((ArrayList<String>) info.get("counselors"));
 
             //make activitities
             ArrayList<Activity> activityList = new ArrayList<Activity>();
