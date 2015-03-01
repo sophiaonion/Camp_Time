@@ -61,6 +61,7 @@ public class ConstraintChecker {
                     //if same session in two different places at same time
                     if( list.get(i).get("session").equals(list.get(j).get("session"))
                             && list.get(i).get("time").equals(list.get(j).get("time"))
+                            && (list.get(i).get("activityArea") != null) && (list.get(j).get("activityArea")!=null)
                             && !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea"))) ) {
                         System.out.println("type 2 conflict found");
                         return 2;
