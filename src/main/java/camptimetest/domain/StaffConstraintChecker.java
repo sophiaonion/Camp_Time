@@ -253,7 +253,6 @@ public class StaffConstraintChecker {
             for (int j = 0; j < e.size(); j++) {
                 if (employees.get().findOne("{_id: #}", new ObjectId(e.get(j))).as(Employee.class).getGender().equals("woman")) //was false
                     if (employees.get().findOne("{_id: #}", new ObjectId(e.get(j))).as(Employee.class).getAge() >= 18) {
-                        System.out.print("ok");
                         hasMatureLady = true;
                     }
             }
@@ -581,10 +580,11 @@ public class StaffConstraintChecker {
             ArrayList<String> a = e.getActivities();
             for(int j=0; j<a.size(); j++)//for each activity employee is working
             {
-                DateTime dtA = activities.get().findOne("{_id, #}", new ObjectId(a.get(j))).as(Activity.class).getTime();
+                DateTime dtA = activities.get().findOne("{_id: #}", new ObjectId(a.get(j))).as(Activity.class).getTime();
                 for (int k = 0; k < a.size(); k++) { //for each other activity employee is working
-                    DateTime dtB = activities.get().findOne("{_id, #}", new ObjectId(a.get(k))).as(Activity.class).getTime();
+                    DateTime dtB = activities.get().findOne("{_id: #}", new ObjectId(a.get(k))).as(Activity.class).getTime();
                     if (j != k && dtA.equals(dtB)) {//not sure if works, compare each activity
+                        System.out.println(a.get(j)+" is at same time as "+a.get(k));
                         System.out.println("type 3 conflict: employee working two activities at same time");
                         return 3;
                     }
@@ -602,7 +602,7 @@ public class StaffConstraintChecker {
 
             //calculate hours worked for employee
             for(int j=0; j<aST.size(); j++) {//for each activity
-                Activity a = activities.get().findOne("{_id, #}", new ObjectId(aST.get(j))).as(Activity.class);
+                Activity a = activities.get().findOne("{_id: #}", new ObjectId(aST.get(j))).as(Activity.class);
                 String day = dtf.print(a.getTime());
                 int hour = a.getTime().getHourOfDay();
 

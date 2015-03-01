@@ -60,9 +60,9 @@ public class ConstraintChecker {
                 if(i!=j) {//make sure not comparing same activity
                     //if same session in two different places at same time
                     if( list.get(i).get("session").equals(list.get(j).get("session"))
-                            && list.get(i).get("time").equals(list.get(j).get("time"))
-                            && (list.get(i).get("activityArea") != null) && (list.get(j).get("activityArea")!=null)
-                            && !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea"))) ) {
+                            && list.get(i).get("time").equals(list.get(j).get("time")))
+                           // && (((list.get(i).get("activityArea") == null) && (list.get(j).get("activityArea")==null)) || !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea")))) )
+                    {
                         System.out.println("type 2 conflict found");
                         return 2;
                     }//end two places at once conflict
@@ -218,7 +218,7 @@ public class ConstraintChecker {
                     //if same session in two different places at same time
                     if( list.get(i).get("session").equals(list.get(j).get("session"))
                             && list.get(i).get("time").equals(list.get(j).get("time"))
-                            && !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea"))) ) {
+                           /* && !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea")))*/ ) {
                         //add conflict to each thing thing only if not fixed time cuz we can't change those anyway
                         if( !((boolean) list.get(i).get("fixed")) ) {
                             int c = numConflicts.get(i);
