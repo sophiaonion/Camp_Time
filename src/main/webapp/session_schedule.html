@@ -17,6 +17,11 @@
         <label for="session-select">Select Session:</label>
         <select name="session-select" id="session-select">
         </select>
+        <button id="delete-session">Delete Session</button>
+        <div class="confirm-delete">
+            <button id="submit-delete">Submit Delete</button>
+            <button id="cancel-delete">Cancel</button>
+        </div>
     </div>
 
     <div class="session-schedule">
@@ -25,19 +30,19 @@
             <p>Required Activities: <span id="required-activities"></span></p>
             <tbody> <!--id convention first number hour, second number date -->
             <tr id="dates">  <td>Time</td></tr>
-            <tr id="r1"> <td>9:00</td></tr>
-            <tr id="r2"> <td>10:00</td></tr>
-            <tr id="r3"> <td>11:00</td></tr>
-            <tr id="r4"> <td>12:00</td></tr>
-            <tr id="r5"> <td>1:00</td></tr>
-            <tr id="r6"> <td>2:00</td></tr>
-            <tr id="r7"> <td>3:00</td></tr>
-            <tr id="r8"> <td>4:00</td></tr>
-            <tr id="r9"> <td>5:00</td></tr>
-            <tr id="r10"><td>6:00</td></tr>
-            <tr id="r11"><td>7:00</td></tr>
-            <tr id="r12"><td>8:00</td></tr>
-            <tr id="r13"><td>9:00</td></tr>
+            <tr id="r1" data-hour="9"> <td>9:00</td></tr>
+            <tr id="r2" data-hour="10"> <td>10:00</td></tr>
+            <tr id="r3" data-hour="11"> <td>11:00</td></tr>
+            <tr id="r4" data-hour="12"> <td>12:00</td></tr>
+            <tr id="r5" data-hour="13"> <td>1:00</td></tr>
+            <tr id="r6" data-hour="14"> <td>2:00</td></tr>
+            <tr id="r7" data-hour="15"> <td>3:00</td></tr>
+            <tr id="r8" data-hour="16"> <td>4:00</td></tr>
+            <tr id="r9" data-hour="17"> <td>5:00</td></tr>
+            <tr id="r10" data-hour="18"><td>6:00</td></tr>
+            <tr id="r11" data-hour="19"><td>7:00</td></tr>
+            <tr id="r12" data-hour="20"><td>8:00</td></tr>
+            <tr id="r13" data-hour="21"><td>9:00</td></tr>
             </tbody>
         </table>
     </div>

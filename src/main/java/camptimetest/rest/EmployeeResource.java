@@ -2,8 +2,12 @@ package camptimetest.rest;
 
 import camptimetest.domain.Activity;
 import camptimetest.domain.Employee;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import restx.Status;
@@ -17,10 +21,8 @@ import camptimetest.rest.CollectionHelper;
 
 
 import javax.inject.Named;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
 import static camptimetest.AppModule.Roles.*;
 import static org.jongo.Oid.withOid;
 
@@ -58,15 +60,13 @@ public class EmployeeResource {
     }
 
 
-    //if parameter isn't specified in URI path with {}, assumes it is the message body
-    //Jackson library automatically tries to map sent JSON to specified class,
-    //setting fields that match and ignoring others
-    //parameters sent by POST are automatically put into message body
-//    @POST("/employees")
-//    public Employee createEmployee(Employee employee){
-//        employees.get().save(employee);
-//        return employee; //can return anything doesn't have to be sent object
-//    }
+    //get employees based on array of employee ids
+    //sent over with 'employee_ids' key
+    @PUT("/employees/ids")
+    public Iterable<Employee> getEmployeesFromIds(Map<String, ArrayList<String>> empIds){
+        ArrayList<ObjectId> empObjectIds = CollectionHelper.stringsToObjectIds(empIds.get("employee_ids"));
+        return employees.get().find("{_id: {$in : #}}", empObjectIds).as(Employee.class);
+    }
 
     @POST("/employees")
     public Employee createEmployee(Map<String, Object> info){
@@ -99,13 +99,15 @@ public class EmployeeResource {
         return Status.of("deleted");
     }
 
-    @GET("/employees/time/{time}") //returns object map object with scheduled, available Employee fields
-    public Iterable<Employee> employeesToActivity(String time){
+    @PUT("/employees/time") //returns object map object with scheduled, available Employee fields
+    public Iterable<Employee> employeesToActivity(DateTime time){
         //first get all activities happening at that time
-        Iterable<Activity> concurrentActs = activities.get().find("{time: #}", time).as(Activity.class);
+       String query = CollectionHelper.getDateQuery(time);
+       Iterable<Activity> activitiesAtTime = activities.get().find(query).as(Activity.class);
+
         //get ObjectIds of all working employees
         ArrayList<String> workingEmps = new ArrayList<>();
-        for(Activity act : concurrentActs){
+        for(Activity act : activitiesAtTime){
             for(String key : act.getEmployees()){
                 workingEmps.add(key);
             }
@@ -115,6 +117,8 @@ public class EmployeeResource {
         Iterable<Employee> available = employees.get().find("{_id: {$nin: #}}", CollectionHelper.stringsToObjectIds(workingEmps)).as(Employee.class);
         return available;
     }
+
+    //getEmployeeObjects
 
     //get sent Map of key value pairs
     //employee_id and activity_id

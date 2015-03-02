@@ -12,6 +12,15 @@ var main = function(camp_sessions){
         return pieces[0] + ' ' + pieces[2] + ' ' + pieces[1]
     }
 
+    Date.prototype.myTimeString = function(){
+        var hours = this.getUTCHours();
+        if(Number(hours) > 12){
+            return hours - 12 + ':00pm';
+        } else {
+            return hours + ':00am';
+        }
+    }
+
     //from stack overflow utility function for date difference
     //http://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
     // a and b are javascript Date objects
@@ -25,28 +34,26 @@ var main = function(camp_sessions){
     }
 
     camp_sessions.forEach(function(session, index){
-        var ses_option = $('<option>').val(index).text(session.name);
+        console.log(session._id);
+        var deleteInfo = {_id: session._id, name: session.name};
+        var ses_option = $('<option>').val(index).text(session.name).data('delete-info', deleteInfo);
         $('#session-select').append(ses_option);
     });
 
     $('#session-select').on('change', function(){
             camp_session = camp_sessions[$(this).val()];
-            console.log(camp_session.activities);
             $.ajax({
                 url: "/api/activities/campsession",
                 data: JSON.stringify({activityIds: camp_session.activities}),
                 type: "PUT",
                 contentType: 'application/JSON'
             }).done(function(activities, textStatus, jxQHR){
-                console.log('activities');
-                console.log(activities);
                 camp_session.activity_objects = activities;
                 buildTableSchedule(camp_session);
             }).fail(alert.bind(null, 'error retrieving session activities'));
         });
 
     var buildTableSchedule = function(session){
-        console.log('buildTableSchedule called');
         $('#schedule').show();
         $('caption').text(session.name + ' Schedule');
         var currentDate = new Date(session.startDate); //keep adding columns until startDate === endDate + 1
@@ -58,10 +65,16 @@ var main = function(camp_sessions){
 
         $('.empty').remove() //remove last selected session table
         while(currentDate.valueOf() !== stopDate.valueOf()){
-            $('#dates').append($('<td>').text(currentDate.myToString()).addClass('empty')); //add date header separately
+            //add date header separately
+            $('#dates').append($('<td>').text(currentDate.myToString()).addClass('empty date-header').data('date', currentDate));
             $('#schedule tr').not('#dates').each(function(){//loop through table rows adding input boxes
-
-                var newCell = $('<td>').append($('<input>').attr('type', 'text')).addClass('empty');
+                //get first child of row text to get hour to append dateTime as data to be used for autocomplete options later
+                var timeText = $(':first-child', this).text();
+                var hours = Number($(this).data('hour'));
+                var dateTime = new Date(currentDate.toString());
+                dateTime.setUTCHours(hours);
+                console.log(dateTime.toUTCString());
+                var newCell = $('<td>').append($('<input>').attr('type', 'text').data('date-time', dateTime)).addClass('empty');
                 $(this).append(newCell);
 
             }); //end each loop for table rows
@@ -81,14 +94,14 @@ var main = function(camp_sessions){
 //            console.log('activity: ' + activity.title);
 //            console.log('activity time string: ' + activity.time);
             var act_date = new Date(activity.time);
-            console.log('act_date: ');
-            console.log(act_date);
+//            console.log('act_date: ');
+//            console.log(act_date);
             var column = dateDiffInDays(new Date(session.startDate), new Date(act_date));
             console.log(column);
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
-            console.log('activity time: ' + act_date.toUTCString());
-            console.log('hour: ' + act_date.getHours());
-            console.log('minutes: should be 0: ' +act_date.getMinutes());
+//            console.log('activity time: ' + act_date);
+//            console.log('hour: ' + act_date.getHours());
+//            console.log('minutes: should be 0: ' +act_date.getMinutes());
             var row_index = act_date.getUTCHours() - 9 + 1;
             var act_row = $('#schedule tbody tr:eq(' + row_index + ')');
             var act_cell = $('td:eq(' + column + ')', act_row);
@@ -116,60 +129,81 @@ var main = function(camp_sessions){
                     "counselor", "canoeing", "archery", "creek", "check in/out", "unit"
                      , "other"];
 
+        //get available activities at that time
+        var keyUpData;
         var previousValue = "";
         $('#schedule input').each(function(){
-            $(this).autocomplete({
-                                       source: source,
-                                       autoFocus: true,
-                                       close: function(event, ui){
-                                            if (($.inArray($(this).val(), source)) === -1){
-                                            $(this).val("");
-                                            }
-                                       }
-                                  }).keyup(function() {
-            var valid = false;
-            //http://stackoverflow.com/questions/6373512/source-only-allowed-values-in-jquery-ui-autocomplete-plugin
-            for(index in source){
-                if(source[index].toLowerCase().match($(this).val().toLowerCase())){
-                    valid = true;
+            var auto = this;
+            $.ajax({
+                url: '/api/activities/open',
+                type: 'POST',
+                contentType: 'application/JSON',
+                data: JSON.stringify({dateTime: $(this).data('date-time')})
+            }).done(function(data){
+                console.log(data);
+                keyUpData = data;
+                $(auto).autocomplete({
+                                           source: data,
+                                           autoFocus: true,
+                                           close: function(event, ui){
+                                                if (($.inArray($(this).val(), source)) === -1){
+                                                $(this).val("");
+                                                }
+                                           },
+                                           minLength: 0
+                                      }).on('keyup', function(event){
+                var valid = false;
+                //http://stackoverflow.com/questions/6373512/source-only-allowed-values-in-jquery-ui-autocomplete-plugin
+                //for limiting allowed values
+                for(index in source){
+                    $(auto).val().toLowerCase();
+                    if(keyUpData[index].toLowerCase().match($(auto).val().toLowerCase())){
+                        valid = true;
+                    }
                 }
-            }
+                if (!valid){
+                    $(this).val(previousValue);
+                } else {
+                    previousValue = $(this).val()
+                }
+            }); //end autocomplete creation
 
-            if (!valid){
-                $(this).val(previousValue);
-            } else {
-                previousValue = $(this).val()
-            }
-        }); //end autocomplete creation
 
-        //set up click handller to display activity info
-        $('.activity').on('click', function(){
-            var activity = $(this).data('activity');
-            $('.activity-info #activity-title').text(activity.title);
+            });//end build autocomplete/ajax done
+        });//end each
+    }; //end buildTableSchedule
 
-            var act_date = new Date(activity.time);
-            console.log('utc string');
-            console.log(act_date.toUTCString());
-            $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.getHours() + ':00');
-            console.log("activity is: ");
-            console.log(activity);
-            console.log(activity._id);
+    //set up click handler to display activity info
+    $('table').on('click', '.activity', function(){
+        var activity = $(this).data('activity');
+        $('.activity-info #activity-title').text(activity.title);
 
-            if(activity.employees){
-                $('.activity-info #num-employees').text(activity.employees.length);
-                activity.employees.forEach(function(employee){
-                    $('.activity-info #employees-working').append($('<li>').text(employee.name));
-                });
-            } else {
-            $('.activity-info #employees-working').hide();
-            $('.activity-info #num-employees').text('0');}
+        var act_date = new Date(activity.time);
+        $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.myTimeString());
+        $('#employees-working').empty();
+        if(activity.employees.length){
+            $('.activity-info #num-employees').text(activity.employees.length);
+            //get employee objects working from ids of activity.employees array
+            $.ajax({
+                url: '/api/employees/ids',
+                type: "PUT",
+                data: JSON.stringify({employee_ids: activity.employees}),
+                contentType: 'application/JSON'
+            }).done(function(employees, textStatus, jqXHR){
+                    //attach names to employees working
+
+                    employees.forEach(function(employee){
+                        $('#employees-working').append($('<li>').text(employee.name).
+                            data('employee', employee)); //get employee name for later
+                    });
+            }).fail(alert.bind(null, 'error getting employee objects of activity'));
+                } else { //no employees working activity
+                    $('.activity-info #employees-working').hide();
+                    $('.activity-info #num-employees').text('0');
+                }
             $('.selected').removeClass('selected');
             $(this).addClass('selected');
-
-        });
-    });//end build autocomplete
-
-    }; //end buildTableSchedule
+            });
 
     $('#session-select').trigger('change');
 

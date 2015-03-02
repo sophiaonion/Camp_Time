@@ -1,5 +1,26 @@
+.activity-info {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.confirm-delete {
+    display: inline-block;
+    visibility: hidden;
+}
+
 .activity-info #employees-working{
-    display: none;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+#employees-working li {
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.activity-info p {
+    margin: 3px;
 }
 
 .activity {

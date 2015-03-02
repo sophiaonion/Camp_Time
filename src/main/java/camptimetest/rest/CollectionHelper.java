@@ -1,6 +1,9 @@
 package camptimetest.rest;
 
 import org.bson.types.ObjectId;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 
@@ -21,4 +24,11 @@ public class CollectionHelper {
 
         return objectIds;
     }
+    //returns string query in correct format YYYY-mm-ddTHH:mm:ssZ
+    public static String getDateQuery(DateTime date){
+        DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        String dateString = date.toString(fmt);
+        return String.format("{time: {$date: \"%s\"}}", dateString);
+    }
+
 }

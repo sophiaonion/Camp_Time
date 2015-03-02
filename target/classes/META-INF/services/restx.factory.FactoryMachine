@@ -1,4 +1,5 @@
 camptimetest.AppModuleFactoryMachine
+camptimetest.domain.MyUserRepositoryFactoryMachine
 camptimetest.rest.ActivityResourceFactoryMachine
 camptimetest.rest.ActivityResourceRouterFactoryMachine
 camptimetest.rest.CampSessionResourceFactoryMachine
