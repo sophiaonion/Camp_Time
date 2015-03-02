@@ -225,6 +225,7 @@ public class StaffConstraintChecker {
                 //pick some random stuff
                 if (!checkSufficientlyStaffed(a)) {
                     System.out.println("not fixed, need assign whoever");
+
                 }
             }
         }

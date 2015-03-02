@@ -59,9 +59,13 @@ var main = function(campers){
             data: JSON.stringify(data),
             contentType: 'application/JSON',
             success: function(data){
-                alert('camper registered for this session');
-                window.location.replace('home_page_test.html');
-            }
+                 if (confirm("Registration Successful: Update schedule now?") == true) {
+                     window.location.replace('trigger_update.html');
+                 } else {
+                     window.location.replace('home_page_test.html');
+                 }
+                     window.location.replace('home_page_test.html');
+            },
         });
 
     }); //end submit-registration click handler

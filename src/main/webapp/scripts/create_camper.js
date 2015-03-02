@@ -13,7 +13,7 @@ var main = function(campers){
         data: JSON.stringify(data),
         contentType: 'application/JSON',
         success: function(data){
-             alert('Camper Registered.');
+             alert('Camper Created.');
 
              console.log("Before get current user's role");
              //link the camper with this customer account

@@ -196,8 +196,12 @@ var tableBuilt = false;
             data: JSON.stringify(data),
             contentType: 'application/JSON',
             success: function(data){
-                alert('Session Created');
-                window.location.replace('home_page_test.html');
+                 if (confirm("Session Created: Update schedule now?") == true) {
+                     window.location.replace('trigger_update.html');
+                 } else {
+                     window.location.replace('home_page_test.html');
+                 }
+                     window.location.replace('home_page_test.html');
             },
             error: function(request, status, error){
                 alert(error);

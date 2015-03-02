@@ -41,8 +41,12 @@ var main = function(employees){
             data: JSON.stringify(data),
             contentType: 'application/JSON',
             success: function(data){
-                alert('Successfully deleted employee');
-                window.location.replace('home_page_test.html');
+                 if (confirm("Employee Deleted: Update schedule now?") == true) {
+                     window.location.replace('trigger_update.html');
+                 } else {
+                     window.location.replace('home_page_test.html');
+                 }
+                     window.location.replace('home_page_test.html');
             },
             error: function(request, status, error){
                 alert(error);
