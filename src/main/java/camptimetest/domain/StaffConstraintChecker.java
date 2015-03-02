@@ -524,8 +524,10 @@ public class StaffConstraintChecker {
         boolean[] hours = new boolean[25];//index in array corresponds to hour of day
         for(int i=0; i<a.size(); i++) {
             //fill in all the array such that on given day, hours during which employee is already working are marked true
-            if (day.getDayOfYear() == activities.get().findOne("{_id: #}", new ObjectId(a.get(i))).projection("{time: 1}").as(DateTime.class).getDayOfYear())
-                hours[activities.get().findOne("{_id: #}", a.get(i)).projection("{time: 1}").as(DateTime.class).getHourOfDay()] = true;
+           Activity test =  activities.get().findOne("{_id: #}", new ObjectId(a.get(i))).as(Activity.class);
+
+            if (day.getDayOfYear() == activities.get().findOne("{_id: #}", new ObjectId(a.get(i))).as(Activity.class).getTime().getDayOfYear())
+                hours[activities.get().findOne("{_id: #}", new ObjectId(a.get(i))).as(Activity.class).getTime().getHourOfDay()] = true;
         }
 
         //if adding hypothetical hour

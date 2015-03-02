@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/ActivityResource.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/ActivityResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/ActivityResource.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/ActivityResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -38,8 +33,8 @@
       <file leaf-file-name="StaffConstraintChecker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29075631" vertical-offset="5677" max-vertical-offset="6645">
-              <caret line="526" column="0" selection-start-line="526" selection-start-column="0" selection-end-line="526" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.064665124" vertical-offset="5807" max-vertical-offset="6675">
+              <caret line="525" column="122" selection-start-line="525" selection-start-column="122" selection-end-line="525" selection-end-column="122" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#StaffConstraintChecker#0" expanded="false" />
@@ -48,45 +43,6 @@
                 <element signature="method#checkSufficientlyStaffed#0;class#StaffConstraintChecker#0" expanded="false" />
                 <element signature="method#checkHas24HourBreakOnDate#0;class#StaffConstraintChecker#0" expanded="false" />
                 <element signature="method#checkConflicts#0;class#StaffConstraintChecker#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivityResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1080">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CampSessionResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="2460">
-              <caret line="108" column="42" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConstraintChecker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2729" max-vertical-offset="5970">
-              <caret line="220" column="29" selection-start-line="220" selection-start-column="29" selection-end-line="220" selection-end-column="29" />
-              <folding>
-                <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="e#3553#3574#0" expanded="true" />
-                <element signature="e#3669#3679#0" expanded="true" />
-                <element signature="e#6995#7005#0" expanded="true" />
-                <element signature="e#17726#17736#0" expanded="true" />
-                <element signature="e#18169#18178#0" expanded="true" />
-                <element signature="e#20949#20959#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,8 +105,8 @@
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/AppServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
       </list>
     </option>
   </component>
@@ -782,7 +738,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425260114887</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fixed cc actually now? hopefully">
+      <created>1425266283890</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1425266283890</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -816,7 +778,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32798833" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39014646" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3899614" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21369863" sideWeight="0.50082374" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3783784" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -826,8 +788,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19789983" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18146718" sideWeight="0.49917626" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2003231" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30759332" sideWeight="0.49917626" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30466473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -876,7 +838,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="create camper" />
     <MESSAGE value="hard coded register camper page" />
     <MESSAGE value="create camper works, register camp maybe?" />
     <MESSAGE value="sequence of session creation -&gt; camper creation -&gt; register camper now works&#10;&#10;changed Calendar class to date, Jackson can't map calendar objects apparently&#10;&#10;fixed some attribute name mismatches -- attribute names of json sent over must match java class attribute names exactly" />
@@ -901,46 +862,23 @@
     <MESSAGE value="scc fixing break checking" />
     <MESSAGE value="fixed cc" />
     <MESSAGE value="kinda working" />
-    <option name="LAST_COMMIT_MESSAGE" value="kinda working" />
+    <MESSAGE value="fixed cc actually now? hopefully" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed cc actually now? hopefully" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java</url>
-          <line>645</line>
+          <line>647</line>
           <properties />
           <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java</url>
-          <line>444</line>
-          <properties />
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
-          <line>366</line>
-          <properties />
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
-          <line>342</line>
-          <properties />
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
-          <line>352</line>
-          <properties />
-          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="82" />
+      <option name="time" value="90" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1226,13 +1164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/restx/restx-core/0.32/restx-core-0.32.jar!/restx/security/RestxSessionCookieFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="2115">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/playground/datetest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
@@ -1282,32 +1213,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1080">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="2460">
-          <caret line="108" column="42" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2729" max-vertical-offset="5970">
-          <caret line="220" column="29" selection-start-line="220" selection-start-column="29" selection-end-line="220" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.7585513" vertical-offset="403" max-vertical-offset="900">
+          <caret line="268" column="0" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
           <folding>
             <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="e#3553#3574#0" expanded="true" />
             <element signature="e#3669#3679#0" expanded="true" />
             <element signature="e#6995#7005#0" expanded="true" />
+            <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#fixConflicts#0;class#ConstraintChecker#0" expanded="false" />
             <element signature="e#17726#17736#0" expanded="true" />
             <element signature="e#18169#18178#0" expanded="true" />
             <element signature="e#20949#20959#0" expanded="true" />
@@ -1315,10 +1236,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12072434" vertical-offset="1305" max-vertical-offset="2460">
+          <caret line="108" column="42" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
+          <folding>
+            <element signature="e#4659#4689#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.018108651" vertical-offset="504" max-vertical-offset="1080">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/restx/restx-core/0.32/restx-core-0.32.jar!/restx/security/RestxSessionCookieFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="344" max-vertical-offset="2115">
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29075631" vertical-offset="5677" max-vertical-offset="6645">
-          <caret line="526" column="0" selection-start-line="526" selection-start-column="0" selection-end-line="526" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.064665124" vertical-offset="5807" max-vertical-offset="6675">
+          <caret line="525" column="122" selection-start-line="525" selection-start-column="122" selection-end-line="525" selection-end-column="122" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#StaffConstraintChecker#0" expanded="false" />
