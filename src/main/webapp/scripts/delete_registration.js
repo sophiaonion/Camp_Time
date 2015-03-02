@@ -63,8 +63,12 @@ var main = function(campers){
             data: JSON.stringify(data),
             contentType: 'application/JSON',
             success: function(data){
-                alert('Successfully delete registration');
-                window.location.replace('home_page_test.html');
+                 if (confirm("Registration Deleted: Update schedule now?") == true) {
+                     window.location.replace('trigger_update.html');
+                 } else {
+                     window.location.replace('home_page_test.html');
+                 }
+                     window.location.replace('home_page_test.html');
             },
             error: function(request, status, error){
                 alert(error);

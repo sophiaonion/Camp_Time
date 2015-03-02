@@ -13,6 +13,7 @@ public class SessionRegistration {
     private String key;
     private String camperID;
     private String sessionID;
+    private boolean approved;
 
 
     public SessionRegistration(String camperID, String sessionID){
@@ -49,4 +50,11 @@ public class SessionRegistration {
         return this;
     }
 
+    public boolean isApproved() {
+        return approved;
+    }
+
+    public void setApproved(boolean approved) {
+        this.approved = approved;
+    }
 }
