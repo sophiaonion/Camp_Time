@@ -1,5 +1,5 @@
 $('.customer-section').hide();
-var main = function(campers, if_customer){
+var main = function(campers, if_customer, userId){
 
     //if it's customer, then give customer the option to add /delete a camper
         if (if_customer){
@@ -26,28 +26,46 @@ var main = function(campers, if_customer){
 
     ////////////////////////add /delete a camper
     $('#create-camper').click(function(event){
-        window.location.href = "create_camper.html"; //todo need to differentiate create camper for admin vs for customer
+        window.location.href = "create_camper.html";
     });
 
     $('#delete-camper').click(function(event){
         var camper_index=$('#select-camper').val();
         var camper=campers[camper_index];
-        $.ajax({
-            type: 'DELETE',
-            url: '/api/campers/' + camper.camperID,
-            data: JSON.stringify(data),
-            contentType: 'application/JSON',
-            success: function(data){
-                alert('Successfully deleted camper');
-                location.reload();
-            },
-            error: function(request, status, error){
-                alert(error);
-            }
+        console.log("user ID is"+userId);
+        console.log("camper ID is"+camper._id);
+        $.when(
+            $.ajax({
+                        type: 'PUT',
+                        url: '/api/users/campers/remove',
+                        data: JSON.stringify({
+                          user_id:userId,
+                          camper_id:camper._id
+                        }),
+                        contentType: 'application/JSON',
+                        success: function(data){
+                            console.log('Successfully disassociate camper from user');
+                        },
+                        error: function(request, status, error){
+                            alert(error);
+                        }
+                    })
+        ).then(function() {
+          console.log("delete camper from database");
+                  $.ajax({
+                      type: 'DELETE',
+                      url: '/api/campers/' + camper._id,
+                      contentType: 'application/JSON',
+                      success: function(data){
+                          alert('Successfully delete camper');
+                          location.reload();
+                      },
+                      error: function(request, status, error){
+                          alert(error);
+                      }
+                  });
         });
-
     });
-    ////////////////////////////////////
 
      $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
@@ -75,7 +93,7 @@ $(document).ready(function(){
                         contentType: 'application/JSON',
                         success: function(result){
                             console.log(result);
-                            main(result, true);
+                            main(result, true, userId);
                         },
                         error: function(request, status, error){
                             console.log(request);
@@ -92,26 +110,23 @@ $(document).ready(function(){
              if(role == "counselor"){ //find out which session is counselor working with (first get),
              //use sessionId to request campers via camper resource (second get)
              var camperList;
+
               $.get('/api/campsessions/'+userID, function(sessions){
+                    $.when(
+                        sessions.forEach(function(session){
 
-                    sessions.forEach(function(session){
+                            $.get('/api/campers/'+session.sessionID, function(campers){
+                               camperList.add(campers);
+                            });
 
-                        $.get('/api/campers/'+session.sessionID, function(campers){
-                           camperList.add(campers);
                         });
 
-                    });
+                    ).then(
+                        main(camperList, false);
+                    );
 
-                    main(camperList, false);
               });
-
-
              }
-
-
-
-
-        //todo what if admin????!!!!!!!
         });
 
 

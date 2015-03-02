@@ -52,6 +52,7 @@ public class UserResource {
         return myUserRepository.findAllUsers();
     }
 
+    @PermitAll
     @POST("/users") //user repository handles hashing
     public User createUser(User user)
     {
