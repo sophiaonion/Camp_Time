@@ -27,6 +27,9 @@ public class StaffConstraintChecker {
         this.campsessions = campsessions;
     }
 
+
+
+
     //runs fixConflicts() as long as there are conflicts
     public JongoCollection update() {
         System.out.println("updating now...");
@@ -41,6 +44,9 @@ public class StaffConstraintChecker {
         if(i>0) System.out.println("still conflicts");
         return this.activities;
     }//end update()
+
+
+
 
     //assigns employees to activities that are insufficiently staffed and then heuristically repairs resulting conflicts
     private void fixConflicts(int type) {
@@ -225,6 +231,9 @@ public class StaffConstraintChecker {
         }//end assign employees to unemployed activities
     }//end fixConflicts()
 
+
+
+
     //returns true if given activity is sufficiently staffed according to rules & regulations
     private boolean checkSufficientlyStaffed(Activity a) {
         //get necessary facts to use for the checking of constraints:
@@ -342,6 +351,10 @@ public class StaffConstraintChecker {
             }//end check for required certifications
              return true;
     }//end checkSufficientlyStaffed()
+
+
+
+
 
     //finds available employee (if there is one, if not?? wat do)
     private String findEmployeeToWork(Activity a, String cert, String session, boolean matureLady, boolean conflictOK) {
@@ -497,6 +510,11 @@ public class StaffConstraintChecker {
         return "none";
     }//end findEmployeeToWork()
 
+
+
+
+
+
     //for given date, returns true if employee needs 2 hours off then for break,
     //can also get result for what would happen if added a specific hour (ifAdd)
     private boolean checkIfNeedsTwoHourBreakOnDate(Employee e, DateTime day, int ifAdd) {
@@ -518,6 +536,11 @@ public class StaffConstraintChecker {
         }
         return false;
     }//end checkNeedsTwoHour()
+
+
+
+
+
 
     //for given date, returns true if employee has their 24 hour break on that day and thus cannot work
     private boolean checkHas24HourBreakOnDate(Employee e, DateTime day) {
