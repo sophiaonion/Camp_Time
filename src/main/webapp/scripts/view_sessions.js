@@ -7,8 +7,6 @@ var main = function(camp_sessions){
             console.log("third");
              $('.activity-info').hide();
         }
-
-
     });
 
     Date.prototype.myToString = function(){

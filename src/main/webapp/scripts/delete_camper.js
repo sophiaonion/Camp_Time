@@ -30,7 +30,7 @@ var main = function(campers){
                 data: JSON.stringify(data),
                 contentType: 'application/JSON',
                 success: function(data){
-                    alert('Successfully deleted camper account');
+                    alert('Successfully delete camper!');
                     window.location.replace('home_page_test.html');
                 },
                 error: function(request, status, error){

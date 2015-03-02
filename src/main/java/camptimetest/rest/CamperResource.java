@@ -58,7 +58,7 @@ public class CamperResource {
         return campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
     }
 
-    @RolesAllowed({ADMIN,CUSTOMER}) //TODO this should be working, need to test
+    @RolesAllowed({ADMIN,CUSTOMER})
     @GET("/campers/customer/{customerID}") //get Campers by user
     public Iterable<Camper> getCampersforCustomer(String customerID){
         return campers.get().find("{user_id: #}", customerID).as(Camper.class);
@@ -95,7 +95,8 @@ public class CamperResource {
     @DELETE("/campers/{camperID}")
     public Status deleteCamper(String camperID){
         registrations.get().remove("{camperID: #}", camperID);
-        campers.get().remove("{camperID: #}", camperID);
+        ObjectId id= new ObjectId(camperID);
+        campers.get().remove("{_id: #}", id);
 
         return Status.of("deleted");
 

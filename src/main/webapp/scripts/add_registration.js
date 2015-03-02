@@ -74,9 +74,9 @@ var main = function(campers){
 
 $(document).ready(function(){
         $.get('/api/login/current/user', function(current){
-           user=current;
+            console.log(current._id);
 
-           $.get('api/campers/customer/'+current.userID, function(campers){
+           $.get('api/campers/customer/'+current._id, function(campers){
                        console.log("Campers:"+ campers);
                        main(campers);
                    });
