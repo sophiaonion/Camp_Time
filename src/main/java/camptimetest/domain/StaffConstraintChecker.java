@@ -62,7 +62,7 @@ public class StaffConstraintChecker {
                 String aStringID = String.valueOf(actList.get(i).get("_id"));
                 Activity a = activities.get().findOne("{_id: #}", new ObjectId(aStringID)).as(Activity.class);//current activity
                 ObjectId campSessionID = new ObjectId(campsessions.get().findOne("{name: # }", String.valueOf(a.getSession())).as(CampSession.class).getSessionID());//campsession id
-                int numCampers = (int) registrations.get().count("{sessionID: #}", campSessionID); //get number of campers
+                int numCampers = (int) registrations.get().count("{sessionID: #, approved: true}", campSessionID); //get number of campers
                 String activityArea = String.valueOf(a.getActivityArea());//get location of activity
                 ArrayList<String> e = new ArrayList<String>(a.getEmployees());//get number of employees working session
                 int numStaff = e.size();
@@ -244,7 +244,7 @@ public class StaffConstraintChecker {
             String session = String.valueOf(a.getSession()); //get session name
             String sessionID = campsessions.get().findOne("{name: # }", session).as(CampSession.class).getSessionID();
             ObjectId ID = new ObjectId(sessionID);
-            int numCampers = (int) registrations.get().count("{sessionID: #}", ID); //get session id from that
+            int numCampers = (int) registrations.get().count("{sessionID: #, approved: true}", ID); //get session id from that
 
             //get age of campers in session
             String age = String.valueOf(campsessions.get().findOne("{_id: # }", ID).as(CampSession.class).getAgeGroup());
