@@ -57,6 +57,7 @@ public class Activity {
     }
 
     public Activity addEmployees(ArrayList<String> employeeIds){
+        System.out.println(employeeIds.get(0));
         employees.addAll(employeeIds);
         return this;
     }

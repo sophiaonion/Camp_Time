@@ -107,6 +107,7 @@ public class CampSessionResource {
             newCS.setName(String.valueOf(info.get("name")));
             newCS.setAgeGroup(String.valueOf(info.get("ageGroup")));
             newCS.setEnrollmentCap(Integer.valueOf(String.valueOf(info.get("enrollmentCap"))));
+            newCS.setCounselorIDs((ArrayList<String>) info.get("counselors"));
 
             //make activitities
             ArrayList<Activity> activityList = new ArrayList<Activity>();
@@ -114,7 +115,7 @@ public class CampSessionResource {
             @SuppressWarnings("unchecked")
             ArrayList< Map<String, String> > activityInfo = (ArrayList< Map<String, String> >) info.get("activities");
             for(int i=0; i<activityInfo.size(); i++) {
-                if ( !activityInfo.get(i).get("title").equals("n/a")) {//activity is filled out
+                if ( true) {//activity is filled out
                     Activity a = new Activity();
                     System.out.println("title: " + activityInfo.get(i).get("title"));
                     String title = String.valueOf(activityInfo.get(i).get("title"));
@@ -139,10 +140,10 @@ public class CampSessionResource {
                         if (activityInfo.get(i).get("time") != null) { //if the activity were required time field would be null
                             String[] timesplit = (activityInfo.get(i).get("time")).toString().split(":");//just get hour number from given time string
 
-
                             DateTime day = new DateTime(start.plusDays(Integer.parseInt(activityInfo.get(i).get("day"))).withZone(DateTimeZone.UTC));//make day be startDate plus day number in session
                             //hours, minutes, seconds, milli
                             DateTime time1 = new DateTime(day.withTime(Integer.parseInt(timesplit[0]), 0, 0, 0).withZone(DateTimeZone.UTC));//set time to given time
+                           System.out.print("adding fixed time: "+time1);
                             a.setTime(time1);
                             //a.setIsSet(false);
                             a.setFixed(true);//activity is fixed time
