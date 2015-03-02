@@ -58,7 +58,7 @@ public class StaffConstraintChecker {
         if (type==1 || type==2) {//have un(der)employed activities todo CHANGE BACK TO WHILE
 
             //add staff as required
-            for(int i=0; i<actList.size(); i++) {//for each activity
+            for (int i = 0; i < actList.size(); i++) {//for each activity
                 String aStringID = String.valueOf(actList.get(i).get("_id"));
                 Activity a = activities.get().findOne("{_id: #}", new ObjectId(aStringID)).as(Activity.class);//current activity
                 ObjectId campSessionID = new ObjectId(campsessions.get().findOne("{name: # }", String.valueOf(a.getSession())).as(CampSession.class).getSessionID());//campsession id
@@ -67,6 +67,7 @@ public class StaffConstraintChecker {
                 ArrayList<String> e = new ArrayList<String>(a.getEmployees());//get number of employees working session
                 int numStaff = e.size();
 
+                if(!a.getTitle().equals("n/a")) {
                 //add staff with required certifications
                 if (a.getActivityArea() != null) {
                     int numLifeGuards = 0;
@@ -74,14 +75,13 @@ public class StaffConstraintChecker {
 
                     //find what certifications activity has already
                     for (int j = 0; j < e.size(); j++) {//for each employee working the activity
-                        if(employees.get().findOne("{_id: #}", new ObjectId(e.get(j))).as(Employee.class).getCertifications() != null) {//if that employee has certifications
-                            ArrayList<String> certs = new ArrayList<String>(employees.get().findOne("{_id: #}", new ObjectId(e.get(j))).as(Employee.class).getCertifications() );//
+                        if (employees.get().findOne("{_id: #}", new ObjectId(e.get(j))).as(Employee.class).getCertifications() != null) {//if that employee has certifications
+                            ArrayList<String> certs = new ArrayList<String>(employees.get().findOne("{_id: #}", new ObjectId(e.get(j))).as(Employee.class).getCertifications());//
                             for (int k = 0; k < certs.size(); k++) {
                                 if (certs.get(k).equals("lifeguard")) numLifeGuards++;
                                 if (certs.get(k).equals("art")) {
                                     hasArt = true;
-                                }else
-                                if (certs.get(k).equals("nature")) hasNature = true;
+                                } else if (certs.get(k).equals("nature")) hasNature = true;
                                 if (certs.get(k).equals("archery")) hasArchery = true;
                                 if (certs.get(k).equals("store")) hasStore = true;
                                 if (certs.get(k).equals("drive")) canDrive = true;
@@ -95,8 +95,8 @@ public class StaffConstraintChecker {
                     //adds employees with required certifications to session until acceptable
                     switch (activityArea) {//todo make compact and get rid of repitition
                         case "pool": //todo check for infinite looping in case of not enough staff for now
-                            int count=0;
-                            while (count<100000000 && (((numCampers + numStaff) / numLifeGuards) < 25)) {
+                            int count = 0;
+                            while (count < 100000000 && (((numCampers + numStaff) / numLifeGuards) < 25)) {
                                 //save employee to activity and activity to employee
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 emps.add(eID);
@@ -113,8 +113,8 @@ public class StaffConstraintChecker {
                             }
                             break;
                         case "canoeing":
-                            int count2=0;
-                            while (count2<100000000 && (((numCampers + numStaff) / numLifeGuards) < 25)) {
+                            int count2 = 0;
+                            while (count2 < 100000000 && (((numCampers + numStaff) / numLifeGuards) < 25)) {
                                 //save employee to activity and activity to employee
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 emps.add(eID);
@@ -188,7 +188,7 @@ public class StaffConstraintChecker {
                 }
 
                 //add assigned and available counselors to session
-                if(!checkSufficientlyStaffed(a)) {//if that wasn't enough
+                if (!checkSufficientlyStaffed(a)) {//if that wasn't enough
                     ArrayList<String> emps = new ArrayList(activities.get().findOne("{_id: #}", new ObjectId(a.getKey())).as(Activity.class).getEmployees());
                     String counID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     while (!counID.equals("none") && !checkSufficientlyStaffed(a)) {
@@ -204,7 +204,7 @@ public class StaffConstraintChecker {
                 }
 
                 //add admin & spec staff as required for coverage
-                if(!checkSufficientlyStaffed(a)) {
+                if (!checkSufficientlyStaffed(a)) {
                     //based on activity area, add staff with necessary certifications
                     ArrayList<String> emps = new ArrayList(activities.get().findOne("{_id: #}", new ObjectId(a.getKey())).as(Activity.class).getEmployees());
                     //add counselors assigned to session
@@ -223,11 +223,11 @@ public class StaffConstraintChecker {
 
 
                 //pick some random stuff
-                if(!checkSufficientlyStaffed(a)) {
+                if (!checkSufficientlyStaffed(a)) {
                     System.out.println("not fixed, need assign whoever");
                 }
             }
-
+        }
         }//end assign employees to unemployed activities
     }//end fixConflicts()
 
@@ -236,6 +236,8 @@ public class StaffConstraintChecker {
 
     //returns true if given activity is sufficiently staffed according to rules & regulations
     private boolean checkSufficientlyStaffed(Activity a) {
+        if(a.getTitle().equals("n/a"))
+            return true;
         //get necessary facts to use for the checking of constraints:
             //get number of campers in session
             String session = String.valueOf(a.getSession()); //get session name

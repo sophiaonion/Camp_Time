@@ -52,6 +52,7 @@ public class ConstraintChecker {
                 || (activities.get().count( "{time: null }" ) != 0) ) {//if time is set or not
             System.out.println("type 1 conflict found");
             return 1;
+
         }
 
         for(int i=0; i<list.size(); i++) {//for each activity
@@ -59,9 +60,8 @@ public class ConstraintChecker {
                 if(i!=j) {//make sure not comparing same activity
                     //if same session in two different places at same time
                     if( list.get(i).get("session").equals(list.get(j).get("session"))
-                            && ( new DateTime(list.get(i).get("time")) ).equals(new DateTime(list.get(j).get("time"))))
-                         //   && (((list.get(i).get("activityArea") == null) && (list.get(j).get("activityArea")==null)) || !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea")))) )
-                    {
+                            && ( new DateTime(list.get(i).get("time")) ).equals(new DateTime(list.get(j).get("time")))) {
+                          //  && !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea"))) ) {
                         System.out.println("type 2 conflict found");
                         return 2;
                     }//end two places at once conflict
@@ -103,13 +103,12 @@ public class ConstraintChecker {
                 DateTime time = new DateTime( list.get(i).get("time") );
                 newDomain.add(time);//list of available times contains only the time it is set at
                 String area = String.valueOf(list.get(i).get("activityArea"));
+                if(area != null)
                 takenAreas.add(time.toString() + area);
                 domains.set(i, new ArrayList<DateTime>(newDomain));//add to domains arraylist
-                System.out.println("final domain size fixed: "+newDomain.size());
             }
             newDomain.clear();
         }
-
 
         //set up domain for all non-set time activities: domain will be all times that are currently not filled (& also times where not already doing something???)
         for(int i=0; i<list.size(); i++) {
@@ -120,6 +119,7 @@ public class ConstraintChecker {
                 DateTime end = new DateTime((campSessions.get().findOne("{name: \"" + list.get(i).get("session") + "\" }").as(CampSession.class)).getEndDate());
                 DateTime nextTime = new DateTime(start);
 
+
                 //calculate all possible time slots and put into domain for now
                 while (nextTime.getDayOfMonth() != end.plusDays(1).getDayOfMonth()) {//for each day of session
                     nextTime = nextTime.withHourOfDay(0);
@@ -128,7 +128,6 @@ public class ConstraintChecker {
                     }//add all possible hours to possible times list
                     nextTime = nextTime.plusDays(1);
                 }
-                System.out.println("original domain size: "+newDomain.size());
 
                 //take out taken times aka times when another session is already doing this activity
                 for (int j = 0; j < newDomain.size(); j++) {
@@ -138,7 +137,6 @@ public class ConstraintChecker {
                         j--;//decrement because removed one from thingy idk if necessary i can't do math
                     }
                 }//remove times from domain that would place activity in area at same time as another session
-                System.out.println("domain size minus times someone else doing the thing: "+newDomain.size());
 
                 //take out unavailable times aka times when this session is already doing a thing
                 DBCursor cursor2 = activities.get().getDBCollection().find(new BasicDBObject("session", list.get(i).get("session")));
@@ -154,7 +152,6 @@ public class ConstraintChecker {
                         }
                     }
                 }//removes all time slots where activity is already scheduled for this session
-                System.out.println("domain size minus times already doing a thing: "+newDomain.size());
 
                // System.out.println();
                // System.out.println("Resulting domain for:"+ list.get(i).get("title") +"/"+list.get(i).get("session"));
@@ -220,8 +217,8 @@ public class ConstraintChecker {
                 if(i!=j) {//make sure not comparing same activity
                     //if same session in two different places at same time
                     if( list.get(i).get("session").equals(list.get(j).get("session"))
-                            && ( new DateTime(list.get(i).get("time")) ).equals(new DateTime(list.get(j).get("time")))
-                           /* && !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea")))*/ ) {
+                            && ( new DateTime(list.get(i).get("time")) ).equals(new DateTime(list.get(j).get("time")))){
+                           // && !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea"))) ) {
                         //add conflict to each thing thing only if not fixed time cuz we can't change those anyway
                         if( !((boolean) list.get(i).get("fixed")) ) {
                             int c = numConflicts.get(i);
@@ -289,20 +286,12 @@ public class ConstraintChecker {
                         DateTime start = new DateTime((campSessions.get().findOne("{name: \"" + actArray.get(i).get("session") + "\" }").as(CampSession.class)).getStartDate());
                         DateTime end = new DateTime((campSessions.get().findOne("{name: \"" + actArray.get(i).get("session") + "\" }").as(CampSession.class)).getEndDate());
 
-                        //pick day
-                        int days = end.getDayOfYear() - start.getDayOfYear();
-                        int randomDay = 0;
-                        if(days >0) {
-                            Random rand1 = new Random();
-                             randomDay = rand1.nextInt(days);
-                        }
+                        //TODO just doing first day possible for now, that's no good - randomize day as well as time
 
-                        //set to random hour of picked day
+                        //set to random time and fix later
                         Random rand = new Random();
-                        int randomHour = rand.nextInt((22 - 8)) + 8;
-                        start = start.plusDays(randomDay).withHourOfDay(randomHour);
-
-                        System.out.println("randomly selecting bc no options");
+                        int randomNum = rand.nextInt((22 - 8)) + 8;
+                        start = start.withHourOfDay(randomNum);
                         newDomain.add(new DateTime(start));
                         domains.set(i, new ArrayList<DateTime>(newDomain));
                         newDomain.clear();
@@ -313,11 +302,11 @@ public class ConstraintChecker {
                         if(!((boolean) actArray.get(i).get("isSet"))) {//if activity's time is not yet set
                             DateTime time = new DateTime(domains.get(i).get(0));//time is only available time in domain
 
-                       //     time = time.withZoneRetainFields(DateTimeZone.UTC);
                             //update activity in collection
                             String ID = String.valueOf(actArray.get(i).get("_id"));
                             ObjectId ID2 = new ObjectId(ID);
                             activities.get().update("{_id: #}",ID2).with("{ $set: { isSet:" + true + ", time:\"" + time+ "\" } }");
+
 
                             //update domains of other activities to remove taken time
                             //TODO should only remove if they are the same session?? or same activity??
@@ -363,14 +352,16 @@ public class ConstraintChecker {
             int mostConf = getMostConflicts(numConflicts);
             if(mostConf > 0)
 
-            //    if(checkConflicts() > 0)
+            //todo loops infinitely WHY never update numConclicts duh
             while(numConflicts.get(mostConf) > 0) {//there are conflicts
                 System.out.println("got the most conflicted, it is # "+mostConf+" ya");
 
                 //remove current time from domains
                 DateTime current = new DateTime(actArray.get(mostConf).get("time"));
-                domainsWithSet.remove(current);
-                domainsExcludeSet.remove(current);
+                for(int d=0; d<domainsWithSet.size(); d++)
+                    domainsWithSet.get(d).remove(current);
+                for(int d=0; d<domainsExcludeSet.size(); d++)
+                        domainsExcludeSet.get(d).remove(current);
 
                 //new time
                 DateTime newTime;
@@ -378,7 +369,10 @@ public class ConstraintChecker {
                 //check if any times that don't conflict other set times
                 if(domainsWithSet.get(mostConf).size() > 0) {
                     System.out.println("there's a free spot so putting it there");
-                    newTime = new DateTime(domainsWithSet.get(mostConf).get(0).withZoneRetainFields(DateTimeZone.UTC));
+                    Random rand = new Random();
+                    int randomNum = rand.nextInt(domainsWithSet.get(mostConf).size());
+
+                    newTime = new DateTime(domainsWithSet.get(mostConf).get(randomNum).withZoneRetainFields(DateTimeZone.UTC));
                     System.out.println(newTime+ " is the time");
                 }
                 //otherwise assign to another time (will cause conflicts, but won't conflict with fixed time thingy)
@@ -398,6 +392,7 @@ public class ConstraintChecker {
                 if( !(activities.get().findOne("{_id: # }", ID2).as(Activity.class).getFixed()) ) {
                     activities.get().update("{_id: #}", ID2).with("{ $set: { isSet:" + true + ", time:\"" + newTime + "\" } }");
                 }
+
                 //reset domainsc and stuff
                 DBCursor cursor2 = activities.get().getDBCollection().find();
                 List<DBObject> arrry2 = cursor2.toArray();

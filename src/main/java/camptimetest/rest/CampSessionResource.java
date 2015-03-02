@@ -109,7 +109,7 @@ public class CampSessionResource {
             @SuppressWarnings("unchecked")
             ArrayList< Map<String, String> > activityInfo = (ArrayList< Map<String, String> >) info.get("activities");
             for(int i=0; i<activityInfo.size(); i++) {
-                if ( !activityInfo.get(i).get("title").equals("n/a")) {//activity is filled out
+                if ( true) {//activity is filled out
                     Activity a = new Activity();
                     System.out.println("title: " + activityInfo.get(i).get("title"));
                     String title = String.valueOf(activityInfo.get(i).get("title"));
