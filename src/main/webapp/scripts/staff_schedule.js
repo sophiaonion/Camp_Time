@@ -21,7 +21,6 @@ var main = function(){
     }
 
     console.log("try to get current role");
-    //get the current role ??????????!!!!!!!!!!! it works.....but is this a good method????
     $.get('/api/role', function(role){
          console.log(role);
          role = role.replace(/\s+/g, '');

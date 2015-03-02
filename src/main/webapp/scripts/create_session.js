@@ -1,4 +1,13 @@
-var main = function(){//get the format we want and correct time zone for date String
+var main = function(employees){//get the format we want and correct time zone for date String
+
+    //counselor selection
+    employees.forEach(function(value){
+        if(value.job == "counselor") {
+        var emp = $('<option>').text(value.name).val(value._id);
+        $('.available-emp').append(emp);
+        }
+    });
+
 Date.prototype.myToString = function(){
     var utcDate = this.toUTCString(); //returns correct date as Day, Date Month Year time
     utcDate = utcDate.slice(0, utcDate.indexOf('2015') - 1);
@@ -99,6 +108,19 @@ var tableBuilt = false;
              });
         });
 
+    //add counselors to session
+    $('.add-counselor').click(function(){
+            $('.available-emp option:selected').each( function() {
+                    $('.working-emp').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
+            });
+        });
+
+    $('.remove-counselor').click(function(){
+        $('.working-emp option:selected').each( function() {
+            $(this).remove();
+        });
+    });
+
 
     //on submission, create fixed-time activities (and also required activities?)
     $('#create-session').on('click', function(){
@@ -116,6 +138,7 @@ var tableBuilt = false;
 
         //list of activities
         var activities = [];
+        var counselors = [];
 
         //puts given activities into list
         var getCalendar = function(){
@@ -147,6 +170,10 @@ var tableBuilt = false;
             $( "#required-activities option" ).each(function( index ) {
                     activities.push(new activity($(this).text(), null, null));
             });
+
+            $( ".working-emp option" ).each(function( index ) {
+                   counselors.push($(this).val());
+            });
         };
 
         getCalendar();
@@ -157,6 +184,7 @@ var tableBuilt = false;
             startDate: $('#start-date').val(),
             endDate: $('#end-date').val(),
             activities: activities,
+            counselors: counselors,
             name: $('#session-name').val(),
             ageGroup: $('#age').val(),
             enrollmentCap: $('#enroll-cap').val(),
@@ -183,5 +211,10 @@ var tableBuilt = false;
     });
 };
 
+
 //eventually get campers and sessions and pass to main function
-$(document).ready(main);
+$(document).ready(function(){
+       $.get('api/employees', function(employees){
+            main(employees);
+        });
+});
