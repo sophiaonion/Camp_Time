@@ -8,6 +8,7 @@ import restx.security.BCryptCredentialsStrategy;
 import restx.security.RestxPrincipal;
 
 import javax.inject.Named;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -21,6 +22,7 @@ public class User implements RestxPrincipal {
     //still have to have some designated id field to use though
     private String password;
     private Collection<String> roles;
+    private ArrayList<String> campers = new ArrayList<>();
 
     public User setUserID(final String userID){
         this.userID = userID;
@@ -60,14 +62,29 @@ public class User implements RestxPrincipal {
         return this;
     }
 
-//    public String getUsertype(){
-//        return usertype;
-//    }
-//
-//    public User setUsertype(String usertype){
-//        this.usertype = usertype;
-//        return this;
-//    }
+    public ArrayList<String> getCampers() {
+        return campers;
+    }
+
+    public void setCampers(ArrayList<String> campers) { this.campers = campers;
+    }
+
+    public User addCamper(String objectId){//must be object id of activity
+
+        this.campers.add(objectId);
+        return this;
+    }
+
+    public User addCampers(ArrayList<String> campersIds){
+        campers.addAll(campersIds);
+        return this;
+    }
+
+    public User removeCamper(String objectId){//must be object id of activity
+
+        this.campers.remove(objectId);
+        return this;
+    }
 
     @Override @JsonIgnore //won't try to convert to property of json object
     public ImmutableSet<String> getPrincipalRoles() {

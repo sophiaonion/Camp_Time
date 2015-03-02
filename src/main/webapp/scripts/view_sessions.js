@@ -1,6 +1,6 @@
 var main = function(camp_sessions){
 
-    $.get('/api/role', function(role){
+    $.get('/api/login/role', function(role){
         role = role.replace(/\s+/g, '');
 
         if (role == "customer"){

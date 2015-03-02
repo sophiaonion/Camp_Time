@@ -1,13 +1,14 @@
 package camptimetest.rest;
 
 import camptimetest.AppModule;
+import camptimetest.domain.Activity;
+import camptimetest.domain.Camper;
+import camptimetest.domain.Employee;
 import camptimetest.domain.User;
+import org.bson.types.ObjectId;
 import org.eclipse.jetty.http.HttpStatus;
 import restx.Status;
-import restx.annotations.DELETE;
-import restx.annotations.GET;
-import restx.annotations.POST;
-import restx.annotations.RestxResource;
+import restx.annotations.*;
 import restx.exceptions.RestxErrors;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
@@ -19,6 +20,7 @@ import com.google.common.base.Optional;
 
 import javax.inject.Named;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by sophiawang on 2/7/15.
@@ -33,13 +35,16 @@ public class UserResource {
     //@Named designates which collection to connect to in database whose name is specified in AppModule
     private final String adminPasswordHash;
     private CredentialsStrategy crypper;
+    private final JongoCollection campers;
 
     public UserResource(MyUserRepository myUserRepository,
                         @Named("credentialsStrategy")CredentialsStrategy credentialsStrategy,
-                        @Named("restx.admin.passwordHash") String adminPasswordHash) {
+                        @Named("restx.admin.passwordHash") String adminPasswordHash,
+                        @Named("campers") JongoCollection campers) {
         this.myUserRepository = myUserRepository;
         this.adminPasswordHash = adminPasswordHash;
         this.crypper = credentialsStrategy;
+        this.campers= campers;
     }
 
     @GET("/users")
@@ -47,7 +52,6 @@ public class UserResource {
         return myUserRepository.findAllUsers();
     }
 
-    //@RolesAllowed(ADMIN)
     @POST("/users") //user repository handles hashing
     public User createUser(User user)
     {
@@ -101,10 +105,54 @@ public class UserResource {
     }
 
     @PermitAll
-    @GET("/role")
+    @GET("/login/current/user")
+    public User getUser(){
+        return AppModule.currentUser();
+    }
+
+    @PermitAll
+    @GET("/login/role")
     public String getUserRole(){
         return AppModule.currentUser().getRoles().iterator().next();
     }
 
+    //get sent Map of key value pairs
+    //user_id and camper_id
+    @PUT("/users/campers/add")
+    public String addCamperToUser(Map<String, String> values){
+        String camperId = (String)values.get("camper_id");
+        String userId = (String)values.get("user_id");
+
+        Camper camper = campers.get().find("{_id: #}", new ObjectId(camperId)).as(Camper.class).iterator().next();
+        User user = myUserRepository.findUserByKey(userId).get();
+
+
+        camper.setUser(userId);
+        campers.get().save(camper);
+
+        user.addCamper(camperId);
+        myUserRepository.updateUser(user);
+
+        return "200";
+    }
+
+    //get sent Map of key value pairs
+    //user_id and camper_id
+    @PUT("/users/campers/remove")
+    public String removeCamperFromUser(Map<String, String> values){
+        String camperId = (String)values.get("camper_id");
+        String userId = (String)values.get("user_id");
+
+        Camper camper = campers.get().find("{_id: #}", new ObjectId(camperId)).as(Camper.class).iterator().next();
+        User user = myUserRepository.findUserByKey(userId).get();
+
+        camper.removeUser();
+        campers.get().save(camper);
+
+        user.removeCamper(camperId);
+        myUserRepository.updateUser(user);
+
+        return "200";
+    }
 
 }

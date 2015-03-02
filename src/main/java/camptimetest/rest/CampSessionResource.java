@@ -83,6 +83,12 @@ public class CampSessionResource {
             return campSession.get().find("{ageGroup: #}", agegroup).as(CampSession.class);
         }
 
+        //get the campsessions that this counselor will be work with
+        @GET("/campsessions/{counselorId}") //TODO need to test this
+        public Iterable<CampSession> getCampSessionsOfCounselor(String counselorId){
+            return campSession.get().find("{counselors: #}", counselorId).as(CampSession.class);
+        }
+
 //        @GET("/campsessions/{sessionName}")
 //        public ArrayList<Activity> getActivities(String sessionName){
 //            Iterable<CampSession> itr= campSession.get().findOne("{name: #}", sessionName).as(CampSession.class);

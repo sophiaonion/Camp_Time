@@ -13,7 +13,7 @@ var logout = function(){
                 sessionKey = key;
             },
             error: function(request, status, error){
-                alert(error);
+               // alert(error);
             }
         });
 
@@ -29,7 +29,7 @@ var logout = function(){
                 window.location.href = "index.html";
             },
             error: function(request, status, error){
-                alert(error);
+                //alert(error);
             }
         });
 

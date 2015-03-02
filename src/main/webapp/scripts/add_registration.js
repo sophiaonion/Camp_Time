@@ -73,7 +73,14 @@ var main = function(campers){
 };
 
 $(document).ready(function(){
-       $.get('api/campers', function(campers){
-            main(campers);
+        $.get('/api/login/current/user', function(current){
+           user=current;
+
+           $.get('api/campers/customer/'+current.userID, function(campers){
+                       console.log("Campers:"+ campers);
+                       main(campers);
+                   });
         });
+
+
 });

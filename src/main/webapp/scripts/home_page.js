@@ -5,7 +5,7 @@ var main = function(){
 
     console.log("try to get current role");
 
-    $.get('/api/role', function(role){
+    $.get('/api/login/role', function(role){
          role = role.replace(/\s+/g, ''); //eliminate unnessacery whitespace, from stackoverflow
          if(role == "counselor"){
             console.log("first");
