@@ -1,7 +1,7 @@
 var main = function(employees){
 
     var userRole;
-    $.get('/api/role', function(role){
+    $.get('/api/login/role', function(role){
         userRole=role.replace(/\s+/g, '');
      });
 

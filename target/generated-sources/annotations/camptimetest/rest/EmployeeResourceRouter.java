@@ -36,7 +36,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                     final RestxSecurityManager securityManager) {
         super(
             "default", "EmployeeResourceRouter", new RestxRoute[] {
-        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Employee>>("default#EmployeeResource#findEmployee",
+        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Employee>>("default#EmployeeResource#getEmployees",
                 readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
                 writerRegistry.<java.lang.Iterable<camptimetest.domain.Employee>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Employee.class), Optional.<String>absent()),
                 new StdRestxRequestMatcher("GET", "/employees"),
@@ -44,7 +44,7 @@ public class EmployeeResourceRouter extends RestxRouter {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Employee>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
                 securityManager.check(request, hasRole("admin"));
-                return Optional.of(resource.findEmployee(
+                return Optional.of(resource.getEmployees(
                         
                 ));
             }
@@ -57,7 +57,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.responseClass = "LIST[Employee]";
                 operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "camptimetest.domain.Employee";
-                operation.sourceLocation = "camptimetest.rest.EmployeeResource#findEmployee()";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#getEmployees()";
             }
         },
         new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Activity>>("default#EmployeeResource#getEmployeeActivities",

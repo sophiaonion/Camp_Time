@@ -17,7 +17,7 @@ public class Activity {
     private ArrayList<String> employees = new ArrayList<>();
     private String title;
     private DateTime time;
-    private String session;
+    private String session;//name
     private String activityArea;
     private boolean fixed;//whether time is fixed by admin
     private boolean isSet;//whether time has been set by algorithm

@@ -47,7 +47,7 @@ public class EmployeeResource {
     @RolesAllowed(ADMIN)
     @GET("/employees") //has to return iterable since .find() returns iterable of objects
     //even if only one entry is returned, .findOne will return object not wrapped in iterable
-    public Iterable<Employee> findEmployee() {
+    public Iterable<Employee> getEmployees() {
         return employees.get().find().as(Employee.class);
     }
 

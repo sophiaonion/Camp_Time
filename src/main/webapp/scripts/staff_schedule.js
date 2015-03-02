@@ -21,7 +21,7 @@ var main = function(){
     }
 
     console.log("try to get current role");
-    $.get('/api/role', function(role){
+    $.get('/api/login/role', function(role){
          console.log(role);
          role = role.replace(/\s+/g, '');
          if (role == "admin"){

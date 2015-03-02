@@ -2,8 +2,6 @@ package camptimetest.rest;
 
 import camptimetest.domain.CampSession;
 import camptimetest.domain.Camper;
-import com.google.common.base.Optional;
-import com.mongodb.BasicDBObject;
 import org.bson.types.ObjectId;
 import restx.Status;
 import restx.annotations.*;
@@ -44,19 +42,27 @@ public class CamperResource {
 
     }
 
-    @GET("/campers")
-    public Iterable<Camper> getCampers(){
-        return campers.get().find().as(Camper.class);
+    @RolesAllowed({ADMIN,COUNSELOR})
+    @GET("/campers/{sessionId}") //get Campers by campsession
+    public Iterable<Camper> getCampersforCounselor(String sessionId){
+        Iterable<SessionRegistration> regs= registrations.get().find("{sessionID: #}", sessionId).as(SessionRegistration.class);
+        //ArrayList<Camper> camperList= new ArrayList<>();
+        ArrayList<ObjectId> camperIDs = new ArrayList<>();
+        for (SessionRegistration reg:regs){
+            //String camperId= reg.getCamperID();
+            camperIDs.add(new ObjectId(reg.getCamperID()));
+            //Camper found = campers.get().find("{_id: {$in:#}}", camperId).as(Camper.class).iterator().next();
+            //camperList.add(found);
+        }
+
+        return campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
     }
-//    @GET("/campers/{camperID}")
-//    public Iterable<Camper> getCamper(Optional<String> camperID) {
-//        if(camperID.isPresent()) {
-//            registrations.get().find(new ObjectId(camperID)).as(Camper);
-//        }
-//        else {
-//
-//        }
-//    }
+
+    @RolesAllowed({ADMIN,CUSTOMER}) //TODO this should be working, need to test
+    @GET("/campers/customer/{customerID}") //get Campers by user
+    public Iterable<Camper> getCampersforCustomer(String customerID){
+        return campers.get().find("{user_id: #}", customerID).as(Camper.class);
+    }
 
 
     @GET("/campers/registrations/{camperID}")
@@ -84,6 +90,7 @@ public class CamperResource {
         registrations.get().remove("{camperID:\""+camperID+"\", sessionID:\""+sessionID+"\"}");
         return Status.of("deleted");
     }
+
 
     @DELETE("/campers/{camperID}")
     public Status deleteCamper(String camperID){

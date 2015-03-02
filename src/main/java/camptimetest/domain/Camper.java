@@ -3,6 +3,8 @@ package camptimetest.domain;
 import org.jongo.marshall.jackson.oid.Id;
 import org.jongo.marshall.jackson.oid.ObjectId;
 
+import java.util.ArrayList;
+
 /**
  * Created by Eric on 2/1/2015.
  */
@@ -15,6 +17,7 @@ public class Camper {
     private String name;
     private String age;
     private String extraInfo;
+    private String user_id;
 
     public String getcamperID(){
         return camperID;
@@ -51,6 +54,14 @@ public class Camper {
         this.extraInfo = extraInfo;
         return this;
     }
+
+    public String getUser() {
+        return user_id;
+    }
+
+    public void setUser(String user_id) { this.user_id = user_id;}
+
+    public void removeUser() { this.user_id = "";}
 
     @Override
     public String toString(){

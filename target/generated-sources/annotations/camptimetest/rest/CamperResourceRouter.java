@@ -76,28 +76,66 @@ public class CamperResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.CamperResource#registerCamper(java.lang.String,java.lang.String)";
             }
         },
-        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Camper>>("default#CamperResource#getCampers",
+        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Camper>>("default#CamperResource#getCampersforCounselor",
                 readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
                 writerRegistry.<java.lang.Iterable<camptimetest.domain.Camper>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Camper.class), Optional.<String>absent()),
-                new StdRestxRequestMatcher("GET", "/campers"),
+                new StdRestxRequestMatcher("GET", "/campers/{sessionId}"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Camper>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
-                return Optional.of(resource.getCampers(
-                        
+                securityManager.check(request, anyOf(hasRole("admin"), hasRole("counselor")));
+                return Optional.of(resource.getCampersforCounselor(
+                        /* [PATH] sessionId */ match.getPathParam("sessionId")
                 ));
             }
 
             @Override
             protected void describeOperation(OperationDescription operation) {
                 super.describeOperation(operation);
-                
+                                OperationParameterDescription sessionId = new OperationParameterDescription();
+                sessionId.name = "sessionId";
+                sessionId.paramType = OperationParameterDescription.ParamType.path;
+                sessionId.dataType = "string";
+                sessionId.schemaKey = "";
+                sessionId.required = true;
+                operation.parameters.add(sessionId);
+
 
                 operation.responseClass = "LIST[Camper]";
                 operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "camptimetest.domain.Camper";
-                operation.sourceLocation = "camptimetest.rest.CamperResource#getCampers()";
+                operation.sourceLocation = "camptimetest.rest.CamperResource#getCampersforCounselor(java.lang.String)";
+            }
+        },
+        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Camper>>("default#CamperResource#getCampersforCustomer",
+                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
+                writerRegistry.<java.lang.Iterable<camptimetest.domain.Camper>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Camper.class), Optional.<String>absent()),
+                new StdRestxRequestMatcher("GET", "/campers/customer/{customerID}"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<java.lang.Iterable<camptimetest.domain.Camper>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
+                securityManager.check(request, anyOf(hasRole("admin"), hasRole("customer")));
+                return Optional.of(resource.getCampersforCustomer(
+                        /* [PATH] customerID */ match.getPathParam("customerID")
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription customerID = new OperationParameterDescription();
+                customerID.name = "customerID";
+                customerID.paramType = OperationParameterDescription.ParamType.path;
+                customerID.dataType = "string";
+                customerID.schemaKey = "";
+                customerID.required = true;
+                operation.parameters.add(customerID);
+
+
+                operation.responseClass = "LIST[Camper]";
+                operation.inEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "camptimetest.domain.Camper";
+                operation.sourceLocation = "camptimetest.rest.CamperResource#getCampersforCustomer(java.lang.String)";
             }
         },
         new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.CampSession>>("default#CamperResource#getCampers",

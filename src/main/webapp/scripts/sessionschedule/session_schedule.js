@@ -119,14 +119,14 @@ var main = function(camp_sessions){
         var previousValue = "";
         $('#schedule input').each(function(){
             $(this).autocomplete({
-                                       source: source,
-                                       autoFocus: true,
-                                       close: function(event, ui){
-                                            if (($.inArray($(this).val(), source)) === -1){
-                                            $(this).val("");
-                                            }
-                                       }
-                                  }).keyup(function() {
+               source: source,
+               autoFocus: true,
+               close: function(event, ui){
+                    if (($.inArray($(this).val(), source)) === -1){
+                    $(this).val("");
+                    }
+               }
+          }).keyup(function() {
             var valid = false;
             //http://stackoverflow.com/questions/6373512/source-only-allowed-values-in-jquery-ui-autocomplete-plugin
             for(index in source){
