@@ -108,7 +108,7 @@ public class CampSessionResource {
         }
 
         //get the campsessions that this counselor will be work with
-        @GET("/campsessions/{counselorId}") //TODO need to test this
+        @GET("/campsessions/counselor/{counselorId}") //TODO need to test this
         public Iterable<CampSession> getCampSessionsOfCounselor(String counselorId){
             return campSession.get().find("{counselors: #}", counselorId).as(CampSession.class);
         }

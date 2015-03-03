@@ -6,13 +6,15 @@ var main = function(campers, if_customer, userId){
             $('.customer-section').show();
         }
 
-    campers.forEach(function(value,index){
-        var element = $("<option>");
-         console.log(index);
-         element.val(index);
-         element.text(value.name);
-         $('#select-camper').append(element);
-    });
+    if (campers){
+        campers.forEach(function(value,index){
+                var element = $("<option>");
+                 console.log(index);
+                 element.val(index);
+                 element.text(value.name);
+                 $('#select-camper').append(element);
+        });
+    }
 
     $('#select-camper').on('change', function(){
         var camper_index = $(this).val();
@@ -81,51 +83,72 @@ $(document).ready(function(){
 
              console.log('here');
              var userId;
-             $.get('/api/login/current/user', function(data){
-                userId=data._id;
-                console.log(userId);
-                if (role == "customer"){
-                //get the campers that user created
-                console.log(userId);
-                  $.ajax({
-                        type: 'GET',
-                        url: '/api/campers/customer/' + userId,
-                        contentType: 'application/JSON',
-                        success: function(result){
-                            console.log(result);
-                            main(result, true, userId);
-                        },
-                        error: function(request, status, error){
-                            console.log(request);
-                            alert(status),
-                            alert(error);
-                        }
-                    });
+             $.ajax({
+                 type: 'GET',
+                 url: '/api/login/current/user',
+                 contentType: 'application/JSON',
+                 async:false,
+                 success: function(data){
+                     userId=data._id;
+                     console.log(userId);
+                     if (role == "customer"){
+                     //get the campers that user created
+                     console.log(userId);
+                       $.ajax({
+                             type: 'GET',
+                             url: '/api/campers/customer/' + userId,
+                             contentType: 'application/JSON',
+                             async:false,
+                             success: function(result){
+                                 console.log(result);
+                                 main(result, true, userId);
+                             },
+                             error: function(request, status, error){
+                                 console.log(request);
+                                 alert(status),
+                                 alert(error);
+                             }
+                         });
 
-                }
-             });
+                     }
+                 },
+                 error: function(request, status, error){
+                     alert(error);
+                 }
+             })
 
-            // console.log(userId);
+
 
              if(role == "counselor"){ //find out which session is counselor working with (first get),
              //use sessionId to request campers via camper resource (second get)
-              var camperList;
 
-              $.get('/api/campsessions/'+userID, function(sessions){
-                    $.when(
-                        sessions.forEach(function(session){
+              console.log("counselor userId"+userId);
+               $.ajax({
+                   type: 'GET',
+                   url: '/api/campsessions/counselor/' + userId,
+                   contentType: 'application/JSON',
+                   async:false,
+                   success: function(sessions){
+                       console.log("sessions");
+                       console.log(sessions);
+                       var camperList;
+                       $.when(
+                           sessions.forEach(function(session){
+                               $.get('/api/campers/'+session.sessionID, function(campers){
+                                  camperList.add(campers);
+                               });
 
-                            $.get('/api/campers/'+session.sessionID, function(campers){
-                               camperList.add(campers);
-                            });
-
-                        })
-
-                    ).then(
-                        main(camperList, false)
-                    );
-
-              });
+                           })
+                       ).then(
+                           main(camperList, false)
+                       );
+                   },
+                   error: function(request, status, error){
+                       console.log(request);
+                       alert(status),
+                       alert(error);
+                   }
+               });
              }
         });
 

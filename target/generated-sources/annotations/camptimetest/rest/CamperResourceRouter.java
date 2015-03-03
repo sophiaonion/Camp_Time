@@ -39,14 +39,15 @@ public class CamperResourceRouter extends RestxRouter {
         new StdEntityRoute<Void, camptimetest.domain.SessionRegistration>("default#CamperResource#registerCamper",
                 readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
                 writerRegistry.<camptimetest.domain.SessionRegistration>build(camptimetest.domain.SessionRegistration.class, Optional.<String>absent()),
-                new StdRestxRequestMatcher("PUT", "/campers/{camperID}/{sessionID}"),
+                new StdRestxRequestMatcher("PUT", "/campers/{camperID}/{sessionID}/{approved}"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<camptimetest.domain.SessionRegistration> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
                 securityManager.check(request, open());
                 return Optional.of(resource.registerCamper(
                         /* [PATH] camperID */ match.getPathParam("camperID"),
-                        /* [PATH] sessionID */ match.getPathParam("sessionID")
+                        /* [PATH] sessionID */ match.getPathParam("sessionID"),
+                        /* [PATH] approved */ match.getPathParam("approved")
                 ));
             }
 
@@ -69,23 +70,31 @@ public class CamperResourceRouter extends RestxRouter {
                 sessionID.required = true;
                 operation.parameters.add(sessionID);
 
+                OperationParameterDescription approved = new OperationParameterDescription();
+                approved.name = "approved";
+                approved.paramType = OperationParameterDescription.ParamType.path;
+                approved.dataType = "string";
+                approved.schemaKey = "";
+                approved.required = true;
+                operation.parameters.add(approved);
+
 
                 operation.responseClass = "SessionRegistration";
                 operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "camptimetest.domain.SessionRegistration";
-                operation.sourceLocation = "camptimetest.rest.CamperResource#registerCamper(java.lang.String,java.lang.String)";
+                operation.sourceLocation = "camptimetest.rest.CamperResource#registerCamper(java.lang.String,java.lang.String,java.lang.String)";
             }
         },
-        new StdEntityRoute<java.lang.String[], Empty>("default#CamperResource#approveCampers",
-                readerRegistry.<java.lang.String[]>build(java.lang.String[].class, Optional.<String>absent()),
+        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.Object>, Empty>("default#CamperResource#approveCampers",
+                readerRegistry.<java.util.Map<java.lang.String,java.lang.Object>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.Object.class), Optional.<String>absent()),
                 writerRegistry.<Empty>build(void.class, Optional.<String>absent()),
                 new StdRestxRequestMatcher("PUT", "/campers/approve"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
-            protected Optional<Empty> doRoute(RestxRequest request, RestxRequestMatch match, java.lang.String[] body) throws IOException {
+            protected Optional<Empty> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.Object> body) throws IOException {
                 securityManager.check(request, open());
                 resource.approveCampers(
-                        /* [BODY] registrationIDs */ checkValid(validator, body)
+                        /* [BODY] reg */ checkValid(validator, body)
                 );
                 return Optional.of(Empty.EMPTY);
             }
@@ -93,19 +102,19 @@ public class CamperResourceRouter extends RestxRouter {
             @Override
             protected void describeOperation(OperationDescription operation) {
                 super.describeOperation(operation);
-                                OperationParameterDescription registrationIDs = new OperationParameterDescription();
-                registrationIDs.name = "registrationIDs";
-                registrationIDs.paramType = OperationParameterDescription.ParamType.body;
-                registrationIDs.dataType = "string[]";
-                registrationIDs.schemaKey = "";
-                registrationIDs.required = true;
-                operation.parameters.add(registrationIDs);
+                                OperationParameterDescription reg = new OperationParameterDescription();
+                reg.name = "reg";
+                reg.paramType = OperationParameterDescription.ParamType.body;
+                reg.dataType = "Object>";
+                reg.schemaKey = "";
+                reg.required = true;
+                operation.parameters.add(reg);
 
 
                 operation.responseClass = "void";
                 operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "";
-                operation.sourceLocation = "camptimetest.rest.CamperResource#approveCampers(java.lang.String[])";
+                operation.sourceLocation = "camptimetest.rest.CamperResource#approveCampers(java.util.Map<java.lang.String,java.lang.Object>)";
             }
         },
         new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Camper>>("default#CamperResource#getCampersforCounselor",
@@ -173,7 +182,7 @@ public class CamperResourceRouter extends RestxRouter {
         new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Camper>>("default#CamperResource#getCamper",
                 readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
                 writerRegistry.<java.lang.Iterable<camptimetest.domain.Camper>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Camper.class), Optional.<String>absent()),
-                new StdRestxRequestMatcher("GET", "/campers/{camperID}"),
+                new StdRestxRequestMatcher("GET", "/campers/camperInfo/{camperID}"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Camper>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
@@ -254,30 +263,6 @@ public class CamperResourceRouter extends RestxRouter {
                 operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "camptimetest.domain.Camper";
                 operation.sourceLocation = "camptimetest.rest.CamperResource#getCampers()";
-            }
-        },
-        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.SessionRegistration>>("default#CamperResource#getUnapprovedRegistrations",
-                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
-                writerRegistry.<java.lang.Iterable<camptimetest.domain.SessionRegistration>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.SessionRegistration.class), Optional.<String>absent()),
-                new StdRestxRequestMatcher("GET", "/campers/unapproved"),
-                HttpStatus.OK, RestxLogLevel.DEFAULT) {
-            @Override
-            protected Optional<java.lang.Iterable<camptimetest.domain.SessionRegistration>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, open());
-                return Optional.of(resource.getUnapprovedRegistrations(
-                        
-                ));
-            }
-
-            @Override
-            protected void describeOperation(OperationDescription operation) {
-                super.describeOperation(operation);
-                
-
-                operation.responseClass = "LIST[SessionRegistration]";
-                operation.inEntitySchemaKey = "";
-                operation.outEntitySchemaKey = "camptimetest.domain.SessionRegistration";
-                operation.sourceLocation = "camptimetest.rest.CamperResource#getUnapprovedRegistrations()";
             }
         },
         new StdEntityRoute<camptimetest.domain.Camper, camptimetest.domain.Camper>("default#CamperResource#createCamper",
