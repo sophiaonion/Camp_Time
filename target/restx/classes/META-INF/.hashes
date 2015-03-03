@@ -32,7 +32,7 @@ src/main/java**camptimetest/domain/Employee.java**30b8401810e23bed2f7fb65a641946
 src\main\java**camptimetest\domain\Activity.java**73d7c708f1f2af2134bbdf4d94d989ba**1425268828632
 src\main\java**camptimetest\rest\CollectionHelper.java**86e25d9c40eb88c6a8f856d42851524c**1425254493042
 src/main/java**camptimetest/AppModule.java**c254c92d026f4ebaa5b843116d6b137a**1424641022000
-src/main/java**camptimetest/domain/StaffConstraintChecker.java**afbd32a7714429f0c51ae73c6a7352d7**1425363446000
+src/main/java**camptimetest/domain/StaffConstraintChecker.java**c5d5c9c37d43edd5677d6ca4d235f820**1425367615000
 src/main/java**camptimetest/domain/SessionRegistration.java**01af2ea25ba1bb06a3a504f4c5768a5c**1425274716000
 src\main\java**camptimetest\rest\ActivityResource.java**e2207ff8751af2ebd698996619296dc7**1425322414415
 src\main\java**camptimetest\domain\User.java**7b4db9eb5dcfe7e7c7343b0b5ff5d8d0**1425268828642
