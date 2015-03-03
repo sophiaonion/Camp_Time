@@ -1,181 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="pdf print schedule">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/001_blankpdf.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/002_twopagedoc.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/002_twopagedoc_oldapi.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/003_demolandscape.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/004_fontsizes.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/005_demofonttypes.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/006_demotestcolors.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/007_demometadata.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/008_demorectangles.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/009_demoliness.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/010_democircles.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/011_multilinetext.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/012_multiplelines.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/013_sillysvgrenderer.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/014_addImage.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/015_splittext.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/24_bit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/32_bit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/RGBA_16bpc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/RGB_16bpc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/images/download.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/media/downloadify.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/bootstrap/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/bootstrap/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/grayscale_16bpc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/grayscale_8bpc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/grayscale_alpha_16_bpc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/grayscale_alpha_8bpc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/grid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/jpg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/null-logo-trans.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/octocat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/octocat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/png8_flat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/png8_trans.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test_annotation-magFactor.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test_annotation.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test_outline.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/thinking-monkey.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images/tiny_png_indexed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-icons_888888_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/images/ui-icons_cd0a0a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/.gitmodules" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/013_sillysvgrenderer.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/014_addImage.jpeg.base64.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/014_addImage.pdf.base64.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/014_addImage.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/015_splittext.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/src/com/dynamicflash/util/Base64.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/src/com/dynamicflash/util/tests/Base64Test.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/CNAME" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/src/Downloadify.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/FontObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/MIT-LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/PubSub.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/README.textile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/_global_.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/allclasses.tmpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/allfiles.tmpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/basic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/bootstrap/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/bootstrap/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/build.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/src/c__work_jsPDF_jspdf.js.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/src/c__work_jsPDF_tools_jspdf.js.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/circles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/class.tmpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/components_tests.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/libs/curl-0.5.4.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/libs/custom_fill.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/static/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/deflate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/downloadify.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/src/downloadify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/js/downloadify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/editor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/editor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/files.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/font-faces.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/font-size.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/from-html.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/static/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/html2canvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/images.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/images.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/index.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/static/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/index.tmpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/jaxer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/jquery/jquery-1.7.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/smoothness/jquery-ui-1.8.17.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/jquery/jquery-ui-1.8.17.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/jsPDF-PubSub.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/jsPDF-jsPDF.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/jsPDF.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/jsPDFClass.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.PLUGINTEMPLATE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/dist/jspdf.debug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/doc/symbols/src/jspdf.js.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/dist/jspdf.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.addhtml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.addimage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.annotations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.autoprint.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.cell.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.context2d.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.from_html.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.javascript.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.outline.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.png_support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.sillysvgrenderer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.split_text_to_size.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.standard_fonts_metrics.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/jspdf.plugin.total_pages.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/kitchen-sink.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/landscape.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/lines.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/pdf_generate_tests.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/png_support/png.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/polyfill.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/publish.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/libs/qunit.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/libs/qunit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/rectangles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/runner.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/string-splitting.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/js/swfobject.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/tools/jsdoc_template/symbol.tmpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/Downloadify/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test_annotation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test_context2d.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test_insert_page.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test_min.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/test/test_outline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/text-colors.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/theme-ambiance.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/todo.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/triangles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/two-page.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/examples/js/user-input.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/wscript.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jsPDF-master/libs/png_support/zlib.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
+    <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/session_schedule.html" afterPath="$PROJECT_DIR$/src/main/webapp/session_schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts/sessionschedule/session_schedule.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/sessionschedule/session_schedule.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="72ed9e26-3295-4136-814c-afbbf4dae147" name="New changelist" comment="" />
@@ -203,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="session_schedule.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="session_schedule.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/session_schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="1545">
-              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.4988864" vertical-offset="1" max-vertical-offset="1590">
+              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
               <folding>
                 <element signature="n#style#0;n#h4#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -217,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="session_schedule.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/sessionschedule/session_schedule.js">
+      <file leaf-file-name="edit_session.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/edit_session.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49295774" vertical-offset="0" max-vertical-offset="4050">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="757" max-vertical-offset="1230">
+              <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -232,7 +60,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="2085">
               <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1670#1671#0" expanded="false" />
+                <element signature="e#1724#1725#0" expanded="false" />
+                <element signature="e#4095#4096#0" expanded="false" />
+                <element signature="e#4141#4142#0" expanded="false" />
+                <element signature="e#4214#4215#0" expanded="false" />
+                <element signature="e#4289#4290#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -294,8 +130,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/styles/session_schedule.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/edit-employee.html" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/session_schedule.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/sessionschedule/session_schedule.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/session_schedule.html" />
       </list>
     </option>
   </component>
@@ -963,7 +799,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425363320686</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="pdf print schedule">
+      <created>1425367143667</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1425367143667</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1008,7 +850,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2932933" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33285713" sideWeight="0.49917626" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2657143" sideWeight="0.49917626" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30466473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1054,6 +896,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
@@ -1269,13 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/register_camper.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.769231" vertical-offset="163" max-vertical-offset="561">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/schedule.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
@@ -1437,13 +1274,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/edit_session.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5945331" vertical-offset="5950" max-vertical-offset="6570">
@@ -1463,27 +1293,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="2085">
           <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1670#1671#0" expanded="false" />
+            <element signature="e#1724#1725#0" expanded="false" />
+            <element signature="e#4095#4096#0" expanded="false" />
+            <element signature="e#4141#4142#0" expanded="false" />
+            <element signature="e#4214#4215#0" expanded="false" />
+            <element signature="e#4289#4290#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/register_camper.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55233854" vertical-offset="22" max-vertical-offset="495">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/sessionschedule/session_schedule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47568712" vertical-offset="0" max-vertical-offset="4050">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/edit_session.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="757" max-vertical-offset="1230">
+          <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/session_schedule.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="1545">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.4988864" vertical-offset="1" max-vertical-offset="1590">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
           <folding>
             <element signature="n#style#0;n#h4#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#0;n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/sessionschedule/session_schedule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49295774" vertical-offset="0" max-vertical-offset="4050">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
