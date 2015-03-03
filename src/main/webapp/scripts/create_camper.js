@@ -13,15 +13,15 @@ var main = function(campers){
         data: JSON.stringify(data),
         contentType: 'application/JSON',
         success: function(data){
-             alert('Camper Registered.');
+             alert('Camper Created.');
 
              console.log("Before get current user's role");
              //link the camper with this customer account
              $.get('/api/login/role', function(role){
-                console.log("start to use get current role");
-                role = role.replace(/\s+/g, '');
+                 console.log("start to use get current role");
+                 role = role.replace(/\s+/g, '');
 
-                console.log("test whether user is a customer");
+                 console.log("test whether user is a customer");
                  console.log("current role is"+role);
                  if (role == "customer"){
                      console.log("create_camper: user is a customer");
@@ -41,25 +41,37 @@ var main = function(campers){
                               }),
                              contentType: 'application/JSON',
                              success: function(data){
-                                 console.log('added camper to the current user');
-                                 window.location.replace('register_camper.html');
+                                 if (confirm('Camper Added to User: Continue to Registration?') == true) {
+                                    window.location.replace('register_camper.html');
+                                 } else {
+                                    window.location.replace('home_page_test.html');
+                                 }
+                                    window.location.replace('home_page_test.html');
                              },
+
                              error: function(request, status, error){
                                  alert(error);
                              }
                          });
-                     });
+                        })
 
+                 };
+                 if (confirm('Camper Added: Continue to Registration?') == true) {
+                    window.location.replace('register_camper.html');
+                 } else {
+                    window.location.replace('home_page_test.html');
                  }
-             });
+                    window.location.replace('home_page_test.html');
+                 console.log('Camper Added: Continue to Registration?');
+                 window.location.replace('register_camper.html');
 
+             });
 
         },
         error: function(request, status, error){
              alert(error);
         }
     });
-
     });
 
     $('#cancel').on('click', function(){

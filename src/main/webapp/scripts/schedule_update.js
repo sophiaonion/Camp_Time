@@ -1,19 +1,20 @@
-var main = function(activities){
+var main = function(){
 
-    $('#trigger-update').on('click', function(){
-        console.log(activities.toString());
-        //do the stuff here - put activities into a viewable schedule
-        activities.forEach(function(value){
-              var emp = $("<li>").text(value.title + "  " + value.time + "  " + value.session+
-               "  " + value.activityArea);
-              $(".schedules").append(emp);
-          });
+
+    $("#busy").show();
+
+    $.ajax({
+        type: 'GET',
+        url: '/api/activities',
+        contentType: 'application/JSON',
+        success: function(data){
+            $("#busy").hide();
+            alert('nice, it worked');
+            window.location.replace('home_page_test.html');
+        }
+
     });
 
-
-    $('#approve-update').on('click', function(){
-        window.location.replace('session_schedule.html');
-    });
 
     $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
@@ -24,7 +25,5 @@ var main = function(activities){
 
 
 $(document).ready(function(){
-       $.get('api/activities', function(activities){
-            main(activities);
-        });
+     main();
 });

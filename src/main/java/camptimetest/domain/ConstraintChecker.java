@@ -393,7 +393,7 @@ public class ConstraintChecker {
                     activities.get().update("{_id: #}", ID2).with("{ $set: { isSet:" + true + ", time:\"" + newTime + "\" } }");
                 }
 
-                //reset domainsc and stuff
+                //reset domains and stuff
                 DBCursor cursor2 = activities.get().getDBCollection().find();
                 List<DBObject> arrry2 = cursor2.toArray();
                 ArrayList<DBObject> actArray2 = new ArrayList<DBObject>(arrry2);

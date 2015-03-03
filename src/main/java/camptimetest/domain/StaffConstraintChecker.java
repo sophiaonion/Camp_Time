@@ -13,6 +13,17 @@ import java.util.*;
  * Created by rachelfeltes on 2/14/15.
  */
 
+
+/*
+-1: no conflicts
+ 1: no staff assigned yet
+ 2: ratios not met
+ 3: certification requirements not met
+ 4: employee working 2 activities at same time
+ 5: doesn't have 2 hour break
+ 6: working during 24 hour break
+ */
+
 public class StaffConstraintChecker {
 
     private JongoCollection activities;
@@ -55,14 +66,14 @@ public class StaffConstraintChecker {
         List<DBObject> arrry = cursor.toArray();
         ArrayList<DBObject> actList = new ArrayList<DBObject>(arrry);
 
-        if (type==1 || type==2) {//have un(der)employed activities todo CHANGE BACK TO WHILE
+        if (type==1 || type==2 || type==3) {//have un(der)employed activities todo CHANGE BACK TO WHILE
 
             //add staff as required
             for (int i = 0; i < actList.size(); i++) {//for each activity
                 String aStringID = String.valueOf(actList.get(i).get("_id"));
                 Activity a = activities.get().findOne("{_id: #}", new ObjectId(aStringID)).as(Activity.class);//current activity
                 ObjectId campSessionID = new ObjectId(campsessions.get().findOne("{name: # }", String.valueOf(a.getSession())).as(CampSession.class).getSessionID());//campsession id
-                int numCampers = (int) registrations.get().count("{sessionID: #}", campSessionID); //get number of campers
+                int numCampers = (int) registrations.get().count("{sessionID: #, approved: true}", campSessionID); //get number of campers
                 String activityArea = String.valueOf(a.getActivityArea());//get location of activity
                 ArrayList<String> e = new ArrayList<String>(a.getEmployees());//get number of employees working session
                 int numStaff = e.size();
@@ -188,10 +199,10 @@ public class StaffConstraintChecker {
                 }
 
                 //add assigned and available counselors to session
-                if (!checkSufficientlyStaffed(a)) {//if that wasn't enough
+                if (checkSufficientlyStaffed(a) > 0) {//if that wasn't enough
                     ArrayList<String> emps = new ArrayList(activities.get().findOne("{_id: #}", new ObjectId(a.getKey())).as(Activity.class).getEmployees());
                     String counID = findEmployeeToWork(a, null, a.getSession(), false, false);
-                    while (!counID.equals("none") && !checkSufficientlyStaffed(a)) {
+                    while (!counID.equals("none") && (checkSufficientlyStaffed(a)>0)) {
                         emps.add(counID);
                         Employee empl = employees.get().findOne("{_id: #}", new ObjectId(counID)).as(Employee.class);
                         empl.addActivity(a.getKey());
@@ -204,12 +215,12 @@ public class StaffConstraintChecker {
                 }
 
                 //add admin & spec staff as required for coverage
-                if (!checkSufficientlyStaffed(a)) {
+                if ((checkSufficientlyStaffed(a)>0)) {
                     //based on activity area, add staff with necessary certifications
                     ArrayList<String> emps = new ArrayList(activities.get().findOne("{_id: #}", new ObjectId(a.getKey())).as(Activity.class).getEmployees());
                     //add counselors assigned to session
                     String adID = findEmployeeToWork(a, null, "", false, false);
-                    while (adID != "none" && !checkSufficientlyStaffed(a)) {
+                    while (adID != "none" && (checkSufficientlyStaffed(a)>0)) {
                         emps.add(adID);
                         Employee empl = employees.get().findOne("{_id: #}", new ObjectId(adID)).as(Employee.class);
                         empl.addActivity(a.getKey());
@@ -220,30 +231,92 @@ public class StaffConstraintChecker {
                         adID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     }
                 }
-
-
-                //pick some random stuff
-                if (!checkSufficientlyStaffed(a)) {
-                    System.out.println("not fixed, need assign whoever");
-                }
-            }
+            }//end make sure is not n/a
         }
         }//end assign employees to unemployed activities
+
+        int c = checkConflicts();
+        if(c > 0) {
+            //couldn't staff required certifications
+            if(c==3) {
+                System.out.println("couldn't staff required certifications");
+                //idk what to do about this
+                return;
+            }
+
+            //ratios not met - assign however
+            if(c==2) {
+                System.out.println("ratios still not met...");
+
+
+            }
+
+            //conflict for employees - fix with heuristic repair
+            if(c>3) {
+                System.out.println("enter heuristic repair for staffing conflicts...");
+
+            }
+
+            //get domains of all employees
+            DBCursor empCursor = employees.get().getDBCollection().find();
+            List<DBObject> arrrrry = empCursor.toArray();
+            ArrayList<DBObject> empArray = new ArrayList<DBObject>(arrrrry);
+
+            //fix heuristically based on type of conflicts
+
+          //  ArrayList< ArrayList<Activity> > domainsWithTwos = new ArrayList<>(findDomain(empArray, true));
+          //  ArrayList< ArrayList<Activity> > domainsWithoutTwos = new ArrayList<>(findDomain(empArray, true));
+
+//            //conflict count for each activity at same index
+//            ArrayList<Integer> numConflicts = new ArrayList<Integer> (this.countConflicts(actArray));
+//            //change mostConflicted ~~ doesn't include fixed time ones bc can't change them anywho
+//            int mostConf = getMostConflicts(numConflicts);
+//            if(mostConf > 0)
+//                while(numConflicts.get(mostConf) > 0) {//there are conflicts
+
+        }
+
+        return;
     }//end fixConflicts()
 
 
 
 
+    //maps employeeIDs to list of activities they can work
+    private Map< String, ArrayList<Activity> > findDomains(ArrayList<DBObject> empArray, String cert, String session, boolean matureLady, boolean conflictOKTwos) {
+        Map< String, ArrayList<Activity> > domains = new HashMap<>();
+        Iterable<Activity> actItr= activities.get().find().as(Activity.class);
+
+        //initialize domains to empty
+        for(DBObject e: empArray) {
+            domains.put(String.valueOf(e.get("_id")), new ArrayList<Activity>());
+        }
+
+        //for each activity
+        for(Activity a: actItr) {
+            //get list of employees available to work
+            ArrayList<String> options = new ArrayList<String> (findEmployeesToWork(a, cert, session, matureLady, conflictOKTwos));
+            //for each employee that can work it, add to their domain that they can work it
+            for(String op: options) {
+                domains.get(op).add(a);
+            }
+        }
+        return domains;
+    }
+
+
+
+
     //returns true if given activity is sufficiently staffed according to rules & regulations
-    private boolean checkSufficientlyStaffed(Activity a) {
+    private int checkSufficientlyStaffed(Activity a) {
         if(a.getTitle().equals("n/a"))
-            return true;
+            return -1;
         //get necessary facts to use for the checking of constraints:
             //get number of campers in session
             String session = String.valueOf(a.getSession()); //get session name
             String sessionID = campsessions.get().findOne("{name: # }", session).as(CampSession.class).getSessionID();
             ObjectId ID = new ObjectId(sessionID);
-            int numCampers = (int) registrations.get().count("{sessionID: #}", ID); //get session id from that
+            int numCampers = (int) registrations.get().count("{sessionID: #, approved: true}", ID); //get session id from that
 
             //get age of campers in session
             String age = String.valueOf(campsessions.get().findOne("{_id: # }", ID).as(CampSession.class).getAgeGroup());
@@ -257,7 +330,7 @@ public class StaffConstraintChecker {
 
         //begin constraint checking
             //at least 2 staff are with campers
-            if ((numStaff < 2)) {System.out.println("not enough staff"); return false;}
+            if ((numStaff < 2)) {System.out.println("not enough staff"); return 1;}
 
             //woman over 18 is with campers
             boolean hasMatureLady = false;
@@ -269,34 +342,34 @@ public class StaffConstraintChecker {
             }
             if (hasMatureLady == false) {
                 System.out.println("does not have staff over 18 and woman");
-                return false;
+                return 2;
             }
 
             //check that activities have correct ratios
             switch (age) {
                 case "daisy": //need 2 staff for first 6 campers, then 1 staff for every 4 campers after that
-                    if(numCampers<= 6) {if(numStaff < 2) {return false;}}//need 2 staff for first 6 campers
-                    else if (numStaff == 2) {return false;}//separate this instance so won't divide by 0 - more than 6 campers but only 2 staff
-                    else if ( (numCampers - 6) / (numStaff - 2) >= 4) {return false;}//need 1 staff for every 4 campers after that
+                    if(numCampers<= 6) {if(numStaff < 2) {return 2;}}//need 2 staff for first 6 campers
+                    else if (numStaff == 2) {return 1;}//separate this instance so won't divide by 0 - more than 6 campers but only 2 staff
+                    else if ( (numCampers - 6) / (numStaff - 2) >= 4) {return 2;}//need 1 staff for every 4 campers after that
                     break;
                 case "brownie":
-                    if (numCampers / numStaff >= 6) {return false;}
+                    if (numCampers / numStaff >= 6) {return 2;}
                     break;
                 case "junior":
-                    if (numCampers / numStaff >= 8) {return false;}
+                    if (numCampers / numStaff >= 8) {return 2;}
                     break;
                 case "cadette":
-                    if (numCampers / numStaff >= 10) {return false;}
+                    if (numCampers / numStaff >= 10) {return 2;}
                     break;
                 case "senior":
-                    if (numCampers / numStaff >= 12) {return false;}
+                    if (numCampers / numStaff >= 12) {return 2;}
                     break;
                 case "ambassador":
-                    if (numCampers / numStaff >= 12) {return false;}
+                    if (numCampers / numStaff >= 12) {return 2;}
                     break;
                 default:
                     System.out.println("error: no age group assigned");
-                    return true;
+                    return -1;
             }
 
             //ensure that areas requiring certifications have those certifications
@@ -348,159 +421,19 @@ public class StaffConstraintChecker {
                 }
                 if (!certsOK) {
                     System.out.println("lacking required certifications");
-                    return false;
+                    return 3;
                 }
             }//end check for required certifications
-             return true;
+             return -1;
     }//end checkSufficientlyStaffed()
 
 
 
 
-
     //finds available employee (if there is one, if not?? wat do)
-    private String findEmployeeToWork(Activity a, String cert, String session, boolean matureLady, boolean conflictOK) {
+    private String findEmployeeToWork(Activity a, String cert, String session, boolean matureLady, boolean conflictOKTwos) {
         ArrayList<String> options = new ArrayList<>();
-
-        //looking for admin or specialty staff to fill in coverage
-        if((session==null || session.equals("")) && (cert==null || cert.equals("")) ) {
-            Iterable<Employee> adminCursor, specCursor;
-
-            //ensures employee is mature lady if necessary
-            if (matureLady) {
-                adminCursor = employees.get().find("{job: 'admin', woman: true, age: {$gt: 18}}").as(Employee.class);
-                specCursor = employees.get().find("{job: 'specialty', woman: true, age: {$gt: 18}}").as(Employee.class);
-            } else {
-                adminCursor = employees.get().find("{job: 'admin'}").as(Employee.class);
-                specCursor = employees.get().find("{job: 'specialty'}").as(Employee.class);
-            }
-
-            //add available admin
-            for(Employee e: adminCursor) {
-                if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
-                    if(!conflictOK) {
-                        //go through each activity emp is working and make sure it isn't same as day being added
-                        for(String wID: e.getActivities()) {
-                            if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
-                                options.add(e.getKey());
-                            }
-                        }
-                    }
-                    else
-                        options.add(e.getKey());
-                }
-            }
-
-            //add available spec staff
-            for(Employee e: specCursor) {
-                if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
-                    if(!conflictOK) {
-                        //go through each activity emp is working and make sure it isn't same as day being added
-                        for(String wID: e.getActivities()) {
-                            if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
-                                options.add(e.getKey());
-                            }
-                        }
-                    } else
-                        options.add(e.getKey());
-                }
-            }
-        }
-
-        //looking for staff with specific certification
-        if((session==null || session.equals("")) && !(cert==null || cert.equals("")) ) {
-            Iterable<Employee> cursor;
-            //ensures employee is mature lady if necessary
-            if (matureLady) {
-                cursor = employees.get().find("{certifications: #, woman: true, age: {$gt: 18}}", cert).as(Employee.class);
-            } else {
-                cursor = employees.get().find("{certifications: #}", cert).as(Employee.class);
-            }
-
-            //adds available employees
-            for(Employee e: cursor) {
-                if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
-                    if(!conflictOK) {
-                        //go through each activity emp is working and make sure it isn't same as day being added
-                        boolean alreadyWorking = false;
-                        System.out.println(alreadyWorking);
-                        for(String wID: e.getActivities()) {
-                            if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
-                                alreadyWorking = true;
-                            }
-                        }
-                        System.out.println(alreadyWorking);
-                        if(!alreadyWorking) {
-                            options.add(e.getKey());
-                        }
-                    }
-                    else
-                    {options.add(e.getKey());}
-                }
-            }
-        }
-
-        //looking for counselor assigned to session
-        else {
-            String sessionID = campsessions.get().findOne("{name: #}", session).as(CampSession.class).getSessionID();
-            ArrayList<String> counselorIDs = campsessions.get().findOne("{_id: #}", new ObjectId(sessionID)).as(CampSession.class).getCounselorIDs();
-            System.out.println("ya");
-            //for each counselor
-            for(String cID: counselorIDs) {
-                Employee e = employees.get().findOne("{_id: #}", new ObjectId(cID)).as(Employee.class);
-                //if isn't on break
-                System.out.println("ok");
-                if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
-                    //case 1: need mature lady
-                    if (matureLady) {
-                        if (e.getGender().equals("woman") && e.getAge() >= 18) {
-                            //case 1.1: not ok to be working something else
-                            if (!conflictOK) {
-                                //go through each activity emp is working and make sure it isn't same as day being added
-                                boolean alreadyWorking = false;
-                                for (String wID : e.getActivities()) {
-                                    if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
-                                        alreadyWorking = true;
-                                    }
-                                }
-                                if (!alreadyWorking) {
-                                    options.add(e.getKey());
-                                }
-                            }
-                            //case 1.2: if ok to be working something else (idk why i would need this just in case for now can remove laterzz)
-                            else
-                                options.add(e.getKey());
-                        }
-                    } //end need a mature lady
-
-                    //case 2: don't need mature lady
-                    else {
-                        if (!conflictOK) {
-                            //go through each activity emp is working and make sure it isn't same as day being added
-                            boolean alreadyWorking = false;
-                            for (String wID : e.getActivities()) {
-                                if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
-                                    alreadyWorking = true;
-                                }
-                            }
-                            if (!alreadyWorking) {
-                                options.add(e.getKey());
-                            }
-                        }
-                        else
-                            options.add(e.getKey());
-                    }//end don't need mature lady
-                }//end employee doesn't have break then
-            }//end for each counselor assigned to session
-        }//end add counselors assigned to session
-
-        //double check that they aren't already working that same activity
-        for(int i=0; i<options.size(); i++) {
-            if(a.getEmployees().contains(options.get(i))) {
-                    options.remove(i);
-                    i--;//subtract from i because change the thing?????? todo
-            }
-        }
+        options = findEmployeesToWork(a, cert, session, matureLady, conflictOKTwos);
 
         //return result
         if(options.size()>0) {
@@ -513,6 +446,111 @@ public class StaffConstraintChecker {
     }//end findEmployeeToWork()
 
 
+
+
+    //finds available employee (if there is one, if not?? wat do)
+    private ArrayList<String> findEmployeesToWork(Activity a, String cert, String session, boolean matureLady, boolean conflictOKTwos) {
+        ArrayList<String> options = new ArrayList<>();
+
+        //looking for admin or specialty staff to fill in coverage
+        if((session==null || session.equals("")) && (cert==null || cert.equals("")) ) {
+            Iterable<Employee> adminCursor, specCursor;
+
+            //ensures employees are mature lady if necessary
+            if (matureLady) {
+                adminCursor = employees.get().find("{job: 'admin', woman: true, age: {$gt: 18}}").as(Employee.class);
+                specCursor = employees.get().find("{job: 'specialty', woman: true, age: {$gt: 18}}").as(Employee.class);
+            } else {
+                adminCursor = employees.get().find("{job: 'admin'}").as(Employee.class);
+                specCursor = employees.get().find("{job: 'specialty'}").as(Employee.class);
+            }
+
+            //add available admin
+            for(Employee e: adminCursor) {
+                if(!checkHas24HourBreakOnDate(e, a.getTime()) && (conflictOKTwos || !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay()))) {
+                    //go through each activity emp is working and make sure it isn't same as day being added
+                    for(String wID: e.getActivities()) {
+                        if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
+                            options.add(e.getKey());
+                        }
+                    }
+                }
+            }//end add admin
+
+            //add available spec staff
+            for(Employee e: specCursor) {
+                if(!checkHas24HourBreakOnDate(e, a.getTime()) && (conflictOKTwos || !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay()))) {
+                    //go through each activity emp is working and make sure it isn't same as day being added
+                    for(String wID: e.getActivities()) {
+                        if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
+                            options.add(e.getKey());
+                        }
+                    }
+                }
+            }//end add spec staff
+        }//end find coverage
+
+        //looking for staff with specific certification
+        if((session==null || session.equals("")) && !(cert==null || cert.equals("")) ) {
+            Iterable<Employee> cursor;
+            cursor = employees.get().find("{certifications: #}", cert).as(Employee.class);
+
+            //adds available employees
+            for(Employee e: cursor) {
+                if(!checkHas24HourBreakOnDate(e, a.getTime()) && (conflictOKTwos || !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay()))) {
+
+                    //go through each activity emp is working and make sure it isn't same as day being added
+                    boolean alreadyWorking = false;
+                    System.out.println(alreadyWorking);
+                    for(String wID: e.getActivities()) {
+                        if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
+                            alreadyWorking = true;
+                        }
+                    }
+                    System.out.println(alreadyWorking);
+                    if(!alreadyWorking) {
+                        options.add(e.getKey());
+                    }
+                }
+            }
+        }//end get staff with specific certification
+
+        //looking for counselor assigned to session
+        else {
+            String sessionID = campsessions.get().findOne("{name: #}", session).as(CampSession.class).getSessionID();
+            ArrayList<String> counselorIDs = campsessions.get().findOne("{_id: #}", new ObjectId(sessionID)).as(CampSession.class).getCounselorIDs();
+            System.out.println("ya");
+            //for each counselor
+            for(String cID: counselorIDs) {
+                Employee e = employees.get().findOne("{_id: #}", new ObjectId(cID)).as(Employee.class);
+                if (!matureLady || (e.getGender().equals("woman") && e.getAge() >= 18)) {
+                    if (!checkHas24HourBreakOnDate(e, a.getTime()) && (conflictOKTwos || !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay()))) {
+                        //go through each activity emp is working and make sure it isn't same as day being added
+                        boolean alreadyWorking = false;
+                        for (String wID : e.getActivities()) {
+                            if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
+                                alreadyWorking = true;
+                            }
+                        }
+                        if (!alreadyWorking) {
+                            options.add(e.getKey());
+                        }
+                    }//end check appropriately for break conflicts
+                }//end check mature lady or not
+            }//end check each counselor
+        }//end add counselors assigned to session
+
+        //double check that they aren't already working that same activity
+        for(int i=0; i<options.size(); i++) {
+            if(a.getEmployees().contains(options.get(i))) {
+                options.remove(i);
+                i--;//subtract from i because change the thing?????? todo
+            }
+        }
+
+        //return result
+        return options;
+    }//end findEmployeeToWork()
 
 
 
@@ -545,7 +583,6 @@ public class StaffConstraintChecker {
 
 
 
-
     //for given date, returns true if employee has their 24 hour break on that day and thus cannot work
     private boolean checkHas24HourBreakOnDate(Employee e, DateTime day) {
         int interval = e.getIntervalBreak();
@@ -554,27 +591,8 @@ public class StaffConstraintChecker {
         else return false;
     }//end checkHas24Hour()
 
-//    private ArrayList<ArrayList<String>> findDomain(ArrayList<DBObject> actList) {
-//        ArrayList<ArrayList<String>> domains = new ArrayList<ArrayList<String>>(); //list of possible domains for each i
-//        ArrayList<String> newDomain = new ArrayList<String>();//domain specific to i
-//
-//        DBCursor cursor2 = employees.get().getDBCollection().find();
-//        List<DBObject> arrry2 = cursor2.toArray();
-//        ArrayList<DBObject> empList = new ArrayList<>(arrry2);
-//
-//        for(int i=0; i<actList.size(); i++) {
-//            String[] counselors = campsessions.get().findOne("{name: #}", actList.get(i).get("session")).projection("{counselorIDs: 1}").as(String[].class);//get array of counselorIDs from camp session whose name is same as the name of the camp session for this activity
-//            //if(  campsessions.get().findOne("{name: #}", actList.get(i).get("session"))
-//
-//
-//            for(int j=0; j<empList.size(); j++) {
-//                //if j ok add to newDomain
-//            }
-//            domains.add(i, new ArrayList<String> (newDomain));
-//            newDomain.clear();
-//        }
-//        return domains;
-//    }
+
+
 
     //returns >0 if there are conflicts, 0 if not
     private int checkConflicts() {
@@ -595,9 +613,10 @@ public class StaffConstraintChecker {
         for(int i=0; i<actList.size(); i++) {
             String aString = String.valueOf(actList.get(i).get("_id"));
             Activity act = activities.get().findOne("{_id: #}", new ObjectId(aString)).as(Activity.class);
-            if(!checkSufficientlyStaffed(act)) {
+            int c = checkSufficientlyStaffed(act);//c==2 if ratio issue, c==3 if certification issue
+            if(c > 0) {
                 System.out.println("insufficiently staffed");
-                return 2;
+                return c;
             }
         }
 
@@ -612,8 +631,8 @@ public class StaffConstraintChecker {
                     DateTime dtB = activities.get().findOne("{_id: #}", new ObjectId(a.get(k))).as(Activity.class).getTime();
                     if (j != k && dtA.equals(dtB)) {//not sure if works, compare each activity
                         System.out.println(a.get(j)+" is at same time as "+a.get(k));
-                        System.out.println("type 3 conflict: employee working two activities at same time");
-                        return 3;
+                        System.out.println("type 4 conflict: employee working two activities at same time");
+                        return 4;
                     }
                 }
             }
@@ -648,8 +667,8 @@ public class StaffConstraintChecker {
             for (boolean[] hours : working.values()) {
                 if (((hours[9] || hours[10])) && ((hours[10] || hours[11])) && ((hours[13] || hours[14])) && //if working any of the possible 2 hour break slots
                         ((hours[14] || hours[15])) && ((hours[15] || hours[16])) && ((hours[19] || hours[20]))) {
-                    System.out.println("type 4: employee does not have 2 hour break");
-                    return 4;
+                    System.out.println("type 5: employee does not have 2 hour break");
+                    return 5;
                 }
             }//end check 2 hour break
 
@@ -668,8 +687,8 @@ public class StaffConstraintChecker {
             for(int j=0; j<numToCheck; j++) {
                 String requiredDayOffString = dtf.print(requiredDayOff);
                 if(working.containsKey(requiredDayOffString)) {
-                    System.out.println("type 5: employee working on their 24 hour break");
-                    return 5;
+                    System.out.println("type 6: employee working on their 24 hour break");
+                    return 6;
                 }
                 requiredDayOff = requiredDayOff.plusDays(interval);
             }
@@ -678,4 +697,41 @@ public class StaffConstraintChecker {
         System.out.println("checked conflicts: there are none");
         return 0;
     }//end checkConflicts()
+
+
+
+
+    //returns index of most constrained activity in arraylist
+    private int getMostConstrained(Map<String, ArrayList<DateTime> > domains) {
+        //assuming domains with 1 or no items have already been assigned or whatevs
+        int numConst = 100000000;//number of options for most constrained activity
+        int mostConst=-1;//index of most constrained activity
+
+        for(int i=0; i<domains.size(); i++) {
+            if ((domains.get(i).size() < numConst) && (domains.get(i).size() > 1)) {//smallest domain that still has a choice
+                mostConst = i;
+                numConst = domains.get(i).size();
+            }
+        }
+        return mostConst;
+    }//end getMostConstrained
+
+
+
+
+    //returns index of most constrained activity
+    private int getMostConflicts(ArrayList<Integer> conflicts) {
+        int most = -1;
+        int mostInd = -1;
+        for(int i=0; i<conflicts.size(); i++) {
+            if(conflicts.get(i) >= most) {
+                most = conflicts.get(i);
+                mostInd = i;
+            }
+        }
+        System.out.println("index "+mostInd+" has "+most+" conflicts, the most");
+        return mostInd;
+    }//end getMostConflicts
+
+
 }

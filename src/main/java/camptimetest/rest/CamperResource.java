@@ -36,11 +36,24 @@ public class CamperResource {
 
     @PUT("/campers/{camperID}/{sessionID}")
     public SessionRegistration registerCamper(String camperID, String sessionID){
+
+
         SessionRegistration reg = new SessionRegistration(camperID, sessionID);
         registrations.get().save(reg);
         return reg;
 
     }
+
+    @PUT("/campers/approve")
+    public void approveCampers(String[] registrationIDs){
+        for(int i=0; i<registrationIDs.length; i++) {
+            SessionRegistration approve = registrations.get().findOne("{_id: #}", registrationIDs[i]).as(SessionRegistration.class);
+            approve.setApproved(true);
+            registrations.get().save(approve);
+        }
+        return;
+    }
+
 
     @RolesAllowed({ADMIN,COUNSELOR})
     @GET("/campers/{sessionId}") //get Campers by campsession
@@ -58,10 +71,15 @@ public class CamperResource {
         return campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
     }
 
-    @RolesAllowed({ADMIN,CUSTOMER}) //TODO this should be working, need to test
+    @RolesAllowed({ADMIN,CUSTOMER})
     @GET("/campers/customer/{customerID}") //get Campers by user
     public Iterable<Camper> getCampersforCustomer(String customerID){
         return campers.get().find("{user_id: #}", customerID).as(Camper.class);
+    }
+
+    @GET("/campers/{camperID}")
+    public Iterable<Camper> getCamper(String camperID){
+        return campers.get().find("{_id: #}", camperID).as(Camper.class);
     }
 
 
@@ -77,6 +95,18 @@ public class CamperResource {
         return campSessions.get().find("{_id: {$in:#}}", sessionIDs).as(CampSession.class);
     }
 
+    @RolesAllowed({ADMIN,COUNSELOR})
+    @GET("/campers")
+    public Iterable<Camper> getCampers(){
+        return campers.get().find().as(Camper.class);
+    }
+
+    @GET("/campers/unapproved")
+    public Iterable<SessionRegistration> getUnapprovedRegistrations(){
+        System.out.println("this many: "+registrations.get().count("{approved: false}"));
+        Iterable<SessionRegistration> unapp = registrations.get().find("{approved: false}").as(SessionRegistration.class);
+        return unapp;
+    }
 
     @POST("/campers")
     public Camper createCamper(Camper camper){
@@ -95,7 +125,8 @@ public class CamperResource {
     @DELETE("/campers/{camperID}")
     public Status deleteCamper(String camperID){
         registrations.get().remove("{camperID: #}", camperID);
-        campers.get().remove("{camperID: #}", camperID);
+        ObjectId id= new ObjectId(camperID);
+        campers.get().remove("{_id: #}", id);
 
         return Status.of("deleted");
 
