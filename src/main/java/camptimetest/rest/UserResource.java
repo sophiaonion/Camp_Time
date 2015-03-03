@@ -36,15 +36,18 @@ public class UserResource {
     private final String adminPasswordHash;
     private CredentialsStrategy crypper;
     private final JongoCollection campers;
+    private final JongoCollection employees;
 
     public UserResource(MyUserRepository myUserRepository,
                         @Named("credentialsStrategy")CredentialsStrategy credentialsStrategy,
                         @Named("restx.admin.passwordHash") String adminPasswordHash,
-                        @Named("campers") JongoCollection campers) {
+                        @Named("campers") JongoCollection campers,
+                        @Named("employees") JongoCollection employees) {
         this.myUserRepository = myUserRepository;
         this.adminPasswordHash = adminPasswordHash;
         this.crypper = credentialsStrategy;
         this.campers= campers;
+        this.employees=employees;
     }
 
     @GET("/users")
@@ -132,6 +135,22 @@ public class UserResource {
         campers.get().save(camper);
 
         user.addCamper(camperId);
+        myUserRepository.updateUser(user);
+
+        return "200";
+    }
+
+    //get sent Map of key value pairs
+    //user_id and camper_id
+    @PUT("/users/employees/add")
+    public String addEmployeeToUser(Map<String, String> values){
+        String employeeId = (String)values.get("employee_id");
+        String userId = (String)values.get("user_id");
+
+        //Employee employee = employees.get().find("{_id: #}", new ObjectId(employeeId)).as(Employee.class).iterator().next();
+        User user = myUserRepository.findUserByKey(userId).get();
+
+        user.addEmployee(employeeId);
         myUserRepository.updateUser(user);
 
         return "200";

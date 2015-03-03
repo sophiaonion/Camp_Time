@@ -23,6 +23,7 @@ public class User implements RestxPrincipal {
     private String password;
     private Collection<String> roles;
     private ArrayList<String> campers = new ArrayList<>();
+    private ArrayList<String> employees = new ArrayList<>();
 
     public User setUserID(final String userID){
         this.userID = userID;
@@ -59,6 +60,19 @@ public class User implements RestxPrincipal {
     public User setPassword(String password){
 
         this.password = password;
+        return this;
+    }
+
+    public ArrayList<String> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(ArrayList<String> employees) { this.employees = employees;
+    }
+
+    public User addEmployee(String objectId){//must be object id of activity
+
+        this.employees.add(objectId);
         return this;
     }
 

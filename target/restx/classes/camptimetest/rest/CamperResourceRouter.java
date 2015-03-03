@@ -244,7 +244,7 @@ public class CamperResourceRouter extends RestxRouter {
         new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Camper>>("default#CamperResource#getCampers",
                 readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
                 writerRegistry.<java.lang.Iterable<camptimetest.domain.Camper>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Camper.class), Optional.<String>absent()),
-                new StdRestxRequestMatcher("GET", "/campers"),
+                new StdRestxRequestMatcher("GET", "/campers/all"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Camper>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {

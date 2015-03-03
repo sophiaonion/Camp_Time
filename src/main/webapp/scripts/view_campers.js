@@ -6,6 +6,7 @@ var main = function(campers, if_customer, userId){
             $('.customer-section').show();
         }
 
+    console.log(campers);
     if (campers){
         campers.forEach(function(value,index){
                 var element = $("<option>");
@@ -78,17 +79,21 @@ var main = function(campers, if_customer, userId){
 
 $(document).ready(function(){
 
+
+
     $.get('/api/login/role', function(role){
              role = role.replace(/\s+/g, ''); //eliminate unnessacery whitespace, from stackoverflow
 
              console.log('here');
              var userId;
+             var user;
              $.ajax({
                  type: 'GET',
                  url: '/api/login/current/user',
                  contentType: 'application/JSON',
                  async:false,
                  success: function(data){
+                     user=data;
                      userId=data._id;
                      console.log(userId);
                      if (role == "customer"){
@@ -117,15 +122,47 @@ $(document).ready(function(){
                  }
              })
 
-
+/* $.ajax({
+                        type: 'PUT',
+                        url: '/api/users/employees/add',
+                        data: JSON.stringify({
+                          user_id:userId,
+                          employee_id:"54f4da9a03649af8cc13b756"
+                        }),
+                        contentType: 'application/JSON',
+                        success: function(data){
+                            console.log('Successfully disassociate camper from user');
+                        },
+                        error: function(request, status, error){
+                            alert(error);
+                        }
+                    })*/
 
              if(role == "counselor"){ //find out which session is counselor working with (first get),
              //use sessionId to request campers via camper resource (second get)
 
-              console.log("counselor userId"+userId);
-               $.ajax({
+              console.log("counselor userId");
+              console.log(user);
+
+              $.ajax({
+                                 type: 'GET',
+                                 url: '/api/campers/all',
+                                 contentType: 'application/JSON',
+                                 async:false,
+                                 success: function(camperList){
+                                        console.log(camperList);
+                                         main(camperList, false)
+                                 },
+                                 error: function(request, status, error){
+                                     console.log(request);
+                                     alert(status),
+                                     alert(error);
+                                 }
+                             });
+
+               /*$.ajax({
                    type: 'GET',
-                   url: '/api/campsessions/counselor/' + userId,
+                   url: '/api/campsessions/counselor/',
                    contentType: 'application/JSON',
                    async:false,
                    success: function(sessions){
@@ -148,7 +185,7 @@ $(document).ready(function(){
                        alert(status),
                        alert(error);
                    }
-               });
+               });*/
              }
         });
 

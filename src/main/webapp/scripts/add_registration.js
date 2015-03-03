@@ -64,8 +64,8 @@ var main = function(campers, role){
             data: JSON.stringify(data),
             contentType: 'application/JSON',
             success: function(data){
-                 if (confirm("Registration Successful: Update schedule now?") == true) {
-                     window.location.replace('trigger_update.html');
+                 if (confirm("Registration Successful: Continue?") == true) {
+                     window.location.replace('home_page_test.html');
                  } else {
                      window.location.replace('home_page_test.html');
                  }
