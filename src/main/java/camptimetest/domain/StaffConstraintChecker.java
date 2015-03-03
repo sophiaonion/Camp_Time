@@ -414,7 +414,7 @@ public class StaffConstraintChecker {
     //finds available employee (if there is one, if not?? wat do)
     private String findEmployeeToWork(Activity a, String cert, String session, boolean matureLady, boolean conflictOKTwos) {
         ArrayList<String> options = new ArrayList<>();
-
+        System.out.println("1: number of options: "+options.size());
         //looking for staff with specific certification
         if((session==null || session.equals("")) && !(cert==null || cert.equals("")) ) {
             Iterable<Employee> cursor = employees.get().find("{certifications: #}", cert).as(Employee.class);
@@ -434,7 +434,9 @@ public class StaffConstraintChecker {
                     }
                 }
             }//end add available staff with certifications
+            System.out.println("2: number of options: "+options.size());
         }
+
 
         //looking for counselors assigned to session
         else if(session != null && !session.equals("")){
@@ -459,7 +461,7 @@ public class StaffConstraintChecker {
                 }//end employee doesn't have break then
             }//end for each counselor assigned to session
         }//end add counselors assigned to session
-
+        System.out.println("3: number of options: "+options.size());
         //looking for admin or specialty staff to fill in coverage
         if((session==null || session.equals("")) && (cert==null || cert.equals("")) ) {
             Iterable<Employee> adminCursor, specCursor;
@@ -484,6 +486,7 @@ public class StaffConstraintChecker {
                     }
                 }
             }
+            System.out.println("4: number of options: "+options.size());
 
             //add available spec staff
             for(Employee e: specCursor) {
@@ -496,6 +499,7 @@ public class StaffConstraintChecker {
                     }
                 }
             }
+            System.out.println("5: number of options: "+options.size());
         }
 
 //        //looking for staff with specific certification
@@ -584,6 +588,8 @@ public class StaffConstraintChecker {
 //                }//end employee doesn't have break then
 //            }//end for each counselor assigned to session
 //        }//end add counselors assigned to session
+
+        System.out.println("6: number of options: "+options.size());
 
         //double check that they aren't already working that same activity
         for(int i=0; i<options.size(); i++) {
