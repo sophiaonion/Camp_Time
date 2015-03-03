@@ -1,8 +1,24 @@
 var main = function(camp_sessions){
-    //add option to be selected for each session and also tack on index data to access session in camp_sessions array
-    //once selected
 
 
+$('#print').on('click', function(){
+var doc = new jsPDF();
+var elementHandler = {
+  '#ignorePDF': function (element, renderer) {
+    return true;
+  }
+};
+var source = window.document.getElementsByTagName("table")[0];
+doc.fromHTML(
+    source,
+    15,
+    15,
+    {
+      'width': 180,'elementHandlers': elementHandler
+    });
+
+doc.output("dataurlnewwindow");
+});
 
     Date.prototype.myToString = function(){
         var utcDate = this.toUTCString(); //returns correct date as Day, Date Month Year time
@@ -36,12 +52,19 @@ var main = function(camp_sessions){
     camp_sessions.forEach(function(session, index){
         console.log(session._id);
         var deleteInfo = {_id: session._id, name: session.name};
-        var ses_option = $('<option>').val(index).text(session.name).data('delete-info', deleteInfo);
+        var ses_option = $('<option>').val(index).text(session.name).data('delete-info', deleteInfo).data('campsession', session);
         $('#session-select').append(ses_option);
     });
 
     $('#session-select').on('change', function(){
-            camp_session = camp_sessions[$(this).val()];
+            camp_session = $('#session-select option:selected').data('campsession');
+            if(!camp_session){//no sessions to choose from covers corner case last session deleted
+            $('.empty').remove();
+            return;
+            }
+
+
+            console.log(camp_session);
             $.ajax({
                 url: "/api/activities/campsession",
                 data: JSON.stringify({activityIds: camp_session.activities}),
@@ -73,7 +96,6 @@ var main = function(camp_sessions){
                 var hours = Number($(this).data('hour'));
                 var dateTime = new Date(currentDate.toString());
                 dateTime.setUTCHours(hours);
-                console.log(dateTime.toUTCString());
                 var newCell = $('<td>').append($('<input>').attr('type', 'text').data('date-time', dateTime)).addClass('empty');
                 $(this).append(newCell);
 
@@ -97,7 +119,6 @@ var main = function(camp_sessions){
 //            console.log('act_date: ');
 //            console.log(act_date);
             var column = dateDiffInDays(new Date(session.startDate), new Date(act_date));
-            console.log(column);
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
 //            console.log('activity time: ' + act_date);
 //            console.log('hour: ' + act_date.getHours());
@@ -140,7 +161,6 @@ var main = function(camp_sessions){
                 contentType: 'application/JSON',
                 data: JSON.stringify({dateTime: $(this).data('date-time')})
             }).done(function(data){
-                console.log(data);
                 keyUpData = data;
                 $(auto).autocomplete({
                                            source: data,
@@ -155,7 +175,8 @@ var main = function(camp_sessions){
                 var valid = false;
                 //http://stackoverflow.com/questions/6373512/source-only-allowed-values-in-jquery-ui-autocomplete-plugin
                 //for limiting allowed values
-                for(index in source){
+                if(!keyUpData) keyUpData = source;
+                for(index in keyUpData){
                     $(auto).val().toLowerCase();
                     if(keyUpData[index].toLowerCase().match($(auto).val().toLowerCase())){
                         valid = true;
@@ -175,12 +196,18 @@ var main = function(camp_sessions){
 
     //set up click handler to display activity info
     $('table').on('click', '.activity', function(){
+
+        $('.selected').removeClass('selected');
+        $(this).addClass('selected');
+        $('.activity-control-cont').show().css('visibility', 'visible');
+        $(this).trigger('populate:employee-select');
+         //get available and working employees
         var activity = $(this).data('activity');
         $('.activity-info #activity-title').text(activity.title);
 
         var act_date = new Date(activity.time);
         $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.myTimeString());
-        $('#employees-working').empty();
+        $('.working-emp').empty();
         if(activity.employees.length){
             $('.activity-info #num-employees').text(activity.employees.length);
             //get employee objects working from ids of activity.employees array
@@ -190,32 +217,49 @@ var main = function(camp_sessions){
                 data: JSON.stringify({employee_ids: activity.employees}),
                 contentType: 'application/JSON'
             }).done(function(employees, textStatus, jqXHR){
-                    //attach names to employees working
+                  console.log('employees: ');
+                  console.log(employees);
+                  employees.forEach(function(emp){
+                      var certString = "    ";
+                      if(emp.certifications){
+                          emp.certifications.slice(0, -1).forEach(function(cert){
+                              certString += cert + ", ";
+                          });
+                          certString += emp.certifications.slice(-1);
+                      }
 
-                    employees.forEach(function(employee){
-                        $('#employees-working').append($('<li>').text(employee.name).
-                            data('employee', employee)); //get employee name for later
-                    });
+                      var nextEmp = $('<option>').text(emp.name + ' ' + certString).data('employee', emp);
+                      console.log(nextEmp.data('employee')._id);
+                      $('.working-emp').append(nextEmp);
+                });
             }).fail(alert.bind(null, 'error getting employee objects of activity'));
                 } else { //no employees working activity
                     $('.activity-info #employees-working').hide();
                     $('.activity-info #num-employees').text('0');
                 }
-            $('.selected').removeClass('selected');
-            $(this).addClass('selected');
+
             });
+
 
     $('#session-select').trigger('change');
 
-
      $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
+    });
+    //hide activity container when none selected
+    //and deselect activity
+    $(document).click(function(e){
+        var $actCont = $('.activity-control-cont');
+        console.log(e.target);
+        if(!$actCont.is(e.target) && !$(e.target).hasClass('selected') && !$.contains($actCont[0], e.target)){
+            $actCont.hide();
+            $('.selected').removeClass('selected');
+        }
     });
 };
 
 $(document).ready(function(){
     $.get('/api/campsessions', function(camp_sessions){
-        console.log(camp_sessions.length);
         main(camp_sessions);
     });
 });

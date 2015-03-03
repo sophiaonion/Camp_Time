@@ -68,6 +68,20 @@ public class CampSessionResource {
 //            registrations.get().remove("")
 //            campSession.get().remove
 //        }
+        @GET("/campsessions/{id}")
+        public CampSession updateCampSession(String id){
+            CampSession toUpdate = campSession.get().findOne("{_id: #}", id).as(CampSession.class);
+            return toUpdate;
+        }
+
+        @DELETE("/campsessions") //map has keys _id, name
+        public String deleteCampSession(Map<String, String> deleteInfo){
+            //remove campsession ids from registrations, and activities with
+            activities.get().remove("{session: #}", deleteInfo.get("name"));
+            registrations.get().remove("{sessionID: #}", deleteInfo.get("_id"));
+            campSession.get().remove("{_id: #}", new ObjectId(deleteInfo.get("_id")));
+            return "200";
+        }
 
         //get campers in a session
         @GET("/campsessions/campers/{id}")

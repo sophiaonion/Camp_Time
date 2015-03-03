@@ -1,6 +1,7 @@
 package camptimetest.rest;
 
 import camptimetest.domain.Activity;
+import camptimetest.domain.CampSession;
 import camptimetest.domain.ConstraintChecker;
 import camptimetest.domain.StaffConstraintChecker;
 import org.bson.types.ObjectId;
@@ -73,20 +74,36 @@ public class ActivityResource {
         return activity;
     }
 
+    @POST("/activities/multi") //receive arraylist of new activities to add to campsession in campsession field
+    public CampSession addMultipleActivities(ArrayList<Activity> activitiesToAdd){
+        //must set activityArea field -- check if necessary
+        if(activitiesToAdd.size() == 0) return new CampSession();
+        String sessionName = activitiesToAdd.get(0).getSession();
+        CampSession session = campsessions.get().findOne("{name: #}", sessionName).as(CampSession.class);
+        for(Activity act: activitiesToAdd){
+            if(activitiesAtAreas.contains(act.getTitle())){
+                act.setActivityArea(act.getTitle());
+            }
+            activities.get().save(act);
+            session.addActivity(act.getKey());
+        }
+        campsessions.get().save(session);
+
+        return session;
+    }
+
     @POST("/activities/open")
     public ArrayList<String> getPossibleActivities(Map<String, DateTime> dateInfo){
-        System.out.println(new DateTime(dateInfo.get("dateTime")));
         String query = CollectionHelper.getDateQuery(new DateTime(dateInfo.get("dateTime")));
         //remove closing bracket
         query = query.substring(0, query.length() - 1);
-        String titleQuery = ", {title: {$in: #}}}";
+        String titleQuery = ", title: {$in: #}}";
         String fullQuery = query + titleQuery;
-        System.out.println(fullQuery);
-        Iterable<String> areaActsAtTime = activities.get().find(fullQuery, activitiesAtAreas).
-                projection("{title: 1}").as(String.class);
+        Iterable<Activity> areaActsAtTime = activities.get().find(fullQuery, activitiesAtAreas).
+                projection("{title: 1}").as(Activity.class);
         ArrayList<String> possibleActsAtTime = new ArrayList<>(possibleActivites);
-        for(String actTitle: areaActsAtTime){
-            possibleActsAtTime.remove(actTitle);
+        for(Activity act: areaActsAtTime){
+            possibleActsAtTime.remove(act.getTitle());
         }
         System.out.println(possibleActsAtTime.toString());
         return possibleActsAtTime;

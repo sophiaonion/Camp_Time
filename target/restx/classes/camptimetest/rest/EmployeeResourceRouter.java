@@ -246,13 +246,13 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#addEmployeeToActivity(java.util.Map<java.lang.String,java.lang.Object>)";
             }
         },
-        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.Object>, camptimetest.domain.Activity>("default#EmployeeResource#removeEmployeeFromActivity",
+        new StdEntityRoute<java.util.Map<java.lang.String,java.lang.Object>, camptimetest.domain.CampSession>("default#EmployeeResource#removeEmployeeFromActivity",
                 readerRegistry.<java.util.Map<java.lang.String,java.lang.Object>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.Object.class), Optional.<String>absent()),
-                writerRegistry.<camptimetest.domain.Activity>build(camptimetest.domain.Activity.class, Optional.<String>absent()),
+                writerRegistry.<camptimetest.domain.CampSession>build(camptimetest.domain.CampSession.class, Optional.<String>absent()),
                 new StdRestxRequestMatcher("PUT", "/employees/activities/remove"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
-            protected Optional<camptimetest.domain.Activity> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.Object> body) throws IOException {
+            protected Optional<camptimetest.domain.CampSession> doRoute(RestxRequest request, RestxRequestMatch match, java.util.Map<java.lang.String,java.lang.Object> body) throws IOException {
                 securityManager.check(request, open());
                 return Optional.of(resource.removeEmployeeFromActivity(
                         /* [BODY] values */ checkValid(validator, body)
@@ -271,9 +271,9 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.parameters.add(values);
 
 
-                operation.responseClass = "Activity";
+                operation.responseClass = "CampSession";
                 operation.inEntitySchemaKey = "";
-                operation.outEntitySchemaKey = "camptimetest.domain.Activity";
+                operation.outEntitySchemaKey = "camptimetest.domain.CampSession";
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#removeEmployeeFromActivity(java.util.Map<java.lang.String,java.lang.Object>)";
             }
         },

@@ -28,7 +28,6 @@ public class AppServer {
         //create webserver 0.0.0.0 IP can also be accessed as localhost when run on own comp
         WebServer server = new JettyWebServer(WEB_INF_LOCATION, WEB_APP_LOCATION, port, "0.0.0.0");
 
-
         //dev mode produces admin console UI and enforces statelessness by throwing away resources between calls
         System.setProperty("restx.mode", System.getProperty("restx.mode", "dev"));
 
