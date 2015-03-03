@@ -10,25 +10,29 @@
 </head>
 <body>
     <header>
-        <h1>Edit Session Schedule</h1>
+        <h1>Edit & View Session Schedule</h1>
     </header>
     <main>
         <button type="button" id="cancel">Return Home</button>
     <div class="session-select-con">
+        <br>
         <label for="session-select">Select Session:</label>
         <select name="session-select" id="session-select">
         </select>
-        <button id="delete-session">Delete Session</button>
+        <br>
+        <button id="delete-session">Delete Selected Session</button>
         <div class="confirm-delete">
             <button id="submit-delete">Submit Delete</button>
             <button id="cancel-delete">Cancel</button>
         </div>
     </div>
     <div class="activity-change-con">
-        <h4 style="display:inline-block">Activity changes to schedule</h4>
+        <h4 style="display:inline-block">Activity changes to schedule:</h4>
+        <br>
         <button id="submit-schedule-changes">Submit</button>
         <button id="cancel-schedule-changes">Cancel</button>
-        <h4>Required Activities: <span id="required-activities"></span></h4>
+        <br><br>
+        <h4>Current Schedule: <span id="required-activities"></span></h4>
 
     </div>
     <div class="session-schedule">
@@ -51,24 +55,21 @@
             </tbody>
         </table>
     </div>
-        <button id="print">Print Schedule</button>
+        <button id="print">Print Current Schedule</button>
         <div id="ignorePDF">
     <div class="activity-control-cont">
     <div class="activity-info">
+        <h4 style="display:inline-block">Selected Activity Info:</h4>
         <p>Activity Title: <span id="activity-title"></span></p>
         <p>Time: <span id="activity-time"></span></p>
         <p >Employees working: <span id="num-employees"></span>
         <ul id="employees-working"></ul>
     </div>
-    <div class="emp-change-con">
-        <h4 style="display:inline-block">Employee changes to activity</h4>
-        <button id="submit-emp-changes">Submit</button>
-        <button id="cancel-emp-changes">Cancel</button>
-    </div>
+
     <div class='edit-employees' style="display: inline-block">
             <div style="display:inline-block">
-                <p style="display:inline-block">Working</p>
-                <button type='button' class='remove'>Remove</button>
+                <p style="display:inline-block">Working:</p>
+                <button type='button' class='remove'>Remove:</button>
                 <br>
                 <select class='working-emp' multiple size=10></select>
             </div>
@@ -79,6 +80,12 @@
                 <select class='available-emp' multiple size=10></select>
             </div>
     </div>
+        <div class="emp-change-con">
+            <h4 style="display:inline-block">Employee changes to activity</h4>
+            <button id="submit-emp-changes">Submit</button>
+            <button id="cancel-emp-changes">Cancel</button>
+        </div>
+
     </div>
         </div>
 

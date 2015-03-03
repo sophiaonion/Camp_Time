@@ -67,7 +67,6 @@ public class StaffConstraintChecker {
                 ArrayList<String> e = new ArrayList<String>(a.getEmployees());//get number of employees working session
                 int numStaff = e.size();
 
-                System.out.println("#campers: "+numCampers);
                 if(!a.getTitle().equals("n/a")) {
                 //add staff with required certifications
                 if (a.getActivityArea() != null) {
@@ -268,12 +267,6 @@ public class StaffConstraintChecker {
                     }
                 }
 
-
-                //pick some random stuff
-                if (!checkSufficientlyStaffed(a)) {
-                    System.out.println("not fixed, need assign whoever");
-
-                }
             }
         }
         }//end assign employees to unemployed activities
@@ -504,12 +497,9 @@ public class StaffConstraintChecker {
 
         //return result
         if(options.size()>0) {
-            System.out.println("returning option to add: "+options.get(0));
             return options.get(0);
         }
         else
-        System.out.println("ur a nerd");
-            System.out.println("found nobody");
         return "none";
     }//end findEmployeeToWork()
 
@@ -555,27 +545,7 @@ public class StaffConstraintChecker {
         else return false;
     }//end checkHas24Hour()
 
-//    private ArrayList<ArrayList<String>> findDomain(ArrayList<DBObject> actList) {
-//        ArrayList<ArrayList<String>> domains = new ArrayList<ArrayList<String>>(); //list of possible domains for each i
-//        ArrayList<String> newDomain = new ArrayList<String>();//domain specific to i
-//
-//        DBCursor cursor2 = employees.get().getDBCollection().find();
-//        List<DBObject> arrry2 = cursor2.toArray();
-//        ArrayList<DBObject> empList = new ArrayList<>(arrry2);
-//
-//        for(int i=0; i<actList.size(); i++) {
-//            String[] counselors = campsessions.get().findOne("{name: #}", actList.get(i).get("session")).projection("{counselorIDs: 1}").as(String[].class);//get array of counselorIDs from camp session whose name is same as the name of the camp session for this activity
-//            //if(  campsessions.get().findOne("{name: #}", actList.get(i).get("session"))
-//
-//
-//            for(int j=0; j<empList.size(); j++) {
-//                //if j ok add to newDomain
-//            }
-//            domains.add(i, new ArrayList<String> (newDomain));
-//            newDomain.clear();
-//        }
-//        return domains;
-//    }
+
 
     //returns >0 if there are conflicts, 0 if not
     private int checkConflicts() {
@@ -587,7 +557,7 @@ public class StaffConstraintChecker {
         //if there is an activity without employees
         if( (activities.get().count( "{employees: {$exists: false} }" ) != 0)
                 || (activities.get().count( "{employees: null }" ) != 0)) {//if time is set or not
-            System.out.println("type 1 conflict found (no staff)");
+//            System.out.println("type 1 conflict found (no staff)");
             return 1;
         }
 
@@ -596,7 +566,7 @@ public class StaffConstraintChecker {
             String aString = String.valueOf(actList.get(i).get("_id"));
             Activity act = activities.get().findOne("{_id: #}", new ObjectId(aString)).as(Activity.class);
             if(!checkSufficientlyStaffed(act)) {
-                System.out.println("insufficiently staffed");
+//                System.out.println("insufficiently staffed");
                 return 2;
             }
         }
@@ -611,8 +581,8 @@ public class StaffConstraintChecker {
                 for (int k = 0; k < a.size(); k++) { //for each other activity employee is working
                     DateTime dtB = activities.get().findOne("{_id: #}", new ObjectId(a.get(k))).as(Activity.class).getTime();
                     if (j != k && dtA.equals(dtB)) {//not sure if works, compare each activity
-                        System.out.println(a.get(j)+" is at same time as "+a.get(k));
-                        System.out.println("type 3 conflict: employee working two activities at same time");
+//                        System.out.println(a.get(j)+" is at same time as "+a.get(k));
+//                        System.out.println("type 3 conflict: employee working two activities at same time");
                         return 3;
                     }
                 }
@@ -648,7 +618,7 @@ public class StaffConstraintChecker {
             for (boolean[] hours : working.values()) {
                 if (((hours[9] || hours[10])) && ((hours[10] || hours[11])) && ((hours[13] || hours[14])) && //if working any of the possible 2 hour break slots
                         ((hours[14] || hours[15])) && ((hours[15] || hours[16])) && ((hours[19] || hours[20]))) {
-                    System.out.println("type 4: employee does not have 2 hour break");
+//                    System.out.println("type 4: employee does not have 2 hour break");
                     return 4;
                 }
             }//end check 2 hour break
@@ -668,7 +638,7 @@ public class StaffConstraintChecker {
             for(int j=0; j<numToCheck; j++) {
                 String requiredDayOffString = dtf.print(requiredDayOff);
                 if(working.containsKey(requiredDayOffString)) {
-                    System.out.println("type 5: employee working on their 24 hour break");
+//                    System.out.println("type 5: employee working on their 24 hour break");
                     return 5;
                 }
                 requiredDayOff = requiredDayOff.plusDays(interval);
@@ -679,3 +649,26 @@ public class StaffConstraintChecker {
         return 0;
     }//end checkConflicts()
 }
+
+
+//    private ArrayList<ArrayList<String>> findDomain(ArrayList<DBObject> actList) {
+//        ArrayList<ArrayList<String>> domains = new ArrayList<ArrayList<String>>(); //list of possible domains for each i
+//        ArrayList<String> newDomain = new ArrayList<String>();//domain specific to i
+//
+//        DBCursor cursor2 = employees.get().getDBCollection().find();
+//        List<DBObject> arrry2 = cursor2.toArray();
+//        ArrayList<DBObject> empList = new ArrayList<>(arrry2);
+//
+//        for(int i=0; i<actList.size(); i++) {
+//            String[] counselors = campsessions.get().findOne("{name: #}", actList.get(i).get("session")).projection("{counselorIDs: 1}").as(String[].class);//get array of counselorIDs from camp session whose name is same as the name of the camp session for this activity
+//            //if(  campsessions.get().findOne("{name: #}", actList.get(i).get("session"))
+//
+//
+//            for(int j=0; j<empList.size(); j++) {
+//                //if j ok add to newDomain
+//            }
+//            domains.add(i, new ArrayList<String> (newDomain));
+//            newDomain.clear();
+//        }
+//        return domains;
+//    }
