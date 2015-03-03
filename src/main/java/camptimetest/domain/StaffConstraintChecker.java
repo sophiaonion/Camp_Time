@@ -56,15 +56,12 @@ public class StaffConstraintChecker {
         ArrayList<DBObject> actList = new ArrayList<DBObject>(arrry);
 
         if (type==1 || type==2) {//have un(der)employed activities todo CHANGE BACK TO WHILE
-            System.out.println("here");
 
             //add staff as required
             for (int i = 0; i < actList.size(); i++) {//for each activity
-                System.out.println("here2");
                 String aStringID = String.valueOf(actList.get(i).get("_id"));
                 Activity a = activities.get().findOne("{_id: #}", new ObjectId(aStringID)).as(Activity.class);//current activity
                 ObjectId campSessionID = new ObjectId(campsessions.get().findOne("{name: # }", String.valueOf(a.getSession())).as(CampSession.class).getSessionID());//campsession id
-                System.out.println(campSessionID);
                 int numCampers = (int) registrations.get().count("{sessionID: #}", campSessionID); //get number of campers
                 String activityArea = String.valueOf(a.getActivityArea());//get location of activity
                 ArrayList<String> e = new ArrayList<String>(a.getEmployees());//get number of employees working session
@@ -72,7 +69,6 @@ public class StaffConstraintChecker {
 
                 System.out.println("#campers: "+numCampers);
                 if(!a.getTitle().equals("n/a")) {
-                    System.out.println("here3");
                 //add staff with required certifications
                 if (a.getActivityArea() != null) {
                     int numLifeGuards = 0;
@@ -102,7 +98,6 @@ public class StaffConstraintChecker {
                             int count = 0;
                             if(numLifeGuards == 0) {
                                 //save employee to activity and activity to employee
-                                System.out.println("105");
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -118,12 +113,9 @@ public class StaffConstraintChecker {
                                     count++;
                                 }
                             }
-                            System.out.println("#camp: "+numCampers+" #staff:"+numStaff+" numGuards: "+numLifeGuards+" restult: "+((numCampers + numStaff) / numLifeGuards));
                             while (count < 1000 && (((numCampers + numStaff) / numLifeGuards) > 25)) {
-                                System.out.println("#camp: "+numCampers+" #staff:"+numStaff+" numGuards: "+numLifeGuards+" restult: "+((numCampers + numStaff) / numLifeGuards));
 
                                 //save employee to activity and activity to employee
-                                System.out.println("123");
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -144,7 +136,6 @@ public class StaffConstraintChecker {
                             int count2 = 0;
                             if(numLifeGuards == 0) {
                                 //save employee to activity and activity to employee
-                                System.out.println("144");
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -162,7 +153,6 @@ public class StaffConstraintChecker {
                             }
                             while (count2 < 1000 && (((numCampers + numStaff) / numLifeGuards) > 25)) {
                                 //save employee to activity and activity to employee
-                                System.out.println("162");
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -182,7 +172,6 @@ public class StaffConstraintChecker {
                         case "art":
                             if (!hasArt) {
                                 //save employee to activity and activity to employee
-                                System.out.println("182");
                                 String eID = findEmployeeToWork(a, "art", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -198,7 +187,6 @@ public class StaffConstraintChecker {
                         case "nature":
                             if (!hasNature) {
                                 //save employee to activity and activity to employee
-                                System.out.println("198");
                                 String eID = findEmployeeToWork(a, "nature", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -214,7 +202,6 @@ public class StaffConstraintChecker {
                         case "archery":
                             if (!hasArchery) {
                                 //save employee to activity and activity to employee
-                                System.out.println("214");
                                 String eID = findEmployeeToWork(a, "archery", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -230,7 +217,6 @@ public class StaffConstraintChecker {
                         case "store":
                             if (!hasStore) {
                                 //save employee to activity and activity to employee
-                                System.out.println("230");
                                 String eID = findEmployeeToWork(a, "store", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -251,7 +237,6 @@ public class StaffConstraintChecker {
                 //add assigned and available counselors to session
                 if (!checkSufficientlyStaffed(a)) {//if that wasn't enough
                     ArrayList<String> emps = new ArrayList(activities.get().findOne("{_id: #}", new ObjectId(a.getKey())).as(Activity.class).getEmployees());
-                    System.out.println("251");
                     String counID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     while (!counID.equals("none") && !checkSufficientlyStaffed(a)) {
                         emps.add(counID);
@@ -261,7 +246,6 @@ public class StaffConstraintChecker {
                         a.setEmployees(new ArrayList<String>(emps));
                         activities.get().save(a);
                         numStaff++;
-                        System.out.println("261");
                         counID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     }
                 }
@@ -271,7 +255,6 @@ public class StaffConstraintChecker {
                     //based on activity area, add staff with necessary certifications
                     ArrayList<String> emps = new ArrayList(activities.get().findOne("{_id: #}", new ObjectId(a.getKey())).as(Activity.class).getEmployees());
                     //add counselors assigned to session
-                    System.out.println("271");
                     String adID = findEmployeeToWork(a, null, "", false, false);
                     while (!adID.equals("none") && !checkSufficientlyStaffed(a)) {
                         emps.add(adID);
@@ -281,7 +264,6 @@ public class StaffConstraintChecker {
                         a.setEmployees(new ArrayList<String>(emps));
                         activities.get().save(a);
                         numStaff++;
-                        System.out.println("281");
                         adID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     }
                 }
@@ -429,7 +411,6 @@ public class StaffConstraintChecker {
     //finds available employee (if there is one, if not?? wat do)
     private String findEmployeeToWork(Activity a, String cert, String session, boolean matureLady, boolean conflictOKTwos) {
         ArrayList<String> options = new ArrayList<>();
-        System.out.println("1: number of options: "+options.size());
         //looking for staff with specific certification
         if((session==null || session.equals("")) && !(cert==null || cert.equals("")) ) {
             Iterable<Employee> cursor = employees.get().find("{certifications: #}", cert).as(Employee.class);
@@ -449,7 +430,6 @@ public class StaffConstraintChecker {
                     }
                 }
             }//end add available staff with certifications
-            System.out.println("2: number of options: "+options.size());
         }
 
 
@@ -476,7 +456,6 @@ public class StaffConstraintChecker {
                 }//end employee doesn't have break then
             }//end for each counselor assigned to session
         }//end add counselors assigned to session
-        System.out.println("3: number of options: "+options.size());
         //looking for admin or specialty staff to fill in coverage
         if((session==null || session.equals("")) && (cert==null || cert.equals("")) ) {
             Iterable<Employee> adminCursor, specCursor;
@@ -501,7 +480,6 @@ public class StaffConstraintChecker {
                     }
                 }
             }
-            System.out.println("4: number of options: "+options.size());
 
             //add available spec staff
             for(Employee e: specCursor) {
@@ -514,97 +492,7 @@ public class StaffConstraintChecker {
                     }
                 }
             }
-            System.out.println("5: number of options: "+options.size());
         }
-
-//        //looking for staff with specific certification
-//        if((session==null || session.equals("")) && !(cert==null || cert.equals("")) ) {
-//            Iterable<Employee> cursor;
-//            //ensures employee is mature lady if necessary
-//            if (matureLady) {
-//                cursor = employees.get().find("{certifications: #, woman: true, age: {$gt: 18}}", cert).as(Employee.class);
-//            } else {
-//                cursor = employees.get().find("{certifications: #}", cert).as(Employee.class);
-//            }
-//
-//            //adds available employees
-//            for(Employee e: cursor) {
-//                if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
-//                    if(!conflictOK) {
-//                        //go through each activity emp is working and make sure it isn't same as day being added
-//                        boolean alreadyWorking = false;
-//                        System.out.println(alreadyWorking);
-//                        for(String wID: e.getActivities()) {
-//                            if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
-//                                alreadyWorking = true;
-//                            }
-//                        }
-//                        System.out.println(alreadyWorking);
-//                        if(!alreadyWorking) {
-//                            options.add(e.getKey());
-//                        }
-//                    }
-//                    else
-//                    {options.add(e.getKey());}
-//                }
-//            }
-//        }
-
-//        //looking for counselor assigned to session
-//        else {
-//            String sessionID = campsessions.get().findOne("{name: #}", session).as(CampSession.class).getSessionID();
-//            ArrayList<String> counselorIDs = campsessions.get().findOne("{_id: #}", new ObjectId(sessionID)).as(CampSession.class).getCounselorIDs();
-//            System.out.println("ya");
-//            //for each counselor
-//            for(String cID: counselorIDs) {
-//                Employee e = employees.get().findOne("{_id: #}", new ObjectId(cID)).as(Employee.class);
-//                //if isn't on break
-//                System.out.println("ok");
-//                if(!checkHas24HourBreakOnDate(e, a.getTime()) && !checkIfNeedsTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay())) {
-//                    //case 1: need mature lady
-//                    if (matureLady) {
-//                        if (e.getGender().equals("woman") && e.getAge() >= 18) {
-//                            //case 1.1: not ok to be working something else
-//                            if (!conflictOK) {
-//                                //go through each activity emp is working and make sure it isn't same as day being added
-//                                boolean alreadyWorking = false;
-//                                for (String wID : e.getActivities()) {
-//                                    if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
-//                                        alreadyWorking = true;
-//                                    }
-//                                }
-//                                if (!alreadyWorking) {
-//                                    options.add(e.getKey());
-//                                }
-//                            }
-//                            //case 1.2: if ok to be working something else (idk why i would need this just in case for now can remove laterzz)
-//                            else
-//                                options.add(e.getKey());
-//                        }
-//                    } //end need a mature lady
-//
-//                    //case 2: don't need mature lady
-//                    else {
-//                        if (!conflictOK) {
-//                            //go through each activity emp is working and make sure it isn't same as day being added
-//                            boolean alreadyWorking = false;
-//                            for (String wID : e.getActivities()) {
-//                                if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() == a.getTime()) {
-//                                    alreadyWorking = true;
-//                                }
-//                            }
-//                            if (!alreadyWorking) {
-//                                options.add(e.getKey());
-//                            }
-//                        }
-//                        else
-//                            options.add(e.getKey());
-//                    }//end don't need mature lady
-//                }//end employee doesn't have break then
-//            }//end for each counselor assigned to session
-//        }//end add counselors assigned to session
-
-        System.out.println("6: number of options: "+options.size());
 
         //double check that they aren't already working that same activity
         for(int i=0; i<options.size(); i++) {
