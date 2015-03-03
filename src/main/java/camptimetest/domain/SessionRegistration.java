@@ -16,12 +16,11 @@ public class SessionRegistration {
     private boolean approved;
 
 
-    public SessionRegistration(String camperID, String sessionID){
+    public SessionRegistration(String camperID, String sessionID, String approval){
         this.camperID = camperID;
         this.sessionID = sessionID;
+        this.approved=Boolean.valueOf(approval);
     }
-
-    public SessionRegistration(){}
 
     public String getKey(){
         return key;

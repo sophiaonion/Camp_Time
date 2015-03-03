@@ -15,13 +15,16 @@ import static camptimetest.AppModule.Roles.*;
 import javax.inject.Named;
 import java.io.Console;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by Eric on 2/1/2015.
  */
-@Component @RestxResource
+@Component
+@RestxResource
 @PermitAll
 public class CamperResource {
+
     private JongoCollection registrations;
     private JongoCollection campers;
     private JongoCollection campSessions;
@@ -34,20 +37,20 @@ public class CamperResource {
         this.campSessions=campSessions;
     }
 
-    @PUT("/campers/{camperID}/{sessionID}")
-    public SessionRegistration registerCamper(String camperID, String sessionID){
+    @PUT("/campers/{camperID}/{sessionID}/{approved}")
+    public SessionRegistration registerCamper(String camperID, String sessionID, String approved){
 
-
-        SessionRegistration reg = new SessionRegistration(camperID, sessionID);
+        SessionRegistration reg = new SessionRegistration(camperID, sessionID, approved);
         registrations.get().save(reg);
         return reg;
 
     }
 
     @PUT("/campers/approve")
-    public void approveCampers(String[] registrationIDs){
-        for(int i=0; i<registrationIDs.length; i++) {
-            SessionRegistration approve = registrations.get().findOne("{_id: #}", registrationIDs[i]).as(SessionRegistration.class);
+    public void approveCampers(Map<String, Object> reg){
+        ArrayList<String> registrationIDs = (ArrayList<String>) reg.get("ids");
+        for(int i=0; i<registrationIDs.size(); i++) {
+            SessionRegistration approve = registrations.get().findOne("{_id: #}", new ObjectId(registrationIDs.get(i))).as(SessionRegistration.class);
             approve.setApproved(true);
             registrations.get().save(approve);
         }
@@ -77,9 +80,11 @@ public class CamperResource {
         return campers.get().find("{user_id: #}", customerID).as(Camper.class);
     }
 
-    @GET("/campers/{camperID}")
+    @GET("/campers/camperInfo/{camperID}")
     public Iterable<Camper> getCamper(String camperID){
-        return campers.get().find("{_id: #}", camperID).as(Camper.class);
+        System.out.println("In");
+
+        return campers.get().find("{_id: #}", new ObjectId(camperID)).as(Camper.class);
     }
 
 
@@ -101,12 +106,16 @@ public class CamperResource {
         return campers.get().find().as(Camper.class);
     }
 
-    @GET("/campers/unapproved")
-    public Iterable<SessionRegistration> getUnapprovedRegistrations(){
-        System.out.println("this many: "+registrations.get().count("{approved: false}"));
-        Iterable<SessionRegistration> unapp = registrations.get().find("{approved: false}").as(SessionRegistration.class);
-        return unapp;
-    }
+
+ //   @GET("/campers/unapproved")
+ //   public Iterable<SessionRegistration> getUnapprovedRegistrations(){
+ //       System.out.println("test");
+ //       System.out.println("this many: "+registrations.get().count("{approved: false}"));
+ //       Iterable<SessionRegistration> unapp = registrations.get().find("{approved: false}").as(SessionRegistration.class);
+
+ //       return unapp;
+ //   }
+
 
     @POST("/campers")
     public Camper createCamper(Camper camper){

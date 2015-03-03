@@ -5,14 +5,16 @@ console.log(registrations);
         //counselor selection
         registrations.forEach(function(value){
             console.log('step one');
-            $.get('api/campers/'+value.camperID, function(camper){
+            console.log(value);
+            $.get('/api/campers/camperInfo/'+value.camperID, function(camper){
                 console.log('step two');
+                console.log(camper);
                 camper.forEach(function(cvalue){
                     $.get('/api/campers/registrations/'+value.camperID, function(camp_sessions){
                         //append as option elements for campsession collect
                         camp_sessions.forEach(function(session){
                             var camper = $('<option>').text(cvalue.name+'/'+session.name).val(value._id);
-                            $('.requesting').append(emp);
+                            $('.requesting').append(camper);
                         });
                      });
                 });
@@ -36,14 +38,18 @@ console.log(registrations);
     //submit approvals
     $('#submit').on('click', function(){
 
-        var approved = [];
-        $( ".approving option" ).each(function( index ) {
-            counselors.push($(this).val());
+        var approved=[];
+        $( ".approving option" ).each(function(index) {
+            approved.push(new String($(this).val()));
         });
 
+        console.log("data going to be sent");
+        console.log(approved);
+        //var newdata = JSON.stringify(approved);
+        //console.log("test stringify data "+newdata);
         var data = {
-            approved: approved
-        };
+                ids: approved
+            };
 
         $.ajax({
             type: 'PUT',
@@ -71,7 +77,9 @@ console.log(registrations);
 };
 
 $(document).ready(function(){
-       $.get('api/campers/unapproved', function(registrations){
+        console.log("before get");
+       $.get('/api/campsessions/unapproved', function(registrations){
+            console.log("in the get");
             console.log(registrations);
             main(registrations);
         });

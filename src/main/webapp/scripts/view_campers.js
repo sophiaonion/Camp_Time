@@ -109,7 +109,7 @@ $(document).ready(function(){
 
              if(role == "counselor"){ //find out which session is counselor working with (first get),
              //use sessionId to request campers via camper resource (second get)
-             var camperList;
+              var camperList;
 
               $.get('/api/campsessions/'+userID, function(sessions){
                     $.when(
@@ -119,10 +119,10 @@ $(document).ready(function(){
                                camperList.add(campers);
                             });
 
-                        });
+                        })
 
                     ).then(
-                        main(camperList, false);
+                        main(camperList, false)
                     );
 
               });
