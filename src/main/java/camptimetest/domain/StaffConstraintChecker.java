@@ -102,6 +102,7 @@ public class StaffConstraintChecker {
                             int count = 0;
                             if(numLifeGuards == 0) {
                                 //save employee to activity and activity to employee
+                                System.out.println("105");
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -117,8 +118,12 @@ public class StaffConstraintChecker {
                                     count++;
                                 }
                             }
-                            while (count < 100000 && (((numCampers + numStaff) / numLifeGuards) < 25)) {
+                            System.out.println("#camp: "+numCampers+" #staff:"+numStaff+" numGuards: "+numLifeGuards+" restult: "+((numCampers + numStaff) / numLifeGuards));
+                            while (count < 1000 && (((numCampers + numStaff) / numLifeGuards) > 25)) {
+                                System.out.println("#camp: "+numCampers+" #staff:"+numStaff+" numGuards: "+numLifeGuards+" restult: "+((numCampers + numStaff) / numLifeGuards));
+
                                 //save employee to activity and activity to employee
+                                System.out.println("123");
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -139,6 +144,7 @@ public class StaffConstraintChecker {
                             int count2 = 0;
                             if(numLifeGuards == 0) {
                                 //save employee to activity and activity to employee
+                                System.out.println("144");
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -154,8 +160,9 @@ public class StaffConstraintChecker {
                                     count2++;
                                 }
                             }
-                            while (count2 < 100000 && (((numCampers + numStaff) / numLifeGuards) < 25)) {
+                            while (count2 < 1000 && (((numCampers + numStaff) / numLifeGuards) > 25)) {
                                 //save employee to activity and activity to employee
+                                System.out.println("162");
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -175,6 +182,7 @@ public class StaffConstraintChecker {
                         case "art":
                             if (!hasArt) {
                                 //save employee to activity and activity to employee
+                                System.out.println("182");
                                 String eID = findEmployeeToWork(a, "art", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -190,6 +198,7 @@ public class StaffConstraintChecker {
                         case "nature":
                             if (!hasNature) {
                                 //save employee to activity and activity to employee
+                                System.out.println("198");
                                 String eID = findEmployeeToWork(a, "nature", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -205,6 +214,7 @@ public class StaffConstraintChecker {
                         case "archery":
                             if (!hasArchery) {
                                 //save employee to activity and activity to employee
+                                System.out.println("214");
                                 String eID = findEmployeeToWork(a, "archery", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -220,6 +230,7 @@ public class StaffConstraintChecker {
                         case "store":
                             if (!hasStore) {
                                 //save employee to activity and activity to employee
+                                System.out.println("230");
                                 String eID = findEmployeeToWork(a, "store", "", false, false);
                                 if(!eID.equals("none")) {
                                     emps.add(eID);
@@ -240,6 +251,7 @@ public class StaffConstraintChecker {
                 //add assigned and available counselors to session
                 if (!checkSufficientlyStaffed(a)) {//if that wasn't enough
                     ArrayList<String> emps = new ArrayList(activities.get().findOne("{_id: #}", new ObjectId(a.getKey())).as(Activity.class).getEmployees());
+                    System.out.println("251");
                     String counID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     while (!counID.equals("none") && !checkSufficientlyStaffed(a)) {
                         emps.add(counID);
@@ -249,6 +261,7 @@ public class StaffConstraintChecker {
                         a.setEmployees(new ArrayList<String>(emps));
                         activities.get().save(a);
                         numStaff++;
+                        System.out.println("261");
                         counID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     }
                 }
@@ -258,6 +271,7 @@ public class StaffConstraintChecker {
                     //based on activity area, add staff with necessary certifications
                     ArrayList<String> emps = new ArrayList(activities.get().findOne("{_id: #}", new ObjectId(a.getKey())).as(Activity.class).getEmployees());
                     //add counselors assigned to session
+                    System.out.println("271");
                     String adID = findEmployeeToWork(a, null, "", false, false);
                     while (!adID.equals("none") && !checkSufficientlyStaffed(a)) {
                         emps.add(adID);
@@ -267,6 +281,7 @@ public class StaffConstraintChecker {
                         a.setEmployees(new ArrayList<String>(emps));
                         activities.get().save(a);
                         numStaff++;
+                        System.out.println("281");
                         adID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     }
                 }
@@ -605,6 +620,7 @@ public class StaffConstraintChecker {
             return options.get(0);
         }
         else
+        System.out.println("ur a nerd");
             System.out.println("found nobody");
         return "none";
     }//end findEmployeeToWork()
