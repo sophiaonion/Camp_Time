@@ -1,6 +1,7 @@
 package camptimetest.rest;
 
 import camptimetest.domain.Activity;
+import camptimetest.domain.CampSession;
 import camptimetest.domain.Employee;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
@@ -37,13 +38,16 @@ import static org.jongo.Oid.withOid;
 public class EmployeeResource {
     private final JongoCollection employees; //Database access object, will inject when resource is created/called
     private final JongoCollection activities;
+    private final JongoCollection campsessions;
 
     //@Named designates which collection to connect to in database whose name is specified in AppModule
     public EmployeeResource(@Named("employees") JongoCollection employees,
-                            @Named("activities") JongoCollection activities)
+                            @Named("activities") JongoCollection activities,
+                            @Named("campsessions") JongoCollection campsessions)
     {
         this.employees = employees;
         this.activities = activities;
+        this.campsessions = campsessions;
     }
 
     @RolesAllowed(ADMIN)
@@ -118,13 +122,12 @@ public class EmployeeResource {
         return available;
     }
 
-    //getEmployeeObjects
-
     //get sent Map of key value pairs
     //employee_id and activity_id
     @PUT("/employees/activities/add")
     public String addEmployeeToActivity(Map<String, Object> values){
         ArrayList<String> stringIds = (ArrayList<String>)values.get("employees");
+        if(stringIds.size() == 0) return "200";
         ArrayList<ObjectId> employeeIds = CollectionHelper.stringsToObjectIds(stringIds);
         String activityId = (String)values.get("activity_id");
 
@@ -144,8 +147,10 @@ public class EmployeeResource {
 
     //employee_id and activity_id
     @PUT("/employees/activities/remove")
-    public Activity removeEmployeeFromActivity(Map<String, Object> values){
+    public CampSession removeEmployeeFromActivity(Map<String, Object> values){
         ArrayList<String> employeeStringIds = (ArrayList<String>)values.get("employees");
+        if(employeeStringIds.size() == 0) return new CampSession();
+
         ArrayList<ObjectId> employeeIds = CollectionHelper.stringsToObjectIds(employeeStringIds);
         String activityId = (String)values.get("activity_id");
 
@@ -159,7 +164,7 @@ public class EmployeeResource {
 
         act.removeEmployees(employeeStringIds);
         activities.get().save(act);
-    return act;
+        return campsessions.get().findOne("{name: #}", act.getSession()).as(CampSession.class);
     }
 
 
