@@ -1,5 +1,5 @@
 src/main/java**camptimetest/rest/CampSessionResource.java**ce02793b488c01f7fc9bd301d4cf9982**1425368977000
-src/main/java**camptimetest/domain/User.java**412845618902283e530720fde8b5d667**1425269006000
+src/main/java**camptimetest/domain/User.java**3d2c7d2aea4cee81323c497543823aa8**1425373985000
 src/main/java**camptimetest/rest/ActivityResource.java**12eb2d2c1e8cd2ef85d377fe09f078f0**1425368026000
 src/main/java**camptimetest/domain/SessionRegistration.java**ab200c4b223187b501bfd4a3e5321ab7**1425367625000
 src\main\java**camptimetest\domain\Activity.java**b2640c53e56529b1d95c2c467fbdf4f2**1423275086151
@@ -16,7 +16,7 @@ src/main/java**camptimetest/domain/ActivityArea.java**6b50f98a339b16d8e7bf604cb2
 src/main/java**camptimetest/domain/Activity.java**badc31d22ce6dd063c7b15c75552bec6**1425269006000
 src\main\java**camptimetest\rest\CampSessionResource.java**264ff861aa84da0f31d274860c6a74e8**1423278660081
 src\main\java**camptimetest\domain\Day.java**2dce4180000ea965d78af635fe14fabf**1423092277364
-src/main/java**camptimetest/rest/CamperResource.java**31e53cab89fcbecb7f94f4750bddcdc9**1425367838000
+src/main/java**camptimetest/rest/CamperResource.java**4c0ffc087ff5f03ea23762e0fe1cf6a6**1425373985000
 src/main/java**camptimetest/domain/Hour.java**a6fcb334f9dbc85f80ca94c07d3eb623**1423102753000
 src\main\java**camptimetest\domain\ConstraintChecker.java**75cc3af2a60035728be453f198aa3ea0**1423103236930
 src/main/java**camptimetest/AppServer.java**bde992416e29a19eb4d7af10fd28618c**1425368026000
@@ -29,13 +29,13 @@ src/main/java**playground/datetest.java**8426ffaf6587671afe35871e90ebb352**14226
 src/main/java**camptimetest/domain/ConstraintChecker.java**71a2633c13b472513203fc4450f3a6af**1425368026000
 src\main\java**camptimetest\domain\Certification.java**74451bbcb342a7dc5802316515864ae6**1423092277357
 src/main/java**camptimetest/domain/CampSession.java**de305600ecdaa913cf0f6e4f9c4ac63d**1425159801000
-src/main/java**camptimetest/domain/StaffConstraintChecker.java**c5d5c9c37d43edd5677d6ca4d235f820**1425369278000
+src/main/java**camptimetest/domain/StaffConstraintChecker.java**d7e5e7483a0fa28ae619a6de49c0498b**1425370962000
 src/main/java**camptimetest/AppModule.java**c254c92d026f4ebaa5b843116d6b137a**1424641022000
 src\main\java**camptimetest\domain\Employee.java**1dfd0ee2fef823e20aaaa3adaa000ed2**1423339370167
 src/main/java**camptimetest/domain/Camper.java**890a390fc781c704f4d832c4c4a41572**1425269006000
 src/main/java**camptimetest/domain/Day.java**eefea86a1a24d8a6360ff71037cfe348**1423555534000
 src/main/java**camptimetest/rest/MyUserRepository.java**2e1e4ee463778bbfaeb227cc6cdcdf23**1423555534000
-src/main/java**camptimetest/rest/UserResource.java**1380e4b394ef0a3a728347ee434cf1f7**1425355527000
+src/main/java**camptimetest/rest/UserResource.java**aa63b8bb52f4a9488d2e9ccee7af2f24**1425373985000
 src/main/java**camptimetest/domain/MasterSchedule.java**68aa46aafbc649d4e44dce95e5f8a43b**1423287952000
 src\main\java**playground\datetest.java**8426ffaf6587671afe35871e90ebb352**1422675267000
 src\main\java**camptimetest\createdata\TestData.java**15f981894f2269829dd8de219d2903d6**1422928912000
