@@ -270,6 +270,30 @@ public class StaffConstraintChecker {
             }
         }
         }//end assign employees to unemployed activities
+
+        if(checkConflicts()>0) {
+            //heuristic repair
+
+//        ArrayList<ArrayList<String>> domains = new ArrayList<ArrayList<String>>(); //list of possible domains for each i
+//        ArrayList<String> newDomain = new ArrayList<String>();//domain specific to i
+//
+//        DBCursor cursor2 = employees.get().getDBCollection().find();
+//        List<DBObject> arrry2 = cursor2.toArray();
+//        ArrayList<DBObject> empList = new ArrayList<>(arrry2);
+//
+//        for(int i=0; i<actList.size(); i++) {
+//            String[] counselors = campsessions.get().findOne("{name: #}", actList.get(i).get("session")).projection("{counselorIDs: 1}").as(String[].class);//get array of counselorIDs from camp session whose name is same as the name of the camp session for this activity
+//            //if(  campsessions.get().findOne("{name: #}", actList.get(i).get("session"))
+//
+//
+//            for(int j=0; j<empList.size(); j++) {
+//                //if j ok add to newDomain
+//            }
+//            domains.add(i, new ArrayList<String> (newDomain));
+//            newDomain.clear();
+//        }
+
+        }
     }//end fixConflicts()
 
 
@@ -649,26 +673,3 @@ public class StaffConstraintChecker {
         return 0;
     }//end checkConflicts()
 }
-
-
-//    private ArrayList<ArrayList<String>> findDomain(ArrayList<DBObject> actList) {
-//        ArrayList<ArrayList<String>> domains = new ArrayList<ArrayList<String>>(); //list of possible domains for each i
-//        ArrayList<String> newDomain = new ArrayList<String>();//domain specific to i
-//
-//        DBCursor cursor2 = employees.get().getDBCollection().find();
-//        List<DBObject> arrry2 = cursor2.toArray();
-//        ArrayList<DBObject> empList = new ArrayList<>(arrry2);
-//
-//        for(int i=0; i<actList.size(); i++) {
-//            String[] counselors = campsessions.get().findOne("{name: #}", actList.get(i).get("session")).projection("{counselorIDs: 1}").as(String[].class);//get array of counselorIDs from camp session whose name is same as the name of the camp session for this activity
-//            //if(  campsessions.get().findOne("{name: #}", actList.get(i).get("session"))
-//
-//
-//            for(int j=0; j<empList.size(); j++) {
-//                //if j ok add to newDomain
-//            }
-//            domains.add(i, new ArrayList<String> (newDomain));
-//            newDomain.clear();
-//        }
-//        return domains;
-//    }

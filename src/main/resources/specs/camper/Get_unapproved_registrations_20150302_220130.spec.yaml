@@ -1,0 +1,31 @@
+title: Get unapproved registrations 20150302 220130
+given:
+  - time: 2015-03-03T04:01:30.480Z
+  - collection: users
+    data: |
+        { "_id" : { "$oid" : "54d9966c0364faae8c09b1c0"} , "name" : "test" , "password" : "$2a$10$FKmjdGjNwc/rbDhYFWitDOkG0VQqHAm.0bv8jU7UnMfGNjGwjYIH." , "roles" : [ "admin"] , "campers" : [ ]}
+        { "_id" : { "$oid" : "54d9a5bd0364faae8c09b206"} , "name" : "counselor" , "password" : "$2a$10$3K9W2etVCdwfN9IvFpAffeomrJpOfLvDic4Gxn0db3eWK216/9Axq" , "roles" : [ "counselor"]}
+        { "_id" : { "$oid" : "54e3e9880364dd79cd3291c2"} , "name" : "spec" , "password" : "$2a$10$JaWYOVKTnD/iIaLVLVzMsuZUNm3ZKR5/WWt.K4v0DWMb8UfXa4vSG" , "roles" : [ "specialty"]}
+        { "_id" : { "$oid" : "54eadace03640a4b87542741"} , "name" : "counsel" , "password" : "$2a$10$vxmQSbNREx8hYLjbxhPGruCXTyhZKjyTqUK4XFKtTvvMj0JhH3AkS" , "roles" : [ "counselor"]}
+        { "_id" : { "$oid" : "54ebfeb303647265b9b5c4ef"} , "name" : "customer" , "password" : "$2a$10$xyTMFxVIMLmh33RyT0sbQOAZ03k5389UZz10FrfyI.gRqLigSkICK" , "roles" : [ "customer"] , "campers" : [ "54f3dd730364223fd855195f" , "54f4a9b703646d896f05b880"]}
+        { "_id" : { "$oid" : "54ec015203647265b9b5c4f0"} , "name" : "trial" , "password" : "$2a$10$SDJArcnDRRLvfz1YBKbuD.yAe8VXf/2Wz8gVMutLONSgehmWivgrO" , "roles" : [ "customer"]}
+        { "_id" : { "$oid" : "54f3ec10036419a153246f7e"} , "name" : "testuser" , "password" : "$2a$10$ggZGrdOHr9.4oI3QcFisHuI20yt2aMoFDkjDMlvOFTnyeOuPIa9Zm" , "roles" : [ "customer"] , "campers" : [ "54f3ec29036419a153246f7f"]}
+        { "_id" : { "$oid" : "54f52e230364dc74b7e6c1fe"} , "name" : "approval" , "password" : "$2a$10$366LeirxZJxmqusEiS9TWOVS55HFey8mxTlyatafOTepzWtNhkFJu" , "roles" : [ "customer"] , "campers" : [ "54f52e3b0364dc74b7e6c1ff"]}
+  - collection: registrations
+    data: |
+        { "_id" : { "$oid" : "54ec99c003648e1b738a61bf"} , "camperID" : "54ec99b703648e1b738a61be" , "sessionID" : "54d999c80364faae8c09b203"}
+        { "_id" : { "$oid" : "54f3e0d5036419a153246f75"} , "camperID" : "54f3da5c0364223fd855195d" , "sessionID" : "54f3cccf0364293fe284ef10"}
+        { "_id" : { "$oid" : "54f4a9c303646d896f05b881"} , "camperID" : "54f4a9b703646d896f05b880" , "sessionID" : "54f3cccf0364293fe284ef10" , "approved" : false}
+        { "_id" : { "$oid" : "54f52e450364dc74b7e6c200"} , "camperID" : "54f52e3b0364dc74b7e6c1ff" , "sessionID" : "54f3cccf0364293fe284ef10" , "approved" : false}
+  - collection: campers
+    data: |
+        { "_id" : { "$oid" : "54f3dd730364223fd855195f"} , "name" : "whatsUp" , "age" : "daisy" , "extraInfo" : "whatsUp? go to bed" , "user_id" : "54ebfeb303647265b9b5c4ef"}
+        { "_id" : { "$oid" : "54f3ec29036419a153246f7f"} , "name" : "testuser's camper" , "age" : "daisy" , "extraInfo" : "adfadsfadfasd" , "user_id" : "54f3ec10036419a153246f7e"}
+        { "_id" : { "$oid" : "54f4a9b703646d896f05b880"} , "name" : "yo" , "age" : "daisy" , "extraInfo" : "yo" , "user_id" : "54ebfeb303647265b9b5c4ef"}
+        { "_id" : { "$oid" : "54f52e3b0364dc74b7e6c1ff"} , "name" : "approval?" , "age" : "daisy" , "extraInfo" : "approval?" , "user_id" : "54f52e230364dc74b7e6c1fe"}
+wts:
+  - when: |
+       GET campers/unapproved
+       Cookie: RestxSession={"principal":"admin","sessionKey":"4d5aeeb4-c778-4a17-b7a0-bd135bc64139","_expires":"2015-04-02T04:01:30.480Z"}; RestxSessionSignature=YcqV6rSSMpDQFwSvXA6sXgMA2cI=
+    then: |
+        [ ]

@@ -1,0 +1,19 @@
+title: Get campersfor customer 20150301 022024
+given:
+  - time: 2015-03-01T08:20:24.447Z
+  - collection: users
+    data: |
+        { "_id" : { "$oid" : "54d9966c0364faae8c09b1c0"} , "name" : "test" , "password" : "$2a$10$FKmjdGjNwc/rbDhYFWitDOkG0VQqHAm.0bv8jU7UnMfGNjGwjYIH." , "roles" : [ "admin"]}
+        { "_id" : { "$oid" : "54d9a5bd0364faae8c09b206"} , "name" : "counselor" , "password" : "$2a$10$3K9W2etVCdwfN9IvFpAffeomrJpOfLvDic4Gxn0db3eWK216/9Axq" , "roles" : [ "counselor"]}
+        { "_id" : { "$oid" : "54e3e9880364dd79cd3291c2"} , "name" : "spec" , "password" : "$2a$10$JaWYOVKTnD/iIaLVLVzMsuZUNm3ZKR5/WWt.K4v0DWMb8UfXa4vSG" , "roles" : [ "specialty"]}
+        { "_id" : { "$oid" : "54eadace03640a4b87542741"} , "name" : "counsel" , "password" : "$2a$10$vxmQSbNREx8hYLjbxhPGruCXTyhZKjyTqUK4XFKtTvvMj0JhH3AkS" , "roles" : [ "counselor"]}
+        { "_id" : { "$oid" : "54ebfeb303647265b9b5c4ef"} , "name" : "customer" , "password" : "$2a$10$xyTMFxVIMLmh33RyT0sbQOAZ03k5389UZz10FrfyI.gRqLigSkICK" , "roles" : [ "customer"]}
+        { "_id" : { "$oid" : "54ec015203647265b9b5c4f0"} , "name" : "trial" , "password" : "$2a$10$SDJArcnDRRLvfz1YBKbuD.yAe8VXf/2Wz8gVMutLONSgehmWivgrO" , "roles" : [ "customer"]}
+wts:
+  - when: |
+       GET campers/54ebfeb303647265b9b5c4ef
+       Cookie: RestxSession={"principal":"54ebfeb303647265b9b5c4ef","sessionKey":"917aa18c-2626-4ea8-9f16-1a7d96376fb3","_expires":"2015-03-31T08:20:24.447Z"}; RestxSessionSignature=WvNCooww/wxdJ8+UvG2L4T9PH48=
+    then: |
+       401
+
+        Unauthorized
