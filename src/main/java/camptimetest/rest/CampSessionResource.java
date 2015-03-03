@@ -52,6 +52,22 @@ public class CampSessionResource {
             return CSessions;
         }
 
+    @GET("/campsessions/unapproved")
+    public Iterable<SessionRegistration> getUnapproved(){
+        System.out.println("test");
+        System.out.println("this many: "+registrations.get().count("{approved: false}"));
+        Iterable<SessionRegistration> unapp = registrations.get().find("{approved: false}").as(SessionRegistration.class);
+
+        return unapp;
+    }
+
+//        @DELETE("/campsessions") //map has keys _id, name
+//        public int deleteCampSession(Map<String, String> deleteInfo){
+//            //remove campsession ids from registrations, and activities with
+//            activities.get().remove("{session: #}", deleteInfo.get("name"));
+//            registrations.get().remove("")
+//            campSession.get().remove
+//        }
         @GET("/campsessions/{id}")
         public CampSession updateCampSession(String id){
             CampSession toUpdate = campSession.get().findOne("{_id: #}", id).as(CampSession.class);
@@ -67,6 +83,7 @@ public class CampSessionResource {
             return "200";
         }
 
+        //get campers in a session
         @GET("/campsessions/campers/{id}")
         public Iterable<Camper> getCampersInSession(String id){ //
             //mapping straight to strings or ObjectIds DOESN'T work

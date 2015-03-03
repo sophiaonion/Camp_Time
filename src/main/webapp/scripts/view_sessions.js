@@ -40,15 +40,18 @@ var main = function(camp_sessions){
 
     $('#session-select').on('change', function(){
             camp_session = camp_sessions[$(this).val()];
+            if (camp_session){
             $.ajax({
-                url: "/api/activities/campsession",
-                data: JSON.stringify({activityIds: camp_session.activities}),
-                type: "PUT",
-                contentType: 'application/JSON'
-            }).done(function(activities, textStatus, jxQHR){
-                camp_session.activity_objects = activities;
-                buildTableSchedule(camp_session);
-            }).fail(alert.bind(null, 'error retrieving session activities'));
+                            url: "/api/activities/campsession",
+                            data: JSON.stringify({activityIds: camp_session.activities}),
+                            type: "PUT",
+                            contentType: 'application/JSON'
+                        }).done(function(activities, textStatus, jxQHR){
+                            camp_session.activity_objects = activities;
+                            buildTableSchedule(camp_session);
+                        }).fail(alert.bind(null, 'error retrieving session activities'));
+            }
+
         });
 
     var buildTableSchedule = function(session){
@@ -141,15 +144,15 @@ var main = function(camp_sessions){
                 console.log(data);
                 keyUpData = data;
                 $(auto).autocomplete({
-                                           source: data,
-                                           autoFocus: true,
-                                           close: function(event, ui){
-                                                if (($.inArray($(this).val(), source)) === -1){
-                                                $(this).val("");
-                                                }
-                                           },
-                                           minLength: 0
-                                      }).on('keyup', function(event){
+                   source: data,
+                   autoFocus: true,
+                   close: function(event, ui){
+                        if (($.inArray($(this).val(), source)) === -1){
+                        $(this).val("");
+                        }
+                   },
+                   minLength: 0
+              }).on('keyup', function(event){
                 var valid = false;
                 //http://stackoverflow.com/questions/6373512/source-only-allowed-values-in-jquery-ui-autocomplete-plugin
                 //for limiting allowed values
@@ -212,8 +215,48 @@ var main = function(camp_sessions){
 };
 
 $(document).ready(function(){
-    $.get('/api/campsessions', function(camp_sessions){
-        console.log(camp_sessions.length);
-        main(camp_sessions);
+    //get list of campers first and then find the camp sessions that camper is with
+    var camp_sessions;
+    $.get('/api/login/current/user', function(current){
+
+        $.get('/api/campers/customer/'+current._id, function(campers){
+
+                var camp_sessions=[];
+                campers.forEach(function(camper){
+                    console.log("before get: ");
+                    console.log(camp_sessions);
+                    console.log(camper);
+
+                     $.ajax({
+                         type: 'GET',
+                         url: '/api/campers/registrations/'+camper._id,
+                         async: false,
+                         contentType: 'application/JSON',
+                         success: function(csessions){
+                             csessions.forEach(function(csession){
+                                 if (csession){
+                                 camp_sessions.push(csession);
+                                 }
+
+                                 console.log("in the foreach get");
+                                 console.log(camp_sessions);
+                             });
+                             console.log("after foreach get");
+                             console.log(camp_sessions);
+                         },
+                     });
+
+                     console.log("after get");
+                     console.log(camp_sessions);
+
+                });
+
+                   console.log("the camp sessions are: ");
+                   console.log(camp_sessions);
+                   main(camp_sessions);
+            });
     });
+
+
+
 });

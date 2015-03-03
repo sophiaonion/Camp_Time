@@ -28,10 +28,6 @@ var main = function(campers){
 
                      $.get('/api/login/current/user', function(current){
                         console.log("create camper, current user"+current);
-                        console.log(current);
-                        console.log(current._id);
-                        console.log(data);
-                        console.log(data._id);
                          $.ajax({
                              type: 'PUT',
                              url: '/api/users/campers/add',

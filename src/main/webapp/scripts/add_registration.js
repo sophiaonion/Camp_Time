@@ -47,8 +47,8 @@ var main = function(campers, role){
     $('#submit-registration').on('click', function(){
         var approved;
         console.log(role);
-        if(role == 'customer') {approved = false}
-        else {approved = true}
+        if(role == 'customer') {approved = "false"}
+        else {approved = "true"}
 
         var data = {
             //for nonhard coded method
@@ -60,7 +60,7 @@ var main = function(campers, role){
         console.log('submit clicked');
         $.ajax({
             type: 'PUT',
-            url: '/api/campers/' + data.camperID + '/' + data.sessionID,
+            url: '/api/campers/' + data.camperID + '/' + data.sessionID + '/' + data.approved,
             data: JSON.stringify(data),
             contentType: 'application/JSON',
             success: function(data){
@@ -82,14 +82,14 @@ var main = function(campers, role){
 $(document).ready(function(){
         $.get('/api/login/current/user', function(current){
             console.log(current._id);
-            console.log(current.role);
-            if(current.role == 'customer') {
-                $.get('api/campers/customer/'+current._id, function(campers){
+            console.log(current.roles[0]);
+            if(current.roles[0] == 'customer') {
+                $.get('/api/campers/customer/'+current._id, function(campers){
                        console.log("Campers:"+ campers);
                        main(campers, current.role);
                 });
            } else {
-                $.get('api/campers', function(campers){
+                $.get('/api/campers', function(campers){
                        console.log("Campers:"+ campers);
                        main(campers, current.role);
                 });
