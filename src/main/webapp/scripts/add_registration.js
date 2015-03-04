@@ -86,7 +86,7 @@ $(document).ready(function(){
             if(current.roles[0] == 'customer') {
                 $.get('/api/campers/customer/'+current._id, function(campers){
                        console.log("Campers:"+ campers);
-                       main(campers, current.role);
+                       main(campers, current.roles[0]);
                 });
            } else {
                 $.get('/api/campers', function(campers){
