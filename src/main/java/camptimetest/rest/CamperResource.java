@@ -87,10 +87,9 @@ public class CamperResource {
         return campers.get().find("{_id: #}", new ObjectId(camperID)).as(Camper.class);
     }
 
-
     @GET("/campers/registrations/{camperID}")
     public Iterable<CampSession> getCampers(String camperID){
-        Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #}", camperID).as(SessionRegistration.class);
+        Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #, approved:true}", camperID).as(SessionRegistration.class);
         ArrayList<ObjectId> sessionIDs = new ArrayList<>();
         for(SessionRegistration reg : regsOfSession){
             sessionIDs.add(new ObjectId(reg.getSessionID()));

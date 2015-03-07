@@ -18,12 +18,34 @@ var main = function(campers, if_customer, userId){
     }
 
     $('#select-camper').on('change', function(){
+        $('#campers-info').load("view_campers.html  #campers-info");
         var camper_index = $(this).val();
         var camper=campers[camper_index];
-        console.log("here");
-        console.log(camper.age);
+        console.log("refresh");
         $('.campers-info #age').text(camper.age);
         $('.campers-info #extra-info').text(camper.extraInfo);
+        console.log(camper._id);
+        $.ajax({
+             type: 'GET',
+             url: '/api/campers/registrations/'+camper._id,
+             contentType: 'application/JSON',
+             async:false,
+             success: function(sessions){
+                 console.log("success ajax");
+                 console.log(sessions.length);
+                 if (sessions.length!=0){
+                     sessions.forEach(function(session){
+                        console.log("success foreach");
+                         $('.campers-info #sessions').text(session.name);
+                     });
+                 }else{
+                    $('.campers-info #sessions').text(" ");
+                 }
+             },
+             error: function(request, status, error){
+                 console(error);
+             }
+         })
 
     });
 
