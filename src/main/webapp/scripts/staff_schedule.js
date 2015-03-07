@@ -27,7 +27,7 @@ var main = function(){
          if (role == "admin"){
             $('.staff-select-con').show();
             //get the list of employees
-            $.get('/api/employees', function(employees){
+            $.get('/api/employees/all', function(employees){
              //append as option elements for campsession collect
                 employees.forEach(function(employee){
                     var element = $("<option>");
@@ -51,18 +51,40 @@ var main = function(){
 
         //find all the date that have area scheduled
         container1.innerHTML= content1;
-        $.get('/api/employees/'+ staffId, function(activities){
-            activities.forEach(function(activity){
-                var element = $("<option>");
-                var date = new Date (activity.time);
+        var activities=[];
+        $.get('/api/employees/'+ staffId, function(employee){
+            console.log("employee:");
+            console.log(employee);
+            var activityIds = employee.activities;
+            activityIds.forEach(function(activityId){
+                console.log("activity:");
+                console.log(activityId);
 
-                //test if there's already an activity happening on particular day
-                if ($.inArray(date.myToString(), display)== -1 )
-                {    display.push(date.myToString());
-                    element.val(date.myToString());
-                    element.text(date.myToString());
-                    $('#select-date').append(element);
-                }
+                $.ajax({
+                     type: 'GET',
+                     url: '/api/activities/byId/'+activityId,
+                     contentType: 'application/JSON',
+                     async:false,
+                     success: function(activity){
+                        activities.push(activity);
+                        var element = $("<option>");
+                        console.log("activity from get");
+                        console.log(activity);
+                        var date = new Date (activity.time);
+
+                        //test if there's already an activity happening on particular day
+                        if ($.inArray(date.myToString(), display)== -1 )
+                        {   display.push(date.myToString());
+                            //element.val();
+                            element.text(date.myToString());
+                            element.data('date',date.myToString());
+                            $('#select-date').append(element);
+                        }
+                     },
+                     error: function(request, status, error){
+                         console(error);
+                     }
+                 });
             });
             $('.date-select').show();
 
@@ -71,14 +93,19 @@ var main = function(){
             var content2 = container2.innerHTML;
 
             $('#select-date').on('change', function(){
-                var select = $(this).val();
+                var select = $('#select-date option:selected').data('date');
+                console.log(select);
                 //reload
                 container2.innerHTML= content2;
-                $('#schedule').show();
-                 console.log(activities);
+
+                console.log(activities);
                  //print the activities for that selected date
                  activities.forEach(function(activity){
+                    console.log("current activity");
+                    console.log(activity);
                     var time = new Date (activity.time).myToString();
+                    console.log("this activity's time");
+                    console.log(time);
                     var hour = new Date (activity.time).myGetHour();
 
                     //add activity & session to html
@@ -95,11 +122,10 @@ var main = function(){
                         row.appendChild(new2);
                     }
                 });
+
+                $('#schedule').show();
             });
          });
-
-
-
     });
 
      $('#cancel').on('click', function(){

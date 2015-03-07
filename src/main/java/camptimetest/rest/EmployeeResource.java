@@ -51,7 +51,7 @@ public class EmployeeResource {
     }
 
     @RolesAllowed(ADMIN)
-    @GET("/employees") //has to return iterable since .find() returns iterable of objects
+    @GET("/employees/all") //has to return iterable since .find() returns iterable of objects
     //even if only one entry is returned, .findOne will return object not wrapped in iterable
     public Iterable<Employee> getEmployees() {
 
@@ -59,10 +59,10 @@ public class EmployeeResource {
         return employees.get().find().as(Employee.class);
     }
 
-    //get list of activities with certain Employee
+    //get certain employee
     @GET("/employees/{employeeID}")
-    public Iterable<Activity> getEmployeeActivities(String employeeID){
-        return employees.get().find("{employee:#}",employeeID).as(Activity.class);
+    public Employee getEmployee(String employeeID){
+        return employees.get().find("{_id:#}", new ObjectId(employeeID)).as(Employee.class).iterator().next();
     }
 
 
