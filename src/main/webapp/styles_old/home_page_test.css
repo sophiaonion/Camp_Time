@@ -1,17 +1,14 @@
 
-header {
-    display: block;
-    background-color: #627a60;
-    text-align: left;
-}
-
-body {
-    margin: 0;
-    padding:0;
+h1 {
+    text-align: center;
 }
 
 nav {
-    text-align: left;
+    text-align: center;
+}
+
+div {
+    display:inline;
 }
 
 /* hide nested lists */
@@ -25,15 +22,17 @@ nav ul li:hover > ul {
 }
 
 nav ul {
-    padding: 0 0px;
-    background-color: #948c75; /*menu color*/
-    border: 1px solid #7a6a53;
+    display: inline-table; /*makes menu width fit around items */
+    padding: 0 20px;
+    background-color: #CC333F;
+    border-radius: 8px; /*round edges*/
     list-style: none; /*get rid of bullet points */
     position: relative; /*sub menus position relative to nav bar */
+    color: #EFEFEF;
 }
 
 nav ul:after { /*inserts content  after list*/
-    content: "";
+    content: ;
     clear: both;
     display: block;
 }
@@ -43,18 +42,17 @@ nav ul li {
 }
 
 nav ul li:hover {
-    background-color: #d9ceb2;
-    border: 1px solid #6A4A3C;
+    background-color: #EB6841;
 }
 
 nav ul li:hover a {
-    color: #7a6a53;
+    color: #EFEFEF;
 }
 
 /*modify menu bar blocks */
 nav ul li a {
     display: block;
-    padding: 10px 15px;
+    padding: 20px 15px;
     text-decoration: none; /*remove link underlines */
     color: #EFEFEF;
 }
@@ -64,34 +62,26 @@ nav ul ul {
    position: absolute; /*set towards parent ul*/
    top: 100%; /*lines top of element right up next to containing li in menu*/
    padding: 0;
-
 }
 
 /*sub menu list items */
 nav ul ul li {
     float: none;
-    border: 1px solid #948c75;
+    border: 1px solid #EB6841;
     position: relative;
-    background: #d9ceb2;
-
+    background: #EDC951;
 }
 
 nav ul ul li a {
-    text-align: left;
-    padding: 15px 5px;
+    padding: 20px 15px;
 }
 
 nav ul ul li a:hover {
-
-    background: #EDC951;
+    background: #DE5F59;
 }
 /* sub sub menus */
 nav ul ul ul {
     position: absolute;
     left: 100%;
     top: 0;
-}
-
-.auto-update {
-
 }

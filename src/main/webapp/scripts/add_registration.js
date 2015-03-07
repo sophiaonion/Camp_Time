@@ -95,7 +95,7 @@ $(document).ready(function(){
                        main(campers, current.roles[0]);
                 });
            } else {
-                $.get('/api/campers', function(campers){
+                $.get('/api/campers/all', function(campers){
                        console.log("Campers:"+ campers);
                        main(campers, current.role);
                 });

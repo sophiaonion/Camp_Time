@@ -55,7 +55,7 @@ p {
 }
 
 button:hover {
-    background-color: #d5d3d9;
+    background-color: #EB6841;
 }
 
 .confirm-buttons{
@@ -100,8 +100,8 @@ select {
     width: 7vw;
     margin: 0;
     padding: 0;
-    border: 1px #7a6a53;
-    background-color: #d5d3d9
+    border: 1px;
+    background-color: rgba(90, 200, 150, .6)
 
 }
 

@@ -49,16 +49,17 @@ public class ActivityResource {
 
     //this is to get schedule to work with for stuff
     @GET("/activities")
-    public Iterable<Activity> getActivities(){
+    public Activity getActivities(){
 
         //constraint checker assigns updated schedule to activitiesCopy, campSessionCopy
         ConstraintChecker cc = new ConstraintChecker(activities, campsessions);
         cc.update();
 
         StaffConstraintChecker scc = new StaffConstraintChecker(activities, employees, registrations, campsessions);
-        scc.update();
+       Activity a= new Activity();
+        a= scc.update();
 
-        return activities.get().find().as(Activity.class);//returns copy of activities
+        return a;//returns copy of activities
     }
 
     //get list of activities with certain activity area
