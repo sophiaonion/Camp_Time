@@ -27,7 +27,7 @@ var main = function(campers, if_customer, userId){
         console.log(camper._id);
         $.ajax({
              type: 'GET',
-             url: '/api/campers/registrations/'+camper._id,
+             url: '/api/campers/registrations/approve/'+camper._id,
              contentType: 'application/JSON',
              async:false,
              success: function(sessions){
