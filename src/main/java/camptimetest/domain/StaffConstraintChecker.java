@@ -98,6 +98,7 @@ public class StaffConstraintChecker {
                         case "pool": //todo check for infinite looping in case of not enough staff for now
                             int count = 0;
                             if(numLifeGuards == 0) {
+                                System.out.println("ee");
                                 //save employee to activity and activity to employee
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
@@ -115,7 +116,7 @@ public class StaffConstraintChecker {
                                 }
                             }
                             while (count < 1000 && (((numCampers + numStaff) / numLifeGuards) > 25)) {
-
+                                System.out.println("o");
                                 //save employee to activity and activity to employee
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
@@ -288,8 +289,16 @@ public class StaffConstraintChecker {
                 //pick most available employee able to work that activity and put them there
                 actList.get(mostConf);
 
-                //
+                //remove current staff from activity
+                Activity editA = activities.get().findOne("{_id: #}", new ObjectId(String.valueOf(actList.get(mostConf).get("_id")))).as(Activity.class);
+                editA.getEmployees().clear();
+                activities.get().save(editA);
 
+                //add best choice staff to activity - if adding won't change break
+                ArrayList<ArrayList<String>> actDomains = new ArrayList<ArrayList<String>>(findActivityDomains(false));
+
+
+                //if none could be added without changing break, add someone else and fix in next run through
 
                 //update numConflicts array and index of mostConf
                 numConflicts = new ArrayList<>(countConflicts(false));
@@ -353,7 +362,7 @@ public class StaffConstraintChecker {
         //if there is an activity without employees
         if( (activities.get().count( "{employees: {$exists: false} }" ) != 0)
                 || (activities.get().count( "{employees: null }" ) != 0)) {//if time is set or not
-//            System.out.println("type 1 conflict found (no staff)");
+            System.out.println("type 1 conflict found (no staff)");
             return 1;
         }
 
@@ -362,7 +371,7 @@ public class StaffConstraintChecker {
             String aString = String.valueOf(actList.get(i).get("_id"));
             Activity act = activities.get().findOne("{_id: #}", new ObjectId(aString)).as(Activity.class);
             if(!checkSufficientlyStaffed(act)) {
-//                System.out.println("insufficiently staffed");
+                System.out.println("insufficiently staffed");
                 return 2;
             }
         }
@@ -377,8 +386,8 @@ public class StaffConstraintChecker {
                 for (int k = 0; k < a.size(); k++) { //for each other activity employee is working
                     DateTime dtB = activities.get().findOne("{_id: #}", new ObjectId(a.get(k))).as(Activity.class).getTime();
                     if (j != k && dtA.equals(dtB)) {//not sure if works, compare each activity
-//                        System.out.println(a.get(j)+" is at same time as "+a.get(k));
-//                        System.out.println("type 3 conflict: employee working two activities at same time");
+                        System.out.println(a.get(j)+" is at same time as "+a.get(k));
+                       System.out.println("type 3 conflict: employee working two activities at same time");
                         return 3;
                     }
                 }
@@ -414,7 +423,7 @@ public class StaffConstraintChecker {
             for (boolean[] hours : working.values()) {
                 if (((hours[9] || hours[10])) && ((hours[10] || hours[11])) && ((hours[13] || hours[14])) && //if working any of the possible 2 hour break slots
                         ((hours[14] || hours[15])) && ((hours[15] || hours[16])) && ((hours[19] || hours[20]))) {
-//                    System.out.println("type 4: employee does not have 2 hour break");
+                    System.out.println("type 4: employee does not have 2 hour break");
                     return 4;
                 }
             }//end check 2 hour break
@@ -431,7 +440,7 @@ public class StaffConstraintChecker {
             for(int j=0; j<numToCheck; j++) {
                 String requiredDayOffString = dtf.print(requiredDayOff);
                 if(working.containsKey(requiredDayOffString)) {
-//                  System.out.println("type 5: employee working on their 24 hour break");
+                  System.out.println("type 5: employee working on their 24 hour break");
                     return 5;
                 }
                 requiredDayOff = requiredDayOff.plusDays(interval);
@@ -582,7 +591,7 @@ public class StaffConstraintChecker {
 
         //begin constraint checking
         //at least 2 staff are with campers
-        if ((numStaff < 2)) {System.out.println("not enough staff"); return false;}
+        if ((numStaff < 2)) { return false;}
 
         //woman over 18 is with campers
         boolean hasMatureLady = false;
@@ -652,11 +661,11 @@ public class StaffConstraintChecker {
             switch(activityArea) {
                 case "pool"://pretty sure this equation works: need
                     if(numLifeGuards != 0)
-                        if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - ((numCampers + numStaff) / 25))) >= 12)) {certsOK = true;}
+                        if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - numLifeGuards +1)) < 12 )) {certsOK = true;}
                     break;
                 case "canoeing":
                     if(numLifeGuards != 0)
-                        if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - ((numCampers + numStaff) / 25))) >= 12)) {certsOK = true;}
+                        if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - numLifeGuards+1 )) < 12 )) {certsOK = true;}
                     break;
                 case "art":
                     if(hasArt) {certsOK = true;}
