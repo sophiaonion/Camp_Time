@@ -87,9 +87,21 @@ public class CamperResource {
         return campers.get().find("{_id: #}", new ObjectId(camperID)).as(Camper.class);
     }
 
+    @GET("/campers/registrations/approve/{camperID}")
+    public Iterable<CampSession> getCampersApprovedSessions(String camperID){
+        Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #, approved:true}", camperID).as(SessionRegistration.class);
+        ArrayList<ObjectId> sessionIDs = new ArrayList<>();
+        for(SessionRegistration reg : regsOfSession){
+            sessionIDs.add(new ObjectId(reg.getSessionID()));
+            System.out.println("sessionID"+ reg.getSessionID());
+        }
+
+        return campSessions.get().find("{_id: {$in:#}}", sessionIDs).as(CampSession.class);
+    }
+
     @GET("/campers/registrations/{camperID}")
     public Iterable<CampSession> getCampers(String camperID){
-        Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #, approved:true}", camperID).as(SessionRegistration.class);
+        Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #}", camperID).as(SessionRegistration.class);
         ArrayList<ObjectId> sessionIDs = new ArrayList<>();
         for(SessionRegistration reg : regsOfSession){
             sessionIDs.add(new ObjectId(reg.getSessionID()));
@@ -102,6 +114,7 @@ public class CamperResource {
     @RolesAllowed({ADMIN,COUNSELOR})
     @GET("/campers/all")
     public Iterable<Camper> getCampers(){
+        System.out.println("here");
         return campers.get().find().as(Camper.class);
     }
 
@@ -123,11 +136,12 @@ public class CamperResource {
 
     }
 
-    @DELETE("/campers/{camperID}/{sessionID}")
+    @DELETE("/campers/registrations/{camperID}/{sessionID}")
     public Status deleteRegistration(String camperID, String sessionID){
         registrations.get().remove("{camperID:\""+camperID+"\", sessionID:\""+sessionID+"\"}");
         return Status.of("deleted");
     }
+
 
 
     @DELETE("/campers/{camperID}")

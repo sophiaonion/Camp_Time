@@ -71,6 +71,29 @@ console.log(registrations);
 
     }); //end submit-registration click handler
 
+    $('#delete').on('click', function(){
+
+        $( ".approving option" ).each(function(index){
+            console.log("data going to be delete");
+            console.log($(this).val());
+
+                $.ajax({
+                    type: 'DELETE',
+                    url: '/api/campers/registrations/byregid/'+$(this).val(),
+                    contentType: 'application/JSON',
+                    success:function(data){
+                        console.log(data);
+                        alert("Request Successfully Deleted");
+                        window.location.replace('home_page_test.html');
+                    },
+                    error: function(request, status, error){
+                        alert(error);
+                    }
+                });
+        });
+
+    }); //end submit-registration click handler
+
     $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
     });

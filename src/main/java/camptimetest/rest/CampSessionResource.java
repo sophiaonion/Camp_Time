@@ -7,6 +7,7 @@ import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import restx.Status;
 import restx.annotations.*;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
@@ -218,5 +219,10 @@ public class CampSessionResource {
             return campsession;
         }
 
-
+    @DELETE("/campers/registrations/byregid/{regId}")
+    public Status deleteRegistrationByRegId(String regId){
+        System.out.println("Get Here");
+        registrations.get().remove("{_id:#}", new ObjectId(regId));
+        return Status.of("deleted");
+    }
 }

@@ -122,6 +122,37 @@ public class EmployeeResourceRouter extends RestxRouter {
                 operation.sourceLocation = "camptimetest.rest.EmployeeResource#getEmployeesFromIds(java.util.Map<java.lang.String,java.util.ArrayList<java.lang.String>>)";
             }
         },
+        new StdEntityRoute<camptimetest.domain.Employee, java.lang.String>("default#EmployeeResource#updateEmployee",
+                readerRegistry.<camptimetest.domain.Employee>build(camptimetest.domain.Employee.class, Optional.<String>absent()),
+                writerRegistry.<java.lang.String>build(java.lang.String.class, Optional.<String>absent()),
+                new StdRestxRequestMatcher("PUT", "/employee/update"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<java.lang.String> doRoute(RestxRequest request, RestxRequestMatch match, camptimetest.domain.Employee body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.updateEmployee(
+                        /* [BODY] updateEmployee */ checkValid(validator, body)
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription updateEmployee = new OperationParameterDescription();
+                updateEmployee.name = "updateEmployee";
+                updateEmployee.paramType = OperationParameterDescription.ParamType.body;
+                updateEmployee.dataType = "Employee";
+                updateEmployee.schemaKey = "camptimetest.domain.Employee";
+                updateEmployee.required = true;
+                operation.parameters.add(updateEmployee);
+
+
+                operation.responseClass = "string";
+                operation.inEntitySchemaKey = "camptimetest.domain.Employee";
+                operation.outEntitySchemaKey = "";
+                operation.sourceLocation = "camptimetest.rest.EmployeeResource#updateEmployee(camptimetest.domain.Employee)";
+            }
+        },
         new StdEntityRoute<java.util.Map<java.lang.String,java.lang.Object>, camptimetest.domain.Employee>("default#EmployeeResource#createEmployee",
                 readerRegistry.<java.util.Map<java.lang.String,java.lang.Object>>build(Types.newParameterizedType(java.util.Map.class, java.lang.String.class, java.lang.Object.class), Optional.<String>absent()),
                 writerRegistry.<camptimetest.domain.Employee>build(camptimetest.domain.Employee.class, Optional.<String>absent()),
