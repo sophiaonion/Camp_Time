@@ -62,8 +62,15 @@ public class ActivityResource {
         return a;//returns copy of activities
     }
 
+    @GET("/activities/byId/{activityId}")
+    public Activity getActivity(String activityId){
+        Activity a=activities.get().find("{_id:#}", new ObjectId(activityId)).as(Activity.class).iterator().next();
+
+        return a;//returns copy of activities
+    }
+
     //get list of activities with certain activity area
-    @GET("/activities/{areaName}")
+    @GET("/activities/area/{areaName}")
     public Iterable<Activity> getAreaActivities(String areaName){
         return activities.get().find("{activityArea:#}",areaName).as(Activity.class);
     }

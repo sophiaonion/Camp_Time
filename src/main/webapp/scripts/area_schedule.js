@@ -28,7 +28,7 @@ var main = function(camp_sessions){
 
             //find all the date that have area scheduled
             container1.innerHTML= content1;
-            $.get('/api/activities/'+ areaName, function(activities){
+            $.get('/api/activities/area/'+ areaName, function(activities){
                 activities.forEach(function(activity){
                     var element = $("<option>");
                     var date = new Date (activity.time);
@@ -84,7 +84,7 @@ var main = function(camp_sessions){
 };
 
 $(document).ready(function(){
-    $.get('/api/campsessions', function(camp_sessions){
+    $.get('/api/campsessions/all', function(camp_sessions){
         console.log(camp_sessions.length);
         main(camp_sessions);
     });

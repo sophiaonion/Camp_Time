@@ -12,6 +12,15 @@ var main = function(){
             alert('nice, it worked');
             window.location.replace('home_page_test.html');
         }
+        fail: function(data) {
+            $("#busy").hide();
+            if (confirm("Update failed: go to manual adjust mode?") == true) {
+                 window.location.replace('session_schedule.html');
+            } else {
+                 window.location.replace('home_page_test.html');
+            }
+            window.location.replace('home_page_test.html');
+        }
 
     });
 

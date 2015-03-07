@@ -111,11 +111,7 @@ public class CamperResource {
         return campSessions.get().find("{_id: {$in:#}}", sessionIDs).as(CampSession.class);
     }
 
-    @RolesAllowed({ADMIN,COUNSELOR})
-    @GET("/campers/all")
-    public Iterable<Camper> getCampers(){
-        return campers.get().find().as(Camper.class);
-    }
+
 
 
  //   @GET("/campers/unapproved")
