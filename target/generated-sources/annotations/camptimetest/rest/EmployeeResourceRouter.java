@@ -63,7 +63,7 @@ public class EmployeeResourceRouter extends RestxRouter {
         new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Activity>>("default#EmployeeResource#getEmployeeActivities",
                 readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
                 writerRegistry.<java.lang.Iterable<camptimetest.domain.Activity>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Activity.class), Optional.<String>absent()),
-                new StdRestxRequestMatcher("GET", "/employees/{employeeID}"),
+                new StdRestxRequestMatcher("GET", "/employees/activities/{employeeID}"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Activity>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {

@@ -12,6 +12,8 @@ import restx.annotations.*;
 import restx.factory.Component;
 import restx.jongo.JongoCollection;
 import restx.security.PermitAll;
+import restx.security.RolesAllowed;
+
 import javax.inject.Named;
 
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 
+import static camptimetest.AppModule.Roles.ADMIN;
+import static camptimetest.AppModule.Roles.COUNSELOR;
 import static restx.common.MorePreconditions.checkEquals;
 
 
@@ -224,5 +228,12 @@ public class CampSessionResource {
         System.out.println("Get Here");
         registrations.get().remove("{_id:#}", new ObjectId(regId));
         return Status.of("deleted");
+    }
+
+    @RolesAllowed({ADMIN,COUNSELOR})
+    @GET("/campers/all")
+    public Iterable<Camper> getCampers(){
+        System.out.println("here");
+        return campers.get().find().as(Camper.class);
     }
 }
