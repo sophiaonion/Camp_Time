@@ -114,6 +114,7 @@ public class CamperResource {
     @RolesAllowed({ADMIN,COUNSELOR})
     @GET("/campers/all")
     public Iterable<Camper> getCampers(){
+        System.out.println("here");
         return campers.get().find().as(Camper.class);
     }
 

@@ -84,7 +84,7 @@ var main = function(camp_sessions){
 };
 
 $(document).ready(function(){
-    $.get('/api/campsessions', function(camp_sessions){
+    $.get('/api/campsessions/all', function(camp_sessions){
         console.log(camp_sessions.length);
         main(camp_sessions);
     });
