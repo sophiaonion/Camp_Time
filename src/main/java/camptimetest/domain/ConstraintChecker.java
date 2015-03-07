@@ -33,7 +33,7 @@ public class ConstraintChecker {
         int i = this.checkConflicts();
         while(i>0) {
             this.fixConflicts(i);
-            System.out.println("after fix: ");
+//            System.out.println("after fix: ");
             i=this.checkConflicts();
         }
         return this.activities;
@@ -50,7 +50,7 @@ public class ConstraintChecker {
         //if there is an activity without a set time
         if( (activities.get().count( "{time: {$exists: false} }" ) != 0)
                 || (activities.get().count( "{time: null }" ) != 0) ) {//if time is set or not
-            System.out.println("type 1 conflict found");
+//            System.out.println("type 1 conflict found");
             return 1;
 
         }
@@ -62,7 +62,7 @@ public class ConstraintChecker {
                     if( list.get(i).get("session").equals(list.get(j).get("session"))
                             && ( new DateTime(list.get(i).get("time")) ).equals(new DateTime(list.get(j).get("time")))) {
                           //  && !(list.get(i).get("activityArea").equals(list.get(j).get("activityArea"))) ) {
-                        System.out.println("type 2 conflict found");
+//                        System.out.println("type 2 conflict found");
                         return 2;
                     }//end two places at once conflict
 
@@ -71,14 +71,14 @@ public class ConstraintChecker {
                     if( list.get(i).get("activityArea").equals(list.get(j).get("activityArea"))
                             && ( new DateTime(list.get(i).get("time")) ).equals(new DateTime(list.get(j).get("time")))
                             && !(list.get(i).get("session").equals(list.get(j).get("session"))) ) {
-                        System.out.println("type 3 conflict found");
+//                        System.out.println("type 3 conflict found");
                         return 3;
                     }//end two sessions at once conflict
 
                 }//end compare two different activities
             }
         }//end compare all activities for conflicts
-        System.out.println("no conflicts, nice");
+//        System.out.println("no conflicts, nice");
         return 0;//no conflicts
     }//end checkconflicts()
 
@@ -197,7 +197,7 @@ public class ConstraintChecker {
                 mostInd = i;
             }
         }
-        System.out.println("index "+mostInd+" has "+most+" conflicts, the most");
+//        System.out.println("index "+mostInd+" has "+most+" conflicts, the most");
         return mostInd;
     }//end getMostConflicts
 
@@ -309,7 +309,6 @@ public class ConstraintChecker {
 
 
                             //update domains of other activities to remove taken time
-                            //TODO should only remove if they are the same session?? or same activity??
                             for(int j=0; j<actArray.size(); j++) {
                                 if(domains.get(j).size() > 1) {
                                     if(domains.get(j).contains(time)) {
@@ -352,9 +351,8 @@ public class ConstraintChecker {
             int mostConf = getMostConflicts(numConflicts);
             if(mostConf > 0)
 
-            //todo loops infinitely WHY never update numConclicts duh
             while(numConflicts.get(mostConf) > 0) {//there are conflicts
-                System.out.println("got the most conflicted, it is # "+mostConf+" ya");
+//                System.out.println("got the most conflicted, it is # "+mostConf+" ya");
 
                 //remove current time from domains
                 DateTime current = new DateTime(actArray.get(mostConf).get("time"));
@@ -368,12 +366,12 @@ public class ConstraintChecker {
 
                 //check if any times that don't conflict other set times
                 if(domainsWithSet.get(mostConf).size() > 0) {
-                    System.out.println("there's a free spot so putting it there");
+//                    System.out.println("there's a free spot so putting it there");
                     Random rand = new Random();
                     int randomNum = rand.nextInt(domainsWithSet.get(mostConf).size());
 
                     newTime = new DateTime(domainsWithSet.get(mostConf).get(randomNum).withZoneRetainFields(DateTimeZone.UTC));
-                    System.out.println(newTime+ " is the time");
+//                    System.out.println(newTime+ " is the time");
                 }
                 //otherwise assign to another time (will cause conflicts, but won't conflict with fixed time thingy)
                 else if (domainsExcludeSet.get(mostConf).size() > 0) {
@@ -382,7 +380,7 @@ public class ConstraintChecker {
                     newTime = new DateTime(domainsExcludeSet.get(mostConf).get(randomNum));
                 }
                 else {
-                    System.out.println("error line 378");
+//                    System.out.println("error line 378");
                     return false;//can't assign to anything - some conflict with amongst fixed activities
                 }
 
@@ -403,7 +401,7 @@ public class ConstraintChecker {
                 mostConf = getMostConflicts(numConflicts);
             }//end change most conflicted
             else {
-                System.out.println("error 389");
+//                System.out.println("error 389");
                 return false;
             } //if checkconflicts says there are conflicts but numconflicts are all 0--means fixed activities are conflicting each other
         }//end heuristic repair
