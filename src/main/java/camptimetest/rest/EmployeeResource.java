@@ -54,6 +54,8 @@ public class EmployeeResource {
     @GET("/employees") //has to return iterable since .find() returns iterable of objects
     //even if only one entry is returned, .findOne will return object not wrapped in iterable
     public Iterable<Employee> getEmployees() {
+
+        System.out.println("get employees");
         return employees.get().find().as(Employee.class);
     }
 
@@ -70,6 +72,12 @@ public class EmployeeResource {
     public Iterable<Employee> getEmployeesFromIds(Map<String, ArrayList<String>> empIds){
         ArrayList<ObjectId> empObjectIds = CollectionHelper.stringsToObjectIds(empIds.get("employee_ids"));
         return employees.get().find("{_id: {$in : #}}", empObjectIds).as(Employee.class);
+    }
+
+    @PUT("/employee/update")
+    public String updateEmployee(Employee updateEmployee){
+        employees.get().save(updateEmployee);
+        return "200";
     }
 
     @POST("/employees")
