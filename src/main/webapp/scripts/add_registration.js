@@ -17,20 +17,23 @@ var main = function(campers, role){
         console.log(value.value + value.ID);
     });
 
+     $.get('/api/campsessions/all', function(camp_sessions){
+        //append as option elements for campsession collect
+        console.log(camp_sessions);
+        camp_sessions.forEach(function(session){
+         var element = $("<option>");
+             element.val(session.name);
+             element.text(session.name);
+             element.data('sessionID', session._id);
+             $('#session').append(element);
+         });
+     });
+
     var selected_camperID;
     var uponSelect = function(event, ui){ //upon selection set camperID to send when submitting registration
         //ui.item is selected item, has fields set in source
         selected_camperID = ui.item.ID;
-        $.get('/api/campsessions/agegroup/' + ui.item.age, function(camp_sessions){
-        //append as option elements for campsession collect
-            camp_sessions.forEach(function(session){
-             var element = $("<option>");
-                 element.val(session.name);
-                 element.text(session.name);
-                 element.data('sessionID', session._id);
-                 $('#session').append(element);
-             });
-        });
+
         console.log(ui.item.ID);
     };
 
@@ -47,8 +50,10 @@ var main = function(campers, role){
     $('#submit-registration').on('click', function(){
         var approved;
         console.log(role);
-        if(role == 'customer') {approved = "false"}
-        else {approved = "true"}
+        if(role == 'customer')
+            {approved = "false";}
+        else
+            {approved = "true";}
 
         var data = {
             //for nonhard coded method
@@ -58,6 +63,7 @@ var main = function(campers, role){
 
         };
         console.log('submit clicked');
+        console.log(data.approved);
         $.ajax({
             type: 'PUT',
             url: '/api/campers/' + data.camperID + '/' + data.sessionID + '/' + data.approved,
@@ -86,7 +92,7 @@ $(document).ready(function(){
             if(current.roles[0] == 'customer') {
                 $.get('/api/campers/customer/'+current._id, function(campers){
                        console.log("Campers:"+ campers);
-                       main(campers, current.role);
+                       main(campers, current.roles[0]);
                 });
            } else {
                 $.get('/api/campers', function(campers){

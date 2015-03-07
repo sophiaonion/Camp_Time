@@ -22,6 +22,8 @@ public class SessionRegistration {
         this.approved=Boolean.valueOf(approval);
     }
 
+    public SessionRegistration(){}
+
     public String getKey(){
         return key;
     }

@@ -1,6 +1,7 @@
 package camptimetest.rest;
 
 import camptimetest.domain.*;
+import com.mongodb.DBCollection;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -45,21 +46,29 @@ public class CampSessionResource {
             this.activities = activities;
         }
 
-        @GET("/campsessions")
+        @GET("/campsessions/all") //get the camp session ids
         public Iterable<CampSession> getSessions(){
 
             Iterable<CampSession> CSessions = campSession.get().find().as(CampSession.class);
+            //Iterable<Data> data = campSession.get().find().as(CampSession.class);
+            /*for(CampSession cs : CSessions){
+
+                cs.getSessionID();
+            }*/
             return CSessions;
+            //return campSession.get().find("{},{name:1}").as(CampSession.class);
         }
 
     @GET("/campsessions/unapproved")
     public Iterable<SessionRegistration> getUnapproved(){
         System.out.println("test");
         System.out.println("this many: "+registrations.get().count("{approved: false}"));
-        Iterable<SessionRegistration> unapp = registrations.get().find("{approved: false}").as(SessionRegistration.class);
 
-        return unapp;
+        return registrations.get().find("{approved: false}").as(SessionRegistration.class);
+        //System.out.println(unapp);
+        // unapp;
     }
+
 
 //        @DELETE("/campsessions") //map has keys _id, name
 //        public int deleteCampSession(Map<String, String> deleteInfo){
