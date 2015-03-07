@@ -8,7 +8,7 @@ src\main\java**camptimetest\rest\CampSessionResource.java**264ff861aa84da0f31d27
 src/main/java**camptimetest/domain/CampSession.java**de305600ecdaa913cf0f6e4f9c4ac63d**1425159801000
 src/main/java**camptimetest/domain/Activity.java**badc31d22ce6dd063c7b15c75552bec6**1425269006000
 src/main/java**camptimetest/rest/CamperResource.java**4c0ffc087ff5f03ea23762e0fe1cf6a6**1425372024000
-src/main/java**camptimetest/rest/ActivityResource.java**12eb2d2c1e8cd2ef85d377fe09f078f0**1425368026000
+src/main/java**camptimetest/rest/ActivityResource.java**9a4e1bdf0c51e4c153866a7ece7562da**1425614558000
 src/main/java**camptimetest/domain/MasterSchedule.java**68aa46aafbc649d4e44dce95e5f8a43b**1423287952000
 src\main\java**camptimetest\domain\MasterSchedule.java**abbcfc0b4f8157530e50c95e695eaec2**1423103206571
 src\main\java**camptimetest\domain\SessionRegistration.java**cf06e0823173a774e93234e017cfb588**1422940990000
@@ -35,7 +35,7 @@ src/main/java**camptimetest/domain/Employee.java**30b8401810e23bed2f7fb65a641946
 src\main\java**camptimetest\domain\Activity.java**b2640c53e56529b1d95c2c467fbdf4f2**1423275086151
 src\main\java**camptimetest\domain\Certification.java**74451bbcb342a7dc5802316515864ae6**1423092277357
 src/main/java**camptimetest/AppModule.java**c254c92d026f4ebaa5b843116d6b137a**1424641022000
-src/main/java**camptimetest/domain/StaffConstraintChecker.java**d7e5e7483a0fa28ae619a6de49c0498b**1425372254000
+src/main/java**camptimetest/domain/StaffConstraintChecker.java**29d72acf8bb1642c145debd06e416e2e**1425693650000
 src/main/java**camptimetest/domain/SessionRegistration.java**ab200c4b223187b501bfd4a3e5321ab7**1425368755000
 src/main/java**camptimetest/domain/Hour.java**a6fcb334f9dbc85f80ca94c07d3eb623**1423102753000
 src\main\java**camptimetest\rest\ActivityResource.java**11ba050343d66bd786654221a6d69abc**1423102887319

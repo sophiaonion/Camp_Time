@@ -1,28 +1,45 @@
 body {
-	background-color: #00A0B0;
-	color: #EFEFEF;
+	background-color: #99b2b7;
+	color: #6A4A3C;
 	font-family: Helvetica;
+
 }
 
+header {
+    display: block;
+    background-color: #627a60;
+    text-align: left;
+    margin: 0;
+    padding:0;
+}
+
+body {
+    margin: 0;
+    padding:0;
+    background-repeat: no-repeat;
+    background-size:  100%;
+    background-attachment: fixed;
+    background-position: center bottom;
+
+}
 
 h1{
-	margin: 3px;
-	color: #EDC951;
-}
-
-hr {
-	height: 12px;
-	background-color: #CC333F;
+background-color: #627a60;
 	color: #EFEFEF;
+	margin: 0;
+	padding:0;
+
 }
 
-fieldset {
-	border: 2px solid #CC333F;
-}
 
 button {
-	background-color: #DE5F59;
+	background-color: #948c75;
 	color: white;
-	border: 1px solid #DE5F50;
-	padding: 8px;
+	border: 1px solid #7a6a53;
+	padding: 4px;
+}
+
+
+.login{
+text-align: center;
 }

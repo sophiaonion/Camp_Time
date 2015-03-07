@@ -1,0 +1,117 @@
+body {
+    min-width: 80vh;
+    margin: 0 5vh;
+}
+
+p {
+    cursor: default;
+}
+
+.activity-control-cont{
+    padding: 2vh 0;
+    visibility: hidden;
+}
+
+.activity-info {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}
+
+.confirm-delete {
+    visibility: hidden;
+    display: inline-block;
+}
+
+.activity-info #employees-working{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+#employees-working li {
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.activity-info p {
+    margin: 3px;
+}
+
+.activity {
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.activity-control {
+    display: inline-block;
+
+}
+
+.activity-control p {
+    padding: 0px;
+    margin: 0px;
+}
+
+button:hover {
+    background-color: #EB6841;
+}
+
+.confirm-buttons{
+    visibility: show;
+    display: inline;
+    overflow: visible;
+}
+
+select {
+    width: 100px;
+}
+
+.selected {
+    background-color: rgb(200, 200, 200);
+}
+
+.emp-change-con h4 {
+    line-height: 0;
+}
+
+.working-emp {
+    width: 20vw;
+    margin-right: 5vw;
+    white-space: pre;
+}
+
+.available-emp {
+    width: 20vw;
+    white-space: pre;
+}
+
+#schedule input {
+    width: 7vw;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    border: none;
+}
+
+#schedule td {
+    text-align: center;
+    width: 7vw;
+    margin: 0;
+    padding: 0;
+    border: 1px;
+    background-color: rgba(90, 200, 150, .6)
+
+}
+
+
+
+#schedule p {
+    border: none;
+}
+
+#schedule td:hover{
+    background-color: rgba(200, 200, 200, .6)
+}
+
