@@ -57,7 +57,7 @@ public class StaffConstraintChecker {
         List<DBObject> arrry = cursor.toArray();
         ArrayList<DBObject> actList = new ArrayList<DBObject>(arrry);
 
-        if (type==1 || type==2) {//have un(der)employed activities todo CHANGE BACK TO WHILE
+        while (type==1 || type==2) {//have un(der)employed activities todo CHANGE BACK TO WHILE
 
             //add staff as required
             for (int i = 0; i < actList.size(); i++) {//for each activity
@@ -71,7 +71,7 @@ public class StaffConstraintChecker {
 
                 if(!a.getTitle().equals("n/a")) {
                 //add staff with required certifications
-                if (a.getActivityArea() != null) {
+                if (a.getActivityArea() != null && !a.getActivityArea().equals("")) {
                     int numLifeGuards = 0;
                     boolean hasArt = false, hasNature = false, hasArchery = false, hasStore = false, canDrive;
 
@@ -231,7 +231,8 @@ public class StaffConstraintChecker {
                             }
                             break;
                         default:
-                            System.out.println("error: somethin funky going on");
+                            //location is sports or creek, no extra certifications required
+                            break;
                     }
                 }//end add staff with required certifications
 
@@ -267,23 +268,30 @@ public class StaffConstraintChecker {
                         numStaff++;
                         adID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     }
-                }
-
-            }
+                }//end add admin & spec staff for coverage
+            }//end for each activity
         }
+            type = checkConflicts();
         }//end assign employees to unemployed activities
 
+        //if original round of assigning was not sufficient: do heuristic repair
         if(checkConflicts()>0) {
-            //heuristic repair
+
+            //arraylist of number of conflicts where index corresponds to index of activity in actArray (include conflicts with 2 hour breaks)
             ArrayList< Integer > numConflicts = new ArrayList<>(countConflicts(false));
-            //get activity most in conflict
+
+            //get activity with most conflicts
             int mostConf = getMostConflicts(numConflicts);
+
+            //fix conflicts one by one
             while(numConflicts.get(mostConf) > 0) {
                 //pick most available employee able to work that activity and put them there
                 actList.get(mostConf);
 
+                //
 
 
+                //update numConflicts array and index of mostConf
                 numConflicts = new ArrayList<>(countConflicts(false));
                 mostConf = getMostConflicts(numConflicts);
             }
@@ -291,6 +299,8 @@ public class StaffConstraintChecker {
 
         }
     }//end fixConflicts()
+
+
 
 
 
@@ -661,7 +671,9 @@ public class StaffConstraintChecker {
                     if(hasStore) {certsOK = true;}
                     break;
                 default:
-                    System.out.println("error: somethin funky going on");
+                    System.out.println("error: somethin funky going on but it ok");
+                    certsOK = true;
+                    break;
             }
             if (!certsOK) {
                 System.out.println("lacking required certifications");
@@ -744,6 +756,14 @@ public class StaffConstraintChecker {
 
         ArrayList<Integer> numConflicts = new ArrayList<>();
         Iterable<Activity> actCursor = activities.get().find().as(Activity.class);
+        //initialize arraylist
+
+        int index=0;
+        for(Activity a: actCursor) {
+            numConflicts.add(index, 0);
+            index++;
+        }
+
         int i=0;
         for(Activity a: actCursor) {
 
