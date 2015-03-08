@@ -56,7 +56,7 @@ public class ActivityResource {
         cc.update();
 
         StaffConstraintChecker scc = new StaffConstraintChecker(activities, employees, registrations, campsessions);
-       Activity a= new Activity();
+        Activity a= new Activity();
         a= scc.update();
 
         return a;//returns copy of activities

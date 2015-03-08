@@ -29,13 +29,16 @@ public class ConstraintChecker {
 
 
     public JongoCollection update() {
+        System.out.println("scheduling activities...");
         //scheduling activities
         int i = this.checkConflicts();
         while(i>0) {
             this.fixConflicts(i);
 //            System.out.println("after fix: ");
+            System.out.println("here");
             i=this.checkConflicts();
         }
+        System.out.println("activities scheduled");
         return this.activities;
     }//end update()
 
