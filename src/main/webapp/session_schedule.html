@@ -21,6 +21,7 @@
         <select name="session-select" id="session-select">
         </select>
         <button id="delete-session">Delete Selected Session</button>
+        <button id="print-session">Print Session</button>
         <div class="confirm-delete">
             <button id="submit-delete">Submit Delete</button>
             <button id="cancel-delete">Cancel</button>
@@ -101,10 +102,17 @@
 <script src="scripts/sessionschedule/session_schedule.js"></script>
 <script src="scripts/sessionschedule/button_handlers.js"></script>
 <script src="scripts/sessionschedule/edit_employees.js"></script>
+<script src='scripts/jsPDF-master/dist/jspdf.min.js'></script>
+<script src='scripts/jsPDF-master/dist/jspdf.debug.js'></script>
+<script src='scripts/jsPDF-master/examples/bootstrap/js/bootstrap.js'></script>
+<script src='scripts/jsPDF-master/examples/bootstrap/js/bootstrap.min.js'></script>
 <script src='scripts/jsPDF-master/jspdf.js'></script>
 <script src='scripts/jsPDF-master/jspdf.plugin.from_html.js'></script>
 <script src='scripts/jsPDF-master/jspdf.plugin.split_text_to_size.js'></script>
 <script src='scripts/jsPDF-master/jspdf.plugin.standard_fonts_metrics.js'></script>
+<script src='scripts/jsPDF-master/jspdf.plugin.cell.js'></script>
+<script src='scripts/sessionschedule/print_schedule.js'></script>
+
 
 
 </html>
