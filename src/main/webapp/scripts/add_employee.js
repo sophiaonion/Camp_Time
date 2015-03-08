@@ -80,6 +80,28 @@ console.log($('#start-break').val());
         }
     });
 
+    var useraccount = {
+            name: $('#user-name').val(),
+            password: $('#password').val(),
+            roles: [$('#job').val()]
+        };
+
+        console.log(JSON.stringify(useraccount));
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/users',
+            data: JSON.stringify(useraccount),
+            contentType: 'application/JSON',
+            success: function(data){
+                 alert('User Created.');
+                 window.location.replace('index.html');
+            },
+            error: function(request, status, error){
+                 alert(error);
+            }
+        });
+
 });
 
      $('#cancel').on('click', function(){

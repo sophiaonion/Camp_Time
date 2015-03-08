@@ -25,6 +25,7 @@ var main = function(camp_sessions){
     $('#select-area').on('change', function(){
              var areaName = $(this).val();
              var display= [];
+             $('.activity').remove();
 
             //find all the date that have area scheduled
             container1.innerHTML= content1;
@@ -48,6 +49,7 @@ var main = function(camp_sessions){
 
                 $('#select-date').on('change', function(){
                     var select = $(this).val();
+                    $('.activity').remove();
                     //reload
                     container2.innerHTML= content2;
                     $('#schedule').show();
@@ -62,9 +64,11 @@ var main = function(camp_sessions){
                             var row = document.getElementById(hour);
 
                             var new1 = document.createElement('td');
+                            $(new1).addClass('activity');
                             new1.innerHTML=activity.title;
 
                             var new2 = document.createElement('td');
+                            $(new2).addClass('activity');
                             new2.innerHTML=activity.session;
 
                             row.appendChild(new1);

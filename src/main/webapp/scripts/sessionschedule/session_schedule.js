@@ -259,7 +259,12 @@ doc.output("dataurlnewwindow");
 };
 
 $(document).ready(function(){
+
+
     $.get('/api/campsessions/all', function(camp_sessions){
+
+
+
         main(camp_sessions);
     });
 });
