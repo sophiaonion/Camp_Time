@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/ActivityResource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts/schedule_update.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/schedule_update.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="72ed9e26-3295-4136-814c-afbbf4dae147" name="New changelist" comment="" />
@@ -35,31 +32,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ConstraintChecker.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2717842" vertical-offset="1438" max-vertical-offset="3045">
-              <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-              <folding>
-                <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
-                <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaffConstraintChecker.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StaffConstraintChecker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.444445" vertical-offset="135" max-vertical-offset="3045">
-              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.22222222" vertical-offset="3794" max-vertical-offset="5430">
+              <caret line="287" column="14" selection-start-line="287" selection-start-column="14" selection-end-line="287" selection-end-column="14" />
               <folding>
                 <element signature="method#StaffConstraintChecker#0;class#StaffConstraintChecker#0" expanded="false" />
-                <element signature="method#fixConflicts#0;class#StaffConstraintChecker#0" expanded="false" />
+                <element signature="method#update#0;class#StaffConstraintChecker#0" expanded="false" />
+                <element signature="e#17001#17009#0" expanded="true" />
+                <element signature="method#checkConflicts#0;class#StaffConstraintChecker#0" expanded="false" />
                 <element signature="method#findEmployeeToWork#0;class#StaffConstraintChecker#0" expanded="false" />
                 <element signature="method#findEmployeesToWork#0;class#StaffConstraintChecker#0" expanded="false" />
                 <element signature="method#checkSufficientlyStaffed#0;class#StaffConstraintChecker#0" expanded="false" />
@@ -785,7 +767,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425768840669</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="scc">
+      <created>1425850354264</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1425850354264</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -830,7 +818,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20516963" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30080214" sideWeight="0.49835256" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27139038" sideWeight="0.49835256" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30466473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -876,6 +864,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
@@ -908,14 +897,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java</url>
-          <line>273</line>
-          <properties />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -1278,13 +1259,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5912863" vertical-offset="0" max-vertical-offset="930">
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="method#ConstraintChecker#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
+            <element signature="method#fixConflicts#0;class#ConstraintChecker#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.444445" vertical-offset="135" max-vertical-offset="3045">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.22222222" vertical-offset="3794" max-vertical-offset="5430">
+          <caret line="287" column="14" selection-start-line="287" selection-start-column="14" selection-end-line="287" selection-end-column="14" />
           <folding>
             <element signature="method#StaffConstraintChecker#0;class#StaffConstraintChecker#0" expanded="false" />
-            <element signature="method#fixConflicts#0;class#StaffConstraintChecker#0" expanded="false" />
+            <element signature="method#update#0;class#StaffConstraintChecker#0" expanded="false" />
+            <element signature="e#17001#17009#0" expanded="true" />
+            <element signature="method#checkConflicts#0;class#StaffConstraintChecker#0" expanded="false" />
             <element signature="method#findEmployeeToWork#0;class#StaffConstraintChecker#0" expanded="false" />
             <element signature="method#findEmployeesToWork#0;class#StaffConstraintChecker#0" expanded="false" />
             <element signature="method#checkSufficientlyStaffed#0;class#StaffConstraintChecker#0" expanded="false" />
@@ -1293,21 +1293,6 @@
             <element signature="method#checkIfLackingTwoHourBreakOnDate#0;class#StaffConstraintChecker#0" expanded="false" />
             <element signature="method#countConflicts#0;class#StaffConstraintChecker#0" expanded="false" />
             <element signature="method#getMostConflicts#0;class#StaffConstraintChecker#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/ConstraintChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2717842" vertical-offset="1438" max-vertical-offset="3045">
-          <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-          <folding>
-            <element signature="method#update#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#checkConflicts#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#findDomain#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#getMostConstrained#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#getMostConflicts#0;class#ConstraintChecker#0" expanded="false" />
-            <element signature="method#countConflicts#0;class#ConstraintChecker#0" expanded="false" />
           </folding>
         </state>
       </provider>

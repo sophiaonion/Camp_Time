@@ -99,7 +99,6 @@ public class StaffConstraintChecker {
                         case "pool": //todo check for infinite looping in case of not enough staff for now
                             int count = 0;
                             if(numLifeGuards == 0) {
-//                                System.out.println("ee");
                                 //save employee to activity and activity to employee
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
@@ -117,7 +116,6 @@ public class StaffConstraintChecker {
                                 }
                             }
                             while (count < 1000 && (((numCampers + numStaff) / numLifeGuards) > 25)) {
-//                                System.out.println("o");
                                 //save employee to activity and activity to employee
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
@@ -274,9 +272,6 @@ public class StaffConstraintChecker {
             }//end for each activity
         }
             type = checkConflicts();
-
-
-
         }//end assign employees to unemployed activities
 
         //if original round of assigning was not sufficient: do heuristic repair
@@ -286,16 +281,13 @@ public class StaffConstraintChecker {
             //arraylist of number of conflicts where index corresponds to index of activity in actArray (include conflicts with 2 hour breaks)
             ArrayList< Integer > numConflicts = new ArrayList<>(countConflicts(false));
 
-
             //get activity with most conflicts
             int mostConf = getMostConflicts(numConflicts);
-//            System.out.println(mostConf);
-//            System.out.println(numConflicts.get(mostConf));
 
             //fix conflicts one by one
             if(numConflicts.get(mostConf) > 0) {
-
-
+                System.out.println(mostConf);
+                System.out.println(numConflicts.get(mostConf));
                 //pick most available employee able to work that activity and put them there
                 actList.get(mostConf);
 
@@ -304,7 +296,8 @@ public class StaffConstraintChecker {
                 editA.getEmployees().clear();
                 activities.get().save(editA);
 
-//                System.out.println("changing" +editA.getTitle());
+                System.out.println(editA.getTitle()+"/"+editA.getSession()+"/"+editA.getTime());
+
 
                 //add best choice staff to activity - if adding won't change break
                 ArrayList<String> actDomain = new ArrayList<String>(findEmployeesToWork(editA, "", "", false, false));
@@ -319,6 +312,7 @@ public class StaffConstraintChecker {
                     //but only as long as not sufficiently staffed
                     if(!checkSufficientlyStaffed(editA)) {
                         editA.getEmployees().add(eID);
+                        activities.get().save(editA);
                     }
                 }
 
