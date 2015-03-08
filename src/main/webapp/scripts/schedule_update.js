@@ -11,7 +11,7 @@ var main = function(){
             $("#busy").hide();
             alert('nice, it worked');
             window.location.replace('home_page_test.html');
-        }
+        },
         fail: function(data) {
             $("#busy").hide();
             if (confirm("Update failed: go to manual adjust mode?") == true) {
