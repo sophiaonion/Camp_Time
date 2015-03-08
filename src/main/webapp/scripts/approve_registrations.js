@@ -25,6 +25,7 @@ console.log(registrations);
         $('.add-camper').click(function(){
             $('.requesting option:selected').each( function() {
                 $('.approving').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
+                $(this).remove(); //todo is correct?
             });
         });
 

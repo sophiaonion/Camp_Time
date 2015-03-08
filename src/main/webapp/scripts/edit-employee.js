@@ -155,7 +155,7 @@ var main = function(employees){
 $(document).ready(function(){
     //get all employees then set up page functionality in main
     $.ajax({
-        url: '/api/employees',
+        url: '/api/employees/all',
         type: 'GET',
         contentType: 'application/JSON'
     }).done(function(employees){

@@ -218,7 +218,7 @@ var tableBuilt = false;
 
 //eventually get campers and sessions and pass to main function
 $(document).ready(function(){
-       $.get('api/employees', function(employees){
+       $.get('api/employees/all', function(employees){
             main(employees);
         });
 });

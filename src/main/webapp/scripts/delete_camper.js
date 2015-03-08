@@ -50,7 +50,7 @@ var main = function(campers){
 };
 
 $(document).ready(function(){
-    $.get('api/campers', function(campers){
+    $.get('api/campers/all', function(campers){
         main(campers);
     });
 });
