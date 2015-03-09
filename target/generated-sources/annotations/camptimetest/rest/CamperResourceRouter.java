@@ -155,7 +155,7 @@ public class CamperResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Camper>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, anyOf(hasRole("admin"), hasRole("customer")));
+                securityManager.check(request, anyOf(hasRole("admin"), hasRole("customer"), hasRole("counselor")));
                 return Optional.of(resource.getCampersforCustomer(
                         /* [PATH] customerID */ match.getPathParam("customerID")
                 ));
@@ -270,30 +270,6 @@ public class CamperResourceRouter extends RestxRouter {
                 operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "camptimetest.domain.CampSession";
                 operation.sourceLocation = "camptimetest.rest.CamperResource#getCampers(java.lang.String)";
-            }
-        },
-        new StdEntityRoute<Void, java.lang.Iterable<camptimetest.domain.Camper>>("default#CamperResource#getCampers",
-                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
-                writerRegistry.<java.lang.Iterable<camptimetest.domain.Camper>>build(Types.newParameterizedType(java.lang.Iterable.class, camptimetest.domain.Camper.class), Optional.<String>absent()),
-                new StdRestxRequestMatcher("GET", "/campers/all"),
-                HttpStatus.OK, RestxLogLevel.DEFAULT) {
-            @Override
-            protected Optional<java.lang.Iterable<camptimetest.domain.Camper>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, anyOf(hasRole("admin"), hasRole("counselor")));
-                return Optional.of(resource.getCampers(
-                        
-                ));
-            }
-
-            @Override
-            protected void describeOperation(OperationDescription operation) {
-                super.describeOperation(operation);
-                
-
-                operation.responseClass = "LIST[Camper]";
-                operation.inEntitySchemaKey = "";
-                operation.outEntitySchemaKey = "camptimetest.domain.Camper";
-                operation.sourceLocation = "camptimetest.rest.CamperResource#getCampers()";
             }
         },
         new StdEntityRoute<camptimetest.domain.Camper, camptimetest.domain.Camper>("default#CamperResource#createCamper",

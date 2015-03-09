@@ -155,7 +155,7 @@ public class CamperResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Camper>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, anyOf(hasRole("admin"), hasRole("customer")));
+                securityManager.check(request, anyOf(hasRole("admin"), hasRole("customer"), hasRole("counselor")));
                 return Optional.of(resource.getCampersforCustomer(
                         /* [PATH] customerID */ match.getPathParam("customerID")
                 ));
