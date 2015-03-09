@@ -170,7 +170,7 @@ var main = function(camp_sessions){
         $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.myTimeString());
         $('#employees-working').empty();
         if(activity.employees.length){
-            $('.activity-info #num-employees').text(activity.employees.length);
+           // $('.activity-info #num-employees').text(activity.employees.length);
             //get employee objects working from ids of activity.employees array
             $.ajax({
                 url: '/api/employees/ids',
@@ -181,7 +181,7 @@ var main = function(camp_sessions){
                     //attach names to employees working
 
                     employees.forEach(function(employee){
-                        $('#employees-working').append($('<li>').text(employee.name).
+                        $('.activity-info #employees-working').append($('<li>').text(employee.name).
                             data('employee', employee)); //get employee name for later
                     });
             }).fail(alert.bind(null, 'error getting employee objects of activity'));
@@ -192,6 +192,9 @@ var main = function(camp_sessions){
             $('.selected').removeClass('selected');
             $(this).addClass('selected');
             });
+
+
+
 
     $('#session-select').trigger('change');
 
