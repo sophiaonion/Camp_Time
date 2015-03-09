@@ -35,6 +35,14 @@ var main = function(){
              $('.customer-options').show();
         }
 
+        if (role == "admin"){
+             console.log("third");
+             $('.spec-schedule').hide();
+             $('.view-schedule').hide();
+             $('.customer-options').hide();
+             $('.admin-view-schedule').show();
+        }
+
     });
 
 }

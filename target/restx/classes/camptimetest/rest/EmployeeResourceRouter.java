@@ -43,7 +43,7 @@ public class EmployeeResourceRouter extends RestxRouter {
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<java.lang.Iterable<camptimetest.domain.Employee>> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
-                securityManager.check(request, hasRole("admin"));
+                securityManager.check(request, anyOf(hasRole("admin"), hasRole("counselor"), hasRole("specialty")));
                 return Optional.of(resource.getEmployees(
                         
                 ));
