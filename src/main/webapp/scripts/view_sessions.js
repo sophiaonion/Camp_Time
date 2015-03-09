@@ -60,9 +60,7 @@ var main = function(camp_sessions){
         var currentDate = new Date(session.startDate); //keep adding columns until startDate === endDate + 1
         var stopDate = new Date(session.endDate); //date types returned as strings
         stopDate.setDate(stopDate.getDate() + 1);
-        //console.log(currentDate);
-        //console.log(stopDate);
-        //console.log('date type: ' + typeof session.startDate);
+
 
         $('.empty').remove() //remove last selected session table
         while(currentDate.valueOf() !== stopDate.valueOf()){
@@ -86,33 +84,22 @@ var main = function(camp_sessions){
         var required_activities = [];
         camp_session.activity_objects.forEach(function(activity){
         //if activity does not have a time field, it is a required activity
-        //console.log(activity.time);
         if(!(activity.time)){
             required_activities.push(activity);
         } else {
             //find offset from startDate, will be column to put activity in
             //find hour, offset from nine will be row to put activity in
-//            console.log('activity: ' + activity.title);
-//            console.log('activity time string: ' + activity.time);
             var act_date = new Date(activity.time);
-//            console.log('act_date: ');
-//            console.log(act_date);
             var column = dateDiffInDays(new Date(session.startDate), new Date(act_date));
             console.log(column);
             //take difference of activity time in 24 hour format and 9(starting time) + 1 to get past date heading row
-//            console.log('activity time: ' + act_date);
-//            console.log('hour: ' + act_date.getHours());
-//            console.log('minutes: should be 0: ' +act_date.getMinutes());
             var row_index = act_date.getUTCHours() - 9 + 1;
             var act_row = $('#schedule tbody tr:eq(' + row_index + ')');
             var act_cell = $('td:eq(' + column + ')', act_row);
-//            console.log('row index: ' + row_index + ' column: ' + column);
 
             //turn input into <p> so activity is not editable
             var activity_to_place = $('<p>').text(activity.title).data('activity', activity).addClass('activity');
             $('p', $(act_cell)).replaceWith(activity_to_place);
-
-
         }
 
         });
@@ -223,13 +210,10 @@ $(document).ready(function(){
 
                 var camp_sessions=[];
                 campers.forEach(function(camper){
-                    console.log("before get: ");
-                    console.log(camp_sessions);
-                    console.log(camper);
 
                      $.ajax({
                          type: 'GET',
-                         url: '/api/campers/registrations/'+camper._id,
+                         url: '/api/campers/registrations/approved/'+camper._id,
                          async: false,
                          contentType: 'application/JSON',
                          success: function(csessions){
@@ -238,21 +222,11 @@ $(document).ready(function(){
                                  camp_sessions.push(csession);
                                  }
 
-                                 console.log("in the foreach get");
-                                 console.log(camp_sessions);
                              });
-                             console.log("after foreach get");
-                             console.log(camp_sessions);
+
                          },
                      });
-
-                     console.log("after get");
-                     console.log(camp_sessions);
-
                 });
-
-                   console.log("the camp sessions are: ");
-                   console.log(camp_sessions);
                    main(camp_sessions);
             });
     });

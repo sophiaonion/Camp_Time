@@ -1,5 +1,4 @@
 var main = function(registrations){
-console.log('got it');
 console.log(registrations);
 
         //counselor selection
@@ -44,10 +43,7 @@ console.log(registrations);
             approved.push(new String($(this).val()));
         });
 
-        console.log("data going to be sent");
         console.log(approved);
-        //var newdata = JSON.stringify(approved);
-        //console.log("test stringify data "+newdata);
         var data = {
                 ids: approved
             };
@@ -75,7 +71,6 @@ console.log(registrations);
     $('#delete').on('click', function(){
 
         $( ".approving option" ).each(function(index){
-            console.log("data going to be delete");
             console.log($(this).val());
 
                 $.ajax({
@@ -101,9 +96,7 @@ console.log(registrations);
 };
 
 $(document).ready(function(){
-        console.log("before get");
        $.get('/api/campsessions/unapproved', function(registrations){
-            console.log("in the get");
             console.log(registrations);
             main(registrations);
         });

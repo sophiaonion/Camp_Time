@@ -45,7 +45,6 @@ var tableBuilt = false;
             dateHead.addClass('remove');
             $('#dates').append(dateHead);
             var toClone = $('.clone'); //get clone column
-            console.log('loop');
             toClone.each(function(index){
                 var next = $(this).clone(true);
                 next.removeClass('clone'); //otherwise it will be included in elements to clone next for loop iteration
@@ -154,15 +153,10 @@ var tableBuilt = false;
                     //loop through each column in row...:gt(1) moves past times and clone columns
                     $(this).children(':gt(1)').each(function(i2, l2){
                         console.log($(this).index());
-                       //idea:  make it so only looks at items in table after and before check in and check out?
-
                        //go through all items and make into activities
                       if($('input', $(this)).val() !== "") {   //not working for now
-//                        console.log('name: ' + $('input', $(this).val()));
-//                        console.log('activity time: ' + time);
-//                        console.log('index: ' + i2.toString() );//day offset from startDate
                         activities.push(new activity($('input', $(this)).val(), i2.toString(), time));
-                        }
+                       }
                     });
             });
 

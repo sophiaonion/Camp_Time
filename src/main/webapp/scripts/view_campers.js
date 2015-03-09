@@ -10,7 +10,6 @@ var main = function(campers, if_customer, userId){
     if (campers){
         campers.forEach(function(value,index){
                 var element = $("<option>");
-                 console.log(index);
                  element.val(index);
                  element.text(value.name);
                  $('#select-camper').append(element);
@@ -21,21 +20,16 @@ var main = function(campers, if_customer, userId){
         $('#campers-info').load("view_campers.html  #campers-info");
         var camper_index = $(this).val();
         var camper=campers[camper_index];
-        console.log("refresh");
         $('.campers-info #age').text(camper.age);
         $('.campers-info #extra-info').text(camper.extraInfo);
-        console.log(camper._id);
         $.ajax({
              type: 'GET',
              url: '/api/campers/registrations/approve/'+camper._id,
              contentType: 'application/JSON',
              async:false,
              success: function(sessions){
-                 console.log("success ajax");
-                 console.log(sessions.length);
                  if (sessions.length!=0){
                      sessions.forEach(function(session){
-                        console.log("success foreach");
                          $('.campers-info #sessions').text(session.name);
                      });
                  }else{
@@ -76,7 +70,6 @@ var main = function(campers, if_customer, userId){
                         }
                     })
         ).then(function() {
-          console.log("delete camper from database");
                   $.ajax({
                       type: 'DELETE',
                       url: '/api/campers/' + camper._id,
@@ -106,7 +99,6 @@ $(document).ready(function(){
     $.get('/api/login/role', function(role){
              role = role.replace(/\s+/g, ''); //eliminate unnessacery whitespace, from stackoverflow
 
-             console.log('here');
              var userId;
              var user;
              $.ajax({
@@ -117,10 +109,8 @@ $(document).ready(function(){
                  success: function(data){
                      user=data;
                      userId=data._id;
-                     console.log(userId);
                      if (role == "customer"){
                      //get the campers that user created
-                     console.log(userId);
                        $.ajax({
                              type: 'GET',
                              url: '/api/campers/customer/' + userId,

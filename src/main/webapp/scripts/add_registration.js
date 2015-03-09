@@ -3,10 +3,7 @@ var main = function(campers, role){
 
     //generate autocomplete selections
     //value is displayed, ID is extra data to send
-    console.log('campers list: ');
-    console.log(campers);
     var autocomplete_source = campers.map(function(camper){
-        console.log('from $get camper name: ' + camper.name + 'id as camperID' + camper._id);
         return {
             value: camper.name,
             ID: camper._id,
@@ -29,25 +26,14 @@ var main = function(campers, role){
 
          $.get('/api/campsessions/all', function(camp_sessions){
             //remove options
-            console.log("here before delete options");
             var x = document.getElementById("session");
-            console.log("length of the option" + x.length);
-            console.log("value of x:");
-            console.log(x);
             for (i=x.length;i > 0;i--) {
-                console.log("value of i"+i);
                 x.remove(i);
             }
 
             //append as option elements for campsession collect
             console.log(camp_sessions);
             camp_sessions.forEach(function(session){
-//            console.log("current session is");
-//            console.log(session);
-//            console.log("selected camper's age");
-//            console.log(selected_camperAge);
-//            console.log("session's age group");
-//            console.log(session.ageGroup);
             if(role == 'customer')
             {
                 if (session.ageGroup == selected_camperAge){

@@ -32,7 +32,6 @@ var main = function(employees){
         $input.after($confirmCancel);
         $input.on('keypress', function(event){
             var val = $input.val() + String.fromCharCode(event.keyCode)
-            console.log(val);
             if (!val.match(/^[a-zA-Z]+$/)) event.preventDefault();
         });
     });

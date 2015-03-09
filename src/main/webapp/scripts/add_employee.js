@@ -45,15 +45,12 @@ var cert;
         else if($(this).text() == "Archery") {cert="archery";}
         else if($(this).text() == "Camp Store") {cert="store";}
         else if($(this).text() == "Driving") {cert="drive";}
-        console.log(cert),
         certifications.push(new String(cert))
 
     });
 
 
 
-    console.log($('#employee-age').val());
-console.log($('#start-break').val());
     //save all info into data
     var data = {
         name: $('#employee-name').val(),
@@ -86,7 +83,6 @@ console.log($('#start-break').val());
             roles: [$('#job').val()]
         };
 
-        console.log(JSON.stringify(useraccount));
 
         $.ajax({
             type: 'POST',

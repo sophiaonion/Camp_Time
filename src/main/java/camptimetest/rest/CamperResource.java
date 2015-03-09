@@ -112,6 +112,19 @@ public class CamperResource {
     }
 
 
+    @GET("/campers/registrations/approved/{camperID}")
+    public Iterable<CampSession> getApprovedRegistrations(String camperID){
+        Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #, approved: true}", camperID).as(SessionRegistration.class);
+        ArrayList<ObjectId> sessionIDs = new ArrayList<>();
+        for(SessionRegistration reg : regsOfSession){
+            sessionIDs.add(new ObjectId(reg.getSessionID()));
+            System.out.println("sessionID"+ reg.getSessionID());
+        }
+
+        return campSessions.get().find("{_id: {$in:#}}", sessionIDs).as(CampSession.class);
+    }
+
+
 
 
  //   @GET("/campers/unapproved")

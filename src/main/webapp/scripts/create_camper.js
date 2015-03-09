@@ -15,19 +15,12 @@ var main = function(campers){
         success: function(data){
              alert('Camper Created.');
 
-             console.log("Before get current user's role");
              //link the camper with this customer account
              $.get('/api/login/role', function(role){
-                 console.log("start to use get current role");
                  role = role.replace(/\s+/g, '');
-
-                 console.log("test whether user is a customer");
-                 console.log("current role is"+role);
                  if (role == "customer"){
-                     console.log("create_camper: user is a customer");
 
                      $.get('/api/login/current/user', function(current){
-                        console.log("create camper, current user"+current);
                          $.ajax({
                              type: 'PUT',
                              url: '/api/users/campers/add',
