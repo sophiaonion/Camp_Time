@@ -23,7 +23,7 @@ var main = function(){
     $.get('/api/login/role', function(role){
          console.log(role);
          role = role.replace(/\s+/g, '');
-         if (role == "admin"){
+         if (role != "customer"){
             $('.staff-select-con').show();
             //get the list of employees
             $.get('/api/employees/all', function(employees){
@@ -37,7 +37,6 @@ var main = function(){
              });
             });
          }
-
     });
 
     var container1 = document.getElementById("select-date");

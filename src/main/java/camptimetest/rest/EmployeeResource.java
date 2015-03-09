@@ -50,7 +50,7 @@ public class EmployeeResource {
         this.campsessions = campsessions;
     }
 
-    @RolesAllowed(ADMIN)
+    @RolesAllowed({ADMIN,COUNSELOR, SPECIALTY})
     @GET("/employees/all") //has to return iterable since .find() returns iterable of objects
     //even if only one entry is returned, .findOne will return object not wrapped in iterable
     public Iterable<Employee> getEmployees() {
