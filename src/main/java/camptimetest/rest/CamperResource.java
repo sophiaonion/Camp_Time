@@ -74,7 +74,7 @@ public class CamperResource {
         return campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
     }
 
-    @RolesAllowed({ADMIN,CUSTOMER})
+    @RolesAllowed({ADMIN,CUSTOMER, COUNSELOR, SPECIALTY})
     @GET("/campers/customer/{customerID}") //get Campers by user
     public Iterable<Camper> getCampersforCustomer(String customerID){
         return campers.get().find("{user_id: #}", customerID).as(Camper.class);

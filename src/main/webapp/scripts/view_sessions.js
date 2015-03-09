@@ -205,7 +205,7 @@ $(document).ready(function(){
     //get list of campers first and then find the camp sessions that camper is with
     var camp_sessions;
     $.get('/api/login/current/user', function(current){
-
+        if(current.roles[0] == 'customer') {
         $.get('/api/campers/customer/'+current._id, function(campers){
 
                 var camp_sessions=[];
@@ -229,6 +229,13 @@ $(document).ready(function(){
                 });
                    main(camp_sessions);
             });
+        }
+        else {
+            var camp_sessions=[];
+            $.get('/api/campsessions/all', function(camp_sessions){
+                 main(camp_sessions);
+            });
+        }
     });
 
 

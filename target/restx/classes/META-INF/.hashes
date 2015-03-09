@@ -7,7 +7,7 @@ src\main\java**playground\datetest.java**8426ffaf6587671afe35871e90ebb352**14226
 src\main\java**camptimetest\rest\CampSessionResource.java**264ff861aa84da0f31d274860c6a74e8**1423278660081
 src/main/java**camptimetest/domain/CampSession.java**de305600ecdaa913cf0f6e4f9c4ac63d**1425159801000
 src/main/java**camptimetest/domain/Activity.java**c04849714ac3526716b37624c6413f93**1425846872000
-src/main/java**camptimetest/rest/CamperResource.java**6a6ea9d5ae60f891e2339e5686a6753e**1425768494000
+src/main/java**camptimetest/rest/CamperResource.java**78f43773996067838ee22bf49b6102e3**1425872046000
 src/main/java**camptimetest/rest/ActivityResource.java**056821f2316648d154df6580b2130088**1425847432000
 src/main/java**camptimetest/domain/MasterSchedule.java**68aa46aafbc649d4e44dce95e5f8a43b**1423287952000
 src\main\java**camptimetest\domain\MasterSchedule.java**abbcfc0b4f8157530e50c95e695eaec2**1423103206571
