@@ -22,6 +22,11 @@ var main = function(camp_sessions){
 
     var container1 = document.getElementById("select-date");
     var content1 = container1.innerHTML;
+    console.log("content1");
+    console.log(content1);
+    //reload part of page
+     var container2 = document.getElementById("schedule");
+     var content2 = container2.innerHTML;
     $('#select-area').on('change', function(){
              var areaName = $(this).val();
              var display= [];
@@ -29,6 +34,7 @@ var main = function(camp_sessions){
 
             //find all the date that have area scheduled
             container1.innerHTML= content1;
+            container2.innerHTML= content2;
             $.get('/api/activities/area/'+ areaName, function(activities){
                 activities.forEach(function(activity){
                     var element = $("<option>");
@@ -71,10 +77,11 @@ var main = function(camp_sessions){
                             $(new2).addClass('activity');
                             new2.innerHTML=activity.session;
 
-                            row.appendChild(new1);
                             row.appendChild(new2);
                         }
                     });
+
+                    $('#schedule').show();
                 });
              });
 

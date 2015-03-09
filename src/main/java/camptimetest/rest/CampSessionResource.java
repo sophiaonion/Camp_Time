@@ -23,6 +23,7 @@ import java.util.Objects;
 
 import static camptimetest.AppModule.Roles.ADMIN;
 import static camptimetest.AppModule.Roles.COUNSELOR;
+import static camptimetest.AppModule.Roles.SPECIALTY;
 import static restx.common.MorePreconditions.checkEquals;
 
 
@@ -230,7 +231,6 @@ public class CampSessionResource {
         return Status.of("deleted");
     }
 
-    @RolesAllowed({ADMIN,COUNSELOR})
     @GET("/campers/all")
     public Iterable<Camper> getCampers(){
         System.out.println("here");

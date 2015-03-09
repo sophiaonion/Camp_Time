@@ -33,6 +33,7 @@ var main = function(){
                     element.val(employee.name);
                     element.text(employee.name);
                     element.data('employeeID', employee._id);
+                    console.log("append employee id data"+element.data('employeeID'));
                      $('#select-staff').append(element);
              });
             });
@@ -50,6 +51,8 @@ var main = function(){
         container1.innerHTML= content1;
         var activities=[];
         $.get('/api/employees/'+ staffId, function(employee){
+            console.log("employee:");
+            console.log(employee);
             var activityIds = employee.activities;
             activityIds.forEach(function(activityId){
 
