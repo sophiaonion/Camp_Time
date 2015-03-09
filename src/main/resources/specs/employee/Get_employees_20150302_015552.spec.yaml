@@ -1,0 +1,15 @@
+title: Get employees 20150302 015552
+given:
+  - time: 2015-03-02T07:55:52.256Z
+  - collection: users
+    data: |
+        { "_id" : { "$oid" : "54f4175303641f53487160a3"} , "name" : "admin" , "password" : "$2a$10$ytSAvuVAG0Vi.7zNlcDB8uOUOdMDtAgayE6/2RSCIdMBxg7ZUGMZm" , "roles" : [ "admin"] , "campers" : [ ]}
+  - collection: employees
+    data: |
+
+wts:
+  - when: |
+       GET employees
+       Cookie: RestxSession={"principal":"admin","sessionKey":"2fd025c7-cca6-49e7-ab07-d8a18a7318cc","_expires":"2015-04-01T07:55:52.256Z"}; RestxSessionSignature=KsZjdodf3HNvm+1wOkc3D+mU/nQ=
+    then: |
+        [ ]

@@ -20,7 +20,10 @@ var main = function(){
         return utcDate;
     }
 
-
+    $.get('/api/login/role', function(role){
+         console.log(role);
+         role = role.replace(/\s+/g, '');
+         if (role != "customer"){
             $('.staff-select-con').show();
             //get the list of employees
             $.get('/api/employees/all', function(employees){
@@ -34,6 +37,8 @@ var main = function(){
                      $('#select-staff').append(element);
              });
             });
+         }
+    });
 
     var container1 = document.getElementById("select-date");
     var content1 = container1.innerHTML;
@@ -50,8 +55,6 @@ var main = function(){
             console.log(employee);
             var activityIds = employee.activities;
             activityIds.forEach(function(activityId){
-                console.log("activity:");
-                console.log(activityId);
 
                 $.ajax({
                      type: 'GET',
@@ -61,8 +64,6 @@ var main = function(){
                      success: function(activity){
                         activities.push(activity);
                         var element = $("<option>");
-                        console.log("activity from get");
-                        console.log(activity);
                         var date = new Date (activity.time);
 
                         //test if there's already an activity happening on particular day
@@ -87,18 +88,12 @@ var main = function(){
 
             $('#select-date').on('change', function(){
                 var select = $('#select-date option:selected').data('date');
-                console.log(select);
                 //reload
                 container2.innerHTML= content2;
 
-                console.log(activities);
                  //print the activities for that selected date
                  activities.forEach(function(activity){
-                    console.log("current activity");
-                    console.log(activity);
                     var time = new Date (activity.time).myToString();
-                    console.log("this activity's time");
-                    console.log(time);
                     var hour = new Date (activity.time).myGetHour();
 
                     //add activity & session to html

@@ -2,10 +2,8 @@ var main = function(campers){
 
     //generate autocomplete selections
     //value is displayed, ID is extra data to send
-    console.log('campers: ' + campers);
     var autocomplete_source = campers.map(function(camper){
 
-        console.log('from $get camper name: ' + camper.name + 'id as camperID' + camper._id);
         return {
             value: camper.name,
             ID: camper._id,
@@ -83,7 +81,7 @@ var main = function(campers){
 };
 
 $(document).ready(function(){
-       $.get('api/campers', function(campers){
+       $.get('api/campers/all', function(campers){
             main(campers);
         });
 });

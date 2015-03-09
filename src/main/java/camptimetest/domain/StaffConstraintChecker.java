@@ -34,7 +34,7 @@ public class StaffConstraintChecker {
 
     //runs fixConflicts() as long as there are conflicts
     public Activity update() {
-        System.out.println("updating now...");
+        System.out.println("scheduling employees...");
 
         //staffing activities
         int i = this.checkConflicts();
@@ -44,6 +44,7 @@ public class StaffConstraintChecker {
             i=this.checkConflicts();
         }
         if(i>0) System.out.println("still conflicts");
+        System.out.println("employees scheduled");
         return errorCauser;
     }//end update()
 
@@ -71,7 +72,7 @@ public class StaffConstraintChecker {
 
                 if(!a.getTitle().equals("n/a")) {
                 //add staff with required certifications
-                if (a.getActivityArea() != null) {
+                if (a.getActivityArea() != null && !a.getActivityArea().equals("")) {
                     int numLifeGuards = 0;
                     boolean hasArt = false, hasNature = false, hasArchery = false, hasStore = false, canDrive;
 
@@ -115,7 +116,6 @@ public class StaffConstraintChecker {
                                 }
                             }
                             while (count < 1000 && (((numCampers + numStaff) / numLifeGuards) > 25)) {
-
                                 //save employee to activity and activity to employee
                                 String eID = findEmployeeToWork(a, "lifeguard", "", false, false);
                                 if(!eID.equals("none")) {
@@ -231,7 +231,8 @@ public class StaffConstraintChecker {
                             }
                             break;
                         default:
-                            System.out.println("error: somethin funky going on");
+                            //location is sports or creek, no extra certifications required
+                            break;
                     }
                 }//end add staff with required certifications
 
@@ -267,68 +268,61 @@ public class StaffConstraintChecker {
                         numStaff++;
                         adID = findEmployeeToWork(a, null, a.getSession(), false, false);
                     }
-                }
-
-            }
+                }//end add admin & spec staff for coverage
+            }//end for each activity
         }
+            type = checkConflicts();
         }//end assign employees to unemployed activities
 
+        //if original round of assigning was not sufficient: do heuristic repair
         if(checkConflicts()>0) {
-            //heuristic repair
+            System.out.println("heree");
+
+            //arraylist of number of conflicts where index corresponds to index of activity in actArray (include conflicts with 2 hour breaks)
             ArrayList< Integer > numConflicts = new ArrayList<>(countConflicts(false));
-            //get activity most in conflict
+
+            //get activity with most conflicts
             int mostConf = getMostConflicts(numConflicts);
-            while(numConflicts.get(mostConf) > 0) {
+
+            //fix conflicts one by one
+            if(numConflicts.get(mostConf) > 0) {
+                System.out.println(mostConf);
+                System.out.println(numConflicts.get(mostConf));
                 //pick most available employee able to work that activity and put them there
                 actList.get(mostConf);
 
+                //remove current staff from activity
+                Activity editA = activities.get().findOne("{_id: #}", new ObjectId(String.valueOf(actList.get(mostConf).get("_id")))).as(Activity.class);
+                editA.getEmployees().clear();
+                activities.get().save(editA);
+
+                System.out.println(editA.getTitle()+"/"+editA.getSession()+"/"+editA.getTime());
 
 
+                //add best choice staff to activity - if adding won't change break
+                ArrayList<String> actDomain = new ArrayList<String>(findEmployeesToWork(editA, "", "", false, false));
+                //if no such options, include ones changing 2 and fix laterz
+                if(actDomain.size()==0) {
+                    System.out.println("changing 2");
+                    actDomain = new ArrayList<String>(findEmployeesToWork(editA, "", "", false, true));
+                }
+
+                //add given employees to list
+                for(String eID: actDomain) {
+                    //but only as long as not sufficiently staffed
+                    if(!checkSufficientlyStaffed(editA)) {
+                        editA.getEmployees().add(eID);
+                        activities.get().save(editA);
+                    }
+                }
+
+                //update numConflicts array and index of mostConf
                 numConflicts = new ArrayList<>(countConflicts(false));
                 mostConf = getMostConflicts(numConflicts);
             }
-
-
         }
     }//end fixConflicts()
 
-
-
-    private ArrayList< ArrayList<String> > findActivityDomains(boolean conflictOKTwos) {
-        ArrayList< ArrayList<String> > domains = new ArrayList<ArrayList<String> >();
-        Iterable<Employee> empCursor = employees.get().find().as(Employee.class);
-        Iterable<Activity> actCursor = activities.get().find().as(Activity.class);
-
-        int index=0;
-        for(Activity a: actCursor) {
-            domains.add(index, new ArrayList<String>(findEmployeesToWork(a, "", "", false, conflictOKTwos)));
-            index++;
-        }
-        return domains;
-    }
-
-
-
-
-    //maps employee ids to list of activities that they are available to work, with consideration into whether we care
-    //about when their 2 hour break is
-    private Map<String, ArrayList<String> >  findEmployeeDomains(boolean conflictOKTwos) {
-        Map<String, ArrayList<String> > domains = new HashMap<String, ArrayList<String> >();
-        Iterable<Employee> empCursor = employees.get().find().as(Employee.class);
-        Iterable<Activity> actCursor = activities.get().find().as(Activity.class);
-
-        for(Employee e: empCursor) {
-            domains.put(e.getKey(), new ArrayList<String>());
-        }
-
-        for(Activity a: actCursor) {
-            ArrayList<String> emps = new ArrayList<String>(findEmployeesToWork(a, "", "", false, conflictOKTwos));
-            for(String empID: emps) {
-                domains.get(empID).add(a.getKey());
-            }
-        }
-        return domains;
-    }
 
 
 
@@ -343,7 +337,7 @@ public class StaffConstraintChecker {
         //if there is an activity without employees
         if( (activities.get().count( "{employees: {$exists: false} }" ) != 0)
                 || (activities.get().count( "{employees: null }" ) != 0)) {//if time is set or not
-//            System.out.println("type 1 conflict found (no staff)");
+            System.out.println("type 1 conflict found (no staff)");
             return 1;
         }
 
@@ -352,7 +346,8 @@ public class StaffConstraintChecker {
             String aString = String.valueOf(actList.get(i).get("_id"));
             Activity act = activities.get().findOne("{_id: #}", new ObjectId(aString)).as(Activity.class);
             if(!checkSufficientlyStaffed(act)) {
-//                System.out.println("insufficiently staffed");
+                System.out.println(act.getTitle()+"/"+act.getSession()+"/"+act.getTime());
+                System.out.println("insufficiently staffed");
                 return 2;
             }
         }
@@ -367,8 +362,8 @@ public class StaffConstraintChecker {
                 for (int k = 0; k < a.size(); k++) { //for each other activity employee is working
                     DateTime dtB = activities.get().findOne("{_id: #}", new ObjectId(a.get(k))).as(Activity.class).getTime();
                     if (j != k && dtA.equals(dtB)) {//not sure if works, compare each activity
-//                        System.out.println(a.get(j)+" is at same time as "+a.get(k));
-//                        System.out.println("type 3 conflict: employee working two activities at same time");
+                        System.out.println(a.get(j)+" is at same time as "+a.get(k));
+                      System.out.println("type 3 conflict: employee working two activities at same time");
                         return 3;
                     }
                 }
@@ -377,7 +372,8 @@ public class StaffConstraintChecker {
 
         //check that employees have appropriate number of breaks todo could change from map to set?
         DateTimeFormatter dtf =  DateTimeFormat.forPattern("MM/dd/YYY");
-        for(Employee e: empCursor) {//for each employee
+        Iterable<Employee> empCursor2 = employees.get().find().as(Employee.class);
+        for(Employee e: empCursor2) {//for each employee
             ArrayList<String> aST = e.getActivities();
 
             Map<String, boolean[]> working = new HashMap<String, boolean[]>();
@@ -404,7 +400,7 @@ public class StaffConstraintChecker {
             for (boolean[] hours : working.values()) {
                 if (((hours[9] || hours[10])) && ((hours[10] || hours[11])) && ((hours[13] || hours[14])) && //if working any of the possible 2 hour break slots
                         ((hours[14] || hours[15])) && ((hours[15] || hours[16])) && ((hours[19] || hours[20]))) {
-//                    System.out.println("type 4: employee does not have 2 hour break");
+                    System.out.println("type 4: employee does not have 2 hour break");
                     return 4;
                 }
             }//end check 2 hour break
@@ -421,14 +417,13 @@ public class StaffConstraintChecker {
             for(int j=0; j<numToCheck; j++) {
                 String requiredDayOffString = dtf.print(requiredDayOff);
                 if(working.containsKey(requiredDayOffString)) {
-//                  System.out.println("type 5: employee working on their 24 hour break");
+                  System.out.println("type 5: employee working on their 24 hour break");
                     return 5;
                 }
                 requiredDayOff = requiredDayOff.plusDays(interval);
             }
         }
-
-        System.out.println("checked conflicts: there are none");
+        System.out.println("no conflicts");
         return 0;
     }//end checkConflicts()
 
@@ -572,7 +567,7 @@ public class StaffConstraintChecker {
 
         //begin constraint checking
         //at least 2 staff are with campers
-        if ((numStaff < 2)) {System.out.println("not enough staff"); return false;}
+        if ((numStaff < 2)) { return false;}
 
         //woman over 18 is with campers
         boolean hasMatureLady = false;
@@ -583,7 +578,7 @@ public class StaffConstraintChecker {
                 }
         }
         if (hasMatureLady == false) {
-            System.out.println("does not have staff over 18 and woman");
+//            System.out.println("does not have staff over 18 and woman");
             return false;
         }
 
@@ -642,11 +637,11 @@ public class StaffConstraintChecker {
             switch(activityArea) {
                 case "pool"://pretty sure this equation works: need
                     if(numLifeGuards != 0)
-                        if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - ((numCampers + numStaff) / 25))) >= 12)) {certsOK = true;}
+                        if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - numLifeGuards +1)) < 12 )) {certsOK = true;}
                     break;
                 case "canoeing":
                     if(numLifeGuards != 0)
-                        if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - ((numCampers + numStaff) / 25))) >= 12)) {certsOK = true;}
+                        if ((((numCampers + numStaff) / numLifeGuards) < 25) && (((numCampers + numStaff) / (numStaff - numLifeGuards+1 )) < 12 )) {certsOK = true;}
                     break;
                 case "art":
                     if(hasArt) {certsOK = true;}
@@ -661,10 +656,10 @@ public class StaffConstraintChecker {
                     if(hasStore) {certsOK = true;}
                     break;
                 default:
-                    System.out.println("error: somethin funky going on");
+                    certsOK = true;
+                    break;
             }
             if (!certsOK) {
-                System.out.println("lacking required certifications");
                 return false;
             }
         }//end check for required certifications
@@ -677,9 +672,15 @@ public class StaffConstraintChecker {
     //returns true if given activity is sufficiently staffed according to rules & regulations
     private boolean checkSufficientlyEmployed(Employee e, boolean twoConflictOK) {
 
-        Iterable<Activity> actCursor = activities.get().find("{_id: #}", e.getActivities()).as(Activity.class);
+        //create list of activities employee is working
+        ArrayList<Activity> empActs = new ArrayList<Activity>();
+        for(String actID: e.getActivities()) {
+            Activity a = activities.get().findOne("{_id: #}", new ObjectId(actID)).as(Activity.class);
+            empActs.add(a);
+        }
+
         //for each activity employee is working
-        for(Activity a: actCursor) {
+        for(Activity a: empActs) {
 
             //check that activity is not on date of 24 hour break
             if(checkHas24HourBreakOnDate(e, a.getTime()))
@@ -690,8 +691,8 @@ public class StaffConstraintChecker {
                 return false;
 
             //if working two activities at the same time
-            for(Activity b: actCursor) {
-                if(a.getTime() == b.getTime())
+            for(int b=0; b<empActs.size(); b++) {
+                if(a.getTime() == empActs.get(b).getTime())
                     return false;
             }
         }
@@ -743,56 +744,50 @@ public class StaffConstraintChecker {
     private ArrayList<Integer> countConflicts(boolean twoConflictOK) {
 
         ArrayList<Integer> numConflicts = new ArrayList<>();
-        Iterable<Activity> actCursor = activities.get().find().as(Activity.class);
         int i=0;
-        for(Activity a: actCursor) {
+        Iterable<Activity> actCursor2 = activities.get().find().as(Activity.class);
+        for(Activity a: actCursor2) {
+            //initialize to 0
+            numConflicts.add(i, 0);
 
-            //if no staff, add 1
-            if(a.getEmployees() == null || a.getEmployees().size() == 0) {
-                int c = numConflicts.get(i);
-                c++;
-                numConflicts.set(i, c);
-            }
-
-            //if innappropriately staffed, add 1 (not enough/not enough with required certifications)
-            if(!checkSufficientlyStaffed(a)) {
-                int c = numConflicts.get(i);
-                c++;
-                numConflicts.set(i, c);
-            }
-
-            //if employees working should not be working then
-            Iterable<Employee> actEmpCursor = employees.get().find("{_id: #}", a.getEmployees()).as(Employee.class);
-            for(Employee e: actEmpCursor) {
-                if (!checkSufficientlyEmployed(e, twoConflictOK)) {
+            //check for conflicts
+            if(!a.getTitle().equals("n/a")) {
+                //if no staff, add 1
+                if (a.getEmployees() == null || a.getEmployees().size() == 0) {
                     int c = numConflicts.get(i);
                     c++;
                     numConflicts.set(i, c);
                 }
+
+                //if innappropriately staffed, add 1 (not enough/not enough with required certifications)
+                if (!checkSufficientlyStaffed(a)) {
+                    int c = numConflicts.get(i);
+                    c++;
+                    numConflicts.set(i, c);
+                }
+
+                //create list of employees working then
+                ArrayList<Employee> actEmps = new ArrayList<Employee>();
+                for(String empID: a.getEmployees()) {
+                    Employee e = employees.get().findOne("{_id: #}", new ObjectId(empID)).as(Employee.class);
+                    actEmps.add(e);
+                }
+
+                //if employees working should not be working then
+                for (Employee e : actEmps) {
+                    if (!checkSufficientlyEmployed(e, twoConflictOK)) {
+                        int c = numConflicts.get(i);
+                        c++;
+                        numConflicts.set(i, c);
+                    }
+                }
             }
             i++;
-
         }
+
         return numConflicts;
     }//end checkConflicts()
 
-
-
-
-    //returns index of most constrained activity in arraylist
-    private int getMostConstrained(ArrayList< ArrayList<String> > domains) {
-        //assuming domains with 1 or no items have already been assigned or whatevs
-        int numConst = 100000000;//number of options for most constrained activity
-        int mostConst=-1;//index of most constrained activity
-
-        for(int i=0; i<domains.size(); i++) {
-            if ((domains.get(i).size() < numConst) && (domains.get(i).size() > 1)) {//smallest domain that still has a choice
-                mostConst = i;
-                numConst = domains.get(i).size();
-            }
-        }
-        return mostConst;
-    }//end getMostConstrained
 
 
 

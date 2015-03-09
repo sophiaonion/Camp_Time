@@ -15,7 +15,9 @@
     <main>
         <br>
         <button type="button" id="cancel">Return Home</button>
-    <div class="session-select-con">
+        <a href="trigger_update.html"><button type="button">Auto Update Schedule</button></a>
+
+        <div class="session-select-con">
         <br>
         <label for="session-select">Select Session:</label>
         <select name="session-select" id="session-select">
@@ -90,7 +92,6 @@
 
     </div>
         </div>
-
     </main>
 
 </body>
@@ -101,10 +102,17 @@
 <script src="scripts/sessionschedule/session_schedule.js"></script>
 <script src="scripts/sessionschedule/button_handlers.js"></script>
 <script src="scripts/sessionschedule/edit_employees.js"></script>
+<script src='scripts/jsPDF-master/dist/jspdf.min.js'></script>
+<script src='scripts/jsPDF-master/dist/jspdf.debug.js'></script>
+<script src='scripts/jsPDF-master/examples/bootstrap/js/bootstrap.js'></script>
+<script src='scripts/jsPDF-master/examples/bootstrap/js/bootstrap.min.js'></script>
 <script src='scripts/jsPDF-master/jspdf.js'></script>
 <script src='scripts/jsPDF-master/jspdf.plugin.from_html.js'></script>
 <script src='scripts/jsPDF-master/jspdf.plugin.split_text_to_size.js'></script>
 <script src='scripts/jsPDF-master/jspdf.plugin.standard_fonts_metrics.js'></script>
+<script src='scripts/jsPDF-master/jspdf.plugin.cell.js'></script>
+<script src='scripts/sessionschedule/print_schedule.js'></script>
+
 
 
 </html>

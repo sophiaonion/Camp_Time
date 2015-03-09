@@ -1,0 +1,21 @@
+Activity Area names (required cert):
+    pool (lifeguard)
+    art (art)
+    lodge
+    sports
+    unit
+    canoeing (lifeguard)
+    archery (archery)
+    creek-hopping
+    other
+
+Certification names:
+    first-aid
+    cpr
+    health
+    lifeguard
+    art
+    nature
+    archery
+    store
+    drive

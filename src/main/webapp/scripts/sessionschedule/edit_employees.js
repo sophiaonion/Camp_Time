@@ -58,7 +58,7 @@ var edit_employees_setup = function() {
                     var remove_employees = [];
                     $('.available-emp option').each(function(index){
                         var employee = $(this).data('employee');
-                        if(activity.employees.indexOf(employee._id) === -1){
+                        if(activity.employees.indexOf(employee._id) !== -1){
                             remove_employees.push(employee._id);
                         }
                     });

@@ -74,7 +74,7 @@ public class CamperResource {
         return campers.get().find("{_id: {$in:#}}", camperIDs).as(Camper.class);
     }
 
-    @RolesAllowed({ADMIN,CUSTOMER,COUNSELOR})
+    @RolesAllowed({ADMIN,CUSTOMER, COUNSELOR, SPECIALTY})
     @GET("/campers/customer/{customerID}") //get Campers by user
     public Iterable<Camper> getCampersforCustomer(String customerID){
         return campers.get().find("{user_id: #}", customerID).as(Camper.class);
@@ -102,6 +102,19 @@ public class CamperResource {
     @GET("/campers/registrations/{camperID}")
     public Iterable<CampSession> getCampers(String camperID){
         Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #}", camperID).as(SessionRegistration.class);
+        ArrayList<ObjectId> sessionIDs = new ArrayList<>();
+        for(SessionRegistration reg : regsOfSession){
+            sessionIDs.add(new ObjectId(reg.getSessionID()));
+            System.out.println("sessionID"+ reg.getSessionID());
+        }
+
+        return campSessions.get().find("{_id: {$in:#}}", sessionIDs).as(CampSession.class);
+    }
+
+
+    @GET("/campers/registrations/approved/{camperID}")
+    public Iterable<CampSession> getApprovedRegistrations(String camperID){
+        Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #, approved: true}", camperID).as(SessionRegistration.class);
         ArrayList<ObjectId> sessionIDs = new ArrayList<>();
         for(SessionRegistration reg : regsOfSession){
             sessionIDs.add(new ObjectId(reg.getSessionID()));

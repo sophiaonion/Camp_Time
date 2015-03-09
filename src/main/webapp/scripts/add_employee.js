@@ -45,15 +45,12 @@ var cert;
         else if($(this).text() == "Archery") {cert="archery";}
         else if($(this).text() == "Camp Store") {cert="store";}
         else if($(this).text() == "Driving") {cert="drive";}
-        console.log(cert),
         certifications.push(new String(cert))
 
     });
 
 
 
-    console.log($('#employee-age').val());
-console.log($('#start-break').val());
     //save all info into data
     var data = {
         name: $('#employee-name').val(),
@@ -79,6 +76,27 @@ console.log($('#start-break').val());
              alert(error);
         }
     });
+
+    var useraccount = {
+            name: $('#user-name').val(),
+            password: $('#password').val(),
+            roles: [$('#job').val()]
+        };
+
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/users',
+            data: JSON.stringify(useraccount),
+            contentType: 'application/JSON',
+            success: function(data){
+                 alert('User Created.');
+                 window.location.replace('index.html');
+            },
+            error: function(request, status, error){
+                 alert(error);
+            }
+        });
 
 });
 

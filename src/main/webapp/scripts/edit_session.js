@@ -22,11 +22,9 @@ var main = function(camp_sessions){
             sessionName: selected_sessionName
         };
 
-        console.log("clicked");
 
         $.get('/api/campsessions/' + data.sessionName, function(activities){
         console.log(data.sessionName);
-        console.log(activities);
            activities.forEach(function(activity){
            //TODO need to put them in an editable area
            var emp = $("<li>").text(activity.title + " " + activity.time + " "+
