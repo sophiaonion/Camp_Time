@@ -36,7 +36,6 @@ public class ConstraintChecker {
         while(i>0) {
             this.fixConflicts(i);
 //            System.out.println("after fix: ");
-            System.out.println("here");
             i=this.checkConflicts();
         }
         System.out.println("activities scheduled");
