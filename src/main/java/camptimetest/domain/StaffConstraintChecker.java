@@ -480,6 +480,7 @@ public class StaffConstraintChecker {
                 }//end employee doesn't have break then
             }//end for each counselor assigned to session
         }//end add counselors assigned to session
+
         //looking for admin or specialty staff to fill in coverage
         if((session==null || session.equals("")) && (cert==null || cert.equals("")) ) {
             Iterable<Employee> adminCursor, specCursor;
@@ -497,20 +498,30 @@ public class StaffConstraintChecker {
             for(Employee e: adminCursor) {
                 if(!checkHas24HourBreakOnDate(e, a.getTime()) && (conflictOKTwos || !checkIfLackingTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay()))) {
                     //go through each activity emp is working and make sure it isn't same as day being added
+                    boolean alreadyWorking = false;
                     for(String wID: e.getActivities()) {
-                        if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() != a.getTime()) {
+                        if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime().getDayOfYear() == a.getTime().getDayOfYear()) {
+                            alreadyWorking = true;
+                        }
+                        if(!alreadyWorking) {
                             options.add(e.getKey());
                         }
                     }
                 }
             }
 
+
+
             //add available spec staff
             for(Employee e: specCursor) {
                 if(!checkHas24HourBreakOnDate(e, a.getTime()) && (conflictOKTwos || !checkIfLackingTwoHourBreakOnDate(e, a.getTime(), a.getTime().getHourOfDay()))) {
                     //go through each activity emp is working and make sure it isn't same as day being added
                     for(String wID: e.getActivities()) {
-                        if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime() != a.getTime()) {
+                        boolean alreadyWorking = false;
+                        if (activities.get().findOne("{_id: #}", new ObjectId(wID)).as(Activity.class).getTime().getDayOfYear() == a.getTime().getDayOfYear()) {
+                            alreadyWorking = true;
+                        }
+                        if(!alreadyWorking) {
                             options.add(e.getKey());
                         }
                     }
