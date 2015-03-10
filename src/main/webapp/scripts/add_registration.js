@@ -8,6 +8,7 @@ var main = function(campers, role){
             value: camper.name,
             ID: camper._id,
             age: camper.age //string of scout level to be used to get appropriate available sessions
+
         };
     });
 
@@ -43,7 +44,7 @@ var main = function(campers, role){
                      element.data('sessionID', session._id);
                      $('#session').append(element);
                 }
-            }else{
+            } else {
              var element = $("<option>");
                  element.val(session.name);
                  element.text(session.name);
@@ -54,6 +55,8 @@ var main = function(campers, role){
              });
          });
     };
+
+
 
     $('#camper-name').autocomplete({
         source: autocomplete_source, //set possible options
