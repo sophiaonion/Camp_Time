@@ -9,16 +9,26 @@ var main = function(campers){
                 });
 
         var autocomplete_source = campers.map(function(camper){
+            console.log(camper);
             return {
                 value: camper.name,
                 ID: camper._id
             };
         });
 
+        var selected_camperID;
+            var uponSelect = function(event, ui){ //upon selection set camperID to send when submitting registration
+                 //ui.item is selected item, has fields set in source
+                 selected_camperID = ui.item.ID;
+                 //get the list of registered sessions for this particular camper
+
+                 console.log(ui.item.ID);
+             };
+
         $('#camper-name').autocomplete({
             source: autocomplete_source, //set possible options
             autoFocus: true, //automatically select closest match
-//            select: uponSelect,
+            select: uponSelect,
             messages: {//get rid of helper text that jqueryUI inserts
                 noResults: '',
                 results: function(){}//usually appends selected result text to bottom
@@ -26,16 +36,12 @@ var main = function(campers){
         });
 
         $('#delete-camper').on('click', function(){
-            var data = {
-                camperID: $('#camper-name option:selected').data('ID'),
-            };
             console.log('submit clicked');
-            console.log(data.camperID);
+            console.log(selected_camperID);
 
             $.ajax({
                 type: 'DELETE',
-                url: '/api/campers/' + data.camperID,
-                data: JSON.stringify(data),
+                url: '/api/campers/' + selected_camperID,
                 contentType: 'application/JSON',
                 success: function(data){
                  if (confirm("Deleted Camper Account: Update schedule now?") == true) {
