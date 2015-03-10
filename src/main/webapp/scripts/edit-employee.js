@@ -1,4 +1,13 @@
 var main = function(employees){
+
+            employees.forEach(function(employee){
+
+                            var element = $("<option>");
+                             element.text(employee.name);
+                             $('.employees-list').append(element);
+
+                    });
+
     var $okayBtn = $('<button>').text('Okay').addClass('okay-button');
     var $cancelBtn = $('<button>').text('Cancel').addClass('cancel-button');
     var $input = $('<input>').attr('type', 'text').addClass('new-info');
