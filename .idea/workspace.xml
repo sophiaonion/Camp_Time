@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05ae7c8a-a8b9-4f24-b796-b0db0f1ffa2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/ActivityResource.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/ActivityResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResource.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResource.class" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouter.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/CamperResourceRouter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResource.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter$2.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter$1.class" afterPath="$PROJECT_DIR$/target/classes/camptimetest/rest/EmployeeResourceRouter$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" afterPath="$PROJECT_DIR$/target/restx/classes/META-INF/.hashes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/camptimetest/rest/CamperResourceRouter.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/camptimetest/rest/CamperResourceRouter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouter.java" afterPath="$PROJECT_DIR$/target/restx/classes/camptimetest/rest/CamperResourceRouter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/camptimetest/rest/EmployeeResourceRouter.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/camptimetest/rest/EmployeeResourceRouter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" afterPath="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.log" afterPath="$PROJECT_DIR$/app.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/area_schedule.html" afterPath="$PROJECT_DIR$/src/main/webapp/area_schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts/area_schedule.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/area_schedule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/home_page_test.html" afterPath="$PROJECT_DIR$/src/main/webapp/home_page_test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/staff_schedule.html" afterPath="$PROJECT_DIR$/src/main/webapp/staff_schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts/staff_schedule.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/staff_schedule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/view_employees.html" afterPath="$PROJECT_DIR$/src/main/webapp/view_employees.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/scripts/create_user.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/create_user.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="72ed9e26-3295-4136-814c-afbbf4dae147" name="New changelist" comment="" />
@@ -52,7 +39,7 @@
       <file leaf-file-name="area_schedule.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/area_schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="764" max-vertical-offset="1515">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1065" max-vertical-offset="1605">
               <caret line="71" column="60" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
               <folding />
             </state>
@@ -71,11 +58,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CampSessionResource.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CampSessionResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2119701" vertical-offset="2634" max-vertical-offset="3315">
-              <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2633" max-vertical-offset="3315">
+              <caret line="214" column="36" selection-start-line="214" selection-start-column="36" selection-end-line="214" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_user.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/create_user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="495">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_user.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/create_user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0493827" vertical-offset="0" max-vertical-offset="750">
+              <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -84,11 +91,9 @@
       <file leaf-file-name="CamperResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CamperResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="984" max-vertical-offset="2355">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="2550">
               <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,7 +111,7 @@
       <file leaf-file-name="staff_schedule.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/staff_schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="2040">
+            <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1965">
               <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
               <folding />
             </state>
@@ -118,7 +123,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="2430">
               <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,7 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/scripts/permission/admin_permission.html" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/Employee.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/CampSession.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/rules.html" />
@@ -162,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/view_sessions.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_camper.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/session_schedule.html" />
-        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/SessionRegistration.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/sessionschedule/session_schedule.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/view_campers.html" />
@@ -182,6 +187,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/staff_schedule.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/scripts/staff_schedule.js" />
         <option value="$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/scripts/create_user.js" />
       </list>
     </option>
   </component>
@@ -193,9 +200,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1276" />
-    <option name="height" value="778" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -223,6 +229,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,7 +244,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="410" />
+              <option name="myItemId" value="HelloWorld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -247,7 +254,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="410" />
+              <option name="myItemId" value="HelloWorld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -269,33 +276,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="410" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CAMPTIMETEST" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="410" />
+              <option name="myItemId" value="HelloWorld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -314,10 +295,6 @@
               <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sessionschedule" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -325,7 +302,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="410" />
+              <option name="myItemId" value="HelloWorld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -343,7 +320,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="410" />
+              <option name="myItemId" value="HelloWorld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -365,7 +342,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="410" />
+              <option name="myItemId" value="HelloWorld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -391,7 +368,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="410" />
+              <option name="myItemId" value="HelloWorld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -411,14 +388,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rest" />
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAMPTIMETEST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HelloWorld" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="camptimetest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="createdata" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,7 +434,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="project.structure.last.edited" value="Problems" />
@@ -531,27 +537,6 @@
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -658,26 +643,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <list size="2">
@@ -931,7 +896,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1276" height="778" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -941,23 +906,23 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37463558" sideWeight="0.5131796" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27696794" sideWeight="0.48682043" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40374333" sideWeight="0.5024233" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35568514" sideWeight="0.49917626" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35327634" sideWeight="0.4983845" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20845482" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958813" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1993517" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3368336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31283423" sideWeight="0.49757674" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30466473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27696794" sideWeight="0.48682043" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20845482" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24898374" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4037901" sideWeight="0.49835256" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24898374" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1042,20 +1007,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/delete_camper.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25" vertical-offset="53" max-vertical-offset="465">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/delete_employee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05670103" vertical-offset="68" max-vertical-offset="480">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/edit-employee.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="412">
@@ -1067,13 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.73660713" vertical-offset="0" max-vertical-offset="540">
           <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67171717" vertical-offset="9321" max-vertical-offset="10095">
-          <caret line="656" column="38" selection-start-line="656" selection-start-column="38" selection-end-line="656" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1360,7 +1304,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62184876" vertical-offset="633" max-vertical-offset="990">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,7 +1311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75630254" vertical-offset="0" max-vertical-offset="420">
           <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1376,9 +1318,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="984" max-vertical-offset="2355">
           <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1402,14 +1342,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="2430">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/domain/StaffConstraintChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.836323" vertical-offset="11464" max-vertical-offset="11910">
+          <caret line="569" column="0" selection-start-line="569" selection-start-column="0" selection-end-line="569" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/camptimetest/rest/CampSessionResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2119701" vertical-offset="2634" max-vertical-offset="3315">
-          <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2633" max-vertical-offset="3315">
+          <caret line="214" column="36" selection-start-line="214" selection-start-column="36" selection-end-line="214" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/create_user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0493827" vertical-offset="0" max-vertical-offset="750">
+          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
           <folding />
         </state>
       </provider>
