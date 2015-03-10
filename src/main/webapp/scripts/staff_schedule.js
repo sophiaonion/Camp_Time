@@ -44,6 +44,7 @@ var main = function(){
     var content1 = container1.innerHTML;
     $('#select-staff').on('change', function(){
          var staffId = $('#select-staff option:selected').data('employeeID');
+         $('.activity').remove();
          console.log(staffId);
          var display= [];
 
@@ -76,7 +77,7 @@ var main = function(){
                         }
                      },
                      error: function(request, status, error){
-                         console(error);
+                         console.log(error);
                      }
                  });
             });
@@ -101,11 +102,13 @@ var main = function(){
                         var row = document.getElementById(hour);
 
                         var new1 = document.createElement('td');
+                        $(new1).addClass('activity');
                         new1.innerHTML=activity.title;
 
                         var new2 = document.createElement('td');
                         new2.innerHTML=activity.session;
 
+                        $(new2).addClass('activity');
                         row.appendChild(new1);
                         row.appendChild(new2);
                     }

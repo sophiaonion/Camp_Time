@@ -276,7 +276,6 @@ public class StaffConstraintChecker {
 
         //if original round of assigning was not sufficient: do heuristic repair
         if(checkConflicts()>0) {
-            System.out.println("heree");
 
             //arraylist of number of conflicts where index corresponds to index of activity in actArray (include conflicts with 2 hour breaks)
             ArrayList< Integer > numConflicts = new ArrayList<>(countConflicts(false));
@@ -286,8 +285,6 @@ public class StaffConstraintChecker {
 
             //fix conflicts one by one
             if(numConflicts.get(mostConf) > 0) {
-                System.out.println(mostConf);
-                System.out.println(numConflicts.get(mostConf));
                 //pick most available employee able to work that activity and put them there
                 actList.get(mostConf);
 
@@ -296,14 +293,13 @@ public class StaffConstraintChecker {
                 editA.getEmployees().clear();
                 activities.get().save(editA);
 
-                System.out.println(editA.getTitle()+"/"+editA.getSession()+"/"+editA.getTime());
+               // System.out.println(editA.getTitle()+"/"+editA.getSession()+"/"+editA.getTime());
 
 
                 //add best choice staff to activity - if adding won't change break
                 ArrayList<String> actDomain = new ArrayList<String>(findEmployeesToWork(editA, "", "", false, false));
                 //if no such options, include ones changing 2 and fix laterz
                 if(actDomain.size()==0) {
-                    System.out.println("changing 2");
                     actDomain = new ArrayList<String>(findEmployeesToWork(editA, "", "", false, true));
                 }
 
@@ -337,7 +333,6 @@ public class StaffConstraintChecker {
         //if there is an activity without employees
         if( (activities.get().count( "{employees: {$exists: false} }" ) != 0)
                 || (activities.get().count( "{employees: null }" ) != 0)) {//if time is set or not
-            System.out.println("type 1 conflict found (no staff)");
             return 1;
         }
 
@@ -346,8 +341,6 @@ public class StaffConstraintChecker {
             String aString = String.valueOf(actList.get(i).get("_id"));
             Activity act = activities.get().findOne("{_id: #}", new ObjectId(aString)).as(Activity.class);
             if(!checkSufficientlyStaffed(act)) {
-                System.out.println(act.getTitle()+"/"+act.getSession()+"/"+act.getTime());
-                System.out.println("insufficiently staffed");
                 return 2;
             }
         }
@@ -362,8 +355,6 @@ public class StaffConstraintChecker {
                 for (int k = 0; k < a.size(); k++) { //for each other activity employee is working
                     DateTime dtB = activities.get().findOne("{_id: #}", new ObjectId(a.get(k))).as(Activity.class).getTime();
                     if (j != k && dtA.equals(dtB)) {//not sure if works, compare each activity
-                        System.out.println(a.get(j)+" is at same time as "+a.get(k));
-                      System.out.println("type 3 conflict: employee working two activities at same time");
                         return 3;
                     }
                 }
@@ -400,7 +391,6 @@ public class StaffConstraintChecker {
             for (boolean[] hours : working.values()) {
                 if (((hours[9] || hours[10])) && ((hours[10] || hours[11])) && ((hours[13] || hours[14])) && //if working any of the possible 2 hour break slots
                         ((hours[14] || hours[15])) && ((hours[15] || hours[16])) && ((hours[19] || hours[20]))) {
-                    System.out.println("type 4: employee does not have 2 hour break");
                     return 4;
                 }
             }//end check 2 hour break
@@ -417,7 +407,6 @@ public class StaffConstraintChecker {
             for(int j=0; j<numToCheck; j++) {
                 String requiredDayOffString = dtf.print(requiredDayOff);
                 if(working.containsKey(requiredDayOffString)) {
-                  System.out.println("type 5: employee working on their 24 hour break");
                     return 5;
                 }
                 requiredDayOff = requiredDayOff.plusDays(interval);
@@ -578,7 +567,6 @@ public class StaffConstraintChecker {
                 }
         }
         if (hasMatureLady == false) {
-//            System.out.println("does not have staff over 18 and woman");
             return false;
         }
 
@@ -802,7 +790,6 @@ public class StaffConstraintChecker {
                 mostInd = i;
             }
         }
-//        System.out.println("index "+mostInd+" has "+most+" conflicts, the most");
         return mostInd;
     }//end getMostConflicts
 
