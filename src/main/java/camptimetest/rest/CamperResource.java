@@ -41,6 +41,7 @@ public class CamperResource {
     public SessionRegistration registerCamper(String camperID, String sessionID, String approved){
 
         SessionRegistration reg = new SessionRegistration(camperID, sessionID, approved);
+        //SessionRegistration a = registrations.get().find("{_id: #}");
         registrations.get().save(reg);
         return reg;
 
