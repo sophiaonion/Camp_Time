@@ -91,7 +91,7 @@ var cert;
             contentType: 'application/JSON',
             success: function(data){
                  alert('User Created.');
-                 window.location.replace('index.html');
+                 window.location.replace('home_page_test.html');
             },
             error: function(request, status, error){
                  alert(error);
