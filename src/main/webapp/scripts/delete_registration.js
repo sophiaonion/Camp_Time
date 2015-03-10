@@ -65,7 +65,7 @@ var main = function(campers){
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/campers/' + data.camperID + '/' + data.sessionID,
+            url: '/api/campers/registrations/' + data.camperID + '/' + data.sessionID,
             data: JSON.stringify(data),
             contentType: 'application/JSON',
             success: function(data){
