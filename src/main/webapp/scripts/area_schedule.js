@@ -1,6 +1,6 @@
 
   $('.date-select').hide();
-
+  $('.activity-info').hide();
 var main = function(camp_sessions){
 
     //add option to be selected for each session and also tack on index data to access session in camp_sessions array
@@ -69,19 +69,41 @@ var main = function(camp_sessions){
                         if (time == select){
                             var row = document.getElementById(hour);
 
-                            var new1 = document.createElement('td');
-                            $(new1).addClass('activity');
-                            new1.innerHTML=activity.title;
-
                             var new2 = document.createElement('td');
-                            $(new2).addClass('activity');
-                            new2.innerHTML=activity.session;
+                            console.log(activity);
+                            $(new2).text(activity.session).data('employees', activity.employees).addClass('activity');
 
                             row.appendChild(new2);
                         }
                     });
 
                     $('#schedule').show();
+                    $('.activity-info').show();
+
+                    //set up click handler to display activity info
+                    $('table').on('click', '.activity', function(){
+                        var employees = $(this).data('employees');
+                        console.log("this is the employees: ");
+                        console.log(employees);
+                        $('#employees-working').empty();
+
+                        if(employees.length){
+                            //get employee objects working from ids of activity.employees array
+                            employees.forEach(function(employee){
+
+                                $.ajax({
+                                    url: '/api/employees/'+employee,
+                                    type: "GET",
+                                    contentType: 'application/JSON',
+                                    async:false
+                                }).done(function(employee, textStatus, jqXHR){
+                                        //attach names to employees working
+                                    $('.activity-info #employees-working').append($('<li>').text(employee.name));
+                                    $('.activity-info #employees-working').append($("<br>"));
+                                })
+                            });
+                        }
+                    });
                 });
              });
 

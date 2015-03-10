@@ -43,3 +43,11 @@ button {
 .login{
 text-align: center;
 }
+
+aside {
+       float: right;
+
+         position: relative;
+         left: -30%; /* or right 50% */
+         text-align: left;
+}

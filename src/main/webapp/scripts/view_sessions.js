@@ -111,12 +111,6 @@ var main = function(camp_sessions){
         $('#required-activities').text(activity_titles.join(', '));
 
 
-
-        //set up autocomplete for activites
-        var source = [ "pool", "art", "meal", "sports",
-                    "counselor", "canoeing", "archery", "creek", "check in/out", "unit"
-                     , "other"];
-
         //get available activities at that time
         var keyUpData;
         var previousValue = "";
@@ -169,39 +163,30 @@ var main = function(camp_sessions){
         var act_date = new Date(activity.time);
         $('.activity-info #activity-time').text(act_date.myToString() + ' ' + act_date.myTimeString());
         $('#employees-working').empty();
-        if(activity.employees.length){
-           // $('.activity-info #num-employees').text(activity.employees.length);
-            //get employee objects working from ids of activity.employees array
-            $.ajax({
-                url: '/api/employees/ids',
-                type: "PUT",
-                data: JSON.stringify({employee_ids: activity.employees}),
-                contentType: 'application/JSON'
-            }).done(function(employees, textStatus, jqXHR){
-                    //attach names to employees working
 
-                    employees.forEach(function(employee){
-                        $('.activity-info #employees-working').append($('<li>').text(employee.name).
-                            data('employee', employee)); //get employee name for later
-                    });
-            }).fail(alert.bind(null, 'error getting employee objects of activity'));
-                } else { //no employees working activity
-                    $('.activity-info #employees-working').hide();
-                    $('.activity-info #num-employees').text('0');
-                }
-            $('.selected').removeClass('selected');
-            $(this).addClass('selected');
+        if(activity.employees.length){
+            activity.employees.forEach(function(employee){
+
+                $.ajax({
+                    url: '/api/employees/'+employee,
+                    type: "GET",
+                    contentType: 'application/JSON',
+                    async:false
+                }).done(function(employee, textStatus, jqXHR){
+                        //attach names to employees working
+                    $('.activity-info #employees-working').append($('<li>').text(employee.name));
+                    $('.activity-info #employees-working').append($("<br>"));
+                })
             });
 
+            $('#session-select').trigger('change');
+        };
+    });
 
-
-
-    $('#session-select').trigger('change');
-
-
-     $('#cancel').on('click', function(){
+    $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
     });
+
 };
 
 $(document).ready(function(){
