@@ -99,6 +99,13 @@ public class CamperResource {
         return campSessions.get().find("{_id: {$in:#}}", sessionIDs).as(CampSession.class);
     }
 
+    @RolesAllowed({ADMIN,COUNSELOR})
+    @GET("/campers/all")
+    public Iterable<Camper> getCampers(){
+        return campers.get().find().as(Camper.class);
+    }
+    
+    @PermitAll
     @GET("/campers/registrations/{camperID}")
     public Iterable<CampSession> getCampers(String camperID){
         Iterable<SessionRegistration> regsOfSession= registrations.get().find("{camperID: #}", camperID).as(SessionRegistration.class);

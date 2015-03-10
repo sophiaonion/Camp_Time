@@ -22,7 +22,6 @@ var main = function(campers, if_customer, userId){
         var camper_index = $(this).val();
         var camper=campers[camper_index];
         console.log("here");
-        console.log(camper.age);
         $('.campers-info #age').text(camper.age);
         $('.campers-info #extra-info').text(camper.extraInfo);
         $.ajax({

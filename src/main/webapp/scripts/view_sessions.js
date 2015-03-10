@@ -44,7 +44,7 @@ var main = function(camp_sessions){
             $.ajax({
                             url: "/api/activities/campsession",
                             data: JSON.stringify({activityIds: camp_session.activities}),
-                            type: "GET",
+                            type: "PUT",
                             contentType: 'application/JSON'
                         }).done(function(activities, textStatus, jxQHR){
                             camp_session.activity_objects = activities;
