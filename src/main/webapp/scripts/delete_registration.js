@@ -1,5 +1,13 @@
 var main = function(campers){
 
+    campers.forEach(function(camper){
+
+                var element = $("<option>");
+                 element.text(camper.name);
+                 $('.campers-list').append(element);
+
+        });
+
     //generate autocomplete selections
     //value is displayed, ID is extra data to send
     var autocomplete_source = campers.map(function(camper){

@@ -1,5 +1,13 @@
 var main = function(employees){
 
+ employees.forEach(function(employee){
+
+                            var element = $("<option>");
+                             element.text(employee.name);
+                             $('.employees-list').append(element);
+
+                    });
+
     var autocomplete_source = employees.map(function(employee){
         return {
             value: employee.name,
@@ -60,7 +68,7 @@ var main = function(employees){
 };
 
 $(document).ready(function(){
-       $.get('api/employees', function(employees){
+       $.get('api/employees/all', function(employees){
             main(employees);
         });
 });
