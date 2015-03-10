@@ -1,13 +1,19 @@
+
+$('.campers-list').hide();
 var main = function(campers, role){
     //to do get camper name from linked camper registration page
 
-    campers.forEach(function(camper){
 
-            var element = $("<option>");
-             element.text(camper.name);
-             $('.campers-list').append(element);
 
-    });
+    if (role != 'customer'){
+            campers.forEach(function(camper){
+                    var element = $("<option>");
+                     element.text(camper.name);
+                     $('.campers-list').append(element);
+
+            });
+        $('.campers-list').show();
+    }
 
     //generate autocomplete selections
     //value is displayed, ID is extra data to send
@@ -17,10 +23,6 @@ var main = function(campers, role){
             ID: camper._id,
             age: camper.age //string of scout level to be used to get appropriate available sessions
         };
-    });
-
-    autocomplete_source.forEach(function(value){
-        console.log(value.value + value.ID);
     });
 
     var selected_camperID;

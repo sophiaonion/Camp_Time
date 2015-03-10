@@ -1,6 +1,7 @@
 $('.view-schedule').hide();
 $('.customer-options').hide();
 $('.counselor-options').hide();
+$('.customer-schedule').hide();
 var main = function(){
 
     console.log("try to get current role");
@@ -31,8 +32,9 @@ var main = function(){
              $('.admin-view-schedule').hide();
              $('.trigger-update').hide();
              $('.spec-schedule').hide();
-             $('.view-schedule').show();
+             $('.view-schedule').hide();
              $('.customer-options').show();
+             $('.customer-schedule').show();
         }
 
         if (role == "admin"){
