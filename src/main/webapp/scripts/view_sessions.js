@@ -183,6 +183,8 @@ var main = function(camp_sessions){
         };
     });
 
+
+    $('#session-select').trigger('change');
     $('#cancel').on('click', function(){
         window.location.replace('home_page_test.html');
     });
@@ -195,7 +197,7 @@ $(document).ready(function(){
     $.get('/api/login/current/user', function(current){
         if(current.roles[0] == 'customer') {
         $.get('/api/campers/customer/'+current._id, function(campers){
-
+                $('#employees-working').remove();
                 var camp_sessions=[];
                 campers.forEach(function(camper){
 
