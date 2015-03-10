@@ -1,6 +1,14 @@
 var main = function(campers, role){
     //to do get camper name from linked camper registration page
 
+    campers.forEach(function(camper){
+
+            var element = $("<option>");
+             element.text(camper.name);
+             $('.campers-list').append(element);
+
+    });
+
     //generate autocomplete selections
     //value is displayed, ID is extra data to send
     var autocomplete_source = campers.map(function(camper){
@@ -34,8 +42,7 @@ var main = function(campers, role){
             //append as option elements for campsession collect
             console.log(camp_sessions);
             camp_sessions.forEach(function(session){
-            if(role == 'customer')
-            {
+
                 if (session.ageGroup == selected_camperAge){
                     var element = $("<option>");
                      element.val(session.name);
@@ -43,13 +50,7 @@ var main = function(campers, role){
                      element.data('sessionID', session._id);
                      $('#session').append(element);
                 }
-            }else{
-             var element = $("<option>");
-                 element.val(session.name);
-                 element.text(session.name);
-                 element.data('sessionID', session._id);
-                 $('#session').append(element);
-             }
+
 
              });
          });

@@ -125,8 +125,6 @@ public class CamperResource {
     }
 
 
-
-
  //   @GET("/campers/unapproved")
  //   public Iterable<SessionRegistration> getUnapprovedRegistrations(){
  //       System.out.println("test");
@@ -149,7 +147,6 @@ public class CamperResource {
         registrations.get().remove("{camperID:\""+camperID+"\", sessionID:\""+sessionID+"\"}");
         return Status.of("deleted");
     }
-
 
 
     @DELETE("/campers/{camperID}")

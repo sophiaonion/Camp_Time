@@ -10,6 +10,7 @@ var main = function(campers, if_customer, userId){
     if (campers){
         campers.forEach(function(value,index){
                 var element = $("<option>");
+                 console.log(index);
                  element.val(index);
                  element.text(value.name);
                  $('#select-camper').append(element);
@@ -20,6 +21,8 @@ var main = function(campers, if_customer, userId){
         $('#campers-info').load("view_campers.html  #campers-info");
         var camper_index = $(this).val();
         var camper=campers[camper_index];
+        console.log("here");
+        console.log(camper.age);
         $('.campers-info #age').text(camper.age);
         $('.campers-info #extra-info').text(camper.extraInfo);
         $.ajax({
